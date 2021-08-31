@@ -2,103 +2,144 @@ package com.company.triviaapp
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Box
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Outline
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import chapterOne
 
 @Composable
 fun FlashcardView() {
+    var activeState = remember {
+        mutableStateOf(value = 0)
+    }
+    var isQuestion = remember {
+        mutableStateOf(value = true)
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    listOf(Color.Black, Color(5, 5, 5))
+                    listOf(Color(85, 85, 85), Color(75, 75, 75))
                 )
             ),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         // Current Quiz Status
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(100.dp)
-                .padding(horizontal = 10.dp, vertical = 5.dp),
 
-            elevation = 10.dp
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(75.dp)
+                .padding(top = 10.dp)
+                .padding(horizontal = 15.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Canvas(modifier = Modifier.fillMaxSize()) {
-                drawRect(
-                    size = size,
-                    color = Color(94, 27, 35),
+            Button(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .padding(horizontal = 8.dp).shadow(elevation = 15.dp),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(36, 36, 36)),
+                onClick = {
+                    isQuestion.value = true
+                    activeState.value = safeDecrement(chapterOne, activeState.value)
+                }) {
+                Text(
+                    text = "BACK",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 30.sp,
+                    color = Color(232, 200, 104)
                 )
-                drawRect(
-                    size = size,
-                    color = Color(8, 74, 23),
-                    topLeft = Offset(x = center.x, y = 0f)
+            }
+            Button(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .padding(horizontal = 8.dp).shadow(elevation = 15.dp),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(35, 91, 32)),
+                onClick = {
+                    isQuestion.value = true
+                    activeState.value = safeIncrement(chapterOne, activeState.value)
+                }) {
+                Text(
+                    text = "NEXT",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 30.sp,
+                    color = Color(67, 194, 67)
                 )
             }
         }
+
         // Question
+        val text = if (isQuestion.value)
+            chapterOne[activeState.value].question
+        else
+            chapterOne[activeState.value].answer
+        val textColor = if (isQuestion.value)
+            Color(227, 192, 95)
+        else
+            Color.White
         Card(
             modifier = Modifier
-                .fillMaxWidth()
-                .requiredHeight(100.dp)
-                .padding(horizontal = 10.dp, vertical = 5.dp),
-            elevation = 10.dp
+                .fillMaxSize()
+                .padding(horizontal = 20.dp, vertical = 20.dp).clickable { isQuestion.value = !isQuestion.value },
+            elevation = 10.dp,
         ) {
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color(13, 45, 120))
+                    .background(Brush.verticalGradient(
+                        listOf(Color(55, 55, 55), Color(45, 45, 45))
+                    ))
             ) {
                 Text(
-                    text = retrieveRandomQuestion().first,
+                    text = text,
                     textAlign = TextAlign.Center,
-                    color = Color.White,
-                    fontSize = 20.sp,
-                    modifier = Modifier.padding(10.dp)
+                    color = textColor,
+                    fontSize = 25.sp,
+                    modifier = Modifier.padding(20.dp)
                 )
             }
         }
-        // Answer
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .requiredHeight(200.dp)
-                .padding(horizontal = 10.dp, vertical = 5.dp),
-            elevation = 10.dp
-        ) {
-            Column(
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color(13, 45, 120))
-            ) {
-                Text(
-                    text = retrieveRandomQuestion().second,
-                    textAlign = TextAlign.Center,
-                    color = Color.White,
-                    fontSize = 20.sp,
-                    modifier = Modifier.padding(10.dp)
-                )
-            }
-        }
+
+    }
+}
+
+fun safeIncrement(array: List<Any>, currentIndex: Int): Int {
+    return when (currentIndex) {
+        array.lastIndex -> 0
+        else -> currentIndex + 1
+    }
+}
+
+fun safeDecrement(array: List<Any>, currentIndex: Int): Int {
+    return when (currentIndex) {
+        0 -> array.lastIndex
+        else -> currentIndex - 1
     }
 }
