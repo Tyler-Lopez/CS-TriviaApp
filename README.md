@@ -3,5 +3,6 @@ An extremely simple Android Q&amp;A educational flashcard application in develop
 
 ## Preview and Early Mock-up
 This is a crude early-stage progress picture of the general app design. It should not include pictures, as this is designed to be read and described by someone other than the person being quizzed.
+
 ![image](https://user-images.githubusercontent.com/77797048/131434837-09a8098f-899c-4f18-ac7d-564c9e55ec5b.png)
 
