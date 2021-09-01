@@ -248,7 +248,7 @@ class DataStructures {
         
         • If smaller, switch the two around
         
-        • Average: O(nÂ²) time | O(1) space
+        • Average: O(n²) time | O(1) space
     """.trimIndent(), Difficulty.Medium
         ),
         QuestionWithAnswer(
@@ -263,7 +263,7 @@ class DataStructures {
         
         • Swap them, switch boolean to TRUE
         
-        • Average: O(nÂ²) time | O(1) space
+        • Average: O(n²) time | O(1) space
     """.trimIndent(), Difficulty.Medium
         ),
         QuestionWithAnswer(
@@ -282,7 +282,7 @@ class DataStructures {
         
         • Active index increment 1
         
-        • Average: O(nÂ²) time | O(1) space
+        • Average: O(n²) time | O(1) space
     """.trimIndent(), Difficulty.Medium
         ),
     )

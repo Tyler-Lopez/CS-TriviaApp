@@ -1,10 +1,7 @@
 package com.company.triviaapp
 
 import QuestionWithAnswer
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.Button
@@ -30,8 +27,7 @@ import com.company.triviaapp.datastructures.DataStructures
 import com.company.triviaapp.discretemath.DiscreteMath
 
 @Composable
-fun FlashcardView(navController: NavController) {
-    val list = DataStructures().chapterOne
+fun FlashcardView(navController: NavController, list: List<QuestionWithAnswer>) {
     var activeState = remember {
         mutableStateOf(value = 0)
     }
@@ -65,7 +61,8 @@ fun FlashcardView(navController: NavController) {
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight()
-                    .padding(horizontal = 8.dp).shadow(elevation = 15.dp),
+                    .padding(horizontal = 8.dp)
+                    .shadow(elevation = 15.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(36, 36, 36)),
                 onClick = {
                     isQuestion.value = true
@@ -98,7 +95,8 @@ fun FlashcardView(navController: NavController) {
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight()
-                    .padding(horizontal = 8.dp).shadow(elevation = 15.dp),
+                    .padding(horizontal = 8.dp)
+                    .shadow(elevation = 15.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(35, 91, 32)),
                 onClick = {
                     isQuestion.value = true
@@ -125,7 +123,8 @@ fun FlashcardView(navController: NavController) {
         Card(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 20.dp, vertical = 20.dp).clickable { isQuestion.value = !isQuestion.value },
+                .padding(horizontal = 20.dp, vertical = 20.dp)
+                .clickable { isQuestion.value = !isQuestion.value },
             elevation = 10.dp,
         ) {
             Column(
@@ -133,9 +132,12 @@ fun FlashcardView(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Brush.verticalGradient(
-                        listOf(Color(55, 55, 55), Color(45, 45, 45))
-                    ))
+                    .verticalScroll(rememberScrollState())
+                    .background(
+                        Brush.verticalGradient(
+                            listOf(Color(55, 55, 55), Color(45, 45, 45))
+                        )
+                    )
             ) {
                 Text(
                     text = text,

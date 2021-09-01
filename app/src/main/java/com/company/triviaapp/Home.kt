@@ -62,7 +62,7 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(20.dp)
-                        .clickable { navController.navigate(Screen.FlashScreen.route) },
+                        .clickable { navController.navigate(Screen.FlashScreen.withArgs()) },
                     backgroundColor = Color.Gray,
                     elevation = 10.dp
                 ) {
