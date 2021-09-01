@@ -1,5 +1,6 @@
 package com.company.triviaapp
 
+import QuestionWithAnswer
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -24,10 +25,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chapterOne
+import androidx.navigation.NavController
+import com.company.triviaapp.datastructures.DataStructures
+import com.company.triviaapp.discretemath.DiscreteMath
 
 @Composable
-fun FlashcardView() {
+fun FlashcardView(navController: NavController) {
+    val list = DataStructures().chapterOne
     var activeState = remember {
         mutableStateOf(value = 0)
     }
@@ -65,7 +69,7 @@ fun FlashcardView() {
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(36, 36, 36)),
                 onClick = {
                     isQuestion.value = true
-                    activeState.value = safeDecrement(chapterOne, activeState.value)
+                    activeState.value = safeDecrement(list, activeState.value)
                 }) {
                 Text(
                     text = "BACK",
@@ -76,13 +80,29 @@ fun FlashcardView() {
             }
             Button(
                 modifier = Modifier
+                    .weight(0.5f)
+                    .fillMaxHeight()
+                    .shadow(elevation = 15.dp),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color(49, 49, 49)),
+                onClick = {
+                    navController.navigate(Screen.MainScreen.route)
+                }) {
+                Text(
+                    text = "⌂",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 30.sp,
+                    color = Color(155, 155, 155)
+                )
+            }
+            Button(
+                modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight()
                     .padding(horizontal = 8.dp).shadow(elevation = 15.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(35, 91, 32)),
                 onClick = {
                     isQuestion.value = true
-                    activeState.value = safeIncrement(chapterOne, activeState.value)
+                    activeState.value = safeIncrement(list, activeState.value)
                 }) {
                 Text(
                     text = "NEXT",
@@ -95,9 +115,9 @@ fun FlashcardView() {
 
         // Question
         val text = if (isQuestion.value)
-            chapterOne[activeState.value].question
+            list[activeState.value].question
         else
-            chapterOne[activeState.value].answer
+            list[activeState.value].answer
         val textColor = if (isQuestion.value)
             Color(227, 192, 95)
         else
