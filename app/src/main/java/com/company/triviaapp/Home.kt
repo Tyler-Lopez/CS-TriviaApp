@@ -1,5 +1,6 @@
 package com.company.triviaapp.ui.theme
 
+import android.provider.ContactsContract
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -24,6 +25,7 @@ import com.company.triviaapp.FlashcardView
 import com.company.triviaapp.Screen
 import com.company.triviaapp.datastructures.DataStructures
 import com.company.triviaapp.discretemath.DiscreteMath
+import com.google.gson.Gson
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -62,7 +64,11 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(20.dp)
-                        .clickable { navController.navigate(Screen.FlashScreen.withArgs()) },
+                        .clickable {
+                            val listJson = Gson().toJson(DiscreteMath())
+                            println(listJson)
+                            navController.navigate(Screen.DataStructures01.route)
+                                   },
                     backgroundColor = Color.Gray,
                     elevation = 10.dp
                 ) {
@@ -78,7 +84,9 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(20.dp)
-                        .clickable { navController.navigate(Screen.FlashScreen.route) },
+                        .clickable {
+                            navController.navigate(Screen.DiscreteMath01.route)
+                        },
                     backgroundColor = Color.Gray,
                     elevation = 10.dp
                 ) {
