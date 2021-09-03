@@ -286,4 +286,185 @@ class DataStructures {
     """.trimIndent(), Difficulty.Medium
         ),
     )
+    val chapterTwo: List<QuestionWithAnswer> = listOf(
+        QuestionWithAnswer(
+            "What is an algorithm?", """
+        • Sequence of steps for accomplishing a task
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What is linear search?", """
+        • Search algorithm that starts from beginning of a list and checks each element until search key is found or end of list
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Given a list of 10 elements and where each comparison takes 2 μs, what is the fastest possible runtime?", """
+        • 2 μs 
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Given a list of 10 elements and where each comparison takes 2 μs, what is the longest possible runtime?", """
+        • 20 μs 
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Given an array with 32 elements, how many elements would be searched if the target was less than anything present in the list?", """
+        • 5
+        
+        • It would first check index 15, then 7, 3, 1, and 0
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What is the formula to calculate the number of binary search searched elements(not steps) when the element is less than any element in the array?", """
+        • [log₂N]
+        
+        • Example: [log₂32] = 5
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Assigning x to y(x = y) is a constant time operation", """
+        • True
+        
+        • Assignment of a single, fixed size data value is a constant time operation
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Can a list be a constant time operation?", """
+        • Yes
+        
+        • A loop with a constant number of iterations is a constant time operation
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Is comparison of two fixed size data fields constant time?", """
+        • Yes
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Is copying the contents of a string to a new string constant time?", """
+        • No
+        
+        • Copying all characters in a string would require more operations for longer strings
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Is string concatenation constant time?", """
+        • No
+        
+        • More characters must be copied for larger strings
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What are upper and lower bounds?", """
+        • Lower and upper bounds provide general picture of runtime
+        
+        • Worst(upper) and best(lower) case scenario
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Consider algorithm with best case 3N + 6 and worst case 5N² + 7N, what function is a lower bound?", """
+        • 3N
+        
+        • Lower bound means best case
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Consider algorithm with best case 3N + 6 and worst case 5N² + 7N, what function is a upper bound?", """
+        • 12N²
+        
+        • Why not 5N²? Because 7N is added to it.
+        
+        • 5N² + 7N also acceptable
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What are asymptotic notation?", """
+        • Functions that indicate only the growth rate of a bounding function
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What are the three types of asymptotic notation?", """
+        • O (Big-O) | upper bound | worst case
+        
+        • Ω (Omega) | lower bound | best case
+        
+        • Θ (Theta) | upper and lower bound
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "State the function for O (Big-O) asymptotic notation", """
+        • For all N ≥ 1, T(N) ≤ c * f(N)
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "State the function for Ω (Omega) asymptotic notation", """
+        • For all N ≥ 1, T(N) ≥ c * f(N)
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "State the function for Θ (Theta) asymptotic notation", """
+        • T(N) = O(f(N)) and T(N)=Ω(f(N))
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What is the Big O notation of 10 * O(N²)?", """
+        • O(N²)
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What is the Big O notation of 10 + O(N²)?", """
+        • O(N²)
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What is the Big O notation of 3N + O(N²)?", """
+        • O(N³)
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What is the Big O notation of 2N³ + O(N²)?", """
+        • O(N³)
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What is the Big O notation of log₂N?", """
+        • O(log(N))
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What runtime complexity does O(N log(N)) have?", """
+        • Linearithmic
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What runtime complexity does O(N + N²) have?", """
+        • O(N²)
+        
+        • Quadratic
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What runtime complexity does linear search have?", """
+        • O(N)
+        
+        • Linearithmic
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "What runtime complexity does selection sort have?", """
+        • O(N²)
+        
+        • Quadratic
+    """.trimIndent()
+        ),
+        QuestionWithAnswer(
+            "Consider code that initializes a count and sum variable then runes a while loop with two operations. What is the worst-case function?", """
+        • f(N) = 3N + 3
+        
+        • 2 operations execute before the loop + 1 after loop terminates = 3
+        
+        • 2 operations are in the loop + 1 for each condition = 3N
+    """.trimIndent()
+        ),
+    )
 }

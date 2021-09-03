@@ -11,6 +11,7 @@ data class QuestionWithAnswer(val question: String, val answer: String, val diff
 
 val categories = mapOf(
     "COSC 311: 01" to DataStructures().chapterOne,
+    "COSC 311: 02" to DataStructures().chapterTwo,
     "COSC 314: 01" to DiscreteMath().chapterOne,
     "COSC 341: 01" to ProgrammingLanguages().chapterOne,
     "COSC 341: 02" to ProgrammingLanguages().chapterTwo

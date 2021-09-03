@@ -29,7 +29,11 @@ import com.company.triviaapp.discretemath.DiscreteMath
 
 @Composable
 fun FlashcardView(navController: NavController, listID: String?) {
-    val list = categories[listID] ?: DataStructures().chapterOne
+    val list = remember {
+        mutableStateOf(value = categories[listID]?.shuffled() ?: DataStructures().chapterOne.shuffled())
+    }
+
+
     var activeState = remember {
         mutableStateOf(value = 0)
     }
@@ -68,7 +72,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(36, 36, 36)),
                 onClick = {
                     isQuestion.value = true
-                    activeState.value = safeDecrement(list, activeState.value)
+                    activeState.value = safeDecrement(list.value, activeState.value)
                 }) {
                 Text(
                     text = "BACK",
@@ -102,7 +106,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(35, 91, 32)),
                 onClick = {
                     isQuestion.value = true
-                    activeState.value = safeIncrement(list, activeState.value)
+                    activeState.value = safeIncrement(list.value, activeState.value)
                 }) {
                 Text(
                     text = "NEXT",
@@ -115,9 +119,9 @@ fun FlashcardView(navController: NavController, listID: String?) {
 
         // Question
         val text = if (isQuestion.value)
-            list[activeState.value].question
+            list.value[activeState.value].question
         else
-            list[activeState.value].answer
+            list.value[activeState.value].answer
         val textColor = if (isQuestion.value)
             Color(227, 192, 95)
         else
