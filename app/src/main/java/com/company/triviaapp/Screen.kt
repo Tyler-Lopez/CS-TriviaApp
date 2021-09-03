@@ -2,13 +2,12 @@ package com.company.triviaapp
 
 sealed class Screen(val route: String) {
     object MainScreen : Screen("main_screen")
-    object DataStructures01 : Screen("datastructures_01")
-    object DiscreteMath01: Screen("discretemath_01")
+    object FlashCard : Screen("flashcard")
 
-    fun withArgs(arg: String): String {
+    fun withArgs(vararg args: String): String {
         return buildString {
             append(route)
-            append("/$arg")
+            args.forEach { arg -> append("/$arg")}
 
         }
     }

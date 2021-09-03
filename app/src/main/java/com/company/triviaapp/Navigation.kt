@@ -22,11 +22,15 @@ fun Navigation() {
         composable(route = Screen.MainScreen.route) {
             HomeScreen(navController = navController)
         }
-        composable(route = Screen.DataStructures01.route) {
-            FlashcardView(navController = navController, DataStructures().chapterOne)
-        }
-        composable(route = Screen.DiscreteMath01.route) {
-            FlashcardView(navController = navController, DiscreteMath().chapterOne)
+        composable(route = Screen.FlashCard.route + "/{listID}",
+        arguments = listOf(
+            navArgument("listID") {
+                type = NavType.StringType
+                defaultValue = ""
+                nullable = false
+            }
+        )) {
+            FlashcardView(navController = navController, it.arguments?.getString("listID"))
         }
     }
 }

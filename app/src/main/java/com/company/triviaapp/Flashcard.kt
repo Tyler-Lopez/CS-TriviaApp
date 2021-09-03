@@ -23,11 +23,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import categories
 import com.company.triviaapp.datastructures.DataStructures
 import com.company.triviaapp.discretemath.DiscreteMath
 
 @Composable
-fun FlashcardView(navController: NavController, list: List<QuestionWithAnswer>) {
+fun FlashcardView(navController: NavController, listID: String?) {
+    val list = categories[listID] ?: DataStructures().chapterOne
     var activeState = remember {
         mutableStateOf(value = 0)
     }

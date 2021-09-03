@@ -21,6 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import categories
 import com.company.triviaapp.FlashcardView
 import com.company.triviaapp.Screen
 import com.company.triviaapp.datastructures.DataStructures
@@ -60,44 +61,27 @@ fun HomeScreen(navController: NavController) {
                         )
                     )
             ) {
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(20.dp)
-                        .clickable {
-                            val listJson = Gson().toJson(DiscreteMath())
-                            println(listJson)
-                            navController.navigate(Screen.DataStructures01.route)
-                                   },
-                    backgroundColor = Color.Gray,
-                    elevation = 10.dp
-                ) {
-                    Text(
-                        text = "Data Structures & Algorithms: 01",
-                        textAlign = TextAlign.Center,
-                        color = Color.Black,
-                        fontSize = 25.sp,
-                        modifier = Modifier.padding(20.dp)
-                    )
+                for (category in categories) {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(20.dp)
+                            .clickable {
+                                navController.navigate(Screen.FlashCard.withArgs(category.key))
+                            },
+                        backgroundColor = Color.Gray,
+                        elevation = 10.dp
+                    ) {
+                        Text(
+                            text = "${category.key}",
+                            textAlign = TextAlign.Center,
+                            color = Color.Black,
+                            fontSize = 25.sp,
+                            modifier = Modifier.padding(20.dp)
+                        )
+                    }
                 }
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(20.dp)
-                        .clickable {
-                            navController.navigate(Screen.DiscreteMath01.route)
-                        },
-                    backgroundColor = Color.Gray,
-                    elevation = 10.dp
-                ) {
-                    Text(
-                        text = "Discrete Math: 01",
-                        textAlign = TextAlign.Center,
-                        color = Color.Black,
-                        fontSize = 25.sp,
-                        modifier = Modifier.padding(20.dp)
-                    )
-                }
+
 
             }
 
