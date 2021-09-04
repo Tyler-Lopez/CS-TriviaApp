@@ -119,9 +119,9 @@ fun FlashcardView(navController: NavController, listID: String?) {
 
         // Question
         val text = if (isQuestion.value)
-            list.value[activeState.value].question
+            list.value[activeState.value].first
         else
-            list.value[activeState.value].answer
+            list.value[activeState.value].second
         val textColor = if (isQuestion.value)
             Color(227, 192, 95)
         else

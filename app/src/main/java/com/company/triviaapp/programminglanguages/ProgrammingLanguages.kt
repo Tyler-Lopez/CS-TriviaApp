@@ -1,17 +1,15 @@
 package com.company.triviaapp.programminglanguages
 
-import QuestionWithAnswer
-
 class ProgrammingLanguages {
-    val chapterOne: List<QuestionWithAnswer> = listOf(
-        QuestionWithAnswer(
+    val chapterOne = listOf(
+        Pair(
             "What is feature multiplicity?", """
         • More than one way to accomplish a operation
 
         • Example: incrementing a integer in Java
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is operator overloading?", """
         • A single operator has more than one meaning
 
@@ -20,7 +18,7 @@ class ProgrammingLanguages {
         • Can lead to reduced readability
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is orthogonality?", """
         • Small set of primitive constructs can be combined to build data structures
 
@@ -29,7 +27,7 @@ class ProgrammingLanguages {
         • The more orthogonal a language is the more simple it is, less exceptions
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is aliasing(ale-e-s-ing)?", """
         • Having two or more distinct names in a program used to access same memory
 
@@ -40,19 +38,19 @@ class ProgrammingLanguages {
         • Changing value pointed to by one of the two changes value of other
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "Define optimization", """
         • Techniques compilers do to decrease size and/or increase execution speed
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is portability?", """
         • How easy it is to move programs from one implementation to another
 
         • Influenced by standardization of language
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is the von Neumann(Noyman) Architecture?", """
         • Languages designed around called imperative
 
@@ -65,7 +63,7 @@ class ProgrammingLanguages {
         • Assignment = piping
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is the fetch-execute cycle?", """
         • Instruction to be executed must be moved from memory to processor
 
@@ -82,14 +80,14 @@ class ProgrammingLanguages {
         • Execute instruction, go back to repeat until end of repeat
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is language translation?", """
         • Translating high-level language to machine code
         
         • Compiling, interpreting, and hybrid compiling / interpreting
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is procedural programming?", """
         • Don't write whole program in one program
         
@@ -98,7 +96,7 @@ class ProgrammingLanguages {
         • Makes programs more manageable
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is compiling?", """
         • Source code translated to machine code
         
@@ -109,7 +107,7 @@ class ProgrammingLanguages {
         • C, C++, Fortran
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is interpreting?", """
         • Interpreter decodes instructions in source program and executes
         
@@ -120,7 +118,7 @@ class ProgrammingLanguages {
         • Lisp, Basic, Perl
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is hybrid method?", """
         • Compiler compiles code into intermediate code (byte code)
         
@@ -129,7 +127,7 @@ class ProgrammingLanguages {
         • Java, Python, JavaScript
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is an IDE?", """
         • Integrated development environment
         
@@ -137,8 +135,8 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
     )
-    val chapterTwo: List<QuestionWithAnswer> = listOf(
-        QuestionWithAnswer(
+    val chapterTwo = listOf(
+        Pair(
             "What is Plankalkul?", """
         • First "programming language"
 
@@ -147,7 +145,7 @@ class ProgrammingLanguages {
         • Theoretical language, 1945
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is minimal hardware programming?", """
         • Machine code programming
 
@@ -156,7 +154,7 @@ class ProgrammingLanguages {
         • 40's & 50's
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is Fortran?", """
         • First high-level language BUT statement-oriented
 
@@ -167,7 +165,7 @@ class ProgrammingLanguages {
         • Versions include: I - IV, 77, 90, 95, 2003, 2008
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is Lisp?", """
         • Functional programming language - 1950's
 
@@ -176,7 +174,7 @@ class ProgrammingLanguages {
         • Descendants include: Common Lisp, Scheme, Haskell
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is Algol?", """
         • Algorithmic language - 1950's
 
@@ -189,7 +187,7 @@ class ProgrammingLanguages {
         • Descendants include: C, C++, Java
     """.trimIndent()
         ),
-        QuestionWithAnswer(
+        Pair(
             "What is Cobol?", """
         • Common Business Oriented Language - IBM, 1960
 
