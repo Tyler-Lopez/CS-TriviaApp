@@ -1,6 +1,9 @@
 package com.company.triviaapp
 
 import QuestionWithAnswer
+import android.content.Context
+import android.media.AudioManager
+import android.view.SoundEffectConstants
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Box
@@ -25,10 +28,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import categories
 import com.company.triviaapp.datastructures.DataStructures
-import com.company.triviaapp.discretemath.DiscreteMath
 
 @Composable
 fun FlashcardView(navController: NavController, listID: String?) {
+
     val list = remember {
         mutableStateOf(value = categories[listID]?.shuffled() ?: DataStructures().chapterOne.shuffled())
     }

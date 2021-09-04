@@ -3,7 +3,10 @@ package com.company.triviaapp.ui.theme
 import android.provider.ContactsContract
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
@@ -60,6 +63,7 @@ fun HomeScreen(navController: NavController) {
                             listOf(Color(55, 55, 55), Color(45, 45, 45))
                         )
                     )
+                    .verticalScroll(state = rememberScrollState())
             ) {
                 for (category in categories) {
                     Card(

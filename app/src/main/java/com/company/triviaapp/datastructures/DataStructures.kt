@@ -235,6 +235,9 @@ class DataStructures {
         • Best case: output size is 0
     """.trimIndent()
         ),
+
+    )
+    val sortingAlgo = listOf(
         Pair(
             "How would you sort an array with Insertion Sort?", """
         • Iterate forward through array, excluding last value
