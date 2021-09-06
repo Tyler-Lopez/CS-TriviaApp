@@ -7,7 +7,7 @@ A simple Android Q&amp;A educational flashcard application in development aimed 
 This app would naturally also work well with any other broader topic - but questions designed by me will exclusively be covering materials of computer science at Eastern Michigan University for now. Feel free to submit a pull request to add additional categories and questions.
 
 ## UI Examples
-![image](https://user-images.githubusercontent.com/77797048/132257603-79bc1c4b-b977-4f4e-b70d-250e1b00febf.png)
-![image](https://user-images.githubusercontent.com/77797048/132257613-c854a9b3-88e2-4b97-93d4-fb4536fbc7ad.png)
-![image](https://user-images.githubusercontent.com/77797048/132257635-15b1a943-3750-46b7-9fa1-f32af3eda2b2.png)
+![image](https://user-images.githubusercontent.com/77797048/132257724-b292eabd-990b-49cc-a0fa-1d0f779b608c.png)
+![image](https://user-images.githubusercontent.com/77797048/132257731-c94a3aa3-91f5-4512-976b-fdc6b90d4a92.png)
+![image](https://user-images.githubusercontent.com/77797048/132257721-87981558-360b-4606-9dca-d216feef652e.png)
 ![image](https://user-images.githubusercontent.com/77797048/132257712-d0f4b99b-ae83-4e10-bfc2-4e8935a2fe84.png)
