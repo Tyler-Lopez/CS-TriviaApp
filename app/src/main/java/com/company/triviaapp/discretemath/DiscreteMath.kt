@@ -1,7 +1,7 @@
 package com.company.triviaapp.discretemath
 
 class DiscreteMath {
-    val chapterOne = listOf(
+    val sets = listOf(
         Pair(
             "What is a Set?", """
         • A collection of objects
@@ -410,5 +410,102 @@ class DiscreteMath {
         • 1, 3 are in set B
     """.trimIndent()
         ),
+        Pair(
+            "Write { 1, 8, 27, 64, 125, ... } in set builder notation", """
+        • A = { x³ | x ∈ Z⁺ }
+        
+        • x cubed such that x is an element of all positive integers
+    """.trimIndent()
+        ),
+        Pair(
+            "Write { 0, 3, 6, 9, 12, ..., 300 } in set builder notation", """
+        • A = { 3x | 0 ≤ x ≤ 100 }
+        
+        • 3x such that x is greater than or equal to 0 and less than or equal to 100
+    """.trimIndent()
+        ),
+        Pair(
+            "Write { 4, 7, 10, 13, 16, ... } in set builder notation", """
+        • A = { 4 + 3x | x ∈ N }
+        
+        • 3x such that x is greater than or equal to 0 and less than or equal to 100
+    """.trimIndent()
+        ),
+        Pair(
+            "Write { (1, 1), (2, 2), (3, 3), (4, 4) ... } in set builder notation", """
+        • A = { (x, x) | x ∈ Z⁺ }
+        
+        • Ordered pair of (x, x) such that x is an element of the set of positive integers
+    """.trimIndent()
+        ),
+        Pair(
+            "Describe (A ∪ B) ∩ C as a Ven diagram", """
+        • 3 circles inside of a rectangle box
+        
+        • Anywhere in which A and B overlap into C is shaded as that is the union of A and B and where it overlaps with C is the intersection
+    """.trimIndent()
+        ),
+        Pair(
+            "Describe (A - B) - C as a Ven diagram", """
+        • 3 circles inside of a rectangle box
+        
+        • Only the area where A is not overlapped by B or C is shaded
+    """.trimIndent()
+        ),
+    )
+
+    val logic = listOf(
+        Pair("What does ∧ mean?",
+        """
+           • Logical AND 
+           
+           • Conjunction
+        """.trimIndent()),
+        Pair("What does ∨ mean?",
+            """
+           • Logical OR
+           
+           • Inclusive
+           
+           • Disjunction
+        """.trimIndent()),
+        Pair("What does ¬ mean?",
+            """
+           • Logical negation
+        """.trimIndent()),
+        Pair("Describe how to create a truth table for (A ∨ B) ∧ B",
+            """
+           • Create four columns: A, B, A ∨ B, (A ∨ B) ∧ B
+           
+           • Create four rows of all possibilities of when A and B can be true or false
+           
+           • Evaluate (A ∨ B) then evaluate that by ∧ B
+        """.trimIndent()),
+        Pair("What does ~ mean?",
+            """
+           • Not
+           
+           • Example: If A = T, ~A = F
+        """.trimIndent()),
+        Pair("What does it mean if two statements have the same truth table?",
+            """
+           • They are logically equivalent
+        """.trimIndent()),
+        Pair("What does A ⇒ B mean?",
+            """
+           • If A then B
+           
+           • Returns true or false by asserting when A is true, B should also be true
+           
+           • If A is false, returns true anyway because of the implication
+        """.trimIndent()),
+        Pair("What does A ⇔ B mean?",
+            """
+           • If A then B AND if B then A
+           
+           • Returns true or false, true means A and B are logically equivalent
+           
+           • A if and only if B
+        """.trimIndent()),
     )
 }

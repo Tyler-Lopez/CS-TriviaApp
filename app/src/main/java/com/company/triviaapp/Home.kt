@@ -1,97 +1,143 @@
 package com.company.triviaapp.ui.theme
 
-import android.provider.ContactsContract
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.scrollable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import categories
-import com.company.triviaapp.FlashcardView
+import com.company.triviaapp.R
 import com.company.triviaapp.Screen
-import com.company.triviaapp.datastructures.DataStructures
-import com.company.triviaapp.discretemath.DiscreteMath
-import com.google.gson.Gson
+
 
 @Composable
 fun HomeScreen(navController: NavController) {
+
+
+    val image = arrayOf(
+        painterResource(id = R.drawable.code),
+        painterResource(id = R.drawable.code1),
+        painterResource(id = R.drawable.code2)
+    )
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    listOf(Color(85, 85, 85), Color(75, 75, 75))
+                    listOf(
+                        Color(7, 21, 56),
+                        Color(25, 44, 77),
+                        Color(42, 12, 56),
+                        Color(64, 3, 62),
+                    )
                 )
             ),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         // Current Quiz Status
-
-
-        Card(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 20.dp, vertical = 20.dp),
-            elevation = 10.dp,
-        ) {
+        Box(modifier = Modifier.padding(horizontal = 20.dp)) {
             Column(
                 //  verticalArrangement = Arrangement.Center,
                 //  horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(
-                        Brush.verticalGradient(
-                            listOf(Color(55, 55, 55), Color(45, 45, 45))
-                        )
-                    )
                     .verticalScroll(state = rememberScrollState())
             ) {
-                for (category in categories) {
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(20.dp)
-                            .clickable {
-                                navController.navigate(Screen.FlashCard.withArgs(category.key))
-                            },
-                        backgroundColor = Color.Gray,
-                        elevation = 10.dp
-                    ) {
-                        Text(
-                            text = "${category.key}",
-                            textAlign = TextAlign.Center,
-                            color = Color.Black,
-                            fontSize = 25.sp,
-                            modifier = Modifier.padding(20.dp)
-                        )
+                Text(text = "Course Selection",
+                color = Color(240, 230, 255),
+                fontFamily = roboto,
+                    fontSize = 30.sp,
+                fontWeight = FontWeight.Light,
+                modifier = Modifier.padding(top = 15.dp))
+                for (i in 0..categories.lastIndex step 2) {
+                    for (j in 0..1) {
+                        if (categories.lastIndex < i + j) break
+
+                        Card(
+                            shape = RoundedCornerShape(10.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 10.dp)
+                                .height(150.dp)
+                                .border(
+                                    shape = RoundedCornerShape(10.dp),
+                                    width = 1.dp,
+                                    color = Color(198, 190, 209)
+                                )
+                                .clickable {
+                                    navController.navigate(Screen.ChapterSelect.withArgs((i + j).toString()))
+                                },
+
+                            backgroundColor = Color.Gray,
+                            elevation = 5.dp,
+                        ) {
+                            Box(modifier = Modifier.fillMaxSize()) {
+                                Image(
+                                    modifier = Modifier.fillMaxSize(),
+                                    painter = image[i + j],
+                                    contentDescription = "",
+                                    contentScale = ContentScale.Crop
+                                )
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(
+                                            Brush.verticalGradient(
+                                                colors = listOf(
+                                                    Color.Transparent, Color.Black,
+
+                                                    ), startY = 250f, endY = 500f
+                                            )
+                                        )
+                                )
+                                Column(
+                                    modifier = Modifier.fillMaxSize(),
+                                    verticalArrangement = Arrangement.Bottom,
+                                ) {
+                                    Text(
+                                        text = "${categories[i + j].first.uppercase()}",
+                                        textAlign = TextAlign.Left,
+                                        color = Color(220, 220, 220),
+                                        fontSize = 26.sp,
+                                        fontFamily = roboto,
+                                        fontWeight = FontWeight.Bold,
+                                        style = MaterialTheme.typography.h4.copy(
+                                            shadow = Shadow(
+                                                color = Color(0.1f, 0.1f, 0.1f, 0.9f),
+                                                offset = Offset(4f, 4f),
+                                                blurRadius = 8f
+                                            )
+                                        ),
+                                        modifier = Modifier.padding(20.dp)
+                                    )
+                                }
+                            }
+
+                        }
                     }
                 }
-
-
             }
-
 
         }
     }
-
 }
+
 

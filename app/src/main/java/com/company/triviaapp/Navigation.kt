@@ -12,6 +12,7 @@ import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import com.company.triviaapp.datastructures.DataStructures
 import com.company.triviaapp.discretemath.DiscreteMath
+import com.company.triviaapp.ui.theme.ChapterSelect
 import com.company.triviaapp.ui.theme.HomeScreen
 import com.google.gson.Gson
 
@@ -31,6 +32,16 @@ fun Navigation() {
             }
         )) {
             FlashcardView(navController = navController, it.arguments?.getString("listID"))
+        }
+        composable(route = Screen.ChapterSelect.route + "/{categoryIndex}",
+            arguments = listOf(
+                navArgument("categoryIndex") {
+                    type = NavType.IntType
+                    defaultValue = 0
+                    nullable = false
+                }
+            )) {
+            ChapterSelect(navController = navController, it.arguments?.getInt("categoryIndex") ?: 0)
         }
     }
 }
