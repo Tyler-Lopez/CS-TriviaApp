@@ -189,12 +189,26 @@ fun FlashcardView(navController: NavController, listID: String?) {
                         ) {
                             Text(
                                 text = text,
-                                textAlign = TextAlign.Center,
                                 color = textColor,
                                 fontSize = 23.sp,
                                 fontWeight = FontWeight.Light,
                                 fontFamily = roboto,
-                                modifier = Modifier.padding(20.dp)
+                                modifier = Modifier.padding(20.dp),
+                                textAlign = TextAlign.Center,
+                            )
+                        }
+                        Column(
+                            verticalArrangement = Arrangement.Bottom,
+                            horizontalAlignment = Alignment.End,
+                            modifier = Modifier.fillMaxSize()
+                        ) {
+                            Text(
+                                text = "${activeState.value + 1} / ${list.value.lastIndex + 1}",
+                                color = Color.LightGray,
+                                fontSize = 15.sp,
+                                fontFamily = roboto,
+                                fontWeight = FontWeight.Medium,
+                            modifier = Modifier.padding(vertical = 10.dp, horizontal = 15.dp)
                             )
                         }
                     }

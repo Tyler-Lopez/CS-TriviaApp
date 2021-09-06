@@ -19,6 +19,7 @@ val sections = mapOf(
     "COSC 311: 03" to DataStructures().chapterThree,
     "COSC 314: 01" to DiscreteMath().sets,
     "COSC 314: 02" to DiscreteMath().logic,
+    "COSC 314: 03" to DiscreteMath().relations,
     "COSC 341: 01" to ProgrammingLanguages().chapterOne,
     "COSC 341: 02" to ProgrammingLanguages().chapterTwo
 )
@@ -27,7 +28,9 @@ val categories = listOf(
     Pair(
         "Discrete Math", listOf(
             Pair("Sets", "COSC 314: 01"),
-            Pair("Logic", "COSC 314: 02")
+            Pair("Logic", "COSC 314: 02"),
+            Pair("Relations", "COSC 314: 03")
+
         )
     ),
     Pair(
