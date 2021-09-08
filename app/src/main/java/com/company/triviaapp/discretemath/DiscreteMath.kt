@@ -379,7 +379,7 @@ class DiscreteMath {
             "What set operation is this: { x | x ∉ A }?", """
         Complement of A ( Aᶜ )
         
-        • This returns a set of all elements in the universe which are not in A
+        This returns a set of all elements in the universe which are not in A
     """.trimIndent()
         ),
         Pair(
@@ -431,6 +431,96 @@ class DiscreteMath {
         Only the area where A is not overlapped by B or C is shaded
     """.trimIndent()
         ),
+        Pair(
+            "Provided a universal set of { x | 0 < x < 11 }, how would A = { 3, 8, 6 } be represented as a bit string?", """
+        0010010100
+    """.trimIndent()
+        ),
+        Pair(
+            "Provided a universal set of { x | 0 < x < 11 }, how would B = { 1, 5, 6, 8, 9 } be represented as a bit string?", """
+        1000110110
+    """.trimIndent()
+        ),
+        Pair(
+            "What does it mean to perform an OR on two bit strings?", """
+        Two bit strings are bit string representations of sets - this means to union them
+        
+        101 + 010 = 111
+    """.trimIndent()
+        ),
+        Pair(
+            "What does it mean to perform an AND on two bit strings?", """
+        Two bit strings are bit string representations of sets - this means to intersect them
+        
+        101 + 010 = 000
+    """.trimIndent()
+        ),
+    )
+
+    val functions = listOf(
+        Pair("What is the domain of a function?",
+            """
+           In f:A → B, A is the domain
+        """.trimIndent()),
+
+        Pair("What is the codomain of a function?",
+            """
+           In f:A → B, B is the codomain
+        """.trimIndent()),
+        Pair("Describe f(a) = b",
+            """
+           b is the unique element of B assigned by function f to the element a of A
+        """.trimIndent()),
+        Pair("In f(a) = b, what is the image of a?",
+            """
+           b is the image of a
+        """.trimIndent()),
+        Pair("In f(a) = b, what is the pre-image of b?",
+            """
+           a is the pre-image of b
+        """.trimIndent()),
+        Pair("What is range?",
+            """
+           Subset of the codomain, set of values the function actually outputs
+        """.trimIndent()),
+        Pair("What is the range of f: {a, b, c, d} → {1, 2, 3, 4, 5} defined by f(a) = 1, f(b) = 2, f(c) = 5, f(d) = 2?",
+            """
+           { 1, 2, 5 }
+           
+           Subset of the codomain, set of values the function actually outputs
+        """.trimIndent()),
+        Pair("In the Java method, int floor(float real) { }, what are the domain and codomain?",
+            """
+           Domain: set of real numbers as floats
+           
+           Codomain: set of integers
+        """.trimIndent()),
+        Pair("What does it mean for a function to be one-to-one?",
+            """
+           Two inputs of the domain may not map to the same element of the codomain
+           
+           A one-to-one function is AKA injection
+        """.trimIndent()),
+        Pair("What is wrong with A = { 1, 2, 3 }, B = { a, b, c, d }; f(1) = b, f(2) = c?", """
+            There is no mapping for f(3); f is not a function.
+        """.trimIndent()),
+        Pair("Does every input in the domain of a function need an output?", """
+            Yes
+        """.trimIndent()),
+        Pair("Provided A = { a, b, c }, B = { 1, 2, 3, 4 }; f(a) = 2, f(b) = 2, f(c) = 3, what is the range?", """
+            { 2, 3 }
+        """.trimIndent()),
+        Pair("Provided A = { a, b }, B = { 1, 2 }; f(a) = 2, f(b) = 1, what is the image of a?", """
+             2
+        """.trimIndent()),
+        Pair("Provided A = { a, b }, B = { 1, 2 }; f(a) = 2, f(b) = 1, what is the pre-image of 1?", """
+             b
+        """.trimIndent()),
+        Pair("What is the range?", """
+            Not all elements of the codomain are "used"
+            
+            The range is which elements are actually being "used"
+        """.trimIndent()),
     )
 
     val logic = listOf(
@@ -486,6 +576,90 @@ class DiscreteMath {
            
            A if and only if B
         """.trimIndent()),
+        Pair("What is the Logic Identity Law?",
+            """
+           p ∧ T (true) ⇔ p
+           
+           p ∨ F (false) ⇔ p
+        """.trimIndent()),
+        Pair("What is the Logic Domination Law?",
+            """
+           p ∨ T (true) ⇔ T
+           
+           p ∧ F (false) ⇔ F
+           
+           It doesn't matter what p is
+        """.trimIndent()),
+        Pair("What is the Logic Double Negation Law?",
+            """
+           ¬¬p ⇔ p 
+        """.trimIndent()),
+        Pair("What is the Logic DeMorgan's Law?",
+            """
+           ¬(p ∧ q) ⇔ ¬p ∨ ¬q 
+           
+           Not p AND q is = to not p OR not q
+           
+           Distribute the negation sign to the statements and flip the connective
+        """.trimIndent()),
+        Pair("What is the Logic Distributive Law?",
+            """
+           p ∧ (q ∨ r) ⇔ (p ∧ q) ∨ (p ∧ r)
+           
+           p ∨ (q ∧ r) ⇔ (p ∨ q) ∧ (p ∨ r)
+        """.trimIndent()),
+        Pair("What is the Logic Absorption Law?",
+            """
+           p ∧ (p ∨ q) ⇔ p
+           
+           p ∨ (p ∧ q) ⇔ p
+        """.trimIndent()),
+        Pair("What is the Logic Commutativity Law?",
+            """
+           p ∧ q ⇔ q ∧ p
+           
+           p ∨ q ⇔ q ∨ p
+        """.trimIndent()),
+        Pair("What is the Logic Associativity Law?",
+            """
+           p ∧ (q ∧ r)  ⇔ (p ∧ q) ∧ r
+           
+           This only works if they both the same connective, otherwise distributive
+        """.trimIndent()),
+        Pair("What is the Logic Inverse Law?",
+            """
+           p ∧ ¬p ⇔ F
+           
+           p ∨ ¬p ⇔ T
+        """.trimIndent()),
+        Pair("What is the Logic Conditional Law?",
+            """
+           p ⇒ q ⇔ ¬p ∨ q
+           
+           p ⇒ q is true when p is false and when p and q are true 
+        """.trimIndent()),
+        Pair("What does ¬(¬p ∧ ¬q) reduce to?",
+            """
+           ¬¬p ∨ ¬¬q | DeMorgan's
+           
+           p ∨ q | Double Negation
+        """.trimIndent()),
+        Pair("What does ¬¬p ∨ ((p ∨ F) ∧ ¬¬q) reduce to? F = false",
+            """
+           p ∨ ((p ∨ F) ∧ q) | Double Negation x2
+           
+           p ∨ (p ∧ q) | Identity
+           
+           p | Absorption
+        """.trimIndent()),
+        Pair("What does (p ∨ F) ∧ (q v T) reduce to?",
+            """
+           p ∧ (q v T) | Identity
+           
+           p ∧ T | Domination
+           
+           p | Identity
+        """.trimIndent()),
     )
     val relations = listOf(
         Pair("What is a binary relation from A to B?", """
@@ -497,10 +671,20 @@ class DiscreteMath {
             
             When (a, b) ∈ R, a is related to b by R
         """.trimIndent()),
+        Pair("Is a relation a function?", """
+            Yes
+        """.trimIndent()),
         Pair("What is the domain of a relation?", """
             The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
             
             Relation denoted by (a, b) ∈ R
-        """.trimIndent())
+        """.trimIndent()),
+        Pair("What is the domain of a relation?", """
+            The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
+            
+            Relation denoted by (a, b) ∈ R
+        """.trimIndent()),
+
+
     )
 }

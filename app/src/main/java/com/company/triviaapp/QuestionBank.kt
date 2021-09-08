@@ -1,5 +1,6 @@
 import com.company.triviaapp.datastructures.DataStructures
 import com.company.triviaapp.discretemath.DiscreteMath
+import com.company.triviaapp.kotlincourse.KotlinCourse
 import com.company.triviaapp.programminglanguages.ProgrammingLanguages
 
 enum class Difficulty {
@@ -20,8 +21,13 @@ val sections = mapOf(
     "COSC 314: 01" to DiscreteMath().sets,
     "COSC 314: 02" to DiscreteMath().logic,
     "COSC 314: 03" to DiscreteMath().relations,
+    "COSC 314: 04" to DiscreteMath().functions,
     "COSC 341: 01" to ProgrammingLanguages().chapterOne,
-    "COSC 341: 02" to ProgrammingLanguages().chapterTwo
+    "COSC 341: 02" to ProgrammingLanguages().chapterTwo,
+    "COSC 341: 03" to ProgrammingLanguages().chapterThree,
+
+    "Kotlin: O2" to KotlinCourse().intermediete
+
 )
 
 val categories = listOf(
@@ -29,8 +35,8 @@ val categories = listOf(
         "Discrete Math", listOf(
             Pair("Sets", "COSC 314: 01"),
             Pair("Logic", "COSC 314: 02"),
+            Pair("Functions", "COSC 314: 04"),
             Pair("Relations", "COSC 314: 03")
-
         )
     ),
     Pair(
@@ -44,6 +50,12 @@ val categories = listOf(
         "Programming Languages", listOf(
             Pair("Introduction", "COSC 341: 01"),
             Pair("Overview of Languages", "COSC 341: 02"),
+            Pair("C", "COSC 341: 03"),
+            )
+    ),
+    Pair(
+        "Kotlin", listOf(
+            Pair("Intermediate", "Kotlin: O2"),
         )
     ),
 )

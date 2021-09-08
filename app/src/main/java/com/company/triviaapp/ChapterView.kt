@@ -66,19 +66,19 @@ fun ChapterSelect(navController: NavController, category: Int) {
                     fontFamily = roboto,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Thin,
-                    modifier = Modifier.padding(top = 2.dp, end = 10.dp)
+                    modifier = Modifier.padding(top = 2.dp, end = 10.dp, bottom = 5.dp)
                 )
                 for (section in categories[category].second) {
                     Card(
-                        shape = RoundedCornerShape(10.dp),
+                     //   shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 10.dp)
+                            .padding(vertical = 3.dp)
                             .height(75.dp)
                             .border(
-                                shape = RoundedCornerShape(10.dp),
-                                width = 1.dp,
-                                color = Color(198, 190, 209)
+                            //    shape = RoundedCornerShape(10.dp),
+                                width = 2.dp,
+                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
                             )
                             .clickable {
                                 navController.navigate(Screen.FlashCard.withArgs(section.second))

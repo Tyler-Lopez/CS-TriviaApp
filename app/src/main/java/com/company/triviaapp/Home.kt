@@ -1,5 +1,6 @@
 package com.company.triviaapp.ui.theme
 
+import android.content.Context
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,10 +23,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import android.speech.tts.*
 import categories
 import com.company.triviaapp.R
 import com.company.triviaapp.Screen
-
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -34,7 +35,8 @@ fun HomeScreen(navController: NavController) {
     val image = arrayOf(
         painterResource(id = R.drawable.code),
         painterResource(id = R.drawable.code1),
-        painterResource(id = R.drawable.code2)
+        painterResource(id = R.drawable.code2),
+        painterResource(id = R.drawable.code3)
     )
     Column(
         modifier = Modifier
@@ -79,15 +81,16 @@ fun HomeScreen(navController: NavController) {
                                 .height(150.dp)
                                 .border(
                                     shape = RoundedCornerShape(10.dp),
-                                    width = 1.dp,
-                                    color = Color(198, 190, 209)
+                                    width = 3.dp,
+                                    color = Color(0.8f, 0.7f, 0.8f, 0.4f),
+
                                 )
                                 .clickable {
                                     navController.navigate(Screen.ChapterSelect.withArgs((i + j).toString()))
                                 },
 
                             backgroundColor = Color.Gray,
-                            elevation = 5.dp,
+                            elevation = 8.dp,
                         ) {
                             Box(modifier = Modifier.fillMaxSize()) {
                                 Image(
