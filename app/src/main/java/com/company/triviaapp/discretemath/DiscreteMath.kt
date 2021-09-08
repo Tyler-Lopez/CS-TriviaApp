@@ -521,6 +521,45 @@ class DiscreteMath {
             
             The range is which elements are actually being "used"
         """.trimIndent()),
+        Pair("Given function f = { (y, a), (y, b) }, what is wrong?", """
+        This is not a function, it is just a subset of ordered pairs
+
+        Each element of a domain must be mapped to only one element of the target
+
+        (y, a) ∈ f and (y, b) ∈ f means this is not a function
+    """.trimIndent()),
+        Pair("Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 2) }: what is the target of f?", """
+        The target is the codomain set, { 1, 2 }
+    """.trimIndent()),
+        Pair("Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 1) }: what is the target of f?", """
+        The target is the codomain set, { 1, 2 }
+    """.trimIndent()),
+        Pair("Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 1) }: what is the range of f?", """
+        The range is the set of elements of the codomain which the function maps elements to
+
+        { 1 }
+    """.trimIndent()),
+        Pair("What does it mean for a function to be well-defined?", """
+        The domain and target of f must be specified such that the function produces well-defined values for all of the domain
+
+        Example: f(x) = 1 / (x-1) is not well-defined because if x = 1 there is no output
+    """.trimIndent()),
+        Pair("What does the floor function do?", """
+        Maps a real number to the nearest integer in the downward direction
+    """.trimIndent()),
+        Pair("What does the ceiling function do?", """
+        Maps a real number to the nearest integer in the upward direction
+    """.trimIndent()),
+        Pair("What is, and provide an example of, an algebraic function?", """
+        Functions that are defined using algebraic formulas
+
+        One example: f: Z ⇾ Z, f(n) = n²
+    """.trimIndent()),
+        Pair("Is p: R ⇾ R, p(x) = √x a function?", """
+        No, the function is not well-defined
+
+        The square root of a negative number is imaginary
+    """.trimIndent()),
     )
 
     val logic = listOf(

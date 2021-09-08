@@ -6,6 +6,7 @@ import android.media.AudioManager
 import android.view.SoundEffectConstants
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.DragInteraction
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -43,6 +44,8 @@ fun FlashcardView(navController: NavController, listID: String?) {
             value = sections[listID]?.shuffled() ?: DataStructures().chapterOne.shuffled()
         )
     }
+    // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
+    val interactionSource = remember { MutableInteractionSource() }
 
 
     var activeState = remember {
@@ -80,15 +83,15 @@ fun FlashcardView(navController: NavController, listID: String?) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
-                        shape = RoundedCornerShape(10.dp),
+                //        shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
                             .padding(end = 4.dp)
                             .border(
-                                shape = RoundedCornerShape(10.dp),
-                                width = 1.dp,
-                                color = Color(198, 190, 209)
+                                //    shape = RoundedCornerShape(10.dp),
+                                width = 2.dp,
+                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
                             )
                             .shadow(elevation = 5.dp),
                         colors = ButtonDefaults.buttonColors(backgroundColor = Color(30, 30, 30)),
@@ -101,15 +104,15 @@ fun FlashcardView(navController: NavController, listID: String?) {
                         )
                     }
                     Button(
-                        shape = RoundedCornerShape(10.dp),
+              //          shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
                             .padding(horizontal = 4.dp)
                             .border(
-                                shape = RoundedCornerShape(10.dp),
-                                width = 1.dp,
-                                color = Color(198, 190, 209)
+                                //    shape = RoundedCornerShape(10.dp),
+                                width = 2.dp,
+                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
                             )
                             .shadow(elevation = 5.dp),
                         colors = ButtonDefaults.buttonColors(backgroundColor = Color(56, 35, 84)),
@@ -123,15 +126,15 @@ fun FlashcardView(navController: NavController, listID: String?) {
                         )
                     }
                     Button(
-                        shape = RoundedCornerShape(10.dp),
+             //           shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
                             .padding(start = 4.dp)
                             .border(
-                                shape = RoundedCornerShape(10.dp),
-                                width = 1.dp,
-                                color = Color(198, 190, 209)
+                                //    shape = RoundedCornerShape(10.dp),
+                                width = 2.dp,
+                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
                             )
                             .shadow(elevation = 5.dp),
                         colors = ButtonDefaults.buttonColors(backgroundColor = Color(56, 35, 84)),
@@ -156,16 +159,16 @@ fun FlashcardView(navController: NavController, listID: String?) {
                 else
                     Color.White
                 Card(
-                    shape = RoundedCornerShape(10.dp),
+               //     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(vertical = 10.dp)
                         .border(
-                            shape = RoundedCornerShape(10.dp),
-                            width = 1.dp,
-                            color = Color(198, 190, 209)
+                            //    shape = RoundedCornerShape(10.dp),
+                            width = 2.dp,
+                            color = Color(0.4f, 0.4f, 0.4f, 0.4f)
                         )
-                        .clickable { isQuestion.value = !isQuestion.value },
+                        .clickable(interactionSource = interactionSource, indication = null) { isQuestion.value = !isQuestion.value },
                     elevation = 5.dp,
                 ) {
                     Box(
@@ -190,7 +193,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             Text(
                                 text = text,
                                 color = textColor,
-                                fontSize = 23.sp,
+                                fontSize = 28.sp,
                                 fontWeight = FontWeight.Light,
                                 fontFamily = roboto,
                                 modifier = Modifier.padding(20.dp),
@@ -205,7 +208,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             Text(
                                 text = "${activeState.value + 1} / ${list.value.lastIndex + 1}",
                                 color = Color.LightGray,
-                                fontSize = 15.sp,
+                                fontSize = 18.sp,
                                 fontFamily = roboto,
                                 fontWeight = FontWeight.Medium,
                             modifier = Modifier.padding(vertical = 10.dp, horizontal = 15.dp)
@@ -218,6 +221,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
     }
 
 }
+
 
 fun safeIncrement(array: List<Any>, currentIndex: Int): Int {
     return when (currentIndex) {

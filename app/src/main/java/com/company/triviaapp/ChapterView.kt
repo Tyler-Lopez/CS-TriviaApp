@@ -74,7 +74,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 3.dp)
-                            .height(75.dp)
+                            .height(100.dp)
                             .border(
                             //    shape = RoundedCornerShape(10.dp),
                                 width = 2.dp,
@@ -102,7 +102,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
                                     text = section.first,
                                     textAlign = TextAlign.Center,
                                     color = Color(245, 220, 157),
-                                    fontSize = 22.sp,
+                                    fontSize = 26.sp,
                                     fontFamily = roboto,
                                     style = MaterialTheme.typography.h4.copy(
                                         shadow = Shadow(

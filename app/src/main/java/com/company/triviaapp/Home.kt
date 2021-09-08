@@ -119,7 +119,7 @@ fun HomeScreen(navController: NavController) {
                                         text = "${categories[i + j].first.uppercase()}",
                                         textAlign = TextAlign.Left,
                                         color = Color(220, 220, 220),
-                                        fontSize = 26.sp,
+                                        fontSize = 28.sp,
                                         fontFamily = roboto,
                                         fontWeight = FontWeight.Bold,
                                         style = MaterialTheme.typography.h4.copy(

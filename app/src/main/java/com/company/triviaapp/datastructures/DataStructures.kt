@@ -496,6 +496,28 @@ class DataStructures {
         N: 2 operations are in the loop + 1 for each conditional check = 3N
     """.trimIndent()
         ),
+        Pair(
+            "Given the following code segment: int i = 0; while (i < 5) { i++; } - how many \"steps\" are there?", """
+        1 step from i = 0
+        
+        2 * 5 steps from the loop iterating 5 times
+        
+        1 step from termination of loop
+        
+        12 steps total
+    """.trimIndent()
+        ),
+        Pair(
+            "Consider a loop which iterates through an array - how many \"steps\" are there?", """
+        1 step from i = 0
+        
+        2 * 5 steps from the loop iterating 5 times
+        
+        1 step from termination of loop
+        
+        12 steps total
+    """.trimIndent()
+        ),
     )
 
     val chapterThree = listOf(
