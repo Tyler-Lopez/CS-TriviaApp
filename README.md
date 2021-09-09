@@ -1,9 +1,9 @@
 # About
-An Android Q&A educational flashcard application in development. Questions and answers are currently hard-coded and cover various standard courses of an undergraduate computer science degree.
+An Android Q&A educational flashcard application in development. Questions and answers are currently hard-coded and cover material of various standard courses of an undergraduate computer science degree.
 
 This app would naturally also work well with any other broader topic - but questions designed by me, for now, will exclusively be covering materials of computer science at Eastern Michigan University for now. Feel free to submit a pull request to add additional categories and questions.
 
-Future roadmap may be to make this app competitive to other existing alternatives for community flashcard browsers, such as Quizlet.
+Future roadmap may be to make this app competitive to other existing alternatives for community flashcard browsers, such as Quizlet - perhaps specialized still to computer science.
 
 ## UI Examples
 <img src="https://user-images.githubusercontent.com/77797048/132620237-07c01930-cd33-45c3-8eab-641145c99c75.png" width="300px">
