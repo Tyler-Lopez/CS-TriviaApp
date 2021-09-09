@@ -23,14 +23,14 @@ fun Navigation() {
             popEnterTransition = { _, _ ->
                 slideInHorizontally(
                     initialOffsetX = { -1200 },
-                    animationSpec = tween(400, 100)
-                )
+                    animationSpec = tween(400)
+                ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
             },
             enterTransition = { _, _ ->
                 slideInHorizontally(
                     initialOffsetX = { -1200 },
-                    animationSpec = tween(400, 100)
-                )
+                    animationSpec = tween(400)
+                ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
             }
         ) {
             HomeScreen(navController = navController)
@@ -47,14 +47,14 @@ fun Navigation() {
             popEnterTransition = { _, _ ->
                 slideInHorizontally(
                     initialOffsetX = { -1200 },
-                    animationSpec = tween(400, 100)
-                )
+                    animationSpec = tween(400)
+                ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
             },
             enterTransition = { _, _ ->
                 slideInHorizontally(
                     initialOffsetX = { 1200 },
-                    animationSpec = tween(400, 100)
-                )
+                    animationSpec = tween(400)
+                ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
             }) {
             FlashcardView(navController = navController, it.arguments?.getString("listID"))
         }
@@ -72,13 +72,13 @@ fun Navigation() {
                 slideInHorizontally(
                     initialOffsetX = { -1200 },
                     animationSpec = tween(400, 100)
-                )
+                ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
             },
             enterTransition = { _, _ ->
                 slideInHorizontally(
                     initialOffsetX = { 1200 },
                     animationSpec = tween(400, 100)
-                )
+                ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
             }) {
             ChapterSelect(navController = navController, it.arguments?.getInt("categoryIndex") ?: 0)
         }

@@ -60,10 +60,10 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxSize()
                     .verticalScroll(state = rememberScrollState())
             ) {
-                Text(text = "Course Selection",
+                Text(text = "Course",
                 color = Color(240, 230, 255),
                 fontFamily = roboto,
-                    fontSize = 30.sp,
+                    fontSize = 33.sp,
                 fontWeight = FontWeight.Light,
                 modifier = Modifier.padding(top = 15.dp))
                 for (i in 0..categories.lastIndex step 2) {
@@ -74,12 +74,12 @@ fun HomeScreen(navController: NavController) {
                             shape = RoundedCornerShape(10.dp),
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(vertical = 10.dp)
-                                .height(150.dp)
+                                .padding(vertical = 3.dp)
+                                .height(130.dp)
                                 .border(
                                     shape = RoundedCornerShape(10.dp),
                                     width = 3.dp,
-                                    color = Color(0.8f, 0.7f, 0.8f, 0.4f),
+                                    color = Color(0.4f, 0.3f, 0.4f, 0.4f),
 
                                 )
                                 .clickable {
@@ -92,10 +92,8 @@ fun HomeScreen(navController: NavController) {
                             Box(modifier = Modifier.fillMaxSize().background(
                                     Brush.verticalGradient(
                                         listOf(
-                                            Color(224, 211, 126),
-                                            Color(219, 147, 217),
-                                            Color(172, 107, 194),
-                                            Color(107, 93, 161),
+                                            Color(21, 23, 23),
+                                            Color(39, 41, 41)
                                         )
                                     )
                                     ),) {
@@ -124,7 +122,7 @@ fun HomeScreen(navController: NavController) {
                                     Text(
                                         text = "${categories[i + j].first.uppercase()}",
                                         textAlign = TextAlign.Left,
-                                        color = Color(220, 220, 220),
+                                        color = Color(210, 200, 210),
                                         fontSize = 28.sp,
                                         fontFamily = roboto,
                                         fontWeight = FontWeight.Bold,

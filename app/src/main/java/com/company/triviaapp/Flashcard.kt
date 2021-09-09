@@ -122,7 +122,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
                         }) {
                         Icon(
                             Icons.Rounded.KeyboardArrowLeft, contentDescription = "BACK",
-                            modifier = Modifier.fillMaxSize(), tint = Color.LightGray,
+                            modifier = Modifier.size(160.dp), tint = Color.LightGray,
                         )
                     }
                     Button(
