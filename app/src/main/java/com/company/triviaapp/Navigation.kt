@@ -1,36 +1,61 @@
 package com.company.triviaapp
 
-import Difficulty
-import QuestionWithAnswer
-import android.provider.ContactsContract
+import androidx.compose.animation.*
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
+import com.google.accompanist.navigation.animation.composable
 import androidx.navigation.compose.navArgument
-import androidx.navigation.compose.rememberNavController
-import com.company.triviaapp.datastructures.DataStructures
-import com.company.triviaapp.discretemath.DiscreteMath
 import com.company.triviaapp.ui.theme.ChapterSelect
 import com.company.triviaapp.ui.theme.HomeScreen
-import com.google.gson.Gson
+import com.google.accompanist.navigation.animation.AnimatedNavHost
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun Navigation() {
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screen.MainScreen.route) {
-        composable(route = Screen.MainScreen.route) {
+    val navController = rememberAnimatedNavController()
+    AnimatedNavHost(navController = navController, startDestination = Screen.MainScreen.route) {
+        composable(
+            route = Screen.MainScreen.route,
+            exitTransition = null,
+            popEnterTransition = { _, _ ->
+                slideInHorizontally(
+                    initialOffsetX = { -600 },
+                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                )
+            },
+            enterTransition = { _, _ ->
+                slideInHorizontally(
+                    initialOffsetX = { -600 },
+                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                )
+            }
+        ) {
             HomeScreen(navController = navController)
         }
         composable(route = Screen.FlashCard.route + "/{listID}",
-        arguments = listOf(
-            navArgument("listID") {
-                type = NavType.StringType
-                defaultValue = ""
-                nullable = false
-            }
-        )) {
+            arguments = listOf(
+                navArgument("listID") {
+                    type = NavType.StringType
+                    defaultValue = ""
+                    nullable = false
+                }
+            ), exitTransition = null,
+            popExitTransition = null,
+            popEnterTransition = { _, _ ->
+                slideInHorizontally(
+                    initialOffsetX = { -600 },
+                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                )
+            },
+            enterTransition = { _, _ ->
+                slideInHorizontally(
+                    initialOffsetX = { 600 },
+                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                )
+            }) {
             FlashcardView(navController = navController, it.arguments?.getString("listID"))
         }
         composable(route = Screen.ChapterSelect.route + "/{categoryIndex}",
@@ -40,7 +65,21 @@ fun Navigation() {
                     defaultValue = 0
                     nullable = false
                 }
-            )) {
+            ),
+            exitTransition = null,
+            popExitTransition = null,
+            popEnterTransition = { _, _ ->
+                slideInHorizontally(
+                    initialOffsetX = { -600 },
+                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                )
+            },
+            enterTransition = { _, _ ->
+                slideInHorizontally(
+                    initialOffsetX = { 600 },
+                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                )
+            }) {
             ChapterSelect(navController = navController, it.arguments?.getInt("categoryIndex") ?: 0)
         }
     }

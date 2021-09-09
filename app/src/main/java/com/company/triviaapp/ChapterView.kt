@@ -64,7 +64,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
                     text = categories[category].first.uppercase(),
                     color = Color.LightGray,
                     fontFamily = roboto,
-                    fontSize = 20.sp,
+                    fontSize = 25.sp,
                     fontWeight = FontWeight.Thin,
                     modifier = Modifier.padding(top = 2.dp, end = 10.dp, bottom = 5.dp)
                 )

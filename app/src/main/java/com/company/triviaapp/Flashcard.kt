@@ -1,6 +1,5 @@
 package com.company.triviaapp
 
-import QuestionWithAnswer
 import android.content.Context
 import android.media.AudioManager
 import android.view.SoundEffectConstants
@@ -35,6 +34,7 @@ import categories
 import com.company.triviaapp.datastructures.DataStructures
 import com.company.triviaapp.ui.theme.roboto
 import sections
+
 
 @Composable
 fun FlashcardView(navController: NavController, listID: String?) {

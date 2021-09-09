@@ -21,8 +21,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -52,6 +52,9 @@ dependencies {
     // Gson
     implementation 'com.google.code.gson:gson:2.8.8'
 
+    // Navigation Animation https://medium.com/androiddevelopers/animations-in-navigation-compose-36d48870776b | https://www.youtube.com/watch?v=6JRYm39bpaA
+    implementation "com.google.accompanist:accompanist-navigation-animation:0.18.0"
+    //
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'

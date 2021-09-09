@@ -509,13 +509,35 @@ class DataStructures {
         ),
         Pair(
             "Consider a loop which iterates through an array - how many \"steps\" are there?", """
-        1 step from i = 0
+        1 step from initializing a sum variable
         
-        2 * 5 steps from the loop iterating 5 times
+        1 step from initializing a iteration variable (i)
         
-        1 step from termination of loop
+        3 steps for each length of the array (if check based on length, iteration increment, addition of value to sum)
         
-        12 steps total
+        1 step to terminate the iteration
+        
+        1 step to return the value
+    """.trimIndent()
+        ),
+        Pair(
+            "What is T(N)?", """
+        Number of "steps" relative to size
+    """.trimIndent()
+        ),
+        Pair(
+            "What is g(n) + O(f(n))? (g of n plus Big O of f of n)", """
+        O(f(n) + g(n))
+    """.trimIndent()
+        ),
+        Pair(
+            "What is g(n) * O(f(n))? (g of n times Big O of f of n)", """
+        O(f(n) * g(n))
+    """.trimIndent()
+        ),
+        Pair(
+            "What is O(n) * O(n)? (Big O of n times Big O of n)", """
+        O(n²)
     """.trimIndent()
         ),
     )

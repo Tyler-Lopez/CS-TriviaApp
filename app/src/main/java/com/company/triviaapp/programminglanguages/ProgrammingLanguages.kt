@@ -738,5 +738,12 @@ class ProgrammingLanguages {
         Stop when a 0 is found, return int
     """.trimIndent()
         ),
+        Pair(
+            "Does C have boolean data types?", """
+        No
+        
+        Use 1 or 0 to indicate true or false
+    """.trimIndent()
+        ),
     )
 }
