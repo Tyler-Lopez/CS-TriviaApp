@@ -4,7 +4,8 @@ A simple Android Q&amp;A educational flashcard application in development aimed 
 This app would naturally also work well with any other broader topic - but questions designed by me will exclusively be covering materials of computer science at Eastern Michigan University for now. Feel free to submit a pull request to add additional categories and questions.
 
 ## UI Examples
-<img src="https://user-images.githubusercontent.com/77797048/132261925-a71dd6ff-2a78-4ef2-b37d-a9e566497e2f.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132261991-9aea5333-88b9-4b14-9ae8-7dfb5fd8e9a0.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132262011-5fcb7402-e0e4-4c29-a7c3-9b4ecf167e6d.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132262008-b22725ff-61f4-4944-9d4c-f48147a36590.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132620237-07c01930-cd33-45c3-8eab-641145c99c75.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132620229-c619377a-e836-433f-a16e-1a4693791690.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132620218-9ff6d9f5-24b4-496a-b2d6-c9ecb5a05ccc.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132620208-16821ab6-3108-4d87-b67b-7a0a93b38d02.png" width="300px">
+
