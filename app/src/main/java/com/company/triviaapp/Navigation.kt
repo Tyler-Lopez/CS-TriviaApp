@@ -22,14 +22,14 @@ fun Navigation() {
             exitTransition = null,
             popEnterTransition = { _, _ ->
                 slideInHorizontally(
-                    initialOffsetX = { -600 },
-                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                    initialOffsetX = { -1200 },
+                    animationSpec = tween(400, 100)
                 )
             },
             enterTransition = { _, _ ->
                 slideInHorizontally(
-                    initialOffsetX = { -600 },
-                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                    initialOffsetX = { -1200 },
+                    animationSpec = tween(400, 100)
                 )
             }
         ) {
@@ -46,14 +46,14 @@ fun Navigation() {
             popExitTransition = null,
             popEnterTransition = { _, _ ->
                 slideInHorizontally(
-                    initialOffsetX = { -600 },
-                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                    initialOffsetX = { -1200 },
+                    animationSpec = tween(400, 100)
                 )
             },
             enterTransition = { _, _ ->
                 slideInHorizontally(
-                    initialOffsetX = { 600 },
-                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                    initialOffsetX = { 1200 },
+                    animationSpec = tween(400, 100)
                 )
             }) {
             FlashcardView(navController = navController, it.arguments?.getString("listID"))
@@ -70,14 +70,14 @@ fun Navigation() {
             popExitTransition = null,
             popEnterTransition = { _, _ ->
                 slideInHorizontally(
-                    initialOffsetX = { -600 },
-                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                    initialOffsetX = { -1200 },
+                    animationSpec = tween(400, 100)
                 )
             },
             enterTransition = { _, _ ->
                 slideInHorizontally(
-                    initialOffsetX = { 600 },
-                    animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
+                    initialOffsetX = { 1200 },
+                    animationSpec = tween(400, 100)
                 )
             }) {
             ChapterSelect(navController = navController, it.arguments?.getInt("categoryIndex") ?: 0)

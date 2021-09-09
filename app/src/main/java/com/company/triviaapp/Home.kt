@@ -89,13 +89,22 @@ fun HomeScreen(navController: NavController) {
                             backgroundColor = Color.Gray,
                             elevation = 8.dp,
                         ) {
-                            Box(modifier = Modifier.fillMaxSize()) {
-                                Image(
+                            Box(modifier = Modifier.fillMaxSize().background(
+                                    Brush.verticalGradient(
+                                        listOf(
+                                            Color(224, 211, 126),
+                                            Color(219, 147, 217),
+                                            Color(172, 107, 194),
+                                            Color(107, 93, 161),
+                                        )
+                                    )
+                                    ),) {
+                                /*Image(
                                     modifier = Modifier.fillMaxSize(),
                                     painter = image[i + j],
                                     contentDescription = "",
                                     contentScale = ContentScale.Crop
-                                )
+                                )*/
                                 Box(
                                     modifier = Modifier
                                         .fillMaxSize()
