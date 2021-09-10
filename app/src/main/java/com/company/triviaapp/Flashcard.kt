@@ -60,10 +60,10 @@ fun FlashcardView(navController: NavController, listID: String?) {
             .background(
                 Brush.verticalGradient(
                     listOf(
-                        Color(7, 21, 56),
-                        Color(25, 44, 77),
-                        Color(42, 12, 56),
-                        Color(64, 3, 62),
+                        Color(19,20,27),
+                        Color(19,20,27),
+                        Color(19,20,27),
+                        Color(19,20,27),
                     )
                 )
             ),
@@ -89,9 +89,9 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             .fillMaxHeight()
                             .padding(end = 4.dp)
                             .border(
-                                //    shape = RoundedCornerShape(10.dp),
-                                width = 2.dp,
-                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
+                          //      shape = RoundedCornerShape(12.dp),
+                                width = 3.dp,
+                                color = Color(26,29,40, 100),
                             )
                             .shadow(elevation = 5.dp),
                         colors = ButtonDefaults.buttonColors(backgroundColor = Color(30, 30, 30)),
@@ -110,12 +110,12 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             .fillMaxHeight()
                             .padding(horizontal = 4.dp)
                             .border(
-                                //    shape = RoundedCornerShape(10.dp),
-                                width = 2.dp,
-                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
+                           //     shape = RoundedCornerShape(12.dp),
+                                width = 3.dp,
+                                color = Color(26,29,40, 100),
                             )
                             .shadow(elevation = 5.dp),
-                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(56, 35, 84)),
+                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(87, 91, 107)),
                         onClick = {
                             isQuestion.value = true
                             activeState.value = safeDecrement(list.value, activeState.value)
@@ -132,12 +132,12 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             .fillMaxHeight()
                             .padding(start = 4.dp)
                             .border(
-                                //    shape = RoundedCornerShape(10.dp),
-                                width = 2.dp,
-                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
+                          //      shape = RoundedCornerShape(12.dp),
+                                width = 3.dp,
+                                color = Color(26,29,40, 100),
                             )
                             .shadow(elevation = 5.dp),
-                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(56, 35, 84)),
+                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(87, 91, 107)),
                         onClick = {
                             isQuestion.value = true
                             activeState.value = safeIncrement(list.value, activeState.value)
@@ -155,18 +155,18 @@ fun FlashcardView(navController: NavController, listID: String?) {
                 else
                     list.value[activeState.value].second
                 val textColor = if (isQuestion.value)
-                    Color(245, 220, 157)
+                    Color(105, 168, 179)
                 else
-                    Color.White
+                    Color(147,153,175,255)
                 Card(
                //     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(vertical = 10.dp)
                         .border(
-                            //    shape = RoundedCornerShape(10.dp),
-                            width = 2.dp,
-                            color = Color(0.4f, 0.4f, 0.4f, 0.4f)
+                       //     shape = RoundedCornerShape(12.dp),
+                            width = 3.dp,
+                            color = Color(26,29,40, 100),
                         )
                         .clickable(interactionSource = interactionSource, indication = null) { isQuestion.value = !isQuestion.value },
                     elevation = 5.dp,
@@ -177,8 +177,8 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             .background(
                                 Brush.verticalGradient(
                                     listOf(
-                                        Color(21, 23, 23),
-                                        Color(39, 41, 41)
+                                        Color(26,29,40,255),
+                                        Color(26,29,40,255)
                                     )
                                 )
                             )
@@ -211,6 +211,13 @@ fun FlashcardView(navController: NavController, listID: String?) {
                                 fontSize = 18.sp,
                                 fontFamily = roboto,
                                 fontWeight = FontWeight.Medium,
+                                style = MaterialTheme.typography.h4.copy(
+                                    shadow = Shadow(
+                                        color = Color(0.1f, 0.1f, 0.1f, 0.9f),
+                                        offset = Offset(4f, 4f),
+                                        blurRadius = 8f
+                                    )
+                                ),
                             modifier = Modifier.padding(vertical = 10.dp, horizontal = 15.dp)
                             )
                         }

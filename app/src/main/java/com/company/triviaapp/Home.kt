@@ -41,10 +41,10 @@ fun HomeScreen(navController: NavController) {
             .background(
                 Brush.verticalGradient(
                     listOf(
-                        Color(7, 21, 56),
-                        Color(25, 44, 77),
-                        Color(42, 12, 56),
-                        Color(64, 3, 62),
+                        Color(19,20,27),
+                        Color(19,20,27),
+                        Color(19,20,27),
+                        Color(19,20,27),
                     )
                 )
             ),
@@ -71,16 +71,15 @@ fun HomeScreen(navController: NavController) {
                         if (categories.lastIndex < i + j) break
 
                         Card(
-                            shape = RoundedCornerShape(10.dp),
+                            shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(vertical = 3.dp)
+                                .padding(vertical = 4.dp)
                                 .height(130.dp)
                                 .border(
-                                    shape = RoundedCornerShape(10.dp),
+                                    shape = RoundedCornerShape(12.dp),
                                     width = 3.dp,
-                                    color = Color(0.4f, 0.3f, 0.4f, 0.4f),
-
+                                    color = Color(26,29,40, 100),
                                 )
                                 .clickable {
                                     navController.navigate(Screen.ChapterSelect.withArgs((i + j).toString()))
@@ -92,8 +91,8 @@ fun HomeScreen(navController: NavController) {
                             Box(modifier = Modifier.fillMaxSize().background(
                                     Brush.verticalGradient(
                                         listOf(
-                                            Color(21, 23, 23),
-                                            Color(39, 41, 41)
+                                            Color(26,29,40,255),
+                                            Color(26,29,40,255)
                                         )
                                     )
                                     ),) {
@@ -103,7 +102,7 @@ fun HomeScreen(navController: NavController) {
                                     contentDescription = "",
                                     contentScale = ContentScale.Crop
                                 )*/
-                                Box(
+                                /*Box(
                                     modifier = Modifier
                                         .fillMaxSize()
                                         .background(
@@ -114,17 +113,17 @@ fun HomeScreen(navController: NavController) {
                                                     ), startY = 250f, endY = 500f
                                             )
                                         )
-                                )
+                                )*/
                                 Column(
                                     modifier = Modifier.fillMaxSize(),
                                     verticalArrangement = Arrangement.Bottom,
                                 ) {
                                     Text(
-                                        text = "${categories[i + j].first.uppercase()}",
+                                        text = "${categories[i + j].first}",
                                         textAlign = TextAlign.Left,
                                         color = Color(210, 200, 210),
-                                        fontSize = 28.sp,
-                                        fontFamily = roboto,
+                                        fontSize = 26.sp,
+                                       // fontFamily = roboto,
                                         fontWeight = FontWeight.Bold,
                                         style = MaterialTheme.typography.h4.copy(
                                             shadow = Shadow(
@@ -133,7 +132,23 @@ fun HomeScreen(navController: NavController) {
                                                 blurRadius = 8f
                                             )
                                         ),
-                                        modifier = Modifier.padding(20.dp)
+                                        modifier = Modifier.padding(start = 20.dp, end = 20.dp, bottom = 2.dp)
+                                    )
+                                    Text(
+                                        text = "${categories[i + j].second.size} ${if (categories[i + j].second.size > 1) "Chapters" else "Chapter" }",
+                                        textAlign = TextAlign.Left,
+                                        color = Color(147,153,175,255),
+                                        fontSize = 20.sp,
+                                        fontFamily = roboto,
+                                        fontWeight = FontWeight.Medium,
+                                        style = MaterialTheme.typography.h4.copy(
+                                            shadow = Shadow(
+                                                color = Color(0.1f, 0.1f, 0.1f, 0.9f),
+                                                offset = Offset(4f, 4f),
+                                                blurRadius = 8f
+                                            )
+                                        ),
+                                        modifier = Modifier.padding(start = 20.dp, bottom = 15.dp)
                                     )
                                 }
                             }

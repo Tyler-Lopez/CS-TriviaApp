@@ -24,6 +24,7 @@ import androidx.navigation.NavController
 import categories
 import com.company.triviaapp.R
 import com.company.triviaapp.Screen
+import sections
 
 @Composable
 fun ChapterSelect(navController: NavController, category: Int) {
@@ -33,10 +34,10 @@ fun ChapterSelect(navController: NavController, category: Int) {
             .background(
                 Brush.verticalGradient(
                     listOf(
-                        Color(7, 21, 56),
-                        Color(25, 44, 77),
-                        Color(42, 12, 56),
-                        Color(64, 3, 62),
+                        Color(19,20,27),
+                        Color(19,20,27),
+                        Color(19,20,27),
+                        Color(19,20,27),
                     )
                 )
             ),
@@ -70,15 +71,15 @@ fun ChapterSelect(navController: NavController, category: Int) {
                 )
                 for (section in categories[category].second) {
                     Card(
-                     //   shape = RoundedCornerShape(10.dp),
+                        shape = RoundedCornerShape(12.dp),
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 3.dp)
-                            .height(100.dp)
+                            .height(150.dp)
                             .border(
-                            //    shape = RoundedCornerShape(10.dp),
-                                width = 2.dp,
-                                color = Color(0.4f, 0.4f, 0.4f, 0.4f)
+                                shape = RoundedCornerShape(10.dp),
+                                width = 3.dp,
+                                color = Color(26,29,40, 100),
                             )
                             .clickable {
                                 navController.navigate(Screen.FlashCard.withArgs(section.second))
@@ -87,8 +88,8 @@ fun ChapterSelect(navController: NavController, category: Int) {
                     ) {
                         Box(modifier = Modifier.fillMaxSize().background(
                             Brush.verticalGradient(listOf(
-                                Color(21, 23, 23),
-                                Color(39, 41, 41)
+                                Color(26,29,40,255),
+                                Color(26,29,40,255)
                             ))
                         )) {
                             Column(
@@ -96,24 +97,43 @@ fun ChapterSelect(navController: NavController, category: Int) {
                                 verticalArrangement = Arrangement.Center,
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-                                Text(
-                                    modifier = Modifier
-                                        .padding(10.dp),
-                                    text = section.first,
-                                    textAlign = TextAlign.Center,
-                                    color = Color(245, 220, 157),
-                                    fontSize = 26.sp,
-                                    fontFamily = roboto,
-                                    style = MaterialTheme.typography.h4.copy(
-                                        shadow = Shadow(
-                                            color = Color(0.1f, 0.1f, 0.1f, 0.9f),
-                                            offset = Offset(4f, 4f),
-                                            blurRadius = 8f
-                                        )
-                                    ),
-                                    fontWeight = FontWeight.Light,
-
-                                )
+                                Row(horizontalArrangement = Arrangement.SpaceAround, verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        modifier = Modifier.padding(
+                                            start = 20.dp,
+                                            end = 20.dp,
+                                        ).weight(6f),
+                                        text = section.first,
+                                        textAlign = TextAlign.Center,
+                                        color = Color(210, 200, 210),
+                                        fontSize = 26.sp,
+                                        fontFamily = roboto,
+                                        style = MaterialTheme.typography.h4.copy(
+                                            shadow = Shadow(
+                                                color = Color(0.1f, 0.1f, 0.1f, 0.9f),
+                                                offset = Offset(4f, 4f),
+                                                blurRadius = 8f
+                                            )
+                                        ),
+                                        fontWeight = FontWeight.Light,
+                                    )
+                                    Text(
+                                        text = "${sections[section.second]?.size} Cards",
+                                        textAlign = TextAlign.Left,
+                                        color = Color(87, 150, 150, 255),
+                                        fontSize = 20.sp,
+                                        fontFamily = roboto,
+                                        fontWeight = FontWeight.Medium,
+                                        style = MaterialTheme.typography.h4.copy(
+                                            shadow = Shadow(
+                                                color = Color(0.1f, 0.1f, 0.1f, 0.9f),
+                                                offset = Offset(4f, 4f),
+                                                blurRadius = 8f
+                                            )
+                                        ),
+                                        modifier = Modifier.padding(horizontal = 20.dp).weight(4f)
+                                    )
+                                }
                             }
                         }
                     }
