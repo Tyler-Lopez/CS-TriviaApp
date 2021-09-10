@@ -1,10 +1,15 @@
 # About
-A simple Android Q&amp;A educational flashcard application in development aimed to fit this niche: you want to study computer science but you're otherwise unable to divert your attention(i.e. long repetitive driving). Questions and answers are designed to be understood when another person, who doesn't necessarily have to understand computer science, reads them aloud. Have someone quiz you with this app!
+An Android Q&A educational flashcard application in development. Questions and answers are currently hard-coded and cover material of various standard courses of an undergraduate computer science degree.
 
-This app would naturally also work well with any other broader topic - but questions designed by me will exclusively be covering materials of computer science at Eastern Michigan University for now. Feel free to submit a pull request to add additional categories and questions.
+This app would naturally also work well with any other broader topic - but questions designed by me, for now, will exclusively be covering materials of computer science at Eastern Michigan University for now. Feel free to submit a pull request to add additional categories and questions.
+
+Future roadmap may be to make this app competitive to other existing alternatives for community flashcard browsers, such as Quizlet - perhaps specialized still to computer science.
 
 ## UI Examples
-<img src="https://user-images.githubusercontent.com/77797048/132261925-a71dd6ff-2a78-4ef2-b37d-a9e566497e2f.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132261991-9aea5333-88b9-4b14-9ae8-7dfb5fd8e9a0.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132262011-5fcb7402-e0e4-4c29-a7c3-9b4ecf167e6d.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132262008-b22725ff-61f4-4944-9d4c-f48147a36590.png" width="300px">
+UI to continue to improve throughout development, light and dark mode toggle as a future-feature.
+
+<img src="https://user-images.githubusercontent.com/77797048/132620237-07c01930-cd33-45c3-8eab-641145c99c75.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132620229-c619377a-e836-433f-a16e-1a4693791690.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132620218-9ff6d9f5-24b4-496a-b2d6-c9ecb5a05ccc.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132620208-16821ab6-3108-4d87-b67b-7a0a93b38d02.png" width="300px">
+
