@@ -617,9 +617,12 @@ class ProgrammingLanguages {
         ),
         Pair(
             "How do you use a for loop?", """
-        Same as Java
+        Same as Java BUT you must declare count variable outside of the loop
         
-        for (int count = 0; counter < target; counter ++) { }
+        Modern versions of C does not 
+        
+        int count;
+        for (count = 0; counter < target; counter ++) { }
     """.trimIndent()
         ),
         Pair(
@@ -639,6 +642,57 @@ class ProgrammingLanguages {
         // for single-line
         
         /* */ for multi-line
+    """.trimIndent()
+        ),
+        Pair(
+            "Is int weights[3] = { 70, 90, 60 } or int weights[] = { 70, 90, 60 } valid?", """
+        Both are valid array initializations
+    """.trimIndent()
+        ),
+        Pair(
+            "Given int x; double y, z; what happens if you attempt to assign x to z?", """
+        z = x;
+        
+        Integer x is converted to double
+        
+        Example: 5 -> 5.0
+    """.trimIndent()
+        ),
+        Pair(
+            "Given int x; double y, z; what happens if you attempt to assign z to x?", """
+        x = z;
+        
+        Double z is converted to int with loss of precision
+        
+        Java would inform you this is a problem, C will NOT
+        
+        Example: 5.7 -> 5
+    """.trimIndent()
+        ),
+        Pair(
+            "What does (9 > 5) return in C?", """
+        1
+        
+        C does not have booleans, 1 == true
+    """.trimIndent()
+        ),
+        Pair(
+            "Is 5 considered \"true\" in C?", """
+        Yes
+        
+        Anything that isn't 0 is considered true
+    """.trimIndent()
+        ),
+        Pair(
+            "Given int x; double y, z; what happens if you attempt to assign x * z to y?", """
+        y = z * x;
+        
+        Integer x is converted to double, y will 
+    """.trimIndent()
+        ),
+        Pair(
+            "How do you explicitly cast a double variable x to int?", """
+        (int) x
     """.trimIndent()
         ),
         Pair(
@@ -743,6 +797,61 @@ class ProgrammingLanguages {
         No
         
         Use 1 or 0 to indicate true or false
+    """.trimIndent()
+        ),
+        Pair(
+            "What does .h mean?", """
+        Header file
+    """.trimIndent()
+        ),
+        Pair(
+            "Given char name[20] = \"John\", what happens if you attempt to access name[500]?", """
+        Unlike Java, the problem will likely not crash
+        
+        It will access whatever byte of memory is at that location
+    """.trimIndent()
+        ),
+        Pair(
+            "Given char name[20] = \"John\", what happens if you attempt to assign name[500]?", """
+        Unlike Java, the problem will likely not crash
+        
+        It will assign whatever that byte is at that location in memory to whatever you assign it to
+        
+        "C will let you scribble all over memory until you really break something"
+    """.trimIndent()
+        ),
+        Pair(
+            "How do you format print a int, double, character, and character array?", """
+        int: %d
+        
+        double: %f
+        
+        char: %c
+        
+        char[]: %s
+    """.trimIndent()
+        ),
+        Pair(
+            "How do you format input a int, double, character, and character array?", """
+        int: %d
+        
+        double: %lf
+        
+        char: %c
+        
+        char[]: %s
+    """.trimIndent()
+        ),
+        Pair(
+            "How do you read user input?", """
+        scanf("% type of input", & name of the pre-initialized variable where data should be stored)
+    """.trimIndent()
+        ),
+        Pair(
+            "Of %d, %lf, %c, and %s, which of these will skip white spaces when reading inputs?", """
+        %d, %lf, and %s will skip white spaces when reading inputs
+        
+        %c will not
     """.trimIndent()
         ),
     )

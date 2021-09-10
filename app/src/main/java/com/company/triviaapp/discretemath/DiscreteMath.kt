@@ -560,6 +560,117 @@ class DiscreteMath {
 
         The square root of a negative number is imaginary
     """.trimIndent()),
+        Pair("Provided an algebraic function definition, and where the domain is equal to the codomain, what is a trick you can use to determine if the function is one-to-one?", """
+        f(x) = f(y)
+        
+        Does f(x) = f(y) reduce to x = y? It is one-to-one
+    """.trimIndent()),
+        Pair("Provided an algebraic function definition, and where the domain is equal to the codomain, what is a trick you can use to determine if it is onto?", """
+        Example: f(x) = 2x + 1
+        
+        f(x) = y
+        
+        2x + 1 = y
+        
+        x = y - 1 / 2
+        
+        Since you can find what x is, the function is onto
+    """.trimIndent()),
+        Pair("How do you determine if a function is onto?", """
+        Look at the codomain
+        
+        Is all of the codomain mapped to? If so, it is onto
+        
+        When the codomain = the range, the function is onto
+        
+        AKA surjective
+    """.trimIndent()),
+        Pair("What does it mean for a function to be bijection?", """
+        One-to-one AND onto
+        
+        AKA one-to-one correspondence
+    """.trimIndent()),
+        Pair("What functions can be inversed?", """
+        Functions which are bijections
+        
+        AKA both one-to-one and onto
+        
+        AKA one-to-one correspondence
+    """.trimIndent()),
+        Pair("What is the notation for an inverse function for f?", """
+        f⁻¹        
+    """.trimIndent()),
+        Pair("What is the inverse of the bijection function f: Z → Z, f(x) = x + 3?", """
+        x = f⁻¹(x) + 3
+        
+        x - 3 = f⁻¹
+        
+        f⁻¹(x) = x - 3
+    """.trimIndent()),
+        Pair("What are 4 ways to represent functions?", """
+        Explicit statement | f(A) = 1, f(B) = 2
+           
+        Algebraic Formula | f(x) = x²
+        
+        Computer Program
+        
+        Relation | A ✕ B - can be a function if the first value is not mapped to multiple values
+    """.trimIndent()),
+        Pair("In f: A → B, f(1) = B, f(2) = B what is the image and preimage?", """
+        Image: B is the image of 1 under f  - B is also the image of 2 under f
+        
+        Preimage: { 1, 3 } is the preimage of B under f
+    """.trimIndent()),
+        Pair("For f: X → Y, f(A) = 1, f(B) = 1, f(C) = 1, f(D) = 2, what is the preimage of 2?", """
+        { D } is the preimage of 2
+    """.trimIndent()),
+        Pair("For f: X → Y, f(A) = 1, f(B) = 1, f(C) = 1, f(D) = 2, what is the image of A?", """
+        { 1 } is the image of A
+    """.trimIndent()),
+        Pair("What does injective mean?", """
+        Another name for one-to-one function, a function where each value in the range corresponds to no more than one element in the domain
+    """.trimIndent()),
+        Pair("What does surjective mean?", """
+        Another name for onto function, a function where every element in the codomain maps to at least one element in the domain
+    """.trimIndent()),
+        Pair("What does bijective mean?", """
+        Another name for a function which is both one-to-one (injective) and onto (surjective)
+    """.trimIndent()),
+        Pair("Is f: Z → Z, f(x) = x² either one-to-one or onto?", """
+        It is not one-to-one, because a negative and positive integer will output the same value    
+            
+        It is not onto, because this will never output a negative number
+    """.trimIndent()),
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is f of g(1)?", """
+        f(1² - 2)
+        
+        f(-1)
+        
+        -1 + 3
+        
+        2
+    """.trimIndent()),
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is f of g(x)?", """
+        g(x) = f(x² - 2)
+        
+        f(x² - 2 + 3)
+        
+        f(x² + 1)
+    """.trimIndent()),
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is g of f(1)?", """
+        g(1 + 3) = (1 + 3)² - 2
+        
+        g(4) = 4² - 2
+        
+        g(4) = 14
+    """.trimIndent()),
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is g of f(x)?", """
+        g(x + 3) = (x + 3)² - 2
+        
+        g(x + 3) = x² + 6x + 9 - 2
+        
+        g(x + 3) = x² + 6x + 7
+    """.trimIndent()),
     )
 
     val logic = listOf(
