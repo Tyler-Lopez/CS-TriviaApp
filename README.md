@@ -7,6 +7,7 @@ Future roadmap may be to make this app competitive to other existing alternative
 
 ## UI Examples
 UI to continue to improve throughout development, light and dark mode toggle as a future-feature.
+
 <img src="https://user-images.githubusercontent.com/77797048/132898515-f73d26d3-3862-40a2-8229-7f4e9db318f0.png" width="300px">
 <img src="https://user-images.githubusercontent.com/77797048/132898524-a4996ac6-3bf8-4c48-8a5b-85b59e281cb4.png" width="300px">
 <img src="https://user-images.githubusercontent.com/77797048/132898531-e0ada33c-e77f-4d03-9854-e023d54a295c.png" width="300px">
