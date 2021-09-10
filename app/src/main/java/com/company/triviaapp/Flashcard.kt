@@ -162,7 +162,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
                //     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(vertical = 10.dp)
+                        .padding(top = 10.dp, bottom = 20.dp)
                         .border(
                        //     shape = RoundedCornerShape(12.dp),
                             width = 3.dp,

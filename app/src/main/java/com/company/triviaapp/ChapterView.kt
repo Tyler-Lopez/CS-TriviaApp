@@ -138,6 +138,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
                         }
                     }
                 }
+                Spacer(modifier = Modifier.height(30.dp))
             }
         }
     }

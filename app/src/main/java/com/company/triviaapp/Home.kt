@@ -156,6 +156,7 @@ fun HomeScreen(navController: NavController) {
                         }
                     }
                 }
+                Spacer(modifier = Modifier.height(30.dp))
             }
 
         }

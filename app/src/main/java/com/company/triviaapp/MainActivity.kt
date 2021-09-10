@@ -10,8 +10,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -31,22 +34,23 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Box(
-                modifier = Modifier.fillMaxSize().background(Color.Black)
-            ) {
-                Navigation()
-            }
+                    // Enclose content within a Box with a background corresponding with the theme for purposes of transitions
+                    Box(modifier = Modifier
+                        .background(Color(19,20,27))) {
+                        Navigation()
+                    }
         }
     }
 }
 
 
-
 @Composable
 fun MyCanvas() {
-    Canvas(modifier = Modifier
-        .padding(20.dp)
-        .size(300.dp)) {
+    Canvas(
+        modifier = Modifier
+            .padding(20.dp)
+            .size(300.dp)
+    ) {
         drawRect(
             color = Color.Black,
             size = size
