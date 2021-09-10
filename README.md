@@ -7,10 +7,9 @@ Future roadmap may be to make this app competitive to other existing alternative
 
 ## UI Examples
 UI to continue to improve throughout development, light and dark mode toggle as a future-feature.
-
-<img src="https://user-images.githubusercontent.com/77797048/132898195-24c1abee-d70d-4f17-b1e9-0c9bb4faa531.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132898235-94be533e-cffc-44fc-a7ac-2c0182447ab4.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132898245-b4665831-7f30-4022-a07b-085b4212dd63.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132898257-a46b1088-e485-4431-9479-e4c145d6f210.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132898515-f73d26d3-3862-40a2-8229-7f4e9db318f0.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132898524-a4996ac6-3bf8-4c48-8a5b-85b59e281cb4.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132898531-e0ada33c-e77f-4d03-9854-e023d54a295c.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/132898540-54dd98c3-23de-4bda-90c8-32c11e97d702.png" width="300px">
 
 
