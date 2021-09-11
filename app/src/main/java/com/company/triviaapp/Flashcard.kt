@@ -146,13 +146,13 @@ fun FlashcardView(navController: NavController, listID: String?) {
                 else
                     list.value[activeState.value].second
                 val textColor = if (isQuestion.value)
-                    MaterialTheme.colors.primaryVariant
-                else
                     MaterialTheme.colors.onSurface
+                else
+                    MaterialTheme.colors.onSecondary
                 val fontWeight = if (isQuestion.value)
                     FontWeight.Medium
                 else
-                    FontWeight.Light
+                    FontWeight.Medium
                 Card(
                //     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
@@ -202,13 +202,13 @@ fun FlashcardView(navController: NavController, listID: String?) {
                         ) {
                             Text(
                                 text = "${activeState.value + 1} / ${list.value.lastIndex + 1}",
-                                color = Color.LightGray,
+                                color = MaterialTheme.colors.primaryVariant,
                                 fontSize = 18.sp,
                                 fontFamily = roboto,
                                 fontWeight = FontWeight.Medium,
                                 style = MaterialTheme.typography.h4.copy(
                                     shadow = Shadow(
-                                        color = Color(0.1f, 0.1f, 0.1f, 0.9f),
+                                        color = Color(0.1f, 0.1f, 0.1f, 0.3f),
                                         offset = Offset(4f, 4f),
                                         blurRadius = 8f
                                     )

@@ -15,9 +15,9 @@ private val DarkColorPalette = darkColors(
     primaryVariant = Blurple200,
     secondary = Teal700,
     secondaryVariant = Color(20, 20, 20),
-    onSecondary = Teal700,
+    onSecondary = Purplish300,
     surface = Purplish900,
-    onSurface = White50,
+    onSurface = White200,
     )
 
 private val LightColorPalette = lightColors(
@@ -28,7 +28,7 @@ private val LightColorPalette = lightColors(
     primaryVariant = NeonGreen,
     secondary = Black700,
     secondaryVariant = Color(50, 50, 50),
-    onSecondary = White200,
+    onSecondary = Black200,
     surface = Green900,
     onSurface = White50,
 
