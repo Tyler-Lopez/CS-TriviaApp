@@ -641,7 +641,7 @@ class DiscreteMath {
             
         It is not onto, because this will never output a negative number
     """.trimIndent()),
-        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is f of g(1)?", """
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is f ∘ g(1)?", """
         f(1² - 2)
         
         f(-1)
@@ -650,26 +650,82 @@ class DiscreteMath {
         
         2
     """.trimIndent()),
-        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is f of g(x)?", """
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is f ∘ g(x)?", """
         g(x) = f(x² - 2)
         
         f(x² - 2 + 3)
         
         f(x² + 1)
     """.trimIndent()),
-        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is g of f(1)?", """
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is g ∘ f(1)?", """
         g(1 + 3) = (1 + 3)² - 2
         
         g(4) = 4² - 2
         
         g(4) = 14
     """.trimIndent()),
-        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is g of f(x)?", """
+        Pair("Given f(x) = x + 3 and g(x) = x² - 2 what is g ∘ f(x)?", """
         g(x + 3) = (x + 3)² - 2
         
         g(x + 3) = x² + 6x + 9 - 2
         
         g(x + 3) = x² + 6x + 7
+    """.trimIndent()),
+        Pair("Given f: S → T and g: T → U what is g(f(s))?", """
+        g(f(s)) is the composition of functions g and f
+        
+        g ∘ f
+    """.trimIndent()),
+        Pair("In f: S → T ?", """
+        The domain of one function must be the same as the codomain of another function
+    """.trimIndent()),
+        Pair("Given two functions, f and g, are f ∘ g and g ∘ f the same?", """
+        Not often; the order in which functions are applied is important
+    """.trimIndent()),
+        Pair("Given f: R⁺ → R⁺, f(x) = x³ and g: R⁺ → R⁺, g(x) = x + 2: what is (f ∘ g)(x)?", """
+        f(g(x))
+        
+        f((x + 2))
+         
+        (x + 2)³  
+    """.trimIndent()),
+        Pair("Given f: R⁺ → R⁺, f(x) = x³ and g: R⁺ → R⁺, g(x) = x + 2: what is (g ∘ f)(x)?", """
+        g(f(x))
+        
+        g((x³))
+         
+        x³ + 2
+    """.trimIndent()),
+        Pair("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ g)(2)?", """
+        f(g(2))
+        
+        f(4)
+        
+        13
+    """.trimIndent()),
+        Pair("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (g ∘ h)(3)?", """
+        g(h(3))
+        
+        g(8)
+        
+        64
+    """.trimIndent()),
+        Pair("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ g ∘ h)(0)?", """
+        f(g(h(0)))
+        
+        f(g(1))
+        
+        f(1)
+        
+        4
+    """.trimIndent()),
+        Pair("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ f⁻¹)(17)?", """
+        (f⁻¹ ∘ f)(a) = a
+        
+        17
+    """.trimIndent()),
+        Pair("Given f(n) = 2ⁿ and g(n) = n / 6: what is (f ∘ g)(0)?", """
+        1
     """.trimIndent()),
     )
 

@@ -3,6 +3,13 @@ import com.company.triviaapp.discretemath.DiscreteMath
 import com.company.triviaapp.kotlincourse.KotlinCourse
 import com.company.triviaapp.programminglanguages.ProgrammingLanguages
 
+/*
+
+Note: this is a temporary way of managing questions, this will eventually be moved to a database rather than being hard-coded.
+
+*/
+
+// Dictionary mapping of chapter keyword to actual question bank
 val sections = mapOf(
     "COSC 311: 01" to DataStructures().chapterOne,
     "COSC 311: 02" to DataStructures().chapterTwo,
@@ -18,6 +25,7 @@ val sections = mapOf(
     "Kotlin: O2" to KotlinCourse().intermediete
 )
 
+// Categories with associated list of each chapter
 val categories = listOf(
     Pair(
         "Discrete Math", listOf(
