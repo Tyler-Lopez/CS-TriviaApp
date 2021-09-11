@@ -102,7 +102,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
                                                 blurRadius = 8f
                                             )
                                         ),
-                                        fontWeight = FontWeight.Light,
+                                        fontWeight = FontWeight.Medium,
                                     )
                                     Text(
                                         text = "${sections[section.second]?.size} Cards",
