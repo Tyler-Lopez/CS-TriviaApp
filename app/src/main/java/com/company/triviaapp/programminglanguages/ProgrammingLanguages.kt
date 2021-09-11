@@ -43,9 +43,7 @@ class ProgrammingLanguages {
             "What increases readability?", """
         Simplicity (small # of language features)
         
-        Process Abstraction (subprograms)
-        
-        Data Abstraction (user defined data)
+        Process and data abstraction
         
         Control and block structures
     """.trimIndent()
@@ -54,20 +52,18 @@ class ProgrammingLanguages {
             "What decreases readability?", """
         Method and operator overloading
         
-        Over simplicity - machine code
+        Over simplicity (machine code)
     """.trimIndent()
         ),
         Pair(
             "What increases writability?", """
         Simplicity (small # of language features)
         
-        Process Abstraction (subprograms)
-        
-        Data Abstraction (user defined data)
+        Process and data abstraction
         
         Control and block structures
         
-        Expressivity (ability to express ideas - recursion, inheritance, etc)
+        Expressivity (ability to express complex structures)
     """.trimIndent()
         ),
         Pair(
@@ -167,11 +163,9 @@ class ProgrammingLanguages {
         ),
         Pair(
             "What is procedural programming?", """
-        Don't write whole program in one program
+        Don't write whole program in one program, divide program into subprograms
         
-        Divide program into subprograms, then put them together
-        
-        Makes programs more manageable
+        Made programs more manageable
         
         AKA imperative
     """.trimIndent()
@@ -180,9 +174,7 @@ class ProgrammingLanguages {
             "What is functional programming?", """
         Work performed by function calls
         
-        Use of recursion
-        
-        AKA applicative
+        AKA applicative languages
     """.trimIndent()
         ),
         Pair(
@@ -202,34 +194,32 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
         Pair(
-            "What is compiling?", """
-        Source code translated to machine code
+            "What is compiling language translation?", """
+        Source code completely translated to machine code
         
         Compiling and executing occur different times
         
-        Compile once run many times
+        Compile once, run many times
         
         C, C++, Fortran
     """.trimIndent()
         ),
         Pair(
-            "What is interpreting?", """
-        Interpreter decodes instructions in source program and executes
-        
-        Compiling and executing occur same time
+            "What is interpreting language translation?", """
+        Interpreter translates source code and executes at the same time
         
         Translation occurs everytime program is run
         
-        Lisp, Basic, Perl
+        Lisp, Basic
     """.trimIndent()
         ),
         Pair(
-            "What is hybrid method?", """
-        Compiler compiles code into intermediate code (byte code)
+            "What is hybrid method language translation?", """
+        Source code translated to intermediate code (byte code)
         
-        Interpreter interprets intermediate code
+        Interpreted code may be executed at runtime, line-by-line
         
-        Java, Python, JavaScript
+        Java, Python
     """.trimIndent()
         ),
         Pair(
@@ -248,6 +238,54 @@ class ProgrammingLanguages {
         Provides package of components: editor, compiler, debugger, libraries
     """.trimIndent()
         ),
+        Pair(
+            "What does it mean for a program to be reliable?", """
+        It performs to specification under all conditions
+    """.trimIndent()
+        ),
+        Pair(
+            "What has been the strongest influence on programming language design?", """
+        Computer architecture
+    """.trimIndent()
+        ),
+        Pair(
+            "What is the name of the category of programming languages whose structure is dictated by the von Neumann computer architecture?", """
+        Imperative
+    """.trimIndent()
+        ),
+        Pair(
+            "Which approach to language implementation produces the fastest program execution?", """
+        Compiler
+    """.trimIndent()
+        ),
+        Pair(
+            "Which was the primary application area of computers at the time Fortran was designed?", """
+        Scientific
+    """.trimIndent()
+        ),
+        Pair(
+            "Which user group was the target of the first version of BASIC?", """
+        Liberal arts students
+    """.trimIndent()
+        ),
+        Pair(
+            "PL/1 was designed to replace which two languages?", """
+        FORTRAN and COBOL
+    """.trimIndent()
+        ),
+        Pair(
+            "What are two ways the choice of programming language can affect software development cost?", """
+        Programmer training costs
+        
+        Writability: more writable = cheaper
+        
+        Reliability: more reliable, less failures = cheaper
+        
+        Readability: more readable, less update cost = cheaper
+        
+        Cost of compiler / debugger if not free
+    """.trimIndent()
+        ),
     )
     val chapterTwo = listOf(
         Pair(
@@ -256,7 +294,7 @@ class ProgrammingLanguages {
 
         "Programming calculus"
         
-        Theoretical language, 1945
+        Theoretical language, 40's
     """.trimIndent()
         ),
         Pair(
@@ -269,146 +307,208 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
         Pair(
-            "What is Fortran?", """
-        First high-level language BUT statement-oriented
+            "What is FORTRAN?", """
+        Procedural & FIRST high-level language
+        
+        Still used today in science / engineering applications
 
-        Formula Translation System (like scientific formulas)
+        Formula Translation System
         
         Beginning of subprogramming approach
+        
+        50's
     """.trimIndent()
         ),
         Pair(
             "What is Lisp?", """
         Functional language
          
-        List processing - program and data represented using lists
+        Based on list processing
                 
         Descendants include: Common Lisp, Scheme, Haskell
+        
+        MIT & IBM, John McCarthy, 50's
     """.trimIndent()
         ),
         Pair(
             "What is Algol?", """
-        Algorithmic language
+        Procedural, "Algorithmic" language
         
-        Not developed by a company, lost support quickly
+        FIRST programming language to describe SYNTAX formally
+        
+        Lost dev support quickly
         
         Descendants include: C, C++, Java
+        
+        Developed in Europe, 50's
     """.trimIndent()
         ),
         Pair(
-            "What is Cobol?", """
-        Common Business Oriented Language - IBM, 1960
+            "What is COBOL?", """
+        Common Business Oriented Language
 
         For business applications
         
         Blamed for Y2K
+        
+        IBM, 60's
     """.trimIndent()
         ),
         Pair(
-            "What is Basic?", """
-        Beginning All Purpose Symbolic Instruction Code
+            "What is BASIC?", """
+        Beginners' All Purpose Symbolic Instruction Code
         
         For teaching basics of programming
+        
+        Dartmouth, 60's
     """.trimIndent()
         ),
         Pair(
             "What is PL/1?", """
         Programming Language 1
+        
+        Designed to replace FORTRAN & COBOL
+        
+        IBM, 60's
     """.trimIndent()
         ),
         Pair(
             "What is Simula?", """
         First object oriented language
+        
+        Designed for simulation applications
+        
+        Norway, 60's
     """.trimIndent()
         ),
         Pair(
             "What is Pascal?", """
-        For teaching computer science students in 70's
+        For teaching computer science students
+        
+        Niklaus Wirth, 70's
     """.trimIndent()
         ),
         Pair(
             "What is Ada?", """
         Derived from Pascal
+        
+        Somewhat object-oriented; for embedded systems
+        
+        Designed with support of the U.S. government, 80's
+    """.trimIndent()
+        ),
+        Pair(
+            "What is Prolog?", """
+        Logic paradigm language
+        
+        Intended for AI applications
+        
+        Developed in Europe, 70's
     """.trimIndent()
         ),
         Pair(
             "What is SmallTalk?", """
-        Early object-oriented language
+        STRICT, early object-oriented language
         
-        STRICT ENFORCEMENT
+        Xerox, Alan Kay, 80's
     """.trimIndent()
         ),
         Pair(
             "What is C?", """
-        Bell labs, 1972
+        Functional language
         
-        Not object-oriented at all
+        Bell labs, Dennis Ritchie, 70's
         
         General purpose, widely used
     """.trimIndent()
         ),
         Pair(
             "What is C++?", """
-        Bell labs, 1985
+        Object oriented, general purpose
         
-        Object oriented
+        Evolved from C and Simula
         
-        Widely used
+        Contains C
+        
+        Bell Labs, Bjarne Stroustrup, 80's
     """.trimIndent()
         ),
         Pair(
             "What is Java?", """
-        Sun Micro Systems, 1994
+        Strictly object oriented, general purpose
         
-        Object oriented
+        Evolved from and simpler than C++
         
-        Widely used
+        Sun Micro Systems, James Gosling, 90's
     """.trimIndent()
         ),
         Pair(
             "What is C#?", """
-        Microsoft, 2002
-        
         Object oriented
         
         Widely used, part of .NET
+        
+        Microsoft, 00's
     """.trimIndent()
         ),
         Pair(
-            "What is Objective C?", """
+            "What is Objective C?", """           
         Used by Apple to develop mobile apps
         
-        Apple did not develop it - Steve Jobs brought it from another company
-        
         Object oriented
+        
+        Developed not by Apple, 80's
     """.trimIndent()
         ),
         Pair(
             "What is Perl?", """
-        Scripting language
+        Scripting language related to Unix and C
         
         Considered "mother of all scripting languages"
+        
+        80's
     """.trimIndent()
         ),
         Pair(
             "What is Python?", """
         Started as a scripting language, became general purpose language
         
-        Many applications
+        Developed by individuals, non-profits, 90's
     """.trimIndent()
         ),
         Pair(
             "What is JavaScript, PHP?", """
-        Web programming languages, not really general purpose
+        Web programming languages
         
-        Many applications
+        Influenced by C, Perl
+        
+        Developed by individuals, non-profits, 90's
     """.trimIndent()
         ),
         Pair(
             "What is Swift?", """
         Mobile application development language
         
-        Used and developed by Apple to develop iOS
+        Developed by Apple, 10's
+    """.trimIndent()
+        ),
+        Pair(
+            "What two programming languages from the 1960 - 1970 were mainly used for teaching purposes?", """
+        Pascal and Basic
+    """.trimIndent()
+        ),
+        Pair(
+            "Name three special purpose programming languages and their domain of applications?", """
+        Visual Basic - Basic UI
+        
+        SQL - Database
+        
+        OpenGL - Graphics
+    """.trimIndent()
+        ),
+        Pair(
+            "In which language is the majority of the UNIX operating system written in?", """
+        C
     """.trimIndent()
         ),
 

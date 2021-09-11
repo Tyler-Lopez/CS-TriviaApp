@@ -69,7 +69,7 @@ fun SettingsScreen(navController: NavController, onToggleTheme: (Unit) -> Unit) 
                     }, colors = buttonColors(backgroundColor = MaterialTheme.colors.surface)
                 ) {
                     Text(
-                        text = "Toggle Dark Mode", color = MaterialTheme.colors.onSurface,
+                        text = "Toggle Dark Mode", fontSize = 25.sp, color = MaterialTheme.colors.onSurface,
                     )
                 }
             }

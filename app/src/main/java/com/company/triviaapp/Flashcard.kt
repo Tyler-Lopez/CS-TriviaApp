@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.KeyboardArrowLeft
 import androidx.compose.material.icons.rounded.KeyboardArrowRight
@@ -54,6 +55,9 @@ fun FlashcardView(navController: NavController, listID: String?) {
     var isQuestion = remember {
         mutableStateOf(value = true)
     }
+
+
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -74,15 +78,15 @@ fun FlashcardView(navController: NavController, listID: String?) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
-                //        shape = RoundedCornerShape(10.dp),
+                        //        shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
                             .padding(end = 4.dp)
                             .border(
-                          //      shape = RoundedCornerShape(12.dp),
+                                //      shape = RoundedCornerShape(12.dp),
                                 width = 3.dp,
-                                color = Color(26,29,40, 100),
+                                color = Color(26, 29, 40, 100),
                             )
                             .shadow(elevation = 5.dp),
                         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
@@ -90,20 +94,22 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             navController.navigate(Screen.MainScreen.route)
                         }) {
                         Icon(
-                            Icons.Rounded.Home, contentDescription = "HOME",
-                            modifier = Modifier.fillMaxSize(), tint = MaterialTheme.colors.onSurface,
+                            Icons.Rounded.Edit,
+                            contentDescription = "HOME",
+                            modifier = Modifier.fillMaxSize(),
+                            tint = MaterialTheme.colors.onSurface,
                         )
                     }
                     Button(
-              //          shape = RoundedCornerShape(10.dp),
+                        //          shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
                             .padding(horizontal = 4.dp)
                             .border(
-                           //     shape = RoundedCornerShape(12.dp),
+                                //     shape = RoundedCornerShape(12.dp),
                                 width = 3.dp,
-                                color = Color(26,29,40, 100),
+                                color = Color(26, 29, 40, 100),
                             )
                             .shadow(elevation = 5.dp),
                         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondaryVariant),
@@ -112,20 +118,22 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             activeState.value = safeDecrement(list.value, activeState.value)
                         }) {
                         Icon(
-                            Icons.Rounded.KeyboardArrowLeft, contentDescription = "BACK",
-                            modifier = Modifier.size(160.dp), tint = MaterialTheme.colors.onSecondary,
+                            Icons.Rounded.KeyboardArrowLeft,
+                            contentDescription = "BACK",
+                            modifier = Modifier.size(160.dp),
+                            tint = MaterialTheme.colors.onSecondary,
                         )
                     }
                     Button(
-             //           shape = RoundedCornerShape(10.dp),
+                        //           shape = RoundedCornerShape(10.dp),
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
                             .padding(start = 4.dp)
                             .border(
-                          //      shape = RoundedCornerShape(12.dp),
+                                //      shape = RoundedCornerShape(12.dp),
                                 width = 3.dp,
-                                color = Color(26,29,40, 100),
+                                color = Color(26, 29, 40, 100),
                             )
                             .shadow(elevation = 5.dp),
                         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondaryVariant),
@@ -134,8 +142,10 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             activeState.value = safeIncrement(list.value, activeState.value)
                         }) {
                         Icon(
-                            Icons.Rounded.KeyboardArrowRight, contentDescription = "NEXT",
-                            modifier = Modifier.fillMaxSize(), tint = MaterialTheme.colors.onSecondary,
+                            Icons.Rounded.KeyboardArrowRight,
+                            contentDescription = "NEXT",
+                            modifier = Modifier.fillMaxSize(),
+                            tint = MaterialTheme.colors.onSecondary,
                         )
                     }
                 }
@@ -154,16 +164,19 @@ fun FlashcardView(navController: NavController, listID: String?) {
                 else
                     FontWeight.Medium
                 Card(
-               //     shape = RoundedCornerShape(10.dp),
+                    //     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(top = 10.dp, bottom = 20.dp)
                         .border(
-                       //     shape = RoundedCornerShape(12.dp),
+                            //     shape = RoundedCornerShape(12.dp),
                             width = 3.dp,
-                            color = Color(26,29,40, 100),
+                            color = Color(26, 29, 40, 100),
                         )
-                        .clickable(interactionSource = interactionSource, indication = null) { isQuestion.value = !isQuestion.value },
+                        .clickable(
+                            interactionSource = interactionSource,
+                            indication = null
+                        ) { isQuestion.value = !isQuestion.value },
                     elevation = 5.dp,
                 ) {
                     Box(
@@ -200,21 +213,31 @@ fun FlashcardView(navController: NavController, listID: String?) {
                             horizontalAlignment = Alignment.End,
                             modifier = Modifier.fillMaxSize()
                         ) {
-                            Text(
-                                text = "${activeState.value + 1} / ${list.value.lastIndex + 1}",
-                                color = MaterialTheme.colors.primaryVariant,
-                                fontSize = 18.sp,
-                                fontFamily = roboto,
-                                fontWeight = FontWeight.Medium,
-                                style = MaterialTheme.typography.h4.copy(
-                                    shadow = Shadow(
-                                        color = Color(0.1f, 0.1f, 0.1f, 0.3f),
-                                        offset = Offset(4f, 4f),
-                                        blurRadius = 8f
+                            Card(
+                                shape = RoundedCornerShape(12.dp),
+                                backgroundColor = MaterialTheme.colors.background,
+                                modifier = Modifier
+                                    .padding(10.dp),
+                            ) {
+                                Text(
+                                    text = "${activeState.value + 1} / ${list.value.lastIndex + 1}",
+                                    color = MaterialTheme.colors.primary,
+                                    fontSize = 18.sp,
+                                    fontFamily = roboto,
+                                    fontWeight = FontWeight.Bold,
+                                    style = MaterialTheme.typography.h4.copy(
+                                        shadow = Shadow(
+                                            color = Color(0.05f, 0.05f, 0.05f, 0.1f),
+                                            offset = Offset(4f, 4f),
+                                            blurRadius = 2f
+                                        )
+                                    ),
+                                    modifier = Modifier.padding(
+                                        vertical = 6.dp,
+                                        horizontal = 6.dp
                                     )
-                                ),
-                            modifier = Modifier.padding(vertical = 10.dp, horizontal = 15.dp)
-                            )
+                                )
+                            }
                         }
                     }
                 }
