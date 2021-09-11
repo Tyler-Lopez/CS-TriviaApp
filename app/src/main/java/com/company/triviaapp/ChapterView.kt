@@ -31,16 +31,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    listOf(
-                        Color(19,20,27),
-                        Color(19,20,27),
-                        Color(19,20,27),
-                        Color(19,20,27),
-                    )
-                )
-            ),
+            .background(MaterialTheme.colors.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
@@ -55,18 +46,18 @@ fun ChapterSelect(navController: NavController, category: Int) {
             ) {
                 Text(
                     text = "Chapter",
-                    color = Color(240, 230, 255),
+                    color = MaterialTheme.colors.onBackground,
                     fontFamily = roboto,
                     fontSize = 33.sp,
-                    fontWeight = FontWeight.Light,
+                    fontWeight = FontWeight.Medium,
                     modifier = Modifier.padding(top = 15.dp)
                 )
                 Text(
                     text = categories[category].first.uppercase(),
-                    color = Color.LightGray,
+                    color = MaterialTheme.colors.secondary,
                     fontFamily = roboto,
                     fontSize = 25.sp,
-                    fontWeight = FontWeight.Thin,
+                    fontWeight = FontWeight.Light,
                     modifier = Modifier.padding(top = 2.dp, end = 10.dp, bottom = 5.dp)
                 )
                 for (section in categories[category].second) {
@@ -86,12 +77,8 @@ fun ChapterSelect(navController: NavController, category: Int) {
                             },
                         elevation = 5.dp,
                     ) {
-                        Box(modifier = Modifier.fillMaxSize().background(
-                            Brush.verticalGradient(listOf(
-                                Color(26,29,40,255),
-                                Color(26,29,40,255)
-                            ))
-                        )) {
+                        Box(modifier = Modifier.fillMaxSize()
+                            .background(MaterialTheme.colors.surface)) {
                             Column(
                                 modifier = Modifier.fillMaxSize(),
                                 verticalArrangement = Arrangement.Center,
@@ -105,7 +92,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
                                         ).weight(6f),
                                         text = section.first,
                                         textAlign = TextAlign.Center,
-                                        color = Color(210, 200, 210),
+                                        color = MaterialTheme.colors.onSurface,
                                         fontSize = 26.sp,
                                         fontFamily = roboto,
                                         style = MaterialTheme.typography.h4.copy(
@@ -120,7 +107,7 @@ fun ChapterSelect(navController: NavController, category: Int) {
                                     Text(
                                         text = "${sections[section.second]?.size} Cards",
                                         textAlign = TextAlign.Left,
-                                        color = Color(87, 150, 150, 255),
+                                        color = MaterialTheme.colors.primaryVariant,
                                         fontSize = 20.sp,
                                         fontFamily = roboto,
                                         fontWeight = FontWeight.Medium,

@@ -30,16 +30,7 @@ fun SearchScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    listOf(
-                        Color(19, 20, 27),
-                        Color(19, 20, 27),
-                        Color(19, 20, 27),
-                        Color(19, 20, 27),
-                    )
-                )
-            ),
+            .background(MaterialTheme.colors.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -54,18 +45,18 @@ fun SearchScreen(navController: NavController) {
             ) {
                 Text(
                     text = "Search",
-                    color = Color(240, 230, 255),
+                    color = MaterialTheme.colors.onBackground,
                     fontFamily = roboto,
                     fontSize = 33.sp,
-                    fontWeight = FontWeight.Light,
+                    fontWeight = FontWeight.Medium,
                     modifier = Modifier.padding(top = 15.dp)
                 )
                 Text(
                     text = "Coming Soon",
-                    color = Color.LightGray,
+                    color = MaterialTheme.colors.secondary,
                     fontFamily = roboto,
                     fontSize = 25.sp,
-                    fontWeight = FontWeight.Thin,
+                    fontWeight = FontWeight.Light,
                     modifier = Modifier.padding(top = 2.dp, end = 10.dp, bottom = 5.dp)
                 )
             }

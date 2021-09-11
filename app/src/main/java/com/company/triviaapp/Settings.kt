@@ -1,9 +1,12 @@
 package com.company.triviaapp.ui.theme
 
+import android.util.Log
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults.buttonColors
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -24,22 +27,14 @@ import androidx.navigation.NavController
 import categories
 import com.company.triviaapp.R
 import com.company.triviaapp.Screen
+import com.google.android.material.color.MaterialColors
 
 @Composable
-fun SettingsScreen(navController: NavController) {
+fun SettingsScreen(navController: NavController, onToggleTheme: (Unit) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    listOf(
-                        Color(19, 20, 27),
-                        Color(19, 20, 27),
-                        Color(19, 20, 27),
-                        Color(19, 20, 27),
-                    )
-                )
-            ),
+            .background(MaterialTheme.colors.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -54,22 +49,29 @@ fun SettingsScreen(navController: NavController) {
             ) {
                 Text(
                     text = "Settings",
-                    color = Color(240, 230, 255),
+                    color = MaterialTheme.colors.onBackground,
                     fontFamily = roboto,
                     fontSize = 33.sp,
-                    fontWeight = FontWeight.Light,
+                    fontWeight = FontWeight.Medium,
                     modifier = Modifier.padding(top = 15.dp)
                 )
                 Text(
-                    text = "Coming Soon",
-                    color = Color.LightGray,
+                    text = "More Coming Soon",
                     fontFamily = roboto,
+                    color = MaterialTheme.colors.secondary,
                     fontSize = 25.sp,
-                    fontWeight = FontWeight.Thin,
+                    fontWeight = FontWeight.Light,
                     modifier = Modifier.padding(top = 2.dp, end = 10.dp, bottom = 5.dp)
                 )
-
-
+                Button(
+                    onClick = {
+                        onToggleTheme(Unit)
+                    }, colors = buttonColors(backgroundColor = MaterialTheme.colors.surface)
+                ) {
+                    Text(
+                        text = "Toggle Dark Mode", color = MaterialTheme.colors.onSurface,
+                    )
+                }
             }
         }
     }

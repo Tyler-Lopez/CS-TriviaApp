@@ -57,16 +57,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    listOf(
-                        Color(19,20,27),
-                        Color(19,20,27),
-                        Color(19,20,27),
-                        Color(19,20,27),
-                    )
-                )
-            ),
+            .background(MaterialTheme.colors.background),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -94,13 +85,13 @@ fun FlashcardView(navController: NavController, listID: String?) {
                                 color = Color(26,29,40, 100),
                             )
                             .shadow(elevation = 5.dp),
-                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(30, 30, 30)),
+                        colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
                         onClick = {
                             navController.navigate(Screen.MainScreen.route)
                         }) {
                         Icon(
                             Icons.Rounded.Home, contentDescription = "HOME",
-                            modifier = Modifier.fillMaxSize(), tint = Color.LightGray,
+                            modifier = Modifier.fillMaxSize(), tint = MaterialTheme.colors.onSurface,
                         )
                     }
                     Button(
@@ -115,14 +106,14 @@ fun FlashcardView(navController: NavController, listID: String?) {
                                 color = Color(26,29,40, 100),
                             )
                             .shadow(elevation = 5.dp),
-                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(87, 91, 107)),
+                        colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondaryVariant),
                         onClick = {
                             isQuestion.value = true
                             activeState.value = safeDecrement(list.value, activeState.value)
                         }) {
                         Icon(
                             Icons.Rounded.KeyboardArrowLeft, contentDescription = "BACK",
-                            modifier = Modifier.size(160.dp), tint = Color.LightGray,
+                            modifier = Modifier.size(160.dp), tint = MaterialTheme.colors.onSecondary,
                         )
                     }
                     Button(
@@ -137,14 +128,14 @@ fun FlashcardView(navController: NavController, listID: String?) {
                                 color = Color(26,29,40, 100),
                             )
                             .shadow(elevation = 5.dp),
-                        colors = ButtonDefaults.buttonColors(backgroundColor = Color(87, 91, 107)),
+                        colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondaryVariant),
                         onClick = {
                             isQuestion.value = true
                             activeState.value = safeIncrement(list.value, activeState.value)
                         }) {
                         Icon(
                             Icons.Rounded.KeyboardArrowRight, contentDescription = "NEXT",
-                            modifier = Modifier.fillMaxSize(), tint = Color.LightGray,
+                            modifier = Modifier.fillMaxSize(), tint = MaterialTheme.colors.onSecondary,
                         )
                     }
                 }
@@ -155,9 +146,13 @@ fun FlashcardView(navController: NavController, listID: String?) {
                 else
                     list.value[activeState.value].second
                 val textColor = if (isQuestion.value)
-                    Color(105, 168, 179)
+                    MaterialTheme.colors.primaryVariant
                 else
-                    Color(147,153,175,255)
+                    MaterialTheme.colors.onSurface
+                val fontWeight = if (isQuestion.value)
+                    FontWeight.Medium
+                else
+                    FontWeight.Light
                 Card(
                //     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier
@@ -174,14 +169,7 @@ fun FlashcardView(navController: NavController, listID: String?) {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(
-                                Brush.verticalGradient(
-                                    listOf(
-                                        Color(26,29,40,255),
-                                        Color(26,29,40,255)
-                                    )
-                                )
-                            )
+                            .background(MaterialTheme.colors.surface)
                     ) {
                         Column(
                             verticalArrangement = Arrangement.Center,
@@ -194,10 +182,17 @@ fun FlashcardView(navController: NavController, listID: String?) {
                                 text = text,
                                 color = textColor,
                                 fontSize = 28.sp,
-                                fontWeight = FontWeight.Light,
+                                fontWeight = fontWeight,
                                 fontFamily = roboto,
                                 modifier = Modifier.padding(20.dp),
                                 textAlign = TextAlign.Center,
+                                style = MaterialTheme.typography.h4.copy(
+                                    shadow = Shadow(
+                                        color = Color(0.1f, 0.1f, 0.1f, 0.7f),
+                                        offset = Offset(3f, 3f),
+                                        blurRadius = 5f
+                                    )
+                                ),
                             )
                         }
                         Column(

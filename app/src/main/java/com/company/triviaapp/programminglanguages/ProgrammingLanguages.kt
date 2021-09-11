@@ -279,7 +279,7 @@ class ProgrammingLanguages {
         ),
         Pair(
             "What is Lisp?", """
-        Functional language        
+        Functional language
          
         List processing - program and data represented using lists
                 
