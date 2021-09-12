@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
@@ -13,12 +14,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.company.triviaapp.ui.theme.TriviaAppTheme
 
 class MainActivity : ComponentActivity() {
+    @ExperimentalMaterialApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
-                
-
             // Enclose content within a Box with a background corresponding with the theme for purposes of transitions
             Box(
                 modifier = Modifier

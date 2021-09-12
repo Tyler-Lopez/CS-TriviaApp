@@ -407,7 +407,7 @@ class DiscreteMath {
             "Write { 4, 7, 10, 13, 16, ... } in set builder notation", """
         A = { 4 + 3x | x ∈ N }
         
-        3x such that x is greater than or equal to 0 and less than or equal to 100
+        3x such that x is an element of the set of natural numbers
     """.trimIndent()
         ),
         Pair(
