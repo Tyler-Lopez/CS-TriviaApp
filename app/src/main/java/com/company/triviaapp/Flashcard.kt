@@ -39,6 +39,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -152,158 +153,165 @@ fun FlashcardView(navController: NavController, listID: String?) {
                     }
                 }
                 // FLASHCARD SECTION
-                // https://developer.android.com/jetpack/compose/animation#animatedcontent
-                AnimatedContent(targetState = activeState.value, transitionSpec = {
-                    // Compare the incoming number with the previous number.
-                    if(slideLeft.value) {
-                        slideInHorizontally(
-                            { height -> height },
-                            animationSpec = tween(300)
-                        ) + fadeIn() with
-                                slideOutHorizontally(
-                                    { height -> -height },
-                                    animationSpec = tween(300)
-                                ) + fadeOut()
-                    } else {
-                        slideInHorizontally(
-                            { height -> -height },
-                            animationSpec = tween(300)
-                        ) + fadeIn() with
-                                slideOutHorizontally(
-                                    { height -> height },
-                                    animationSpec = tween(300)
-                                ) + fadeOut()
-                    }
-                    }
-                    ) { targetCount ->
-                    FlashCardComposable(
-                        list = list,
-                        activeIndex = Pair(targetCount + 1, list.size),
-                        onIncrement = {
-                            activeState.value = safeIncrement(list, targetCount)
-                        })
-                }
-                }
-            }
-        }
-    }
+                Box(modifier = Modifier.fillMaxSize()) {
 
-    @ExperimentalMaterialApi
-    @Composable
-    fun FlashCardComposable(
-        list: List<Pair<String, String>>,
-        activeIndex: Pair<Int, Int>,
-        onIncrement: (Unit) -> Unit
-    ) {
-        // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
-        val interactionSource = remember { MutableInteractionSource() }
+                    /*
 
-        var isQuestion = remember { mutableStateOf(value = true) }
+                    Much work left to do on animation still
 
-        // Some variables based on if it is or is not a question
-        val text = if (isQuestion.value)
-            list[activeIndex.first - 1].first // Question Text
-        else
-            list[activeIndex.first - 1].second // Answer Text
-        val textColor = if (isQuestion.value)
-            MaterialTheme.colors.onSurface
-        else
-            MaterialTheme.colors.onSecondary
-        val fontWeight = if (isQuestion.value)
-            FontWeight.Medium
-        else
-            FontWeight.Medium
+                    Come back to this! Make it so the flashcard is seen behind and it doesnt animate into the padding
 
-        Box(modifier = Modifier.fillMaxSize()) {
-            Card(
-                modifier = Modifier
-                    //.fillMaxSize()
-                    .padding(top = 10.dp, bottom = 20.dp)
-                    .border(
-                        width = 3.dp,
-                        color = Color(26, 29, 40, 100),
-                    )
-                    .clickable(
-                        interactionSource = interactionSource,
-                        indication = null
-                    ) { isQuestion.value = !isQuestion.value },
-                elevation = 5.dp,
-            ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colors.surface)
-                ) {
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .verticalScroll(rememberScrollState())
-                    ) {
-                        Text(
-                            text = text,
-                            color = textColor,
-                            fontSize = 28.sp,
-                            fontWeight = fontWeight,
-                            fontFamily = roboto,
-                            modifier = Modifier.padding(20.dp),
-                            textAlign = TextAlign.Center,
-                            style = MaterialTheme.typography.h4.copy(
-                                shadow = Shadow(
-                                    color = Color(0.1f, 0.1f, 0.1f, 0.7f),
-                                    offset = Offset(3f, 3f),
-                                    blurRadius = 5f
-                                )
-                            ),
-                        )
-                    }
-                    Column(
-                        verticalArrangement = Arrangement.Bottom,
-                        horizontalAlignment = Alignment.End,
-                        modifier = Modifier.fillMaxSize()
-                    ) {
-                        Card(
-                            shape = RoundedCornerShape(12.dp),
-                            backgroundColor = MaterialTheme.colors.background,
-                            modifier = Modifier
-                                .padding(10.dp),
-                        ) {
-                            Text(
-                                text = "${activeIndex.first} / ${activeIndex.second}", // Example: 12/45 cards
-                                color = MaterialTheme.colors.primary,
-                                fontSize = 18.sp,
-                                fontFamily = roboto,
-                                fontWeight = FontWeight.Bold,
-                                style = MaterialTheme.typography.h4.copy(
-                                    shadow = Shadow(
-                                        color = Color(0.05f, 0.05f, 0.05f, 0.1f),
-                                        offset = Offset(4f, 4f),
-                                        blurRadius = 2f
-                                    )
-                                ),
-                                modifier = Modifier.padding(
-                                    vertical = 6.dp,
-                                    horizontal = 6.dp
-                                )
-                            )
+                     */
+
+                    // https://developer.android.com/jetpack/compose/animation#animatedcontent
+                    AnimatedContent(targetState = activeState.value, transitionSpec = {
+                        // Compare the incoming number with the previous number.
+                        if (slideLeft.value) {
+                            slideInHorizontally(
+                                { height -> height },
+                                // Overwrites the default spring animation with tween
+                                animationSpec = tween(500)
+                            )  with
+                                    fadeOut(animationSpec = tween(300))
+                        } else {
+                            slideInHorizontally(
+                                { height -> -height },
+                                // Overwrites the default spring animation with tween
+                                animationSpec = tween(500)
+                            ) with
+                                    fadeOut(animationSpec = tween(300))
                         }
                     }
+                    ) { targetCount ->
+                        FlashCardComposable(
+                            list = list,
+                            activeIndex = Pair(targetCount + 1, list.size),
+                            onIncrement = {
+                                activeState.value = safeIncrement(list, targetCount)
+                            })
+                    }
                 }
             }
         }
     }
+}
 
-    fun safeIncrement(array: List<Any>, currentIndex: Int): Int {
-        return when (currentIndex) {
-            array.lastIndex -> 0
-            else -> currentIndex + 1
+@ExperimentalMaterialApi
+@Composable
+fun FlashCardComposable(
+    list: List<Pair<String, String>>,
+    activeIndex: Pair<Int, Int>,
+    onIncrement: (Unit) -> Unit
+) {
+    // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
+    val interactionSource = remember { MutableInteractionSource() }
+
+    var isQuestion = remember { mutableStateOf(value = true) }
+
+    // Some variables based on if it is or is not a question
+    val text = if (isQuestion.value)
+        list[activeIndex.first - 1].first // Question Text
+    else
+        list[activeIndex.first - 1].second // Answer Text
+    val textColor = if (isQuestion.value)
+        MaterialTheme.colors.onSurface
+    else
+        MaterialTheme.colors.onSecondary
+    val fontWeight = if (isQuestion.value)
+        FontWeight.Medium
+    else
+        FontWeight.Medium
+
+    Box(modifier = Modifier.fillMaxSize()) {
+        Card(
+            modifier = Modifier
+                //.fillMaxSize()
+                .padding(top = 10.dp, bottom = 20.dp)
+                .border(
+                    width = 3.dp,
+                    color = Color(26, 29, 40, 100),
+                )
+                .clickable(
+                    interactionSource = interactionSource,
+                    indication = null
+                ) { isQuestion.value = !isQuestion.value },
+            elevation = 5.dp,
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colors.surface)
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(rememberScrollState())
+                ) {
+                    Text(
+                        text = text,
+                        color = textColor,
+                        fontSize = 28.sp,
+                        fontWeight = fontWeight,
+                        fontFamily = roboto,
+                        modifier = Modifier.padding(20.dp),
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.h4.copy(
+                            shadow = Shadow(
+                                color = Color(0.1f, 0.1f, 0.1f, 0.7f),
+                                offset = Offset(3f, 3f),
+                                blurRadius = 5f
+                            )
+                        ),
+                    )
+                }
+                Column(
+                    verticalArrangement = Arrangement.Bottom,
+                    horizontalAlignment = Alignment.End,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    Card(
+                        shape = RoundedCornerShape(12.dp),
+                        backgroundColor = MaterialTheme.colors.background,
+                        modifier = Modifier
+                            .padding(10.dp),
+                    ) {
+                        Text(
+                            text = "${activeIndex.first} / ${activeIndex.second}", // Example: 12/45 cards
+                            color = MaterialTheme.colors.primary,
+                            fontSize = 18.sp,
+                            fontFamily = roboto,
+                            fontWeight = FontWeight.Bold,
+                            style = MaterialTheme.typography.h4.copy(
+                                shadow = Shadow(
+                                    color = Color(0.05f, 0.05f, 0.05f, 0.1f),
+                                    offset = Offset(4f, 4f),
+                                    blurRadius = 2f
+                                )
+                            ),
+                            modifier = Modifier.padding(
+                                vertical = 6.dp,
+                                horizontal = 6.dp
+                            )
+                        )
+                    }
+                }
+            }
         }
     }
+}
 
-    fun safeDecrement(array: List<Any>, currentIndex: Int): Int {
-        return when (currentIndex) {
-            0 -> array.lastIndex
-            else -> currentIndex - 1
-        }
+fun safeIncrement(array: List<Any>, currentIndex: Int): Int {
+    return when (currentIndex) {
+        array.lastIndex -> 0
+        else -> currentIndex + 1
     }
+}
+
+fun safeDecrement(array: List<Any>, currentIndex: Int): Int {
+    return when (currentIndex) {
+        0 -> array.lastIndex
+        else -> currentIndex - 1
+    }
+}
