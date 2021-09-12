@@ -5,12 +5,23 @@ This app would naturally also work well with any other broader topic - but quest
 
 Future roadmap may be to make this app competitive to other existing alternatives for community flashcard browsers, such as Quizlet - perhaps specialized still to computer science. Potentially app could find a strong niche in providing a user-maintained "wiki" of flashcards - where inaccurate cards may be commented on and modifications suggestion in the app. Text to speech via. a content description field providing informative wordings could be an interesting and unique feature (i.e. f(g) read as f of g)
 
+## Development Features
+* Use of AnimatedNavHost navController and clean architecture
+* Persistent bottom navigation bar
+* Implementation of Light / Dark mode toggle (not yet cached)
+* Animated transitions between state changes of a list (in the future this should be more Tinder-esque in terms of swipeability)
+
 ## UI Examples
 UI to continue to improve throughout development, light and dark mode toggle as a future-feature.
 
-<img src="https://user-images.githubusercontent.com/77797048/132898515-f73d26d3-3862-40a2-8229-7f4e9db318f0.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132898524-a4996ac6-3bf8-4c48-8a5b-85b59e281cb4.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132898531-e0ada33c-e77f-4d03-9854-e023d54a295c.png" width="300px">
-<img src="https://user-images.githubusercontent.com/77797048/132898540-54dd98c3-23de-4bda-90c8-32c11e97d702.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003566-584d0adc-7fec-45c8-954c-4a9cda4400da.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003567-ea99a11e-17c4-42a0-a3d7-62436c92b6b7.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003568-33e943a5-58f1-4547-81eb-6ea8fadef17f.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003569-5e43d223-84f1-4c93-8f10-8e9fff5527d7.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003570-1c1c626a-d5d2-4b16-bd59-2a35b467c9e3.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003571-134f371d-0c0c-4267-8ba9-ef2274202338.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003573-21c05a5f-391b-46b1-b08d-d278ff915625.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003574-eb81a06b-6260-4682-ab57-d401703205a6.png" width="300px">
+<img src="https://user-images.githubusercontent.com/77797048/133003575-0f2c7fc6-66eb-41ff-96f0-b949fc42b1c2.png" width="300px">
 
 
