@@ -245,7 +245,7 @@ class DiscreteMath {
         ),
         Pair(
             "What is the Set Domination Law?", """
-        Intersection of anything with the universe = universe
+        Union of anything with the universe = universe
         
         A ∪ U = U
         
@@ -458,12 +458,60 @@ class DiscreteMath {
     )
 
     val functions = listOf(
-        Pair("What is the domain of a function?",
+        Pair("If a function gives the output for any given input, what does the inverse do?",
+            """
+           Gives the input for any output
+        """.trimIndent()),
+        Pair("How would you find the inverse of f(x) = 1 / x?",
+            """
+           Let f(x) = y
+           
+           y = 1 / x | Solve for x
+           
+           xy = 1
+           
+           x = 1 / y
+           
+           f⁻¹(x) = 1 / x
+        """.trimIndent()),
+        Pair("How would you find the inverse of f(x) = 2x - 4?",
+            """
+           Let f(x) = y
+           
+           y = 2x - 4 | Solve for x
+           
+           y + 4 = 2x
+           
+           (y + 4) / 2 = x
+           
+           f⁻¹(x) = (x + 4) / 2
+        """.trimIndent()),
+        Pair("How would you find the inverse of f(x) = 2x?",
+            """
+           Let f(x) = y
+           
+           y = 2x | Solve for x
+           
+           y / 2 = x
+           
+           f⁻¹(x) = x / 2
+        """.trimIndent()),
+        Pair("How would you find the inverse of f(x) = 4x + 5?",
+            """
+           Let f(x) = y
+           
+           y = 4x + 5 | Solve for x
+           
+           (y - 5) / 4  = x
+           
+           f⁻¹(x) = (x - 5) / 4
+        """.trimIndent()),
+        Pair("What is the domain of the function f:A → B?",
             """
            In f:A → B, A is the domain
         """.trimIndent()),
 
-        Pair("What is the codomain of a function?",
+        Pair("What is the codomain of the function f:A → B?",
             """
            In f:A → B, B is the codomain
         """.trimIndent()),

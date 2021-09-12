@@ -504,6 +504,10 @@ class ProgrammingLanguages {
         SQL - Database
         
         OpenGL - Graphics
+        
+        FORTRAN - Science & Engineering
+        
+        COBOL - Business Applications
     """.trimIndent()
         ),
         Pair(
