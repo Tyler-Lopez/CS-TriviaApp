@@ -165,12 +165,9 @@ fun FlashcardView(navController: NavController, listID: String?) {
 
                     // https://developer.android.com/jetpack/compose/animation#animatedcontent
 
-                     */
 
-                        FlashCardComposableNonInteractable(
-                            list = list,
-                            activeIndex = Pair(safeIncrement(list, activeState.value), list.size)
-                        )
+
+
 
 
                     FlashCardComposable(
@@ -179,7 +176,164 @@ fun FlashcardView(navController: NavController, listID: String?) {
                         onIncrement = {
                             activeState.value = safeIncrement(list, activeState.value)
                         })
+                     */
+                    FlashCardComposableNonInteractable(
+                        list = list,
+                        activeIndex = Pair(safeIncrement(list, activeState.value), list.size)
+                    )
+                    FlashCardComposableTEST(
+                        list = list,
+                        activeIndex = Pair(activeState.value + 1, list.size),
+                        onIncrement = {
+                            activeState.value = safeIncrement(list, activeState.value)
+                        })
+                }
+            }
+        }
+    }
+}
 
+@ExperimentalMaterialApi
+@Composable
+fun FlashCardComposableTEST(
+    list: List<Pair<String, String>>,
+    activeIndex: Pair<Int, Int>,
+    onIncrement: (Unit) -> Unit
+) {
+    // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
+    val interactionSource = remember { MutableInteractionSource() }
+
+    var isQuestion = remember { mutableStateOf(value = true) }
+
+    // Some variables based on if it is or is not a question
+    val text = if (isQuestion.value)
+        list[activeIndex.first - 1].first // Question Text
+    else
+        list[activeIndex.first - 1].second // Answer Text
+    val textColor = if (isQuestion.value)
+        MaterialTheme.colors.onSurface
+    else
+        MaterialTheme.colors.onSecondary
+    val fontWeight = if (isQuestion.value)
+        FontWeight.Medium
+    else
+        FontWeight.Medium
+
+
+    /*
+
+     Swipe implementation experiment
+
+     If an animation is running, and that animation's target value is NOT the 0 initial spot, then progress to next card
+
+     */
+    val swiped = remember { mutableStateOf(false) }
+
+    var swipeableState = rememberSwipeableState(initialValue = 0)
+    val sizePxLeft = with(LocalDensity.current) { -200.dp.toPx() } // This is spaghetti code
+    val sizePx = with(LocalDensity.current) { 200.dp.toPx() }
+    val anchors =
+        mapOf(sizePxLeft to -1, 0f to 0, sizePx to 1) // Maps anchor points (in px) to states
+    println(swipeableState.offset.value)
+    // This iswhat actual detects if a swipe has taken place
+    if (swipeableState.isAnimationRunning && swipeableState.targetValue != 0) {
+        // https://developer.android.com/jetpack/compose/side-effects
+        LaunchedEffect(swipeableState) {
+            isQuestion.value = true
+            onIncrement(Unit)
+            swipeableState.snapTo(0)
+        }
+    }
+    BoxWithConstraints() {
+        val swipeState = rememberSwipeState(
+            maxWidth = constraints.maxWidth.toFloat(),
+            maxHeight = constraints.maxHeight.toFloat()
+        )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .swiper(
+                    state = swipeState,
+                    onDragAccepted = {
+                        swiped.value = true
+                        onIncrement(Unit)
+                    },
+                ),
+        ) {
+            Card(
+                modifier = Modifier
+                    //.fillMaxSize()
+                    .padding(top = 10.dp, bottom = 20.dp)
+                    .border(
+                        width = 3.dp,
+                        color = Color(26, 29, 40, 100),
+                    )
+                    .clickable(
+                        interactionSource = interactionSource,
+                        indication = null
+                    ) { isQuestion.value = !isQuestion.value },
+                elevation = 5.dp,
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colors.surface)
+                ) {
+                    Column(
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .verticalScroll(rememberScrollState())
+                    ) {
+                        Text(
+                            text = text,
+                            color = textColor,
+                            fontSize = 28.sp,
+                            fontWeight = fontWeight,
+                            fontFamily = roboto,
+                            modifier = Modifier.padding(20.dp),
+                            textAlign = TextAlign.Center,
+                            style = MaterialTheme.typography.h4.copy(
+                                shadow = Shadow(
+                                    color = Color(0.1f, 0.1f, 0.1f, 0.7f),
+                                    offset = Offset(3f, 3f),
+                                    blurRadius = 5f
+                                )
+                            ),
+                        )
+                    }
+                    Column(
+                        verticalArrangement = Arrangement.Bottom,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        Card(
+                            shape = RoundedCornerShape(12.dp),
+                            backgroundColor = MaterialTheme.colors.background,
+                            modifier = Modifier
+                                .padding(10.dp),
+                        ) {
+                            Text(
+                                text = "${activeIndex.first} / ${activeIndex.second}", // Example: 12/45 cards
+                                color = MaterialTheme.colors.primary,
+                                fontSize = 18.sp,
+                                fontFamily = roboto,
+                                fontWeight = FontWeight.Bold,
+                                style = MaterialTheme.typography.h4.copy(
+                                    shadow = Shadow(
+                                        color = Color(0.05f, 0.05f, 0.05f, 0.1f),
+                                        offset = Offset(4f, 4f),
+                                        blurRadius = 2f
+                                    )
+                                ),
+                                modifier = Modifier.padding(
+                                    vertical = 6.dp,
+                                    horizontal = 6.dp
+                                )
+                            )
+                        }
+                    }
                 }
             }
         }
@@ -322,7 +476,6 @@ fun FlashCardComposable(
             }
         }
     }
-
 }
 
 @Composable
@@ -380,7 +533,9 @@ fun FlashCardComposableNonInteractable(
                 Column(
                     verticalArrangement = Arrangement.Bottom,
                     horizontalAlignment = Alignment.End,
-                    modifier = Modifier.fillMaxSize().background(Color(0.1f,0.1f,0.1f, 0.5f))
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color(0.1f, 0.1f, 0.1f, 0.5f))
                 ) {
                     Card(
                         shape = RoundedCornerShape(12.dp),

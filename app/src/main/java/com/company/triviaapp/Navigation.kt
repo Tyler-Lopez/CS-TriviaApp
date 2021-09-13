@@ -11,6 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import com.google.accompanist.navigation.animation.composable
 import androidx.navigation.compose.navArgument
@@ -21,8 +22,7 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 @ExperimentalMaterialApi
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun Navigation() {
-    val navController = rememberAnimatedNavController()
+fun Navigation(navController: NavHostController) {
     // TEMPORARY while figure out theming, this should be saved and will reset everytime for now
     val isDark = remember { mutableStateOf(value = true) }
 
