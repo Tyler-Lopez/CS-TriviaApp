@@ -47,9 +47,13 @@ class DataStructures {
             "What is a hash table?", """
         Data structure
          
-        Stores unordered items
+        Stores unordered items; fast insertion, deletion & look-up
         
-        How? By mapping(hashing) each to a location in an array
+        Uses a dynamic array of linked lists to efficiently story key/value pairs
+        
+        When inserting a pair, a hash function maps the key to an index
+        
+        The value and a reference to the key is stored in a linked list
     """.trimIndent()
         ),
         Pair(
@@ -264,7 +268,7 @@ class DataStructures {
     """.trimIndent()
         ),
 
-    )
+        )
     val sortingAlgo = listOf(
         Pair(
             "How would you sort an array with Insertion Sort?", """
@@ -313,7 +317,19 @@ class DataStructures {
         Average: O(n²) time | O(1) space
     """.trimIndent()
         ),
-    )
+        Pair(
+            "Provided the node of a heap, how would you implement a depth-first search?", """ 
+            Recursive implementation with a helper function taking an array parameter
+            
+            For a given node: add it to to the array, then for each child node invoke the recursive function, passing in the array
+            
+            Return the array
+            
+        Average: O(v + e) time | O(v) space
+    """.trimIndent()
+        ),
+
+        )
     val chapterTwo = listOf(
         Pair(
             "What is an algorithm?", """
@@ -326,24 +342,28 @@ class DataStructures {
     """.trimIndent()
         ),
         Pair(
-            "Given a list of 10 elements and where each comparison takes 2 μs, what is the fastest possible runtime?", """
+            "Given a list of 10 elements and where each comparison takes 2 μs, what is the fastest possible runtime?",
+            """
         2 μs 
     """.trimIndent()
         ),
         Pair(
-            "Given a list of 10 elements and where each comparison takes 2 μs, what is the longest possible runtime?", """
+            "Given a list of 10 elements and where each comparison takes 2 μs, what is the longest possible runtime?",
+            """
         20 μs 
     """.trimIndent()
         ),
         Pair(
-            "Given an array with 32 elements, how many elements would be searched if the target was less than anything present in the list?", """
+            "Given an array with 32 elements, how many elements would be searched if the target was less than anything present in the list?",
+            """
         5
         
         It would first check index 15, then 7, 3, 1, and 0
     """.trimIndent()
         ),
         Pair(
-            "What is the formula to calculate the number of binary search searched elements(not steps) when the element is less than any element in the array?", """
+            "What is the formula to calculate the number of binary search searched elements(not steps) when the element is less than any element in the array?",
+            """
         [log₂N]
         
         Example: [log₂32] = 5
@@ -390,14 +410,16 @@ class DataStructures {
     """.trimIndent()
         ),
         Pair(
-            "Consider an algorithm with best case 3N + 6 and worst case 5N² + 7N: which function is a lower bound?", """
+            "Consider an algorithm with best case 3N + 6 and worst case 5N² + 7N: which function is a lower bound?",
+            """
         3N
         
         Lower bound means best case
     """.trimIndent()
         ),
         Pair(
-            "Consider an algorithm with best case 3N + 6 and worst case 5N² + 7N: which function is a upper bound?", """
+            "Consider an algorithm with best case 3N + 6 and worst case 5N² + 7N: which function is a upper bound?",
+            """
         12N²
         
         Why not 5N²? Because 7N is added to it.
@@ -488,7 +510,8 @@ class DataStructures {
     """.trimIndent()
         ),
         Pair(
-            "Consider code that initializes two variables then runs a while loop with two operations. What is the worst-case function?", """
+            "Consider code that initializes two variables then runs a while loop with two operations. What is the worst-case function?",
+            """
         f(N) = 3N + 3
         
         Constant time: 2 operations execute before the loop + 1 to terminate loop = 3
@@ -497,7 +520,8 @@ class DataStructures {
     """.trimIndent()
         ),
         Pair(
-            "Given the following code segment: int i = 0; while (i < 5) { i++; } - how many \"steps\" are there?", """
+            "Given the following code segment: int i = 0; while (i < 5) { i++; } - how many \"steps\" are there?",
+            """
         1 step from i = 0
         
         2 * 5 steps from the loop iterating 5 times
@@ -544,67 +568,70 @@ class DataStructures {
 
     val chapterThree = listOf(
         Pair(
-    "What is a recursive algorithm?", """
+            "What is a recursive algorithm?", """
         Breaks the problem into smaller subprograms and applies an algorithm to solve them
     """.trimIndent()
-    ),
-    Pair(
-    "Does a recursive algorithm apply itself to a smaller subproblem in all cases?", """
+        ),
+        Pair(
+            "Does a recursive algorithm apply itself to a smaller subproblem in all cases?", """
         No
 
         In the base case, the recursive algorithm completes without applying itself
     """.trimIndent()
-    ),
-    Pair(
-    "Describe the Fibonacci Sequence", """
+        ),
+        Pair(
+            "Describe the Fibonacci Sequence", """
         Each term is the sum of the previous two terms, except for first two terms which are 0 and 1
     """.trimIndent()
-    ),
-    Pair(
-    "What is a recurrence relation?", """
+        ),
+        Pair(
+            "What is a recurrence relation?", """
         A function f(N) that is defined in terms of the same function operating on a value less than N
     """.trimIndent()
-    ),
-    Pair(
-    "What is a recurrence relation?", """
+        ),
+        Pair(
+            "What is a recurrence relation?", """
         A function f(N) that is defined in terms of the same function operating on a value less than N
     """.trimIndent()
-    ),
-    Pair(
-    "Is T(N) = N² + 6N + 2 a recurrence relation?", """
+        ),
+        Pair(
+            "Is T(N) = N² + 6N + 2 a recurrence relation?", """
         No
         
         T must be present on other side of equation
     """.trimIndent()
-    ),
-    Pair(
-    "Is T(N) = 6N + T(N/4) a recurrence relation?", """
+        ),
+        Pair(
+            "Is T(N) = 6N + T(N/4) a recurrence relation?", """
         Yes
         
         It has T on the other side of the equation and operates on a value < N
     """.trimIndent()
-    ),
-    Pair(
-    "What is a recursion tree?", """
+        ),
+        Pair(
+            "What is a recursion tree?", """
         A visual diagram of an operation done by a recursive function
     """.trimIndent()
-    ),
-    Pair(
-    "For recursive function with runtime of T(N) = 7 + T(N-1): how many levels will the recursion tree have?", """
+        ),
+        Pair(
+            "For recursive function with runtime of T(N) = 7 + T(N-1): how many levels will the recursion tree have?",
+            """
         N
 
         The input size is reduced by 1 each call, N recursive calls are needed
     """.trimIndent()
-    ),
-    Pair(
-    "For recursive function with runtime of T(N) = 7 + T(N-1): what is the runtime complexity in O notation?", """
+        ),
+        Pair(
+            "For recursive function with runtime of T(N) = 7 + T(N-1): what is the runtime complexity in O notation?",
+            """
         O(N)
     """.trimIndent()
-    ),
-    Pair(
-    "For recursive function with runtime of T(N) = N + T(N-1): how many levels will the recursion tree have?", """
+        ),
+        Pair(
+            "For recursive function with runtime of T(N) = N + T(N-1): how many levels will the recursion tree have?",
+            """
         N
     """.trimIndent()
-    ),
+        ),
     )
 }

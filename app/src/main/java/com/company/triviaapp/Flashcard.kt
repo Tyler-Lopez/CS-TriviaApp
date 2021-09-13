@@ -23,11 +23,10 @@ import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.KeyboardArrowLeft
 import androidx.compose.material.icons.rounded.KeyboardArrowRight
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
@@ -46,6 +45,7 @@ import androidx.navigation.NavController
 import categories
 import com.company.triviaapp.datastructures.DataStructures
 import com.company.triviaapp.ui.theme.roboto
+import kotlinx.coroutines.launch
 import sections
 import kotlin.math.roundToInt
 
@@ -161,35 +161,25 @@ fun FlashcardView(navController: NavController, listID: String?) {
 
                     Come back to this! Make it so the flashcard is seen behind and it doesnt animate into the padding
 
-                     */
+
 
                     // https://developer.android.com/jetpack/compose/animation#animatedcontent
-                    AnimatedContent(targetState = activeState.value, transitionSpec = {
-                        // Compare the incoming number with the previous number.
-                        if (slideLeft.value) {
-                            slideInHorizontally(
-                                { height -> height },
-                                // Overwrites the default spring animation with tween
-                                animationSpec = tween(500)
-                            )  with
-                                    fadeOut(animationSpec = tween(300))
-                        } else {
-                            slideInHorizontally(
-                                { height -> -height },
-                                // Overwrites the default spring animation with tween
-                                animationSpec = tween(500)
-                            ) with
-                                    fadeOut(animationSpec = tween(300))
-                        }
-                    }
-                    ) { targetCount ->
-                        FlashCardComposable(
+
+                     */
+
+                        FlashCardComposableNonInteractable(
                             list = list,
-                            activeIndex = Pair(targetCount + 1, list.size),
-                            onIncrement = {
-                                activeState.value = safeIncrement(list, targetCount)
-                            })
-                    }
+                            activeIndex = Pair(safeIncrement(list, activeState.value), list.size)
+                        )
+
+
+                    FlashCardComposable(
+                        list = list,
+                        activeIndex = Pair(activeState.value + 1, list.size),
+                        onIncrement = {
+                            activeState.value = safeIncrement(list, activeState.value)
+                        })
+
                 }
             }
         }
@@ -222,7 +212,39 @@ fun FlashCardComposable(
     else
         FontWeight.Medium
 
-    Box(modifier = Modifier.fillMaxSize()) {
+
+    /*
+
+     Swipe implementation experiment
+
+     If an animation is running, and that animation's target value is NOT the 0 initial spot, then progress to next card
+
+     */
+    var swipeableState = rememberSwipeableState(initialValue = 0)
+    val sizePxLeft = with(LocalDensity.current) { -200.dp.toPx() } // This is spaghetti code
+    val sizePx = with(LocalDensity.current) { 200.dp.toPx() }
+    val anchors =
+        mapOf(sizePxLeft to -1, 0f to 0, sizePx to 1) // Maps anchor points (in px) to states
+    println(swipeableState.offset.value)
+    // This iswhat actual detects if a swipe has taken place
+    if (swipeableState.isAnimationRunning && swipeableState.targetValue != 0) {
+        // https://developer.android.com/jetpack/compose/side-effects
+        LaunchedEffect(swipeableState) {
+            isQuestion.value = true
+            onIncrement(Unit)
+            swipeableState.snapTo(0)
+        }
+    }
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .swipeable(
+            state = swipeableState,
+            anchors = anchors,
+            thresholds = { _, _ -> FractionalThreshold(0.3f) },
+            orientation = Orientation.Horizontal
+        )
+        .offset { IntOffset(swipeableState.offset.value.roundToInt(), 0) }
+    ) {
         Card(
             modifier = Modifier
                 //.fillMaxSize()
@@ -300,6 +322,96 @@ fun FlashCardComposable(
             }
         }
     }
+
+}
+
+@Composable
+fun FlashCardComposableNonInteractable(
+    list: List<Pair<String, String>>,
+    activeIndex: Pair<Int, Int>,
+) {
+    val text = list[activeIndex.first].first // Question Text
+
+    val textColor = MaterialTheme.colors.onSurface
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        Card(
+            modifier = Modifier
+                //.fillMaxSize()
+                .padding(top = 10.dp, bottom = 20.dp)
+                .border(
+                    width = 3.dp,
+                    color = Color(26, 29, 40, 100),
+                ),
+            elevation = 5.dp,
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colors.surface)
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(rememberScrollState())
+                ) {
+                    Text(
+                        text = text,
+                        color = textColor,
+                        fontSize = 28.sp,
+                        fontWeight = FontWeight.Medium,
+                        fontFamily = roboto,
+                        modifier = Modifier.padding(20.dp),
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.h4.copy(
+                            shadow = Shadow(
+                                color = Color(0.1f, 0.1f, 0.1f, 0.7f),
+                                offset = Offset(3f, 3f),
+                                blurRadius = 5f
+                            )
+                        ),
+                    )
+                }
+                Column(
+                    verticalArrangement = Arrangement.Bottom,
+                    horizontalAlignment = Alignment.End,
+                    modifier = Modifier.fillMaxSize().background(Color(0.1f,0.1f,0.1f, 0.5f))
+                ) {
+                    Card(
+                        shape = RoundedCornerShape(12.dp),
+                        backgroundColor = MaterialTheme.colors.background,
+                        modifier = Modifier
+                            .padding(10.dp),
+                    ) {
+                        Text(
+                            text = "${activeIndex.first + 1} / ${activeIndex.second}", // Example: 12/45 cards
+                            color = MaterialTheme.colors.primary,
+                            fontSize = 18.sp,
+                            fontFamily = roboto,
+                            fontWeight = FontWeight.Bold,
+                            style = MaterialTheme.typography.h4.copy(
+                                shadow = Shadow(
+                                    color = Color(0.05f, 0.05f, 0.05f, 0.1f),
+                                    offset = Offset(4f, 4f),
+                                    blurRadius = 2f
+                                )
+                            ),
+                            modifier = Modifier.padding(
+                                vertical = 6.dp,
+                                horizontal = 6.dp
+                            )
+                        )
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 fun safeIncrement(array: List<Any>, currentIndex: Int): Int {
