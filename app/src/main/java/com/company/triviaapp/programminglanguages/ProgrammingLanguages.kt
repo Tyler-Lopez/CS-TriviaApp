@@ -286,6 +286,11 @@ class ProgrammingLanguages {
         Cost of compiler / debugger if not free
     """.trimIndent()
         ),
+        Pair(
+            "Why do compiled programs typically run faster than interpreted programs?", """
+        The process of translating code at run-time adds to the overhead and can cause the program to be slower.
+    """.trimIndent()
+        ),
     )
     val chapterTwo = listOf(
         Pair(
@@ -513,6 +518,41 @@ class ProgrammingLanguages {
         Pair(
             "In which language is the majority of the UNIX operating system written in?", """
         C
+    """.trimIndent()
+        ),
+        Pair(
+            "Which two object oriented languages influenced the design of Java?", """
+        C++ & Simula
+    """.trimIndent()
+        ),
+        Pair(
+            "What is the first object oriented programming language?", """
+        Simula
+    """.trimIndent()
+        ),
+        Pair(
+            "When and by who was the markup language HTML developed?", """
+        Tim Berners-Lee
+        
+        Early 90's
+    """.trimIndent()
+        ),
+        Pair(
+            "What is the difference between a compiler and integrated development environment?", """
+        Compiler: transforms source code into a lower-level language
+        
+        IDE: set of software development tools designed to make coding easier
+    """.trimIndent()
+        ),
+        Pair(
+            "Name two Java language features that increase the reliability of Java programs", """
+        Compile time static type-checking
+        
+        Exception handling
+        
+        Try-with-resources
+        
+        Generics
     """.trimIndent()
         ),
 

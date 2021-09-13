@@ -433,7 +433,7 @@ class DataStructures {
         ),
         Pair(
             "State the function for Θ (Theta) asymptotic notation", """
-        T(N) = O(f(N)) and T(N)=Ω(f(N))
+        T(N) = O(f(N)) and T(N) = Θ(f(N))
     """.trimIndent()
         ),
         Pair(
