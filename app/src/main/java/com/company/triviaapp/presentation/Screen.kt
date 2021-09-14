@@ -1,4 +1,4 @@
-package com.company.triviaapp
+package com.company.triviaapp.presentation
 
 sealed class Screen(val route: String) {
     object MainScreen : Screen("main_screen")

@@ -1,4 +1,4 @@
-package com.company.triviaapp.datastructures
+package com.company.triviaapp.data.courses.datastructures
 
 class DataStructures {
     val chapterOne = listOf(

@@ -1,4 +1,4 @@
-package com.company.triviaapp
+package com.company.triviaapp.domain
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween

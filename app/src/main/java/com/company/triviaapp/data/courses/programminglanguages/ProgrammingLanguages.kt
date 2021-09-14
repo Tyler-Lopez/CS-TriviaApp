@@ -1,4 +1,4 @@
-package com.company.triviaapp.programminglanguages
+package com.company.triviaapp.data.courses.programminglanguages
 
 class ProgrammingLanguages {
     val chapterOne = listOf(

@@ -1,59 +1,42 @@
-package com.company.triviaapp
+package com.company.triviaapp.presentation
 
-import android.content.Context
-import android.media.AudioManager
-import android.view.SoundEffectConstants
 import androidx.compose.animation.*
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.*
 import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.draggable
-import androidx.compose.foundation.gestures.rememberDraggableState
-import androidx.compose.foundation.interaction.DragInteraction
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Edit
-import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.KeyboardArrowLeft
 import androidx.compose.material.icons.rounded.KeyboardArrowRight
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
-import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import categories
-import com.company.triviaapp.datastructures.DataStructures
-import com.company.triviaapp.ui.theme.roboto
-import kotlinx.coroutines.launch
-import sections
+import com.company.triviaapp.data.courses.datastructures.DataStructures
+import com.company.triviaapp.rememberSwipeState
+import com.company.triviaapp.swiper
+import com.company.triviaapp.presentation.theme.roboto
 import kotlin.math.roundToInt
 
 
 @ExperimentalAnimationApi
 @ExperimentalMaterialApi
 @Composable
-fun FlashcardView(navController: NavController, listID: String?) {
+fun FlashcardView(navController: NavController, listID: String?, index: Int, onSwiped: () -> Unit) {
 
     val list = remember {
         sections[listID]?.shuffled() ?: DataStructures().chapterOne.shuffled()
@@ -179,13 +162,14 @@ fun FlashcardView(navController: NavController, listID: String?) {
                      */
                     FlashCardComposableNonInteractable(
                         list = list,
-                        activeIndex = Pair(safeIncrement(list, activeState.value), list.size)
+                        activeIndex = Pair(safeIncrement(list, index), list.size)
                     )
                     FlashCardComposableTEST(
                         list = list,
-                        activeIndex = Pair(activeState.value + 1, list.size),
+                        activeIndex = Pair(index + 1, list.size),
                         onIncrement = {
-                            activeState.value = safeIncrement(list, activeState.value)
+                            navController.navigate(Screen.FlashCard.withArgs(listID!!))
+                            //activeState.value = safeIncrement(list, activeState.value)
                         })
                 }
             }
@@ -229,21 +213,7 @@ fun FlashCardComposableTEST(
      */
     val swiped = remember { mutableStateOf(false) }
 
-    var swipeableState = rememberSwipeableState(initialValue = 0)
-    val sizePxLeft = with(LocalDensity.current) { -200.dp.toPx() } // This is spaghetti code
-    val sizePx = with(LocalDensity.current) { 200.dp.toPx() }
-    val anchors =
-        mapOf(sizePxLeft to -1, 0f to 0, sizePx to 1) // Maps anchor points (in px) to states
-    println(swipeableState.offset.value)
-    // This iswhat actual detects if a swipe has taken place
-    if (swipeableState.isAnimationRunning && swipeableState.targetValue != 0) {
-        // https://developer.android.com/jetpack/compose/side-effects
-        LaunchedEffect(swipeableState) {
-            isQuestion.value = true
-            onIncrement(Unit)
-            swipeableState.snapTo(0)
-        }
-    }
+
     BoxWithConstraints() {
         val swipeState = rememberSwipeState(
             maxWidth = constraints.maxWidth.toFloat(),

@@ -1,4 +1,4 @@
-package com.company.triviaapp.kotlincourse
+package com.company.triviaapp.data.courses.kotlincourse
 
 class KotlinCourse {
     val intermediete = listOf(

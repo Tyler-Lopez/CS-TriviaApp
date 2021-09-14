@@ -1,7 +1,9 @@
-import com.company.triviaapp.datastructures.DataStructures
-import com.company.triviaapp.discretemath.DiscreteMath
-import com.company.triviaapp.kotlincourse.KotlinCourse
-import com.company.triviaapp.programminglanguages.ProgrammingLanguages
+package com.company.triviaapp.presentation
+
+import com.company.triviaapp.data.courses.datastructures.DataStructures
+import com.company.triviaapp.data.courses.discretemath.DiscreteMath
+import com.company.triviaapp.data.courses.kotlincourse.KotlinCourse
+import com.company.triviaapp.data.courses.programminglanguages.ProgrammingLanguages
 
 /*
 

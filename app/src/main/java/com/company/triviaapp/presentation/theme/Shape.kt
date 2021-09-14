@@ -1,4 +1,4 @@
-package com.company.triviaapp.ui.theme
+package com.company.triviaapp.presentation.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

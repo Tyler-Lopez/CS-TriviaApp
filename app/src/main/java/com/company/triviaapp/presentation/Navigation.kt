@@ -1,11 +1,9 @@
-package com.company.triviaapp
+package com.company.triviaapp.presentation
 
 import androidx.compose.animation.*
-import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -15,9 +13,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import com.google.accompanist.navigation.animation.composable
 import androidx.navigation.compose.navArgument
-import com.company.triviaapp.ui.theme.*
+import com.company.triviaapp.presentation.theme.TriviaAppTheme
 import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 @ExperimentalMaterialApi
 @OptIn(ExperimentalAnimationApi::class)
@@ -113,8 +110,13 @@ fun Navigation(navController: NavHostController) {
                         animationSpec = tween(400)
                     ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
                 }) {
+                var activeState = remember {
+                    mutableStateOf(value = 0)
+                }
                 Box(modifier = Modifier.padding(bottom = 50.dp)) {
-                    FlashcardView(navController = navController, it.arguments?.getString("listID"))
+                    FlashcardView(navController = navController, it.arguments?.getString("listID"), activeState.value, onSwiped = {
+                        activeState.value++
+                    })
                 }
             }
             composable(route = Screen.ChapterSelect.route + "/{categoryIndex}",

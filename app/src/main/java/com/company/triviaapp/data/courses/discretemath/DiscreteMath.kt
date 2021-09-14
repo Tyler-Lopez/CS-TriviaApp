@@ -1,4 +1,4 @@
-package com.company.triviaapp.discretemath
+package com.company.triviaapp.data.courses.discretemath
 
 class DiscreteMath {
     val sets = listOf(
