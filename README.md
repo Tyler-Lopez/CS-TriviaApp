@@ -6,7 +6,7 @@ This app would naturally also work well with any other broader topic - but quest
 Future roadmap may be to make this app competitive to other existing alternatives for community flashcard browsers, such as Quizlet - perhaps specialized still to computer science. Potentially app could find a strong niche in providing a user-maintained "wiki" of flashcards - where inaccurate cards may be commented on and modifications suggestion in the app. Text to speech via. a content description field providing informative wordings could be an interesting and unique feature (i.e. f(g) read as f of g)
 
 ## Development Features
-* Use of AnimatedNavHost navController and clean architecture
+* Use of AnimatedNavHost navController, MVVM and clean architecture(in the process of these with refactor)
 * Persistent bottom navigation bar
 * Implementation of Light / Dark mode toggle (not yet cached)
 * Animated transitions between state changes of a list (in the future this should be more Tinder-esque in terms of swipeability)
