@@ -1,5 +1,7 @@
 package com.company.triviaapp.data.courses.discretemath
 
+import com.company.triviaapp.data.model.QuestionAnswer
+
 class DiscreteMath {
     val sets = listOf(
         Pair(
@@ -940,5 +942,57 @@ class DiscreteMath {
         """.trimIndent()),
 
 
+    )
+    val sequences = listOf(
+        QuestionAnswer(
+            "What is an informal definition of sequence?",
+        """
+            A list of numbers that follow a well-defined rule
+        """.trimIndent()),
+        QuestionAnswer(
+            "What is a mathematical definition of a sequence?",
+            """
+            A function from Z⁺ (set of positive integers) to R (set of real numbers)
+        """.trimIndent()),
+        QuestionAnswer(
+            "What are each number in a sequence referred to as?",
+            """
+            Terms
+        """.trimIndent()),
+        QuestionAnswer(
+            "What does it mean to represent a sequence by terms?",
+            """
+            Sequence is written explicitly; may not be obvious in some cases
+            
+            Example: 1, 3, 5, 7 . . .
+        """.trimIndent()),
+        QuestionAnswer(
+            "What does it mean to represent a sequence by formula?",
+            """
+            Formula is used to describe how to determine each value given n
+            
+            Must include the range of n values
+            
+            Example: aₙ = 2n - 1 for n = 1, 2, 3 . . .
+        """.trimIndent()),
+        QuestionAnswer(
+            "How would you express the sequence 0, 3, 8, 15, 24, 35 . . . by formula?",
+            """
+            aₙ = n² - 1 for n = 1, 2, 3 . . .
+        """.trimIndent()),
+        QuestionAnswer(
+            "What is one potential issue with attempting to represent a sequence by formula?",
+            """
+            It may be difficult to find the formula
+        """.trimIndent()),
+        QuestionAnswer(
+            "What does it mean to represent a sequence by recurrence relation?",
+            """
+            Writing aₙ in respect to other terms
+            
+            Any values that cannot be found by relation must be explicitly defined
+
+            Example: aₙ = aₙ₋₁ + 2 for n ≥ 2, a₁ = 1
+        """.trimIndent()),
     )
 }

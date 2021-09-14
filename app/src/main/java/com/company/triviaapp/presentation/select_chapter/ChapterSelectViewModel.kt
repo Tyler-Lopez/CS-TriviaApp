@@ -39,11 +39,11 @@ class ChapterSelectViewModel @Inject constructor(
         getChaptersUseCase(course).onEach { result ->
             when (result) {
                 is Resource.Success -> {
-                    _state.value = ChapterListState(chapters = result.data ?: emptyList())
+                    _state.value = ChapterListState(chapters = result.data ?: emptyList(), courseName = courseId)
                 }
                 is Resource.Error -> {
                     _state.value =
-                        ChapterListState(error = result.message ?: "Unexpected error occurred")
+                        ChapterListState(error = result.message ?: "Unexpected error occurred", courseName = courseId)
                 }
                 is Resource.Loading -> {
                     _state.value = ChapterListState(isLoading = true)

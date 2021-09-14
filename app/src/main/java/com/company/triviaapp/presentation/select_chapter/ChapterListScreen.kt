@@ -28,7 +28,7 @@ fun ChapterListScreen(
     Box(modifier = Modifier.fillMaxSize()) {
         Column(modifier = Modifier.fillMaxSize().padding(20.dp)) {
             HeaderText("Chapter")
-            SubHeaderText("Placeholder Text")
+            SubHeaderText(state.courseName)
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(state.chapters) { chapter ->
                     ChapterListItem(

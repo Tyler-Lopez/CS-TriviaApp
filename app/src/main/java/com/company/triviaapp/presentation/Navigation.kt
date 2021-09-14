@@ -17,6 +17,7 @@ import com.company.triviaapp.presentation.select_chapter.ChapterListScreen
 import com.company.triviaapp.presentation.select_course.CourseListScreen
 import com.company.triviaapp.presentation.theme.TriviaAppTheme
 import com.company.triviaapp.presentation.ui.BottomBar
+import com.company.triviaapp.presentation.view_flashcards.ViewFlashcardsScreen
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 
 @ExperimentalMaterialApi
@@ -86,7 +87,7 @@ fun Navigation(navController: NavHostController) {
                     ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
                 }) {
                 Box(modifier = Modifier.padding(bottom = 50.dp)) {
-                    FlashcardView(
+                    ViewFlashcardsScreen(
                         navController = navController
                     )
                 }
