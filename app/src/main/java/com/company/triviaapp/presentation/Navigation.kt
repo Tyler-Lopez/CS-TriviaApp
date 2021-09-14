@@ -87,8 +87,13 @@ fun Navigation(navController: NavHostController) {
                     ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
                 }) {
                 Box(modifier = Modifier.padding(bottom = 50.dp)) {
+                    var currIndex = remember {
+                       mutableStateOf(value = 0)
+                     }
                     ViewFlashcardsScreen(
-                        navController = navController
+                        navController = navController,
+                        currIndex = currIndex.value,
+
                     )
                 }
             }

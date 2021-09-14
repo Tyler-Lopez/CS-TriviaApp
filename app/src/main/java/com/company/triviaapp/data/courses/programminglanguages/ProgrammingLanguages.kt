@@ -998,5 +998,12 @@ class ProgrammingLanguages {
         %c will not
     """.trimIndent()
         ),
+        Pair(
+            "If you want to define a function after the main method, what must you do?", """
+        Declare / prototype the function before the main method
+        
+        Example: int maximum(int a, int b)
+    """.trimIndent()
+        ),
     )
 }

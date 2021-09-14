@@ -30,70 +30,24 @@ import com.company.triviaapp.presentation.view_flashcards.components.CardListTex
 
 @ExperimentalMaterialApi
 @Composable
-fun CardListItem(
+fun CardListDummyItem(
     text: QuestionAnswer,
     currIndex: Int,
     listSize: Int,
-    onSwipe: (Unit) -> Unit
 ) {
-    // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
-    val interactionSource = remember { MutableInteractionSource() }
 
-    var isQuestion = remember { mutableStateOf(value = true) }
-
-    // Some variables based on if it is or is not a question
-    val text = if (isQuestion.value)
-        text.question // Question Text
-    else
-        text.answer // Answer Text
-    val textColor = if (isQuestion.value)
-        MaterialTheme.colors.onSurface
-    else
-        MaterialTheme.colors.onSecondary
-    val fontWeight = if (isQuestion.value)
-        FontWeight.Medium
-    else
-        FontWeight.Medium
-
-
-    /*
-
-     Swipe implementation experiment
-
-     If an animation is running, and that animation's target value is NOT the 0 initial spot, then progress to next card
-
-     */
-    val swiped = remember { mutableStateOf(false) }
-
-    BoxWithConstraints() {
-        val swipeState = rememberSwipeState(
-            maxWidth = constraints.maxWidth.toFloat(),
-            maxHeight = constraints.maxHeight.toFloat()
-        )
-        if (swiped.value.not()) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .swiper(
-                        state = swipeState,
-                        onDragAccepted = {
-                            swiped.value = true
-                            onSwipe(Unit)
-                        },
-                    ),
             ) {
                 Card(
                     modifier = Modifier
                         .padding(top = 10.dp, bottom = 20.dp)
-                     //   .border(
-                     //       width = 3.dp,
-                    //        color = Color(26, 29, 40, 100),
-                  //      )
-                        .clickable(
-                            interactionSource = interactionSource,
-                            indication = null
-                        ) { isQuestion.value = !isQuestion.value },
-              //      elevation = 5.dp,
+                        .border(
+                            width = 3.dp,
+                            color = Color(26, 29, 40, 100),
+                        ),
+                    elevation = 5.dp,
                 ) {
                     Box(
                         modifier = Modifier
@@ -108,8 +62,8 @@ fun CardListItem(
                                 .verticalScroll(rememberScrollState())
                         ) {
                             CardListText(
-                                text,
-                                textColor
+                                text.question,
+                                Color.White
                             )
                         }
                         Column(
@@ -133,5 +87,4 @@ fun CardListItem(
                 }
             }
         }
-    }
-}
+

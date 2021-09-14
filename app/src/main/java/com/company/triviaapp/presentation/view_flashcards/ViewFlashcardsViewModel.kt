@@ -31,7 +31,6 @@ class ViewFlashcardsViewModel @Inject constructor(
         }
     }
 
-
     private fun getQuestionAnswers(chapterId: String) {
         val chapter = tempMap["Temp"]!! // This is a temporary, bad way of doing this - come back to and restructure
         getCardsUseCase(chapter).onEach { result ->
