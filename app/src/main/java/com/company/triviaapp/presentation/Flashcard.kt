@@ -27,8 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.company.triviaapp.data.courses.datastructures.DataStructures
-import com.company.triviaapp.rememberSwipeState
-import com.company.triviaapp.swiper
+import com.company.triviaapp.domain.rememberSwipeState
+import com.company.triviaapp.domain.swiper
 import com.company.triviaapp.presentation.theme.roboto
 import kotlin.math.roundToInt
 

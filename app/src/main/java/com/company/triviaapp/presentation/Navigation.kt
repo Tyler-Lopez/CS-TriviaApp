@@ -14,6 +14,7 @@ import androidx.navigation.NavType
 import com.google.accompanist.navigation.animation.composable
 import androidx.navigation.compose.navArgument
 import com.company.triviaapp.presentation.theme.TriviaAppTheme
+import com.company.triviaapp.presentation.ui.BottomBar
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 
 @ExperimentalMaterialApi

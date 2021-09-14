@@ -4,6 +4,8 @@ import com.company.triviaapp.data.courses.datastructures.DataStructures
 import com.company.triviaapp.data.courses.discretemath.DiscreteMath
 import com.company.triviaapp.data.courses.kotlincourse.KotlinCourse
 import com.company.triviaapp.data.courses.programminglanguages.ProgrammingLanguages
+import com.company.triviaapp.data.model.Chapter
+import com.company.triviaapp.data.model.Course
 
 /*
 
@@ -27,6 +29,25 @@ val sections = mapOf(
     "Kotlin: O2" to KotlinCourse().intermediete
 )
 
+val courses = listOf(
+    Course("Discrete Math", listOf(
+        Chapter("Sets", "COSC 314: 01"),
+        Chapter("Logic", "COSC 314: 02"),
+        Chapter("Functions", "COSC 314: 04"),
+        Chapter("Relations", "COSC 314: 03")
+    )),
+    Course("Data Structures & Algorithms", listOf(
+        Chapter("Introduction", "COSC 311: 01"),
+        Chapter("Searching & Algorithm Analysis", "COSC 311: 02"),
+        Chapter("Recursion", "COSC 311: 03"),
+        Chapter("Sorting Algorithms", "COSC 311: Sorting"),
+    )),
+    Course("Programming Languages", listOf(
+        Chapter("Introduction", "COSC 341: 01"),
+        Chapter("Overview of Languages", "COSC 341: 02"),
+        Chapter("C", "COSC 341: 03"),
+    ))
+)
 // Categories with associated list of each chapter
 val categories = listOf(
     Pair(
