@@ -13,6 +13,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import com.google.accompanist.navigation.animation.composable
 import androidx.navigation.compose.navArgument
+import com.company.triviaapp.presentation.select_chapter.ChapterListScreen
+import com.company.triviaapp.presentation.select_course.CourseListScreen
 import com.company.triviaapp.presentation.theme.TriviaAppTheme
 import com.company.triviaapp.presentation.ui.BottomBar
 import com.google.accompanist.navigation.animation.AnimatedNavHost
@@ -44,7 +46,49 @@ fun Navigation(navController: NavHostController) {
                 }
             ) {
                 Box(modifier = Modifier.padding(bottom = 50.dp)) {
-                    HomeScreen(navController = navController)
+                    CourseListScreen(navController = navController) // Updated for MVVM
+                }
+            }
+            composable(route = Screen.ChapterSelect.route + "/{courseId}",
+                exitTransition = null,
+                popExitTransition = null,
+                popEnterTransition = { _, _ ->
+                    slideInHorizontally(
+                        initialOffsetX = { -1200 },
+                        animationSpec = tween(400, 100)
+                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
+                },
+                enterTransition = { _, _ ->
+                    slideInHorizontally(
+                        initialOffsetX = { 1200 },
+                        animationSpec = tween(400, 100)
+                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
+                }) {
+                Box(modifier = Modifier.padding(bottom = 50.dp)) {
+                    ChapterListScreen(
+                        navController = navController // MVVM Update
+                    )
+                }
+            }
+            composable(route = Screen.FlashCard.route + "/{chapterId}",
+                exitTransition = null,
+                popExitTransition = null,
+                popEnterTransition = { _, _ ->
+                    slideInHorizontally(
+                        initialOffsetX = { -1200 },
+                        animationSpec = tween(400)
+                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
+                },
+                enterTransition = { _, _ ->
+                    slideInHorizontally(
+                        initialOffsetX = { 1200 },
+                        animationSpec = tween(400)
+                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
+                }) {
+                Box(modifier = Modifier.padding(bottom = 50.dp)) {
+                    FlashcardView(
+                        navController = navController
+                    )
                 }
             }
             composable(
@@ -90,68 +134,10 @@ fun Navigation(navController: NavHostController) {
                     SearchScreen(navController = navController)
                 }
             }
-            composable(route = Screen.FlashCard.route + "/{listID}",
-                arguments = listOf(
-                    navArgument("listID") {
-                        type = NavType.StringType
-                        defaultValue = ""
-                        nullable = false
-                    }
-                ), exitTransition = null,
-                popExitTransition = null,
-                popEnterTransition = { _, _ ->
-                    slideInHorizontally(
-                        initialOffsetX = { -1200 },
-                        animationSpec = tween(400)
-                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
-                },
-                enterTransition = { _, _ ->
-                    slideInHorizontally(
-                        initialOffsetX = { 1200 },
-                        animationSpec = tween(400)
-                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
-                }) {
-                var activeState = remember {
-                    mutableStateOf(value = 0)
-                }
-                Box(modifier = Modifier.padding(bottom = 50.dp)) {
-                    FlashcardView(navController = navController, it.arguments?.getString("listID"), activeState.value, onSwiped = {
-                        activeState.value++
-                    })
-                }
-            }
-            composable(route = Screen.ChapterSelect.route + "/{categoryIndex}",
-                arguments = listOf(
-                    navArgument("categoryIndex") {
-                        type = NavType.IntType
-                        defaultValue = 0
-                        nullable = false
-                    }
-                ),
-                exitTransition = null,
-                popExitTransition = null,
-                popEnterTransition = { _, _ ->
-                    slideInHorizontally(
-                        initialOffsetX = { -1200 },
-                        animationSpec = tween(400, 100)
-                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
-                },
-                enterTransition = { _, _ ->
-                    slideInHorizontally(
-                        initialOffsetX = { 1200 },
-                        animationSpec = tween(400, 100)
-                    ) + fadeIn(initialAlpha = 0.0f, animationSpec = tween(400))
-                }) {
-                Box(modifier = Modifier.padding(bottom = 50.dp)) {
-                    ChapterSelect(
-                        navController = navController,
-                        it.arguments?.getInt("categoryIndex") ?: 0
-                    )
-                }
-            }
         }
-        Column(modifier = Modifier.fillMaxSize(), Arrangement.Bottom) {
-            BottomBar(navController = navController)
-        }
+    
+    Column(modifier = Modifier.fillMaxSize(), Arrangement.Bottom) {
+        BottomBar(navController = navController)
     }
+}
 }

@@ -25,22 +25,33 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.company.triviaapp.data.courses.datastructures.DataStructures
+import com.company.triviaapp.data.model.QuestionAnswer
 import com.company.triviaapp.domain.rememberSwipeState
 import com.company.triviaapp.domain.swiper
+import com.company.triviaapp.presentation.select_chapter.ChapterSelectViewModel
 import com.company.triviaapp.presentation.theme.roboto
+import com.company.triviaapp.presentation.view_flashcards.ViewFlashcardsViewModel
 import kotlin.math.roundToInt
 
 
 @ExperimentalAnimationApi
 @ExperimentalMaterialApi
 @Composable
-fun FlashcardView(navController: NavController, listID: String?, index: Int, onSwiped: () -> Unit) {
+fun FlashcardView(
+    navController: NavController,
+    viewModel: ViewFlashcardsViewModel = hiltViewModel()
+) {
 
-    val list = remember {
-        sections[listID]?.shuffled() ?: DataStructures().chapterOne.shuffled()
-    }
+    val state = viewModel.state.value
+    val list = state.flashcards
+    val index = 0
+
+  //  val list = remember {
+   //     sections[listID]?.shuffled() ?: DataStructures().chapterOne.shuffled()
+ //   }
 
     var activeState = remember {
         mutableStateOf(value = 0)
@@ -159,16 +170,18 @@ fun FlashcardView(navController: NavController, listID: String?, index: Int, onS
                         onIncrement = {
                             activeState.value = safeIncrement(list, activeState.value)
                         })
-                     */
+
                     FlashCardComposableNonInteractable(
                         list = list,
                         activeIndex = Pair(safeIncrement(list, index), list.size)
                     )
+                    */
+
                     FlashCardComposableTEST(
                         list = list,
                         activeIndex = Pair(index + 1, list.size),
                         onIncrement = {
-                            navController.navigate(Screen.FlashCard.withArgs(listID!!))
+                       //     navController.navigate(Screen.FlashCard.withArgs(listID!!))
                             //activeState.value = safeIncrement(list, activeState.value)
                         })
                 }
@@ -180,7 +193,7 @@ fun FlashcardView(navController: NavController, listID: String?, index: Int, onS
 @ExperimentalMaterialApi
 @Composable
 fun FlashCardComposableTEST(
-    list: List<Pair<String, String>>,
+    list: List<QuestionAnswer>,
     activeIndex: Pair<Int, Int>,
     onIncrement: (Unit) -> Unit
 ) {
@@ -191,9 +204,9 @@ fun FlashCardComposableTEST(
 
     // Some variables based on if it is or is not a question
     val text = if (isQuestion.value)
-        list[activeIndex.first - 1].first // Question Text
+        list[activeIndex.first - 1].question // Question Text
     else
-        list[activeIndex.first - 1].second // Answer Text
+        list[activeIndex.first - 1].answer // Answer Text
     val textColor = if (isQuestion.value)
         MaterialTheme.colors.onSurface
     else

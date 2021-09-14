@@ -6,6 +6,7 @@ import com.company.triviaapp.data.courses.kotlincourse.KotlinCourse
 import com.company.triviaapp.data.courses.programminglanguages.ProgrammingLanguages
 import com.company.triviaapp.data.model.Chapter
 import com.company.triviaapp.data.model.Course
+import com.company.triviaapp.data.model.QuestionAnswer
 
 /*
 
@@ -29,25 +30,71 @@ val sections = mapOf(
     "Kotlin: O2" to KotlinCourse().intermediete
 )
 
-val courses = listOf(
-    Course("Discrete Math", listOf(
-        Chapter("Sets", "COSC 314: 01"),
-        Chapter("Logic", "COSC 314: 02"),
-        Chapter("Functions", "COSC 314: 04"),
-        Chapter("Relations", "COSC 314: 03")
-    )),
-    Course("Data Structures & Algorithms", listOf(
-        Chapter("Introduction", "COSC 311: 01"),
-        Chapter("Searching & Algorithm Analysis", "COSC 311: 02"),
-        Chapter("Recursion", "COSC 311: 03"),
-        Chapter("Sorting Algorithms", "COSC 311: Sorting"),
-    )),
-    Course("Programming Languages", listOf(
-        Chapter("Introduction", "COSC 341: 01"),
-        Chapter("Overview of Languages", "COSC 341: 02"),
-        Chapter("C", "COSC 341: 03"),
-    ))
+val tempMap = mapOf(
+    "Temp" to Chapter("Sets", pairStringToQuestion(sections["COSC 314: 01"]!!))
 )
+
+fun pairStringToQuestion(list: List<Pair<String, String>>): List<QuestionAnswer> {
+    val toReturn = mutableListOf<QuestionAnswer>()
+    list.forEach {
+        toReturn.add(QuestionAnswer(it.first, it.second))
+    }
+    return toReturn
+}
+
+val tempCourseMap = mapOf(
+    "Discrete Math" to Course(
+        "Discrete Math", listOf(
+            Chapter("Sets", pairStringToQuestion(sections["COSC 314: 01"]!!)),
+            Chapter("Logic", pairStringToQuestion(sections["COSC 314: 02"]!!)),
+            Chapter("Functions", pairStringToQuestion(sections["COSC 314: 04"]!!)),
+            Chapter("Relations", pairStringToQuestion(sections["COSC 314: 03"]!!)),
+        )
+    ),
+    "Data Structures & Algorithms" to Course(
+        "Data Structures & Algorithms", listOf(
+            Chapter("Introduction", pairStringToQuestion(sections["COSC 311: 01"]!!)),
+            Chapter("Searching & Algorithm Analysis", pairStringToQuestion(sections["COSC 311: 02"]!!)),
+            Chapter("Recursion", pairStringToQuestion(sections["COSC 311: 03"]!!)),
+            Chapter("Sorting Algorithms", pairStringToQuestion(sections["COSC 311: Sorting"]!!)),
+        )
+    ),
+    "Programming Languages" to Course(
+        "Programming Languages", listOf(
+            Chapter("Introduction", pairStringToQuestion(sections["COSC 341: 01"]!!)),
+            Chapter("Overview of Languages", pairStringToQuestion(sections["COSC 341: 02"]!!)),
+            Chapter("C", pairStringToQuestion(sections["COSC 341: 03"]!!)),
+        )
+    )
+)
+/*
+val courses = listOf(
+    Course(
+        "Discrete Math", listOf(
+            Chapter("Sets", "COSC 314: 01"),
+            Chapter("Logic", "COSC 314: 02"),
+            Chapter("Functions", "COSC 314: 04"),
+            Chapter("Relations", "COSC 314: 03")
+        )
+    ),
+    Course(
+        "Data Structures & Algorithms", listOf(
+            Chapter("Introduction", "COSC 311: 01"),
+            Chapter("Searching & Algorithm Analysis", "COSC 311: 02"),
+            Chapter("Recursion", "COSC 311: 03"),
+            Chapter("Sorting Algorithms", "COSC 311: Sorting"),
+        )
+    ),
+    Course(
+        "Programming Languages", listOf(
+            Chapter("Introduction", "COSC 341: 01"),
+            Chapter("Overview of Languages", "COSC 341: 02"),
+            Chapter("C", "COSC 341: 03"),
+        )
+    )
+)
+*/
+
 // Categories with associated list of each chapter
 val categories = listOf(
     Pair(
@@ -71,7 +118,7 @@ val categories = listOf(
             Pair("Introduction", "COSC 341: 01"),
             Pair("Overview of Languages", "COSC 341: 02"),
             Pair("C", "COSC 341: 03"),
-            )
+        )
     ),
     Pair(
         "Kotlin", listOf(

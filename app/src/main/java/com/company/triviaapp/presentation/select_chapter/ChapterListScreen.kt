@@ -1,4 +1,4 @@
-package com.company.triviaapp.presentation.select_course
+package com.company.triviaapp.presentation.select_chapter
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,25 +11,31 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.navArgument
 import com.company.triviaapp.presentation.Screen
+import com.company.triviaapp.presentation.select_chapter.components.ChapterListItem
+import com.company.triviaapp.presentation.select_course.CourseSelectViewModel
 import com.company.triviaapp.presentation.select_course.components.CourseListItem
 import com.company.triviaapp.presentation.ui.HeaderText
+import com.company.triviaapp.presentation.ui.SubHeaderText
 
 @Composable
-fun CourseListScreen(
+fun ChapterListScreen(
     navController: NavController,
-    viewModel: CourseSelectViewModel = hiltViewModel()
+    viewModel: ChapterSelectViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
     Box(modifier = Modifier.fillMaxSize()) {
         Column(modifier = Modifier.fillMaxSize().padding(20.dp)) {
-            HeaderText("Course")
+            HeaderText("Chapter")
+            SubHeaderText("Placeholder Text")
             LazyColumn(modifier = Modifier.fillMaxSize()) {
-                items(state.courses) { course ->
-                    CourseListItem(
-                        course = course,
+                items(state.chapters) { chapter ->
+                    ChapterListItem(
+                        chapter = chapter,
+                        navController = navController,
                         onItemClick = {
-                            navController.navigate(Screen.ChapterSelect.route + "/${course.name}")
+                            navController.navigate(Screen.FlashCard.route + "/${chapter.name}")
                         })
                 }
             }
