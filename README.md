@@ -1,3 +1,6 @@
+## Note
+Currently in process of MVVM refactor, functionality of flashcard view is currently inhibited.
+
 # About
 An Android Q&A educational flashcard application in development. Questions and answers are currently hard-coded and cover material of various standard courses of an undergraduate computer science degree.
 
