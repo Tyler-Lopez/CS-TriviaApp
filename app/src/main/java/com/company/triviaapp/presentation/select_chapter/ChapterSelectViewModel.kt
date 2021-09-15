@@ -10,7 +10,7 @@ import com.company.triviaapp.common.Resource
 import com.company.triviaapp.data.model.Course
 import com.company.triviaapp.domain.use_case.get_categories.GetCoursesUseCase
 import com.company.triviaapp.domain.use_case.get_chapters.GetChaptersUseCase
-import com.company.triviaapp.presentation.tempCourseMap
+import com.company.triviaapp.presentation.courses
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -35,8 +35,8 @@ class ChapterSelectViewModel @Inject constructor(
 
 
     private fun getChapters(courseId: String) {
-        val course = tempCourseMap[courseId]!! // This is a temporary, bad way of doing this - come back to and restructure
-        getChaptersUseCase(course).onEach { result ->
+        val chapters = courses[courseId]!! // This is a temporary, bad way of doing this - come back to and restructure
+        getChaptersUseCase(chapters).onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     _state.value = ChapterListState(chapters = result.data ?: emptyList(), courseName = courseId)
