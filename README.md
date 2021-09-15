@@ -1,9 +1,7 @@
 # About
 An Android Q&A educational flashcard application in development. Questions and answers are currently hard-coded and cover material of various standard courses of an undergraduate computer science degree.
 
-This app would naturally also work well with any other broader topic - but questions designed by me, for now, will exclusively be covering materials of computer science at Eastern Michigan University. Feel free to submit a pull request to add additional categories and questions.
-
-Future roadmap may be to make this app competitive to other existing alternatives for community flashcard browsers, such as Quizlet - perhaps specialized still to computer science. Potentially app could find a strong niche in providing a user-maintained "wiki" of flashcards - where inaccurate cards may be commented on and modifications suggestion in the app. Text to speech via. a content description field providing informative wordings could be an interesting and unique feature (i.e. f(g) read as f of g)
+This app would naturally also work well with any other broader topic - but questions for now will exclusively be covering materials of computer science at Eastern Michigan University. Feel free to submit a pull request to add additional categories and questions. In the future, Firebase will be implemented allowing users to submit and edit cards.
 
 ## Development Features
 * Use of AnimatedNavHost navController, MVVM and clean architecture
