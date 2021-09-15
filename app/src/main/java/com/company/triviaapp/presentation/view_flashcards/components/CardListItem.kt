@@ -122,6 +122,7 @@ fun CardListItem(
                                 description = "Revert",
                                 onClick = {
                                     onDecrement(Unit)
+                                    if (!isQuestion) onFlip(Unit) // Fix to revert not reverting to question first
                                 })
                         }
                     }

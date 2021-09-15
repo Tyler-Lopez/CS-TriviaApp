@@ -13,6 +13,7 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -34,7 +35,7 @@ fun ViewFlashcardsScreen(
     val state = viewModel.state.value
     val list = state.flashcards
 
-    var currIndex = remember {
+    var currIndex = rememberSaveable {
         mutableStateOf(value = 0)
     }
     Box(
@@ -48,7 +49,7 @@ fun ViewFlashcardsScreen(
             safeIncrement(list.lastIndex, currIndex.value),
             list.size
         )
-        val isQuestion = remember { mutableStateOf(true) }
+        val isQuestion = rememberSaveable { mutableStateOf(true) }
 
         BoxWithConstraints() {
             val swipeState = rememberSwipeState(
