@@ -23,7 +23,7 @@ fun IconButton(icon: ImageVector, description: String, onClick: () -> Unit) {
     Button(
         modifier = Modifier
             .fillMaxHeight()
-            .padding(end = 4.dp)
+            .padding(horizontal = 2.dp)
             .border(
                 width = 3.dp,
                 color = Color(26, 29, 40, 100),

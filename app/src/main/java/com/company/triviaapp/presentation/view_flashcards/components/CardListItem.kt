@@ -93,27 +93,7 @@ fun CardListItem(
                             textColor
                         )
                     }
-                    // Top buttons
-                    Column(
-                        verticalArrangement = Arrangement.Top,
-                        horizontalAlignment = Alignment.End,
-                        modifier = Modifier.fillMaxWidth().height(50.dp)
-                    ) {
-                        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                            IconButton(
-                                icon = Icons.Rounded.Undo,
-                                description = "Revert",
-                                onClick = {
-                                    onDecrement(Unit)
-                                })
-                            IconButton(
-                                icon = Icons.Rounded.Redo,
-                                description = "Increment",
-                                onClick = {
-                                    onSwipe(Unit)
-                                })
-                        }
-                    }
+
                     // NOTE!
                     // This is a hacky, terrible temporary fix
                     // For some reason(will look into) vertical drag does not work without this column being full sized
@@ -130,6 +110,26 @@ fun CardListItem(
                         ) {
                             Text(text="",modifier=Modifier.fillMaxSize())
 
+                        }
+                    }
+
+                    // Top buttons
+                    Column(
+                        verticalArrangement = Arrangement.Top,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp)
+                    ) {
+                        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                            CardIndexText(curr = currIndex, size = listSize)
+
+                            IconButton(
+                                icon = Icons.Rounded.Undo,
+                                description = "Revert",
+                                onClick = {
+                                    onDecrement(Unit)
+                                })
                         }
                     }
                 }
