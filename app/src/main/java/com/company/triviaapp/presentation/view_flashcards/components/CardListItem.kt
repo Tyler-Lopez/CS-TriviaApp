@@ -37,27 +37,22 @@ fun CardListItem(
     text: QuestionAnswer,
     currIndex: Int,
     listSize: Int,
-    onSwipe: (Unit) -> Unit,
+    isQuestion: Boolean,
+    onFlip: (Unit) -> Unit,
     onDecrement: (Unit) -> Unit,
 ) {
     // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
     val interactionSource = remember { MutableInteractionSource() }
 
-    var isQuestion = remember { mutableStateOf(value = true) }
-
     // Some variables based on if it is or is not a question
-    val text = if (isQuestion.value)
+    val text = if (isQuestion)
         text.question // Question Text
     else
         text.answer // Answer Text
-    val textColor = if (isQuestion.value)
+    val textColor = if (isQuestion)
         MaterialTheme.colors.onSurface
     else
         MaterialTheme.colors.onSecondary
-    val fontWeight = if (isQuestion.value)
-        FontWeight.Medium
-    else
-        FontWeight.Medium
 
 
     /*
@@ -74,7 +69,7 @@ fun CardListItem(
                     .clickable(
                         interactionSource = interactionSource,
                         indication = null
-                    ) { isQuestion.value = !isQuestion.value },
+                    ) { onFlip(Unit) },
             ) {
                 Box(
                     modifier = Modifier
