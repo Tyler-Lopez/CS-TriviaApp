@@ -32,7 +32,7 @@ fun CardIndexText(
             )
         ),
         modifier = Modifier.padding(
-            horizontal = 2.dp, vertical = 2.dp
+            horizontal = 8.dp, vertical = 4.dp
         )
     )
 }

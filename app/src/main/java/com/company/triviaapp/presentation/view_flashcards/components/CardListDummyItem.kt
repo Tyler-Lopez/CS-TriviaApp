@@ -86,20 +86,31 @@ fun CardListDummyItem(
                         }
                     }
                 }
+                // Top buttons
+                Column(
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.End,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp)
+                ) {
+                    Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                        IconButton(
+                            icon = Icons.Rounded.Undo,
+                            description = "Revert",
+                            onClick = {
+                                //onDecrement(Unit)
+                            })
+                    }
+                }
                 Column(
                     verticalArrangement = Arrangement.Bottom,
                     horizontalAlignment = Alignment.End,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
                 ) {
-                    Card(
-                        modifier = Modifier.alpha(0f),
-                        backgroundColor = Color(0,0,0,0),
-
-                        ) {
-                        CardIndexText(
-                            currIndex,
-                            listSize
-                        )
+                    Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                        CardIndexText(curr = currIndex, size = listSize)
                     }
                 }
             }

@@ -122,14 +122,22 @@ fun CardListItem(
                             .height(50.dp)
                     ) {
                         Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                            CardIndexText(curr = currIndex, size = listSize)
-
                             IconButton(
                                 icon = Icons.Rounded.Undo,
                                 description = "Revert",
                                 onClick = {
                                     onDecrement(Unit)
                                 })
+                        }
+                    }
+                    Column(
+                        verticalArrangement = Arrangement.Bottom,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier
+                            .fillMaxSize()
+                    ) {
+                        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                            CardIndexText(curr = currIndex, size = listSize)
                         }
                     }
                 }
