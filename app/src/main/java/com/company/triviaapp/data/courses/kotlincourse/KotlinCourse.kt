@@ -1,12 +1,14 @@
 package com.company.triviaapp.data.courses.kotlincourse
 
+import com.company.triviaapp.data.model.QuestionAnswer
+
 class KotlinCourse {
     val intermediete = listOf(
-        Pair("What does it mean for a class to be sealed?",
+        QuestionAnswer("What does it mean for a class to be sealed?",
             """
            Provides more control over inheritance
         """.trimIndent()),
-        Pair("What does it mean for a class to be sealed?",
+        QuestionAnswer("What does it mean for a class to be sealed?",
             """
            Provides more control over inheritance
         """.trimIndent()),

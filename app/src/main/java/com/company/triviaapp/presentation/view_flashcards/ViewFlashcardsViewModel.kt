@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.company.triviaapp.common.Constants
 import com.company.triviaapp.common.Resource
 import com.company.triviaapp.domain.use_case.get_cards.GetCardsUseCase
+import com.company.triviaapp.presentation.courses
 import com.company.triviaapp.presentation.tempMap
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -26,13 +27,16 @@ class ViewFlashcardsViewModel @Inject constructor(
 
     init { // When a CourseSelectViewModel object is created, invoke getCourses
 
-        savedStateHandle.get<String>(Constants.PARAM_CHAPTER_ID)?.let {
-                    chapterId -> getQuestionAnswers(chapterId)
+        savedStateHandle.get<String>(Constants.PARAM_COURSE_ID)?.let { courseId ->
+            savedStateHandle.get<String>(Constants.PARAM_CHAPTER_ID)?.let { chapterId ->
+                getQuestionAnswers(courseId, chapterId)
+            }
         }
     }
 
-    private fun getQuestionAnswers(chapterId: String) {
-        val chapter = tempMap["Temp"]!! // This is a temporary, bad way of doing this - come back to and restructure
+    private fun getQuestionAnswers(courseId: String, chapterId: String) {
+        val chapter = courses[courseId]!!.chapters[chapterId]!!
+
         getCardsUseCase(chapter).onEach { result ->
             when (result) {
                 is Resource.Success -> {
@@ -46,7 +50,8 @@ class ViewFlashcardsViewModel @Inject constructor(
                     _state.value = ViewFlashcardsState(isLoading = true)
                 }
             }
-        }.launchIn(viewModelScope) // A class, but because we overrode the invoke operator this works
+        }
+            .launchIn(viewModelScope) // A class, but because we overrode the invoke operator this works
     }
 
 }

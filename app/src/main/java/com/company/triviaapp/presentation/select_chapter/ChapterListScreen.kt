@@ -35,7 +35,7 @@ fun ChapterListScreen(
                         chapter = chapter,
                         navController = navController,
                         onItemClick = {
-                            navController.navigate(Screen.FlashCard.route + "/${chapter.name}")
+                            navController.navigate(Screen.FlashCard.route + "/${state.courseName}/${chapter.name}")
                         })
                 }
             }

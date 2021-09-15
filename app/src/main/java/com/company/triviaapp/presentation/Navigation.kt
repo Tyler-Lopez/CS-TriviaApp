@@ -71,7 +71,7 @@ fun Navigation(navController: NavHostController) {
                     )
                 }
             }
-            composable(route = Screen.FlashCard.route + "/{chapterId}",
+            composable(route = Screen.FlashCard.route + "/{courseId}/{chapterId}",
                 exitTransition = null,
                 popExitTransition = null,
                 popEnterTransition = { _, _ ->

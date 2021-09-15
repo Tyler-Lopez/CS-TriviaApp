@@ -1,27 +1,29 @@
 package com.company.triviaapp.data.courses.programminglanguages
 
+import com.company.triviaapp.data.model.QuestionAnswer
+
 class ProgrammingLanguages {
     val chapterOne = listOf(
-        Pair(
+        QuestionAnswer(
             "What is feature multiplicity?", """
         More than one way to accomplish a operation
 
         Example: incrementing a integer in Java
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are programming domains?", """
         Places where programming is used
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are Script languages?", """
         Used to write small programs quickly
         
         Perl, MATLAB, R
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are the three most important criteria of language evaluation?", """
         Readability
         
@@ -30,7 +32,7 @@ class ProgrammingLanguages {
         Reliability
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are the three less important criteria of language evaluation?", """
         Generality
         
@@ -39,7 +41,7 @@ class ProgrammingLanguages {
         Cost
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What increases readability?", """
         Simplicity (small # of language features)
         
@@ -48,14 +50,14 @@ class ProgrammingLanguages {
         Control and block structures
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What decreases readability?", """
         Method and operator overloading
         
         Over simplicity (machine code)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What increases writability?", """
         Simplicity (small # of language features)
         
@@ -66,14 +68,14 @@ class ProgrammingLanguages {
         Expressivity (ability to express complex structures)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What decreases writability?", """
         Too much expressivity
         
         Extreme simplicity (ex: a language without loops)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What increases reliability?", """
         Type checking at compile time
         
@@ -84,19 +86,19 @@ class ProgrammingLanguages {
         Writability (less likely to make errors)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is generality?", """
         When a language can be used to write many types of programs
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is portability?", """
         When a language can be used to write programs that are machine independent
         
         Write once, run anywhere
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are the four language categories?", """
         Procedural
         
@@ -107,7 +109,7 @@ class ProgrammingLanguages {
         Logic
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is operator overloading?", """
         A single operator has more than one meaning
 
@@ -116,7 +118,7 @@ class ProgrammingLanguages {
         Can lead to reduced readability
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is orthogonality?", """
         Small set of primitive constructs can be combined to build data structures
 
@@ -125,7 +127,7 @@ class ProgrammingLanguages {
         The more orthogonal a language is the more simple it is, less exceptions
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is aliasing(ale-e-s-ing)?", """
         Having two or more distinct names in a program used to access same memory
 
@@ -136,12 +138,12 @@ class ProgrammingLanguages {
         Changing value pointed to by one of the two changes value of other
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Define optimization", """
         Techniques compilers do to decrease size and/or increase execution speed
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the von Neumann(Noyman) Architecture?", """
         Languages designed around called imperative
 
@@ -154,14 +156,14 @@ class ProgrammingLanguages {
         Program languages designed to work around this
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is language translation?", """
         Translating high-level language to machine code
         
         Compiling, interpreting, and hybrid compiling / interpreting
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is procedural programming?", """
         Don't write whole program in one program, divide program into subprograms
         
@@ -170,14 +172,14 @@ class ProgrammingLanguages {
         AKA imperative
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is functional programming?", """
         Work performed by function calls
         
         AKA applicative languages
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is object oriented programming?", """
         Encapsulation of data and methods
         
@@ -186,14 +188,14 @@ class ProgrammingLanguages {
         Inheritance and polymorphism
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are logic programming languages?", """
         Work performed by logic
         
         AKA declarative
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is compiling language translation?", """
         Source code completely translated to machine code
         
@@ -204,7 +206,7 @@ class ProgrammingLanguages {
         C, C++, Fortran
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is interpreting language translation?", """
         Interpreter translates source code and executes at the same time
         
@@ -213,7 +215,7 @@ class ProgrammingLanguages {
         Lisp, Basic
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is hybrid method language translation?", """
         Source code translated to intermediate code (byte code)
         
@@ -222,7 +224,7 @@ class ProgrammingLanguages {
         Java, Python
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are the three main methods of language translation?", """
         Compiling
         
@@ -231,49 +233,49 @@ class ProgrammingLanguages {
         Hybrid compiling / interpreting
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is an IDE?", """
         Integrated development environment
         
         Provides package of components: editor, compiler, debugger, libraries
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What does it mean for a program to be reliable?", """
         It performs to specification under all conditions
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What has been the strongest influence on programming language design?", """
         Computer architecture
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the name of the category of programming languages whose structure is dictated by the von Neumann computer architecture?", """
         Imperative
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Which approach to language implementation produces the fastest program execution?", """
         Compiler
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Which was the primary application area of computers at the time Fortran was designed?", """
         Scientific
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Which user group was the target of the first version of BASIC?", """
         Liberal arts students
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "PL/1 was designed to replace which two languages?", """
         FORTRAN and COBOL
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are two ways the choice of programming language can affect software development cost?", """
         Programmer training costs
         
@@ -286,14 +288,14 @@ class ProgrammingLanguages {
         Cost of compiler / debugger if not free
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Why do compiled programs typically run faster than interpreted programs?", """
         The process of translating code at run-time adds to the overhead and can cause the program to be slower.
     """.trimIndent()
         ),
     )
     val chapterTwo = listOf(
-        Pair(
+        QuestionAnswer(
             "What is Plankalkul (plan-kah-kool)?", """
         First "programming language"
 
@@ -302,7 +304,7 @@ class ProgrammingLanguages {
         Theoretical language, 40's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is minimal hardware programming?", """
         Machine code programming
 
@@ -311,7 +313,7 @@ class ProgrammingLanguages {
         40's & 50's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is FORTRAN?", """
         Procedural & FIRST high-level language
         
@@ -324,7 +326,7 @@ class ProgrammingLanguages {
         50's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Lisp?", """
         Functional language
          
@@ -335,7 +337,7 @@ class ProgrammingLanguages {
         MIT & IBM, John McCarthy, 50's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Algol?", """
         Procedural, "Algorithmic" language
         
@@ -348,7 +350,7 @@ class ProgrammingLanguages {
         Developed in Europe, 50's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is COBOL?", """
         Common Business Oriented Language
 
@@ -359,7 +361,7 @@ class ProgrammingLanguages {
         IBM, 60's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is BASIC?", """
         Beginners' All Purpose Symbolic Instruction Code
         
@@ -368,7 +370,7 @@ class ProgrammingLanguages {
         Dartmouth, 60's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is PL/1?", """
         Programming Language 1
         
@@ -377,7 +379,7 @@ class ProgrammingLanguages {
         IBM, 60's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Simula?", """
         First object oriented language
         
@@ -386,14 +388,14 @@ class ProgrammingLanguages {
         Norway, 60's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Pascal?", """
         For teaching computer science students
         
         Niklaus Wirth, 70's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Ada?", """
         Derived from Pascal
         
@@ -402,7 +404,7 @@ class ProgrammingLanguages {
         Designed with support of the U.S. government, 80's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Prolog?", """
         Logic paradigm language
         
@@ -411,14 +413,14 @@ class ProgrammingLanguages {
         Developed in Europe, 70's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is SmallTalk?", """
         STRICT, early object-oriented language
         
         Xerox, Alan Kay, 80's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is C?", """
         Functional language
         
@@ -427,7 +429,7 @@ class ProgrammingLanguages {
         General purpose, widely used
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is C++?", """
         Object oriented, general purpose
         
@@ -438,7 +440,7 @@ class ProgrammingLanguages {
         Bell Labs, Bjarne Stroustrup, 80's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Java?", """
         Strictly object oriented, general purpose
         
@@ -447,7 +449,7 @@ class ProgrammingLanguages {
         Sun Micro Systems, James Gosling, 90's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is C#?", """
         Object oriented
         
@@ -456,7 +458,7 @@ class ProgrammingLanguages {
         Microsoft, 00's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Objective C?", """           
         Used by Apple to develop mobile apps
         
@@ -465,7 +467,7 @@ class ProgrammingLanguages {
         Developed not by Apple, 80's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Perl?", """
         Scripting language related to Unix and C
         
@@ -474,14 +476,14 @@ class ProgrammingLanguages {
         80's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Python?", """
         Started as a scripting language, became general purpose language
         
         Developed by individuals, non-profits, 90's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is JavaScript, PHP?", """
         Web programming languages
         
@@ -490,19 +492,19 @@ class ProgrammingLanguages {
         Developed by individuals, non-profits, 90's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is Swift?", """
         Mobile application development language
         
         Developed by Apple, 10's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What two programming languages from the 1960 - 1970 were mainly used for teaching purposes?", """
         Pascal and Basic
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Name three special purpose programming languages and their domain of applications?", """
         Visual Basic - Basic UI
         
@@ -515,36 +517,36 @@ class ProgrammingLanguages {
         COBOL - Business Applications
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "In which language is the majority of the UNIX operating system written in?", """
         C
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Which two object oriented languages influenced the design of Java?", """
         C++ & Simula
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the first object oriented programming language?", """
         Simula
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "When and by who was the markup language HTML developed?", """
         Tim Berners-Lee
         
-        Early 90's
+        90's
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the difference between a compiler and integrated development environment?", """
         Compiler: transforms source code into a lower-level language
         
         IDE: set of software development tools designed to make coding easier
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Name two Java language features that increase the reliability of Java programs", """
         Compile time static type-checking
         
@@ -559,19 +561,19 @@ class ProgrammingLanguages {
     )
 
     val chapterThree = listOf(
-        Pair(
+        QuestionAnswer(
             "What is the extension of C source files?", """
         .c
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the return type of the main function?", """
         int
         
         Returning 0 is seen as a success
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Does the main function require parameters?", """
         No
         
@@ -580,57 +582,57 @@ class ProgrammingLanguages {
         main() or main(void) both work
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Does C have public or static keywords?", """
         No
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you import printf?", """
         #include <stdio.h>
         
         Including Standard IO header
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you print \"Hello World\" and a new line?", """
         printf("Hello World\n");
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Do variables and function identifiers use camelCase?", """
         No
         
         Best practice is all lowercase, with words separated by underscore _
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What does size of types mean?", """
         Size of types is fixed in Java - this is NOT the case in C
         
         You can find out the size of types with: sizeof(int), sizeof(variable) - returns bytes
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you declare a integer named my_number?", """
         int my_number;
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Provided an integer variable, my_number, how do you print it preceded by \"My number is: \"", """
         printf("My number is: %i\n", my_number);
         
         %i = integer
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Provided a float variable, my_float, how do you print it preceded by \"My float is: \"", """
         printf("My float is: %f\n", my_float);
         
         %f = float
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are four categories of types in C?", """
         Numerical
         
@@ -641,7 +643,7 @@ class ProgrammingLanguages {
         Pointers
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are all of the integer types in C?", """
         char
         
@@ -654,83 +656,83 @@ class ProgrammingLanguages {
         long long
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are all of the floating point types in C?", """
         float
         
         double
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you declare an array of 50 integers in C?", """
         int x[50];
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "When is a struct useful?", """
         When you have a lot of information you want to keep together, like a class in Java
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How would you define a struct for a person?", """
         struct person { char name[50]; int age; int height_in_inches; }
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Provided a defined struct for person, how do you declare two different persons?", """
         struct person person_1
         struct person person_2
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What do pointers do?", """
         Store memory addresses or locations in memory
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What do pointers do?", """
         Store memory addresses or locations in memory
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given an int y = 7, what does int *p = &y; do?", """
          p stores, or points to, the location of y
          
          Putting & before a variable returns the memory address
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Provided a pointer *p, what are two ways you can print it?", """
          printf("%p", p) - prints the memory address
          
          printf("%i", *p) - prints the int which p points to
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "If a pointer *p points at a int variable y, can you change the value of y from *p?", """
          Yes
          
          *p = 14;
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What does it mean to be an unsigned type?", """
         The type cannot be negative, but can store a larger positive number for the same size
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How would you create an array of 1, 2, 3, 4, 5?", """
         int arr[5] = {1, 2, 3, 4, 5}
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Provided an integer variable n, is int *p = n acceptable?", """
         No
         
         A pointer cannot be equal to a integer, you must instead write int *p = &n
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Provided an array variable n, is int *p = n acceptable?", """
         Yes
         
@@ -739,7 +741,7 @@ class ProgrammingLanguages {
         An array is also a location in memory
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How are arrays different from pointers?", """
         Arrays allocate space on definition
         
@@ -748,7 +750,7 @@ class ProgrammingLanguages {
         Pointers will crash on run-time upon accessing out of their bounds
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you use a while loop?", """
         Same as Java
         
@@ -759,27 +761,25 @@ class ProgrammingLanguages {
         Increment the counter within the loop block
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you use a for loop?", """
         Same as Java BUT you must declare count variable outside of the loop
-        
-        Modern versions of C does not 
-        
+                
         int count;
         for (count = 0; counter < target; counter ++) { }
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What does break mean in a loop?", """
         Exit the loop entirely
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What does continue mean in a loop?", """
         Exit the current iteration of the loop and continue iterations
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the commenting syntax in C?", """
         Same as Java
         
@@ -788,12 +788,12 @@ class ProgrammingLanguages {
         /* */ for multi-line
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is int weights[3] = { 70, 90, 60 } or int weights[] = { 70, 90, 60 } valid?", """
         Both are valid array initializations
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given int x; double y, z; what happens if you attempt to assign x to z?", """
         z = x;
         
@@ -802,7 +802,7 @@ class ProgrammingLanguages {
         Example: 5 -> 5.0
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given int x; double y, z; what happens if you attempt to assign z to x?", """
         x = z;
         
@@ -813,33 +813,33 @@ class ProgrammingLanguages {
         Example: 5.7 -> 5
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What does (9 > 5) return in C?", """
         1
         
         C does not have booleans, 1 == true
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is 5 considered \"true\" in C?", """
         Yes
         
         Anything that isn't 0 is considered true
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given int x; double y, z; what happens if you attempt to assign x * z to y?", """
         y = z * x;
         
         Integer x is converted to double, y will 
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you explicitly cast a double variable x to int?", """
         (int) x
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is 9 & 5?", """
         9: 1001
         
@@ -850,7 +850,7 @@ class ProgrammingLanguages {
         Bitwise AND
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is 9 | 5?", """
         9: 1001
         
@@ -861,7 +861,7 @@ class ProgrammingLanguages {
         Bitwise OR
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is 9 ^ 5?", """
         9: 1001
         
@@ -872,7 +872,7 @@ class ProgrammingLanguages {
         Bitwise Exclusive OR
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is ~9?", """
         9: 1001
         
@@ -881,14 +881,14 @@ class ProgrammingLanguages {
         Bitwise NOT
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is 9 >> 2?", """
         9: 1001
         
         9 >> 2: 0010 = 2
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is 9 << 1?", """
         9: 1001
         
@@ -897,7 +897,7 @@ class ProgrammingLanguages {
         Left shifting by 1 bit is == multiplying by 2
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do strings work in C?", """
         Strings are an array of MUTABLE characters with a null termination
         
@@ -906,19 +906,19 @@ class ProgrammingLanguages {
         ASCII
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you declare a string containing \"Hello World\"?", """
         char *str1 = "Hello World"
         
         char str2[] = "Hello World"
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you print a string variable my_string using printf?", """
         printf("%s", my_string)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the size (in bytes) of \"Hello!\"?", """
         7
         
@@ -927,7 +927,7 @@ class ProgrammingLanguages {
         [ 'H', 'e', 'l', 'l', 'o', '!', 0 ]
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How would you write a function to return the length of a string?", """
         Input parameter is a char pointer or array
         
@@ -936,26 +936,26 @@ class ProgrammingLanguages {
         Stop when a 0 is found, return int
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Does C have boolean data types?", """
         No
         
         Use 1 or 0 to indicate true or false
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What does .h mean?", """
         Header file
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given char name[20] = \"John\", what happens if you attempt to access name[500]?", """
         Unlike Java, the problem will likely not crash
         
         It will access whatever byte of memory is at that location
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given char name[20] = \"John\", what happens if you attempt to assign name[500]?", """
         Unlike Java, the problem will likely not crash
         
@@ -964,7 +964,7 @@ class ProgrammingLanguages {
         "C will let you scribble all over memory until you really break something"
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you format print a int, double, character, and character array?", """
         int: %d
         
@@ -975,7 +975,7 @@ class ProgrammingLanguages {
         char[]: %s
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you format input a int, double, character, and character array?", """
         int: %d
         
@@ -986,33 +986,33 @@ class ProgrammingLanguages {
         char[]: %s
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How do you read user input?", """
         scanf("% type of input", & name of the pre-initialized variable where data should be stored)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Of %d, %lf, %c, and %s, which of these will skip white spaces when reading inputs?", """
         %d, %lf, and %s will skip white spaces when reading inputs
         
         %c will not
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "If you want to define a function after the main method, what must you do?", """
         Declare / prototype the function before the main method
         
         Example: int maximum(int a, int b)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "In C, how do you access the length of an array within a function where the array is a parameter?", """
         You must explicitly know the length of the array by passing it into the function
         
         array.length does not exist in C
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What do the function parameters (int* num, int length) mean?", """
         num is a pointer to the start of an array
         
@@ -1021,14 +1021,14 @@ class ProgrammingLanguages {
         This is identical to passing in an "array" and it's length
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How can you determine the length of a string?", """
         strlen(s) can be used to find the length of a string
         
         You do not need to pass the length of the string
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What happens when you invoke strlen(s) on char s[1] = \"pen\"?", """
         Returns 3
     """.trimIndent()

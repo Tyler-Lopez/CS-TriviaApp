@@ -4,16 +4,16 @@ import com.company.triviaapp.data.model.Chapter
 import com.company.triviaapp.data.model.Course
 import com.company.triviaapp.data.model.QuestionAnswer
 import com.company.triviaapp.domain.repository.FlashcardRepository
-import com.company.triviaapp.presentation.tempCourseMap
+import com.company.triviaapp.presentation.courses
 
 class FlashcardRepositoryImpl(): FlashcardRepository {
 
     override suspend fun getCourses(): List<Course> {
-        return tempCourseMap.values.toList() // Extremely temporary, this is very bad
+        return courses.values.toList() // Non-ideal, but how else to retrieve from mapping?
     }
 
     override suspend fun getChapters(course: Course): List<Chapter> {
-        return course.chapters
+        return course.chapters.values.toList() // Non-ideal, but how else to retrieve from mapping?
     }
 
     override suspend fun getQuestionAnswers(chapter: Chapter): List<QuestionAnswer> {

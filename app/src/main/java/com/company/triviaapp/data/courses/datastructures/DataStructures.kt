@@ -1,13 +1,15 @@
 package com.company.triviaapp.data.courses.datastructures
 
+import com.company.triviaapp.data.model.QuestionAnswer
+
 class DataStructures {
     val chapterOne = listOf(
-        Pair(
+        QuestionAnswer(
             "What is a data structure?", """
         A way of organizing, storing, and performing operations on data
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a record?", """
         Data structure
          
@@ -16,7 +18,7 @@ class DataStructures {
         Subitems are called fields
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is an array?", """
         Data structure
          
@@ -25,7 +27,7 @@ class DataStructures {
         Each item accessed by index
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a linked list?", """
         Data structure
          
@@ -34,7 +36,7 @@ class DataStructures {
         Each node stores data & points to next node
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a binary tree", """
         Data structure
          
@@ -43,7 +45,7 @@ class DataStructures {
         Children = left & right child
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a hash table?", """
         Data structure
          
@@ -56,7 +58,7 @@ class DataStructures {
         The value and a reference to the key is stored in a linked list
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a heap?", """
         Data structure
   
@@ -67,7 +69,7 @@ class DataStructures {
         Min-heap: node's key is <= node's children keys
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a graph?", """
         Data structure 
         
@@ -80,19 +82,19 @@ class DataStructures {
         Edge represents a connection
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a binary search?", """
         Efficient algorithm for searching a list
         
         Elements must be sorted and accessible
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a Dijkstra(DYKE-struh) shortest path algorithm?", """
         Determines the shortest path from a start vertex to each vertex in a graph
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is algorithm with a polynomial runtime considered efficient?", """
         Yes
         
@@ -101,22 +103,22 @@ class DataStructures {
         O(2ⁿ) is NOT
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Need to know a ADTs underlying implementation to analyze runtime efficiency?", """
         Yes
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Are ADTs only supported in standard libraries?", """
         No
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is underlying data structure for a list the same in all programming languages?", """
         No
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is an NP-complete problem?", """
         No known efficient algorithm exists
         
@@ -125,7 +127,7 @@ class DataStructures {
         It may be possible to find an efficient solution for an NP-complete problem
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is an abstract data type (ADT)", """
         Data type containing predefined user operations
         
@@ -134,7 +136,7 @@ class DataStructures {
         Implementation has impact on program's execution
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a list?", """
         ADT
          
@@ -143,7 +145,7 @@ class DataStructures {
         Underlying structure: array, linked list
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a dynamic array?", """
         ADT
          
@@ -152,7 +154,7 @@ class DataStructures {
         Underlying structure: array (NOT LINKED LIST)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a stack?", """
         ADT 
         
@@ -161,7 +163,7 @@ class DataStructures {
         • Underlying structure: linked list
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a queue?", """
         ADT
         
@@ -170,7 +172,7 @@ class DataStructures {
         Underlying structure: linked list
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a dequeue?", """
         ADT
         
@@ -179,7 +181,7 @@ class DataStructures {
         Underlying structure: linked list
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a bag?", """
         ADT
                  
@@ -188,7 +190,7 @@ class DataStructures {
         Underlying structure: array, linked list
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a set?", """
         ADT
          
@@ -197,7 +199,7 @@ class DataStructures {
         Underlying structure: binary search tree, hash table
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a priority queue?", """
         ADT
         
@@ -208,7 +210,7 @@ class DataStructures {
         Underlying structure: Heap
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a dictionary (map)?", """
         ADT
                  
@@ -217,41 +219,41 @@ class DataStructures {
         Underlying structure: Hash table, binary search tree
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is algorithm efficiency?", """
         Measured by algorithm's computational complexity
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is computational complexity?", """
         Amount of resources used by the algorithm
         
         Resources include time and memory
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is runtime complexity?", """
         Number of constant time operations performed by algorithm of size N
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Are algorithm's best and worst case scenarios always different?", """
         No
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is space complexity?", """
         Number of fixed-size memory units used by the algorithm for an input of size N
         
         Includes input data and additional memory allocated by the algorithm
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is auxiliary space complexity?", """
         Space complexity not including input data
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "If a function retrieves all evens from a list: what is the worst case auxiliary space complexity?",
             """
         S(N) = N + k
@@ -259,7 +261,7 @@ class DataStructures {
         Worst case: all items from the list are returned
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "If a function retrieves all evens from a list: what is the best case auxiliary space complexity?",
             """
         S(N) = k
@@ -270,7 +272,7 @@ class DataStructures {
 
         )
     val sortingAlgo = listOf(
-        Pair(
+        QuestionAnswer(
             "How would you sort an array with Insertion Sort?", """
         Iterate forward through array, excluding last value
         
@@ -283,7 +285,7 @@ class DataStructures {
         Average: O(n²) time | O(1) space
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How would you sort an array with Bubble Sort?", """
         Create loop while a boolean is TRUE
         
@@ -298,7 +300,7 @@ class DataStructures {
         Average: O(n²) time | O(1) space
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "How would you sort an array with Selection Sort?", """
         Make variables to track smallest and active index
         
@@ -317,7 +319,7 @@ class DataStructures {
         Average: O(n²) time | O(1) space
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Provided the node of a heap, how would you implement a depth-first search?", """ 
             Recursive implementation with a helper function taking an array parameter
             
@@ -331,29 +333,29 @@ class DataStructures {
 
         )
     val chapterTwo = listOf(
-        Pair(
+        QuestionAnswer(
             "What is an algorithm?", """
         Sequence of steps for accomplishing a task
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is linear search?", """
         Search algorithm that starts from beginning of a list and checks each element until search key is found or end of list
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given a list of 10 elements and where each comparison takes 2 μs, what is the fastest possible runtime?",
             """
         2 μs 
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given a list of 10 elements and where each comparison takes 2 μs, what is the longest possible runtime?",
             """
         20 μs 
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given an array with 32 elements, how many elements would be searched if the target was less than anything present in the list?",
             """
         5
@@ -361,7 +363,7 @@ class DataStructures {
         It would first check index 15, then 7, 3, 1, and 0
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the formula to calculate the number of binary search searched elements(not steps) when the element is less than any element in the array?",
             """
         [log₂N]
@@ -369,47 +371,47 @@ class DataStructures {
         Example: [log₂32] = 5
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is assigning x to y a constant time operation?", """
         True
         
         Assignment of a single, fixed size data value is a constant time operation
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Can a loop be a constant time operation?", """
         Yes
         
         A loop with a constant number of iterations is a constant time operation
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is comparison of two fixed size data fields constant time?", """
         Yes
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is copying the contents of a string to a new string constant time?", """
         No
         
         Copying all characters in a string requires operations proportional to size of string
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is string concatenation constant time?", """
         No
         
         More characters must be copied for larger strings
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are upper and lower bounds?", """
         Lower and upper bounds provide general picture of runtime
         
         Worst(upper) and best(lower) case scenario
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Consider an algorithm with best case 3N + 6 and worst case 5N² + 7N: which function is a lower bound?",
             """
         3N
@@ -417,7 +419,7 @@ class DataStructures {
         Lower bound means best case
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Consider an algorithm with best case 3N + 6 and worst case 5N² + 7N: which function is a upper bound?",
             """
         12N²
@@ -427,14 +429,14 @@ class DataStructures {
         5N² + 7N also acceptable
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are asymptotic notation?", """
         Functions that indicate the growth rate of a bounding function
         
         Describe the running time of an algorithm
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What are the three types of asymptotic notation?", """
         O (Big-O) | upper bound: worst case
         
@@ -443,73 +445,73 @@ class DataStructures {
         Θ (Theta) | upper and lower bound
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "State the function for O (Big-O) asymptotic notation", """
         For all N ≥ 1, T(N) ≤ c * f(N)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "State the function for Ω (Omega) asymptotic notation", """
         For all N ≥ 1, T(N) ≥ c * f(N)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "State the function for Θ (Theta) asymptotic notation", """
         T(N) = O(f(N)) and T(N) = Θ(f(N))
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the Big O notation of 10 * O(N²)?", """
         O(N²)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the Big O notation of 10 + O(N²)?", """
         O(N²)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the Big O notation of 3N * O(N²)?", """
         O(N³)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the Big O notation of 2N³ + O(N²)?", """
         O(N³)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is the Big O notation of log₂N?", """
         O(log(N))
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What runtime complexity does O(N log(N)) have?", """
         Linearithmic
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What runtime complexity does O(N + N²) have?", """
         O(N²)
         
         Quadratic
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What runtime complexity does linear search have?", """
         O(N)
         
         Linear
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What runtime complexity does selection sort have?", """
         O(N²)
         
         Quadratic
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Consider code that initializes two variables then runs a while loop with two operations. What is the worst-case function?",
             """
         f(N) = 3N + 3
@@ -519,7 +521,7 @@ class DataStructures {
         N: 2 operations are in the loop + 1 for each conditional check = 3N
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Given the following code segment: int i = 0; while (i < 5) { i++; } - how many \"steps\" are there?",
             """
         1 step from i = 0
@@ -531,7 +533,7 @@ class DataStructures {
         12 steps total
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Consider a loop which iterates through an array - how many \"steps\" are there?", """
         1 step from initializing a sum variable
         
@@ -544,22 +546,22 @@ class DataStructures {
         1 step to return the value
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is T(N)?", """
         Number of "steps" relative to size
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is g(n) + O(f(n))? (g of n plus Big O of f of n)", """
         O(f(n) + g(n))
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is g(n) * O(f(n))? (g of n times Big O of f of n)", """
         O(f(n) * g(n))
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is O(n) * O(n)? (Big O of n times Big O of n)", """
         O(n²)
     """.trimIndent()
@@ -567,53 +569,53 @@ class DataStructures {
     )
 
     val chapterThree = listOf(
-        Pair(
+        QuestionAnswer(
             "What is a recursive algorithm?", """
         Breaks the problem into smaller subprograms and applies an algorithm to solve them
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Does a recursive algorithm apply itself to a smaller subproblem in all cases?", """
         No
 
         In the base case, the recursive algorithm completes without applying itself
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Describe the Fibonacci Sequence", """
         Each term is the sum of the previous two terms, except for first two terms which are 0 and 1
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a recurrence relation?", """
         A function f(N) that is defined in terms of the same function operating on a value less than N
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a recurrence relation?", """
         A function f(N) that is defined in terms of the same function operating on a value less than N
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is T(N) = N² + 6N + 2 a recurrence relation?", """
         No
         
         T must be present on other side of equation
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "Is T(N) = 6N + T(N/4) a recurrence relation?", """
         Yes
         
         It has T on the other side of the equation and operates on a value < N
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "What is a recursion tree?", """
         A visual diagram of an operation done by a recursive function
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "For recursive function with runtime of T(N) = 7 + T(N-1): how many levels will the recursion tree have?",
             """
         N
@@ -621,13 +623,13 @@ class DataStructures {
         The input size is reduced by 1 each call, N recursive calls are needed
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "For recursive function with runtime of T(N) = 7 + T(N-1): what is the runtime complexity in O notation?",
             """
         O(N)
     """.trimIndent()
         ),
-        Pair(
+        QuestionAnswer(
             "For recursive function with runtime of T(N) = N + T(N-1): how many levels will the recursion tree have?",
             """
         N
