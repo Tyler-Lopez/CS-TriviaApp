@@ -50,6 +50,8 @@ open class Swipe(val maxWidth: Float, val maxHeight: Float) {
 
     fun rejected(scope: CoroutineScope) = scope.launch {
         offsetX.animateTo(-(maxWidth * 2), tween(400))
+        offsetX.snapTo(0f)
+        offsetY.snapTo(0f)
     }
 
     fun drag(scope: CoroutineScope, x: Float, y: Float) = scope.launch {
@@ -79,8 +81,19 @@ fun Modifier.swiper(
                                 .reset(scope)
                                 .invokeOnCompletion { onDragReset() }
                         }
+                        state.offsetX.targetValue < 0 -> {
+                            scope.launch {
+
+                                state
+                                    .rejected(scope)
+                                    .invokeOnCompletion {
+                                        onDragAccepted()
+                                    }
+                            }
+                        }
                         else -> {
                                 scope.launch {
+
                                     state
                                         .accepted(scope)
                                         .invokeOnCompletion {
@@ -91,10 +104,8 @@ fun Modifier.swiper(
                         }
                 },
                 onDragStart = {
-                    println("here at start")
                 },
                 onDrag = { change, dragAmount ->
-                    println("Here")
                         val original = Offset(state.offsetX.targetValue, state.offsetY.targetValue)
                         val summed = original + dragAmount
                         val newValue = Offset(
@@ -110,7 +121,7 @@ fun Modifier.swiper(
             translationX = state.offsetX.value,
             translationY = state.offsetY.value,
             rotationZ = (state.offsetX.value / 60).coerceIn(-40f, 40f),
-            scaleX = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(2f),
-            scaleY = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(2f)
+            scaleX = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(1f),
+            scaleY = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(1f)
         )
 }
