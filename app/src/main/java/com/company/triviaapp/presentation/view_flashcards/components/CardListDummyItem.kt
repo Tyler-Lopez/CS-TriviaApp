@@ -1,36 +1,23 @@
 package com.company.triviaapp.presentation.view_flashcards
 
 import androidx.compose.foundation.*
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Redo
 import androidx.compose.material.icons.rounded.Undo
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shadow
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.company.triviaapp.data.model.QuestionAnswer
-import com.company.triviaapp.domain.rememberSwipeState
-import com.company.triviaapp.domain.swiper
-import com.company.triviaapp.presentation.theme.roboto
 import com.company.triviaapp.presentation.view_flashcards.components.CardIndexText
 import com.company.triviaapp.presentation.view_flashcards.components.CardListText
 import com.company.triviaapp.presentation.view_flashcards.components.IconButton
-import com.company.triviaapp.presentation.view_flashcards.components.IconDummyButton
 
 
 @ExperimentalMaterialApi
@@ -79,12 +66,24 @@ fun CardListDummyItem(
                         .height(50.dp)
                 ) {
                     Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                        IconDummyButton(
-                            icon = Icons.Rounded.Undo,
-                        )
-                        IconDummyButton(
-                            icon = Icons.Rounded.Redo,
-                        )
+                        Column(
+                            verticalArrangement = Arrangement.Top,
+                            horizontalAlignment = Alignment.End,
+                            modifier = Modifier.fillMaxWidth().height(50.dp)
+                        ) {
+                            Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                                IconButton(
+                                    icon = Icons.Rounded.Undo,
+                                    description = "Revert",
+                                    onClick = {
+                                    })
+                                IconButton(
+                                    icon = Icons.Rounded.Redo,
+                                    description = "Increment",
+                                    onClick = {
+                                    })
+                            }
+                        }
                     }
                 }
                 Column(
@@ -93,11 +92,10 @@ fun CardListDummyItem(
                     modifier = Modifier.fillMaxSize()
                 ) {
                     Card(
-                        shape = RoundedCornerShape(12.dp),
-                        backgroundColor = MaterialTheme.colors.background,
-                        modifier = Modifier
-                            .padding(10.dp),
-                    ) {
+                        modifier = Modifier.alpha(0f),
+                        backgroundColor = Color(0,0,0,0),
+
+                        ) {
                         CardIndexText(
                             currIndex,
                             listSize

@@ -3,6 +3,8 @@ package com.company.triviaapp.domain
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.detectVerticalDragGestures
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -77,7 +79,7 @@ fun Modifier.swiper(
                                 .invokeOnCompletion { onDragReset() }
                         }
                         else -> {
-                                scope.launch { // I, Tyler, added this here
+                                scope.launch {
                                     state
                                         .accepted(scope)
                                         .invokeOnCompletion {
@@ -87,7 +89,11 @@ fun Modifier.swiper(
                             }
                         }
                 },
+                onDragStart = {
+                    println("here at start")
+                },
                 onDrag = { change, dragAmount ->
+                    println("Here")
                         val original = Offset(state.offsetX.targetValue, state.offsetY.targetValue)
                         val summed = original + dragAmount
                         val newValue = Offset(
@@ -96,7 +102,6 @@ fun Modifier.swiper(
                         )
                         change.consumePositionChange()
                         state.drag(scope, newValue.x, newValue.y)
-
                 }
             )
         }

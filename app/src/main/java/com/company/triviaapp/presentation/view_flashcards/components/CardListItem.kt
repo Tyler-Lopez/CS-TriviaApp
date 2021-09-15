@@ -4,10 +4,7 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.*
 import androidx.compose.material.icons.rounded.KeyboardArrowRight
@@ -16,9 +13,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -68,25 +67,7 @@ fun CardListItem(
      If an animation is running, and that animation's target value is NOT the 0 initial spot, then progress to next card
 
      */
-    val swiped = remember { mutableStateOf(false) }
 
-    BoxWithConstraints() {
-        val swipeState = rememberSwipeState(
-            maxWidth = constraints.maxWidth.toFloat(),
-            maxHeight = constraints.maxHeight.toFloat()
-        )
-        //       if (swiped.value.not()) {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .swiper(
-                    state = swipeState,
-                    onDragAccepted = {
-                        swiped.value = true
-                        onSwipe(Unit)
-                    },
-                ),
-        ) {
             Card(
                 modifier = Modifier
                     .padding(top = 10.dp, bottom = 20.dp)
@@ -133,26 +114,24 @@ fun CardListItem(
                                 })
                         }
                     }
-                    // Bottom showing position in list
+                    // NOTE!
+                    // This is a hacky, terrible temporary fix
+                    // For some reason(will look into) vertical drag does not work without this column being full sized
+                    // It is alpha 0 so has no impact but allowing vertical to work
                     Column(
                         verticalArrangement = Arrangement.Bottom,
                         horizontalAlignment = Alignment.End,
                         modifier = Modifier.fillMaxSize()
                     ) {
                         Card(
-                            shape = RoundedCornerShape(12.dp),
-                            backgroundColor = MaterialTheme.colors.background,
-                            modifier = Modifier
-                                .padding(10.dp),
+                            modifier = Modifier.alpha(0f),
+                            backgroundColor = Color(0,0,0,0),
+
                         ) {
-                            CardIndexText(
-                                currIndex,
-                                listSize
-                            )
+                            Text(text="",modifier=Modifier.fillMaxSize())
+
                         }
                     }
                 }
             }
         }
-    }
-}
