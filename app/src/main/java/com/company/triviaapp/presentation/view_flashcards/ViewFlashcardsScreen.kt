@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -23,7 +25,6 @@ import com.company.triviaapp.domain.safeIncrement
 fun ViewFlashcardsScreen(
     navController: NavController,
     viewModel: ViewFlashcardsViewModel = hiltViewModel(),
-    currIndex: Int,
 ) {
     val state = viewModel.state.value
     val list = state.flashcards
@@ -32,22 +33,25 @@ fun ViewFlashcardsScreen(
         mutableStateOf(value = 0)
     }
     Box(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(20.dp)) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(20.dp)
+        ) {
             Box(modifier = Modifier.fillMaxSize())
             {
-                    for(i in list.indices) {
-                 //       if (i == currIndex) {
-                            CardListItem(
-                                text = list[i],
-                                currIndex = i,
-                                listSize = list.size,
-                                onSwipe = {
-                                    currIndex.value = safeIncrement(list.size, currIndex.value)
-                                })
-                   //     }
-                    }
+                CardListDummyItem(
+                    text = list[safeIncrement(list.lastIndex, currIndex.value)].question,
+                    safeIncrement(list.lastIndex, currIndex.value),
+                    list.size
+                )
+                CardListItem(
+                    text = list[currIndex.value],
+                    currIndex = currIndex.value,
+                    listSize = list.size,
+                    onSwipe = {
+                        currIndex.value = safeIncrement(list.lastIndex, currIndex.value)
+                    })
             }
         }
     }

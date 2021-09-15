@@ -70,7 +70,7 @@ fun CardListItem(
             maxWidth = constraints.maxWidth.toFloat(),
             maxHeight = constraints.maxHeight.toFloat()
         )
-        if (swiped.value.not()) {
+ //       if (swiped.value.not()) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -85,15 +85,10 @@ fun CardListItem(
                 Card(
                     modifier = Modifier
                         .padding(top = 10.dp, bottom = 20.dp)
-                     //   .border(
-                     //       width = 3.dp,
-                    //        color = Color(26, 29, 40, 100),
-                  //      )
                         .clickable(
                             interactionSource = interactionSource,
                             indication = null
                         ) { isQuestion.value = !isQuestion.value },
-              //      elevation = 5.dp,
                 ) {
                     Box(
                         modifier = Modifier
@@ -131,7 +126,7 @@ fun CardListItem(
                         }
                     }
                 }
-            }
+      //      }
         }
     }
 }

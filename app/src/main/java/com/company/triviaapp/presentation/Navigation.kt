@@ -92,8 +92,6 @@ fun Navigation(navController: NavHostController) {
                      }
                     ViewFlashcardsScreen(
                         navController = navController,
-                        currIndex = currIndex.value,
-
                     )
                 }
             }

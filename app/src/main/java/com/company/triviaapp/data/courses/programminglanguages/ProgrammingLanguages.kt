@@ -1005,5 +1005,21 @@ class ProgrammingLanguages {
         Example: int maximum(int a, int b)
     """.trimIndent()
         ),
+        Pair(
+            "In C, how do you access the length of an array within a function where the array is a parameter?", """
+        You must explicitly know the length of the array by passing it into the function
+        
+        array.length does not exist in C
+    """.trimIndent()
+        ),
+        Pair(
+            "What do the function parameters (int* num, int length) mean?", """
+        num is a pointer to the start of an array
+        
+        length is the length of the array
+        
+        This is identical to passing in an "array" and it's length
+    """.trimIndent()
+        ),
     )
 }

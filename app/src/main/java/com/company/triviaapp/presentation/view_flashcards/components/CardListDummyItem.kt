@@ -31,7 +31,7 @@ import com.company.triviaapp.presentation.view_flashcards.components.CardListTex
 @ExperimentalMaterialApi
 @Composable
 fun CardListDummyItem(
-    text: QuestionAnswer,
+    text: String,
     currIndex: Int,
     listSize: Int,
 ) {
@@ -62,7 +62,7 @@ fun CardListDummyItem(
                                 .verticalScroll(rememberScrollState())
                         ) {
                             CardListText(
-                                text.question,
+                                text,
                                 Color.White
                             )
                         }

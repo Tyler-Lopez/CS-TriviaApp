@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.consumePositionChange
 import androidx.compose.ui.input.pointer.pointerInput
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import java.lang.Math.abs
 
@@ -40,6 +41,8 @@ open class Swipe(val maxWidth: Float, val maxHeight: Float) {
 
     fun accepted(scope: CoroutineScope) = scope.launch {
         offsetX.animateTo(maxWidth * 2, tween(400))
+        offsetX.snapTo(0f)
+        offsetY.snapTo(0f)
     }
 
     fun rejected(scope: CoroutineScope) = scope.launch {
@@ -63,37 +66,53 @@ fun Modifier.swiper(
     onDragAccepted: () -> Unit,
 ): Modifier = composed {
     val scope = rememberCoroutineScope()
-    Modifier.pointerInput(Unit) {
-        detectDragGestures(
-            onDragEnd = {
-                when {
-                    abs(state.offsetX.targetValue) < state.maxWidth / 4 -> {
-                        state
-                            .reset(scope)
-                            .invokeOnCompletion { onDragReset() }
+    var allowDrag = true
+    Modifier
+        .pointerInput(Unit) {
+            detectDragGestures(
+                onDragEnd = {
+                    allowDrag = false
+                    when {
+                        state.offsetX.targetValue > 0 || state.offsetX.targetValue < 0 ||
+                                state.offsetY.targetValue > 0 || state.offsetY.targetValue < 0 -> {
+                            scope.launch { // I, Tyler, added this here
+                                state
+                                    .accepted(scope)
+                                    .invokeOnCompletion {
+                                        onDragAccepted()
+                                        allowDrag = true
+                                    }
+                            }
+                        }
+                        abs(state.offsetX.targetValue) < state.maxWidth / 4 -> {
+                            state
+                                .reset(scope)
+                                .invokeOnCompletion { onDragReset() }
+                        }
+
                     }
-                    state.offsetX.targetValue > 0 || state.offsetX.targetValue < 0 -> {
-                        state
-                            .accepted(scope)
-                            .invokeOnCompletion { onDragAccepted() }
+                },
+                onDrag = { change, dragAmount ->
+                    if (allowDrag) {
+                        val original = Offset(state.offsetX.targetValue, state.offsetY.targetValue)
+                        val summed = original + dragAmount
+                        val newValue = Offset(
+                            x = summed.x.coerceIn(-state.maxWidth, state.maxWidth),
+                            y = summed.y.coerceIn(-state.maxHeight, state.maxHeight)
+                        )
+                        change.consumePositionChange()
+                        state.drag(scope, newValue.x, newValue.y)
                     }
                 }
-            },
-            onDrag = { change, dragAmount ->
-                val original = Offset(state.offsetX.targetValue, state.offsetY.targetValue)
-                val summed = original + dragAmount
-                val newValue = Offset(
-                    x = summed.x.coerceIn(-state.maxWidth, state.maxWidth),
-                    y = summed.y.coerceIn(-state.maxHeight, state.maxHeight)
-                )
-                change.consumePositionChange()
-                state.drag(scope, newValue.x, newValue.y)
-            }
+            )
+        }
+        .graphicsLayer(
+            translationX = state.offsetX.value,
+            translationY = state.offsetY.value,
+            rotationZ = (state.offsetX.value / 60).coerceIn(-40f, 40f),
+            alpha = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceIn(
+                0.95f,
+                1f
+            )
         )
-    }.graphicsLayer(
-        translationX = state.offsetX.value,
-        translationY = state.offsetY.value,
-        rotationZ = (state.offsetX.value / 60).coerceIn(-40f, 40f),
-        alpha = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceIn(0.95f, 1f)
-    )
 }
