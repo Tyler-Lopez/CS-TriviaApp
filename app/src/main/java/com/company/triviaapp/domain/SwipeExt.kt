@@ -121,7 +121,7 @@ fun Modifier.swiper(
             translationX = state.offsetX.value,
             translationY = state.offsetY.value,
             rotationZ = (state.offsetX.value / 60).coerceIn(-40f, 40f),
-            scaleX = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(1f),
-            scaleY = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(1f)
+            scaleX = ((state.maxWidth - abs(state.offsetX.value/2f)) / state.maxWidth).coerceAtMost(1f),
+            scaleY = ((state.maxWidth - abs(state.offsetX.value/2f)) / state.maxWidth).coerceAtMost(1f)
         )
 }

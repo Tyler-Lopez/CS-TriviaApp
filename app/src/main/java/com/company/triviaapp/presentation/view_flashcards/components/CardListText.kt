@@ -19,7 +19,7 @@ fun CardListText(text: String, textColor: Color) {
     Text(
         text = text,
         color = textColor,
-        fontSize = 20.sp,
+        fontSize = 24.sp,
         fontWeight = FontWeight.Medium,
         fontFamily = roboto,
         modifier = Modifier.padding(20.dp),
