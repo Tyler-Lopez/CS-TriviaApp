@@ -29,12 +29,12 @@ fun IconDummyButton(icon: ImageVector) {
                 color = Color(26, 29, 40, 100),
             )
             .shadow(elevation = 5.dp),
-        colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface))
-        Icon(
-            imageVector = icon,
-            contentDescription = "Dummy",
-            //modifier = Modifier.fillMaxSize(),
-            tint = MaterialTheme.colors.onSurface,
-        )
-    }
+        colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface)
+    )
+    Icon(
+        imageVector = icon,
+        contentDescription = "Dummy",
+        //modifier = Modifier.fillMaxSize(),
+        tint = MaterialTheme.colors.onSurface,
+    )
 }
