@@ -58,34 +58,7 @@ fun CardListDummyItem(
                         Color.White
                     )
                 }
-                Column(
-                    verticalArrangement = Arrangement.Top,
-                    horizontalAlignment = Alignment.End,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp)
-                ) {
-                    Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                        Column(
-                            verticalArrangement = Arrangement.Top,
-                            horizontalAlignment = Alignment.End,
-                            modifier = Modifier.fillMaxWidth().height(50.dp)
-                        ) {
-                            Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                                IconButton(
-                                    icon = Icons.Rounded.Undo,
-                                    description = "Revert",
-                                    onClick = {
-                                    })
-                                IconButton(
-                                    icon = Icons.Rounded.Redo,
-                                    description = "Increment",
-                                    onClick = {
-                                    })
-                            }
-                        }
-                    }
-                }
+
                 // Top buttons
                 Column(
                     verticalArrangement = Arrangement.Top,
