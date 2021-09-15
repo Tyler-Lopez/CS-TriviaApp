@@ -1021,5 +1021,17 @@ class ProgrammingLanguages {
         This is identical to passing in an "array" and it's length
     """.trimIndent()
         ),
+        Pair(
+            "How can you determine the length of a string?", """
+        strlen(s) can be used to find the length of a string
+        
+        You do not need to pass the length of the string
+    """.trimIndent()
+        ),
+        Pair(
+            "What happens when you invoke strlen(s) on char s[1] = \"pen\"?", """
+        Returns 3
+    """.trimIndent()
+        ),
     )
 }

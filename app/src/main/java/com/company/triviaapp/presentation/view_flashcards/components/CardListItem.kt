@@ -8,6 +8,9 @@ import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.*
+import androidx.compose.material.icons.rounded.KeyboardArrowRight
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -26,6 +29,7 @@ import com.company.triviaapp.domain.swiper
 import com.company.triviaapp.presentation.theme.roboto
 import com.company.triviaapp.presentation.view_flashcards.components.CardIndexText
 import com.company.triviaapp.presentation.view_flashcards.components.CardListText
+import com.company.triviaapp.presentation.view_flashcards.components.IconButton
 
 
 @ExperimentalMaterialApi
@@ -34,7 +38,8 @@ fun CardListItem(
     text: QuestionAnswer,
     currIndex: Int,
     listSize: Int,
-    onSwipe: (Unit) -> Unit
+    onSwipe: (Unit) -> Unit,
+    onDecrement: (Unit) -> Unit,
 ) {
     // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
     val interactionSource = remember { MutableInteractionSource() }
@@ -70,63 +75,84 @@ fun CardListItem(
             maxWidth = constraints.maxWidth.toFloat(),
             maxHeight = constraints.maxHeight.toFloat()
         )
- //       if (swiped.value.not()) {
-            Box(
+        //       if (swiped.value.not()) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .swiper(
+                    state = swipeState,
+                    onDragAccepted = {
+                        swiped.value = true
+                        onSwipe(Unit)
+                    },
+                ),
+        ) {
+            Card(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .swiper(
-                        state = swipeState,
-                        onDragAccepted = {
-                            swiped.value = true
-                            onSwipe(Unit)
-                        },
-                    ),
+                    .padding(top = 10.dp, bottom = 20.dp)
+                    .clickable(
+                        interactionSource = interactionSource,
+                        indication = null
+                    ) { isQuestion.value = !isQuestion.value },
             ) {
-                Card(
+                Box(
                     modifier = Modifier
-                        .padding(top = 10.dp, bottom = 20.dp)
-                        .clickable(
-                            interactionSource = interactionSource,
-                            indication = null
-                        ) { isQuestion.value = !isQuestion.value },
+                        .fillMaxSize()
+                        .background(MaterialTheme.colors.surface)
                 ) {
-                    Box(
+                    Column(
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(MaterialTheme.colors.surface)
+                            .verticalScroll(rememberScrollState())
                     ) {
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .verticalScroll(rememberScrollState())
-                        ) {
-                            CardListText(
-                                text,
-                                textColor
-                            )
+                        CardListText(
+                            text,
+                            textColor
+                        )
+                    }
+                    // Top buttons
+                    Column(
+                        verticalArrangement = Arrangement.Top,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier.fillMaxWidth().height(50.dp)
+                    ) {
+                        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                            IconButton(
+                                icon = Icons.Rounded.Undo,
+                                description = "Revert",
+                                onClick = {
+                                    onDecrement(Unit)
+                                })
+                            IconButton(
+                                icon = Icons.Rounded.Redo,
+                                description = "Increment",
+                                onClick = {
+                                    onSwipe(Unit)
+                                })
                         }
-                        Column(
-                            verticalArrangement = Arrangement.Bottom,
-                            horizontalAlignment = Alignment.End,
-                            modifier = Modifier.fillMaxSize()
+                    }
+                    // Bottom showing position in list
+                    Column(
+                        verticalArrangement = Arrangement.Bottom,
+                        horizontalAlignment = Alignment.End,
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        Card(
+                            shape = RoundedCornerShape(12.dp),
+                            backgroundColor = MaterialTheme.colors.background,
+                            modifier = Modifier
+                                .padding(10.dp),
                         ) {
-                            Card(
-                                shape = RoundedCornerShape(12.dp),
-                                backgroundColor = MaterialTheme.colors.background,
-                                modifier = Modifier
-                                    .padding(10.dp),
-                            ) {
-                                CardIndexText(
-                                    currIndex,
-                                    listSize
-                                )
-                            }
+                            CardIndexText(
+                                currIndex,
+                                listSize
+                            )
                         }
                     }
                 }
-      //      }
+            }
         }
     }
 }

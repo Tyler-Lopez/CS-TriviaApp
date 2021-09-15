@@ -8,6 +8,9 @@ import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Redo
+import androidx.compose.material.icons.rounded.Undo
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -26,6 +29,8 @@ import com.company.triviaapp.domain.swiper
 import com.company.triviaapp.presentation.theme.roboto
 import com.company.triviaapp.presentation.view_flashcards.components.CardIndexText
 import com.company.triviaapp.presentation.view_flashcards.components.CardListText
+import com.company.triviaapp.presentation.view_flashcards.components.IconButton
+import com.company.triviaapp.presentation.view_flashcards.components.IconDummyButton
 
 
 @ExperimentalMaterialApi
@@ -36,55 +41,71 @@ fun CardListDummyItem(
     listSize: Int,
 ) {
 
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        Card(
+            modifier = Modifier
+                .padding(top = 10.dp, bottom = 20.dp)
+                .border(
+                    width = 3.dp,
+                    color = Color(26, 29, 40, 100),
+                ),
+            elevation = 5.dp,
+        ) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
+                    .background(MaterialTheme.colors.surface)
             ) {
-                Card(
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
-                        .padding(top = 10.dp, bottom = 20.dp)
-                        .border(
-                            width = 3.dp,
-                            color = Color(26, 29, 40, 100),
-                        ),
-                    elevation = 5.dp,
+                        .fillMaxSize()
+                        .verticalScroll(rememberScrollState())
                 ) {
-                    Box(
+                    CardListText(
+                        text,
+                        Color.White
+                    )
+                }
+                Column(
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.End,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp)
+                ) {
+                    Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                        IconDummyButton(
+                            icon = Icons.Rounded.Undo,
+                        )
+                        IconDummyButton(
+                            icon = Icons.Rounded.Redo,
+                        )
+                    }
+                }
+                Column(
+                    verticalArrangement = Arrangement.Bottom,
+                    horizontalAlignment = Alignment.End,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    Card(
+                        shape = RoundedCornerShape(12.dp),
+                        backgroundColor = MaterialTheme.colors.background,
                         modifier = Modifier
-                            .fillMaxSize()
-                            .background(MaterialTheme.colors.surface)
+                            .padding(10.dp),
                     ) {
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .verticalScroll(rememberScrollState())
-                        ) {
-                            CardListText(
-                                text,
-                                Color.White
-                            )
-                        }
-                        Column(
-                            verticalArrangement = Arrangement.Bottom,
-                            horizontalAlignment = Alignment.End,
-                            modifier = Modifier.fillMaxSize()
-                        ) {
-                            Card(
-                                shape = RoundedCornerShape(12.dp),
-                                backgroundColor = MaterialTheme.colors.background,
-                                modifier = Modifier
-                                    .padding(10.dp),
-                            ) {
-                                CardIndexText(
-                                    currIndex,
-                                    listSize
-                                )
-                            }
-                        }
+                        CardIndexText(
+                            currIndex,
+                            listSize
+                        )
                     }
                 }
             }
         }
+    }
+}
 

@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.company.triviaapp.data.model.QuestionAnswer
+import com.company.triviaapp.domain.safeDecrement
 import com.company.triviaapp.domain.safeIncrement
 
 
@@ -51,6 +52,9 @@ fun ViewFlashcardsScreen(
                     listSize = list.size,
                     onSwipe = {
                         currIndex.value = safeIncrement(list.lastIndex, currIndex.value)
+                    },
+                    onDecrement = {
+                        currIndex.value = safeDecrement(list.lastIndex, currIndex.value)
                     })
             }
         }
