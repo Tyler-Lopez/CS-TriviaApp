@@ -3,6 +3,7 @@ package com.company.triviaapp.presentation.view_flashcards.components
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -22,12 +23,11 @@ import com.company.triviaapp.presentation.Screen
 fun IconButton(icon: ImageVector, description: String, onClick: () -> Unit) {
     Button(
         modifier = Modifier
-            .fillMaxHeight()
             .padding(horizontal = 2.dp)
             .border(
                 width = 3.dp,
                 color = Color(26, 29, 40, 100),
-            )
+            ).height(60.dp)
             .shadow(elevation = 5.dp),
         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
         onClick = {

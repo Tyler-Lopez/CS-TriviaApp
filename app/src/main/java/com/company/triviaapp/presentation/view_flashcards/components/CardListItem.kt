@@ -63,79 +63,82 @@ fun CardListItem(
 
      */
 
-            Card(
+    Card(
+        modifier = Modifier
+            .padding(top = 5.dp, bottom = 5.dp)
+            .border(
+                width = 3.dp,
+                color = Color(40, 40, 40), // Replace with theme
+            )
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null
+            ) { onFlip(Unit) },
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colors.surface)
+        ) {
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
-                    .padding(top = 10.dp, bottom = 20.dp)
-                    .clickable(
-                        interactionSource = interactionSource,
-                        indication = null
-                    ) { onFlip(Unit) },
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
             ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colors.surface)
-                ) {
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .verticalScroll(rememberScrollState())
-                    ) {
-                        CardListText(
-                            text,
-                            textColor
-                        )
-                    }
+                CardListText(
+                    text,
+                    textColor
+                )
+            }
 
-                    // NOTE!
-                    // This is a hacky, terrible temporary fix
-                    // For some reason(will look into) vertical drag does not work without this column being full sized
-                    // It is alpha 0 so has no impact but allowing vertical to work
-                    Column(
-                        verticalArrangement = Arrangement.Bottom,
-                        horizontalAlignment = Alignment.End,
-                        modifier = Modifier.fillMaxSize()
-                    ) {
-                        Card(
-                            modifier = Modifier.alpha(0f),
-                            backgroundColor = Color(0,0,0,0),
+            // NOTE!
+            // This is a hacky, terrible temporary fix
+            // For some reason(will look into) vertical drag does not work without this column being full sized
+            // It is alpha 0 so has no impact but allowing vertical to work
+            Column(
+                verticalArrangement = Arrangement.Bottom,
+                horizontalAlignment = Alignment.End,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Card(
+                    modifier = Modifier.alpha(0f),
+                    backgroundColor = Color(0, 0, 0, 0),
 
-                        ) {
-                            Text(text="",modifier=Modifier.fillMaxSize())
-
-                        }
-                    }
-
-                    // Top buttons
-                    Column(
-                        verticalArrangement = Arrangement.Top,
-                        horizontalAlignment = Alignment.End,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp)
                     ) {
-                        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                            IconButton(
-                                icon = Icons.Rounded.Undo,
-                                description = "Revert",
-                                onClick = {
-                                    onDecrement(Unit)
-                                    if (!isQuestion) onFlip(Unit) // Fix to revert not reverting to question first
-                                })
-                        }
-                    }
-                    Column(
-                        verticalArrangement = Arrangement.Bottom,
-                        horizontalAlignment = Alignment.End,
-                        modifier = Modifier
-                            .fillMaxSize()
-                    ) {
-                        Row(horizontalArrangement = Arrangement.SpaceEvenly) {
-                            CardIndexText(curr = currIndex, size = listSize)
-                        }
-                    }
+                    Text(text = "", modifier = Modifier.fillMaxSize())
+
+                }
+            }
+
+            // Top buttons
+            Column(
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.End,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                    IconButton(
+                        icon = Icons.Rounded.Undo,
+                        description = "Revert",
+                        onClick = {
+                            onDecrement(Unit)
+                            if (!isQuestion) onFlip(Unit) // Fix to revert not reverting to question first
+                        })
+                }
+            }
+            Column(
+                verticalArrangement = Arrangement.Bottom,
+                horizontalAlignment = Alignment.End,
+                modifier = Modifier
+                    .fillMaxSize()
+            ) {
+                Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                    CardIndexText(curr = currIndex, size = listSize)
                 }
             }
         }
+    }
+}

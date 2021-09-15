@@ -22,7 +22,7 @@ fun CardListText(text: String, textColor: Color) {
         fontSize = 20.sp,
         fontWeight = FontWeight.Medium,
         fontFamily = roboto,
-        modifier = Modifier.padding(50.dp),
+        modifier = Modifier.padding(20.dp),
         textAlign = TextAlign.Center,
         style = MaterialTheme.typography.h4.copy(
             shadow = Shadow(

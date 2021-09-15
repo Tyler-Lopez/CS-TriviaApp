@@ -33,7 +33,7 @@ fun ViewFlashcardsScreen(
     viewModel: ViewFlashcardsViewModel = hiltViewModel(),
 ) {
     val state = viewModel.state.value
-    val list = state.flashcards
+    val list = rememberSaveable { state.flashcards.shuffled() }
 
     var currIndex = rememberSaveable {
         mutableStateOf(value = 0)
@@ -82,3 +82,4 @@ fun ViewFlashcardsScreen(
         }
     }
 }
+

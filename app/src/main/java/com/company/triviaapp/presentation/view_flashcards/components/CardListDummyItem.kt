@@ -7,12 +7,10 @@ import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Redo
 import androidx.compose.material.icons.rounded.Undo
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.company.triviaapp.presentation.view_flashcards.components.CardIndexText
@@ -34,10 +32,10 @@ fun CardListDummyItem(
     ) {
         Card(
             modifier = Modifier
-                .padding(top = 10.dp, bottom = 20.dp)
+                .padding(top = 5.dp, bottom = 5.dp)
                 .border(
                     width = 3.dp,
-                    color = Color(26, 29, 40, 100),
+                    color = Color(40, 40, 40), // Replace with theme
                 ),
             elevation = 5.dp,
         ) {
@@ -65,14 +63,13 @@ fun CardListDummyItem(
                     horizontalAlignment = Alignment.End,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(50.dp)
                 ) {
                     Row(horizontalArrangement = Arrangement.SpaceEvenly) {
                         IconButton(
                             icon = Icons.Rounded.Undo,
                             description = "Revert",
                             onClick = {
-                                //onDecrement(Unit)
+                                1
                             })
                     }
                 }

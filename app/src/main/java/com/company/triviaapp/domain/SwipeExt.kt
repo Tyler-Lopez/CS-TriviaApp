@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.consumePositionChange
@@ -109,9 +110,7 @@ fun Modifier.swiper(
             translationX = state.offsetX.value,
             translationY = state.offsetY.value,
             rotationZ = (state.offsetX.value / 60).coerceIn(-40f, 40f),
-         //   alpha = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceIn(
-          //      0.95f,
-         //       1f
-         //   )
+            scaleX = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(2f),
+            scaleY = ((state.maxWidth - abs(state.offsetX.value)) / state.maxWidth).coerceAtMost(2f)
         )
 }
