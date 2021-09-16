@@ -1,5 +1,5 @@
+<h1 align="center"><img src="https://github.com/Tyler-Lopez/CS-TriviaApp/blob/main/app/demo/gif_preview.gif?raw=true"></h1>
 # About
-<center><img src="https://github.com/Tyler-Lopez/CS-TriviaApp/blob/main/app/demo/gif_preview.gif?raw=true"></center>
 An Android Q&A educational flashcard application in development. Questions and answers are currently hard-coded and cover material of various standard courses of an undergraduate computer science degree.
 
 This app would naturally also work well with any other broader topic - but questions for now will exclusively be covering materials of computer science at Eastern Michigan University. Feel free to submit a pull request to add additional categories and questions. In the future, Firebase will be implemented allowing users to submit and edit cards.
