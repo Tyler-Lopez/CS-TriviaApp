@@ -10,7 +10,7 @@ This app would naturally also work well with any other broader topic - but quest
 * Persistent bottom navigation bar
 * Implementation of Light / Dark mode toggle (not yet cached)
 * Tinder-like swipe animations of the flashcard deck
-* Text-to-speech toggle, which reads comprehensible statements. (i.e. strlen(s) read as "call function s t r l e n with parameter character array s) 
+* Text-to-speech toggle which reads comprehensible statements. (i.e. strlen(s) read as "call function s t r l e n with parameter character array s) 
 
 ## UI Examples
 UI to continue to improve throughout development, light and dark mode toggle as a future-feature.
