@@ -44,13 +44,13 @@ open class Swipe(val maxWidth: Float, val maxHeight: Float) {
     }
 
     fun accepted(scope: CoroutineScope) = scope.launch {
-        offsetX.animateTo(maxWidth * 2, tween(200))
+        offsetX.animateTo(maxWidth * 2, tween(300))
         offsetX.snapTo(0f)
         offsetY.snapTo(0f)
     }
 
     fun rejected(scope: CoroutineScope) = scope.launch {
-        offsetX.animateTo(-(maxWidth * 2), tween(200))
+        offsetX.animateTo(-(maxWidth * 2), tween(300))
         offsetX.snapTo(0f)
         offsetY.snapTo(0f)
     }
@@ -79,38 +79,40 @@ fun Modifier.swiper(
         .pointerInput(Unit) {
             detectDragGestures(
                 onDragEnd = {
-                    when {
-                        abs(state.offsetX.targetValue) < state.maxWidth / 8 -> {
-                            state
-                                .reset(scope)
-                                .invokeOnCompletion { onDragReset() }
-                        }
-                        state.offsetX.targetValue < 0 -> {
-                            stopDrag.value = true
-                            scope.launch {
-
+                    if (!stopDrag.value) {
+                        when {
+                            abs(state.offsetX.targetValue) < state.maxWidth / 8 -> {
                                 state
-                                    .rejected(scope)
-                                    .invokeOnCompletion {
-                                        scope.launch {
-                                            onDragAccepted()
-                                            stopDrag.value = false
-                                        }
-                                    }
+                                    .reset(scope)
+                                    .invokeOnCompletion { onDragReset() }
                             }
-                        }
-                        else -> {
-                            stopDrag.value = true
-                            scope.launch {
+                            state.offsetX.targetValue < 0 -> {
+                                stopDrag.value = true
+                                scope.launch {
 
-                                state
-                                    .accepted(scope)
-                                    .invokeOnCompletion {
-                                        scope.launch {
-                                            onDragAccepted()
-                                            stopDrag.value = false
+                                    state
+                                        .rejected(scope)
+                                        .invokeOnCompletion {
+                                            scope.launch {
+                                                onDragAccepted()
+                                                stopDrag.value = false
+                                            }
                                         }
-                                    }
+                                }
+                            }
+                            else -> {
+                                stopDrag.value = true
+                                scope.launch {
+
+                                    state
+                                        .accepted(scope)
+                                        .invokeOnCompletion {
+                                            scope.launch {
+                                                onDragAccepted()
+                                                stopDrag.value = false
+                                            }
+                                        }
+                                }
                             }
                         }
                     }
