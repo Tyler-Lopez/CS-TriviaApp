@@ -965,7 +965,7 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you format print a int, double, character, and character array?", """
+            "How do you format print for a int, double, character, and character array?", """
         int: %d
         
         double: %f
@@ -973,10 +973,20 @@ class ProgrammingLanguages {
         char: %c
         
         char[]: %s
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "How do you format print for a int, double, character, and character array?",
+            answerTts = """
+               int is percent d
+               
+               double is percent f
+               
+               char is percent c
+               
+               char array is percent s
+            """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you format input a int, double, character, and character array?", """
+            "How do you format user input for a int, double, character, and character array?", """
         int: %d
         
         double: %lf
@@ -984,54 +994,109 @@ class ProgrammingLanguages {
         char: %c
         
         char[]: %s
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "How do you format user input for a int, double, character, and character array?",
+            answerTts = """
+               int is percent d
+               
+               double is percent l f
+               
+               char is percent c
+               
+               char array is percent s
+            """.trimIndent()
         ),
         QuestionAnswer(
             "How do you read user input?", """
         scanf("% type of input", & name of the pre-initialized variable where data should be stored)
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "How do you read user input?",
+            answerTts = """
+                With the method scan f which takes two parameters.
+                
+                The first parameter is the type of input specified by a percent identifier enclosed in quotations
+                
+                The second parameter is the name of the pre-initialized variable where the data should be stored, the ampersand symbol must be placed before it to specify this is a location
+            """.trimIndent()
         ),
         QuestionAnswer(
             "Of %d, %lf, %c, and %s, which of these will skip white spaces when reading inputs?", """
         %d, %lf, and %s will skip white spaces when reading inputs
         
         %c will not
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "Consider percent d, percent l f, percent c, and percent s. Which of these will skip white spaces when reading input?",
+            answerTts = """
+                percent d, percent l f, and percent s will all skip white spaces when reading input
+                
+                percent c will not
+            """.trimIndent()
         ),
         QuestionAnswer(
             "If you want to define a function after the main method, what must you do?", """
-        Declare / prototype the function before the main method
+        Declare AKA prototype the function before the main method
         
-        Example: int maximum(int a, int b)
-    """.trimIndent()
+        Example: int maximum(int a, int b);
+    """.trimIndent(),
+            questionTts = "If you want to define a function after the main method, what must you do?",
+            answerTts = """
+                Declare also known as prototype the function before the main method
+                
+                For example, function int maximum which accepts two int variables semicolon
+            """.trimIndent()
         ),
         QuestionAnswer(
             "In C, how do you access the length of an array within a function where the array is a parameter?", """
-        You must explicitly know the length of the array by passing it into the function
+        You must explicitly pass the length of an array into the function
         
         array.length does not exist in C
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "In C, how do you access the length of an array within a function where the array is a parameter?",
+            answerTts = """
+                In C, you must explicitly pass the length of an array into the function
+                
+                No function like array dot length exists in C to find the length of an array otherwise
+            """.trimIndent()
         ),
         QuestionAnswer(
-            "What do the function parameters (int* num, int length) mean?", """
+            "What do the function parameters (int* num, int length) imply the function is using them for?", """
         num is a pointer to the start of an array
         
         length is the length of the array
-        
-        This is identical to passing in an "array" and it's length
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "What do the function parameters int asterisk space num comma int space length imply the function is using them for?",
+            answerTts = """
+                This means that num is a pointer to the start of an array
+                
+                Length is the length of the array
+            """.trimIndent()
         ),
         QuestionAnswer(
-            "How can you determine the length of a string?", """
-        strlen(s) can be used to find the length of a string
-        
-        You do not need to pass the length of the string
-    """.trimIndent()
+            "How can you determine the length of a string in a character array?", """
+        strlen(s) can be used to find the length of a string in a character array
+    """.trimIndent(),
+            questionTts = "How can you determine the length of a string within a character array?",
+            answerTts = """
+                The function s t r l e n which accepts a character array may be used to find the length of a string in a character array
+            """.trimIndent()
         ),
         QuestionAnswer(
-            "What happens when you invoke strlen(s) on char s[1] = \"pen\"?", """
+            "To use the strlen function, what must you include in your C program?", """
+        #include<string.h>
+    """.trimIndent(),
+            questionTts = "To use the s t r l e n function, what must you include in your C program?",
+            answerTts = """
+                hashtag include string dot h in square brackets
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What happens when you pass \"s\" from char s[3] = \"pen\" into the strlen function?", """
         Returns 3
-    """.trimIndent()
+        
+        Returns length of the string, not including null terminator
+    """.trimIndent(),
+            questionTts = "What happens when you pass the character array char s size 3 equals pen into the s t r l e n function?",
+            answerTts = "3 is returned. The s t r l e n function takes a character array and returns the length of the string, excluding null terminators"
         ),
     )
 }

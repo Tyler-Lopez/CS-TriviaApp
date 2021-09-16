@@ -1,5 +1,6 @@
 package com.company.triviaapp.presentation.view_flashcards.components
 
+import androidx.annotation.Px
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -10,16 +11,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.company.triviaapp.presentation.theme.roboto
 
 @Composable
-fun CardListText(text: String, textColor: Color) {
+fun CardListText(text: String, textSize: Int, textColor: Color) {
     Text(
         text = text,
         color = textColor,
-        fontSize = 24.sp,
+        fontSize = textSize.sp,
         fontWeight = FontWeight.Medium,
         fontFamily = roboto,
         modifier = Modifier.padding(20.dp),

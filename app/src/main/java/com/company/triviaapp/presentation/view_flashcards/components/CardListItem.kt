@@ -35,11 +35,13 @@ import com.company.triviaapp.presentation.view_flashcards.components.IconButton
 @ExperimentalMaterialApi
 @Composable
 fun CardListItem(
-    text: QuestionAnswer,
+    questionAnswer: QuestionAnswer,
     currIndex: Int,
     listSize: Int,
     isQuestion: Boolean,
     speechHelper: SpeechHelper,
+    speechOn: Boolean,
+    onSpeechChange: (Unit) -> Unit,
     onFlip: (Unit) -> Unit,
     onDecrement: (Unit) -> Unit,
 ) {
@@ -47,19 +49,31 @@ fun CardListItem(
     val interactionSource = remember { MutableInteractionSource() }
 
 
-
     // Some variables based on if it is or is not a question
     val text = if (isQuestion)
-        text.question // Question Text
+        questionAnswer.question // Question Text
     else
-        text.answer // Answer Text
+        questionAnswer.answer // Answer Text
     val textColor = if (isQuestion)
         MaterialTheme.colors.onSurface
     else
         MaterialTheme.colors.onSecondary
+    val textSize = if (isQuestion)
+        30
+    else
+        24
 
-    val speechOn = remember { mutableStateOf(value = false) }
-    if(speechOn.value) speechHelper.talk(text)
+    val textToSpeech = if (isQuestion) {
+        if (questionAnswer.questionTts != "") {
+            questionAnswer.questionTts
+        } else questionAnswer.question
+    } else {
+        if (questionAnswer.answerTts != "") {
+            questionAnswer.answerTts
+        } else questionAnswer.answer
+    }
+    if (speechOn) speechHelper.talk(textToSpeech)
+
 
     /*
 
@@ -95,6 +109,7 @@ fun CardListItem(
             ) {
                 CardListText(
                     text,
+                    textSize,
                     textColor
                 )
             }
@@ -127,11 +142,17 @@ fun CardListItem(
             ) {
                 Row(horizontalArrangement = Arrangement.SpaceEvenly) {
                     IconButton(
-                        icon = if (speechOn.value) Icons.Rounded.VolumeUp else Icons.Rounded.VolumeMute,
+                        icon = if (speechOn) Icons.Rounded.VolumeUp else Icons.Rounded.VolumeMute,
                         description = "TTS",
                         onClick = {
-                            speechOn.value = !speechOn.value
-                        })
+                            onSpeechChange(Unit)
+                        },
+                        background =
+                        if (speechOn)
+                            ButtonDefaults.buttonColors(backgroundColor = Color(67, 110, 45))
+                        else
+                            ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.background)
+                    )
                     IconButton(
                         icon = Icons.Rounded.Undo,
                         description = "Revert",

@@ -1,7 +1,8 @@
 package com.company.triviaapp.presentation.view_flashcards
 
 import android.speech.SpeechRecognizer
-import androidx.compose.animation.ExperimentalAnimationApi
+import android.transition.Fade
+import androidx.compose.animation.*
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -43,12 +44,15 @@ fun ViewFlashcardsScreen(
             .padding(20.dp)
     )
     {
+        val isQuestion = rememberSaveable { mutableStateOf(true) }
+        val speechOn = rememberSaveable { mutableStateOf(value = false) }
+
         CardListDummyItem(
             text = list[safeIncrement(list.lastIndex, currIndex.value)].question,
             safeIncrement(list.lastIndex, currIndex.value),
-            list.size
+            list.size,
+            speechOn.value
         )
-        val isQuestion = rememberSaveable { mutableStateOf(true) }
 
         BoxWithConstraints() {
             val swipeState = rememberSwipeState(
@@ -67,19 +71,26 @@ fun ViewFlashcardsScreen(
                         },
                     ),
             ) {
-                CardListItem(
-                    text = list[currIndex.value],
-                    currIndex = currIndex.value,
-                    listSize = list.size,
-                    isQuestion = isQuestion.value,
-                    speechHelper = speechHelper,
-                    onFlip = {
-                        isQuestion.value = !isQuestion.value
-                    },
-                    onDecrement = {
-                        currIndex.value = safeDecrement(list.lastIndex, currIndex.value)
-                    })
-            }
+
+
+
+                    CardListItem(
+                        questionAnswer = list[currIndex.value],
+                        currIndex = currIndex.value,
+                        listSize = list.size,
+                        isQuestion = isQuestion.value,
+                        speechHelper = speechHelper,
+                        speechOn = speechOn.value,
+                        onSpeechChange = {
+                            speechOn.value = !speechOn.value
+                        },
+                        onFlip = {
+                            isQuestion.value = !isQuestion.value
+                        },
+                        onDecrement = {
+                            currIndex.value = safeDecrement(list.lastIndex, currIndex.value)
+                        })
+                }
         }
     }
 
