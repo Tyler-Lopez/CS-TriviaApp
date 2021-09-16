@@ -80,7 +80,7 @@ fun Modifier.swiper(
             detectDragGestures(
                 onDragEnd = {
                     when {
-                        abs(state.offsetX.targetValue) < state.maxWidth / 4 -> {
+                        abs(state.offsetX.targetValue) < state.maxWidth / 8 -> {
                             state
                                 .reset(scope)
                                 .invokeOnCompletion { onDragReset() }
