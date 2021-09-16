@@ -22,7 +22,8 @@ fun IconButton(icon: ImageVector, description: String, onClick: () -> Unit) {
     Button(
         shape = RoundedCornerShape(30.dp),
         modifier = Modifier
-            .offset(x = (-10).dp, y = (10).dp)
+            .offset(x = (-3).dp, y = (10).dp)
+            .padding(horizontal = 3.dp)
             .height(50.dp),
          //   .shadow(elevation = 5.dp),
         colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.background),

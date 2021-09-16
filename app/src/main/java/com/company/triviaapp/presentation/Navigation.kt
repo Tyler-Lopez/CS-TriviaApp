@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.company.triviaapp.domain.SpeechHelper
 import com.company.triviaapp.presentation.search.SearchScreen
 import com.google.accompanist.navigation.animation.composable
 import com.company.triviaapp.presentation.select_chapter.ChapterListScreen
@@ -26,7 +27,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 @ExperimentalMaterialApi
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun Navigation(navController: NavHostController) {
+fun Navigation(navController: NavHostController, speechHelper: SpeechHelper) {
     // TEMPORARY while figure out theming, this should be saved and will reset everytime for now
     val isDark = remember { mutableStateOf(value = true) }
 
@@ -102,6 +103,7 @@ fun Navigation(navController: NavHostController) {
                         }
                         ViewFlashcardsScreen(
                             navController = navController,
+                            speechHelper = speechHelper,
                         )
                     }
                 }

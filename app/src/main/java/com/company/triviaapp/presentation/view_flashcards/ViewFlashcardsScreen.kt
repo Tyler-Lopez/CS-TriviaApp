@@ -1,5 +1,6 @@
 package com.company.triviaapp.presentation.view_flashcards
 
+import android.speech.SpeechRecognizer
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollable
@@ -19,10 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.company.triviaapp.data.model.QuestionAnswer
-import com.company.triviaapp.domain.rememberSwipeState
-import com.company.triviaapp.domain.safeDecrement
-import com.company.triviaapp.domain.safeIncrement
-import com.company.triviaapp.domain.swiper
+import com.company.triviaapp.domain.*
 
 
 @ExperimentalAnimationApi
@@ -30,6 +28,7 @@ import com.company.triviaapp.domain.swiper
 @Composable
 fun ViewFlashcardsScreen(
     navController: NavController,
+    speechHelper: SpeechHelper,
     viewModel: ViewFlashcardsViewModel = hiltViewModel(),
 ) {
     val state = viewModel.state.value
@@ -63,7 +62,8 @@ fun ViewFlashcardsScreen(
                         state = swipeState,
                         onDragAccepted = {
                             currIndex.value = safeIncrement(list.lastIndex, currIndex.value)
-                            isQuestion.value = true // Ensures the new card will appear as a question, not an answer
+                            isQuestion.value =
+                                true // Ensures the new card will appear as a question, not an answer
                         },
                     ),
             ) {
@@ -72,6 +72,7 @@ fun ViewFlashcardsScreen(
                     currIndex = currIndex.value,
                     listSize = list.size,
                     isQuestion = isQuestion.value,
+                    speechHelper = speechHelper,
                     onFlip = {
                         isQuestion.value = !isQuestion.value
                     },
@@ -81,5 +82,6 @@ fun ViewFlashcardsScreen(
             }
         }
     }
+
 }
 

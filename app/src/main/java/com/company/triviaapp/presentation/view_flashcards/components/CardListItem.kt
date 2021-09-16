@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.company.triviaapp.data.model.QuestionAnswer
+import com.company.triviaapp.domain.SpeechHelper
 import com.company.triviaapp.domain.rememberSwipeState
 import com.company.triviaapp.domain.swiper
 import com.company.triviaapp.presentation.theme.roboto
@@ -38,11 +39,14 @@ fun CardListItem(
     currIndex: Int,
     listSize: Int,
     isQuestion: Boolean,
+    speechHelper: SpeechHelper,
     onFlip: (Unit) -> Unit,
     onDecrement: (Unit) -> Unit,
 ) {
     // Used to remove clickable effect https://stackoverflow.com/questions/66703448/how-to-disable-ripple-effect-when-clicking-in-jetpack-compose
     val interactionSource = remember { MutableInteractionSource() }
+
+
 
     // Some variables based on if it is or is not a question
     val text = if (isQuestion)
@@ -54,6 +58,8 @@ fun CardListItem(
     else
         MaterialTheme.colors.onSecondary
 
+    val speechOn = remember { mutableStateOf(value = false) }
+    if(speechOn.value) speechHelper.talk(text)
 
     /*
 
@@ -120,6 +126,12 @@ fun CardListItem(
                     .fillMaxWidth()
             ) {
                 Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                    IconButton(
+                        icon = if (speechOn.value) Icons.Rounded.VolumeUp else Icons.Rounded.VolumeMute,
+                        description = "TTS",
+                        onClick = {
+                            speechOn.value = !speechOn.value
+                        })
                     IconButton(
                         icon = Icons.Rounded.Undo,
                         description = "Revert",
