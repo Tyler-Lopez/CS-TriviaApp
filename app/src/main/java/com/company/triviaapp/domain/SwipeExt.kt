@@ -7,6 +7,7 @@ import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.detectVerticalDragGestures
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -43,13 +44,13 @@ open class Swipe(val maxWidth: Float, val maxHeight: Float) {
     }
 
     fun accepted(scope: CoroutineScope) = scope.launch {
-        offsetX.animateTo(maxWidth * 2, tween(400))
+        offsetX.animateTo(maxWidth * 2, tween(200))
         offsetX.snapTo(0f)
         offsetY.snapTo(0f)
     }
 
     fun rejected(scope: CoroutineScope) = scope.launch {
-        offsetX.animateTo(-(maxWidth * 2), tween(400))
+        offsetX.animateTo(-(maxWidth * 2), tween(200))
         offsetX.snapTo(0f)
         offsetY.snapTo(0f)
     }
@@ -71,6 +72,9 @@ fun Modifier.swiper(
     onDragAccepted: () -> Unit,
 ): Modifier = composed {
     val scope = rememberCoroutineScope()
+    val stopDrag = remember {
+        mutableStateOf(value = false)
+    }
     Modifier
         .pointerInput(Unit) {
             detectDragGestures(
@@ -82,30 +86,39 @@ fun Modifier.swiper(
                                 .invokeOnCompletion { onDragReset() }
                         }
                         state.offsetX.targetValue < 0 -> {
+                            stopDrag.value = true
                             scope.launch {
 
                                 state
                                     .rejected(scope)
                                     .invokeOnCompletion {
-                                        onDragAccepted()
+                                        scope.launch {
+                                            onDragAccepted()
+                                            stopDrag.value = false
+                                        }
                                     }
                             }
                         }
                         else -> {
-                                scope.launch {
+                            stopDrag.value = true
+                            scope.launch {
 
-                                    state
-                                        .accepted(scope)
-                                        .invokeOnCompletion {
+                                state
+                                    .accepted(scope)
+                                    .invokeOnCompletion {
+                                        scope.launch {
                                             onDragAccepted()
+                                            stopDrag.value = false
                                         }
-                                }
+                                    }
                             }
                         }
+                    }
                 },
                 onDragStart = {
                 },
                 onDrag = { change, dragAmount ->
+                    if (!stopDrag.value) {
                         val original = Offset(state.offsetX.targetValue, state.offsetY.targetValue)
                         val summed = original + dragAmount
                         val newValue = Offset(
@@ -114,6 +127,7 @@ fun Modifier.swiper(
                         )
                         change.consumePositionChange()
                         state.drag(scope, newValue.x, newValue.y)
+                    }
                 }
             )
         }
@@ -121,7 +135,11 @@ fun Modifier.swiper(
             translationX = state.offsetX.value,
             translationY = state.offsetY.value,
             rotationZ = (state.offsetX.value / 60).coerceIn(-40f, 40f),
-            scaleX = ((state.maxWidth - abs(state.offsetX.value/2f)) / state.maxWidth).coerceAtMost(1f),
-            scaleY = ((state.maxWidth - abs(state.offsetX.value/2f)) / state.maxWidth).coerceAtMost(1f)
+            scaleX = ((state.maxWidth - abs(state.offsetX.value / 2f)) / state.maxWidth).coerceAtMost(
+                1f
+            ),
+            scaleY = ((state.maxWidth - abs(state.offsetX.value / 2f)) / state.maxWidth).coerceAtMost(
+                1f
+            )
         )
 }
