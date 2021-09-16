@@ -1,3 +1,5 @@
+<p align="center"><img src="https://github.com/Tyler-Lopez/CS-TriviaApp/blob/main/app/demo/gif_preview.gif?raw=true"></p>
+
 # About
 An Android Q&A educational flashcard application in development. Questions and answers are currently hard-coded and cover material of various standard courses of an undergraduate computer science degree.
 
