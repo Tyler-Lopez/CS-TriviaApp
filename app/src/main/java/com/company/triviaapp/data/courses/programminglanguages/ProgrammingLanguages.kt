@@ -1013,7 +1013,7 @@ class ProgrammingLanguages {
                         
         9: 1001, 5: 0101
         
-        9 & 5 : 1100 = 12
+        9 ^ 5 : 1100 = 12
     """.trimIndent(),
             questionTts = "What is 9 caret 5",
             answerTts = """
