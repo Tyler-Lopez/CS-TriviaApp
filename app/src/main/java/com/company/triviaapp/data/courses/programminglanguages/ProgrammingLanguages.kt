@@ -1326,6 +1326,60 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "To use math functions, what must you include in your C program?",
+            answer = """
+        #include<math.h>
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                hashtag include math dot h in angle brackets
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "To use random number functions, what must you include in your C program?",
+            answer = """
+        #include<s t d l i b.h>
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                hashtag include s t d l i b dot h in angle brackets
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does srand(seed) do?",
+            answer = """
+        Initializes a random number generator which is automatically used by any call of rand
+    """.trimIndent(),
+            questionTts = "What does s rand open parenthesis seed int variable do?",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does rand() do?",
+            answer = """
+        Returns a random number
+    """.trimIndent(),
+            questionTts = "What does rand empty parentheses do?",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you generate a random number from 1 to 100?",
+            answer = """
+        (rand() % 100) + 1 
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Open parenthesis rand empty parentheses modulo 100 close parenthesis plus 1
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What are the parameters and return types of all math functions?",
+            answer = """
+        Double
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
             question = "What happens when you pass \"s\" from char s[3] = \"pen\" into the strlen function?",
             answer = """
         Returns 3
@@ -1470,10 +1524,14 @@ class ProgrammingLanguages {
             question = "What does the function sprintf() do?",
             answer = """
                 Prints the output of a printf() into a character array
+                
+                Parameters are the array variable to print to, then the standard print f parameters
             """.trimIndent(),
             questionTts = "What does the function s print f do?",
             answerTts = """
                 Prints the output of a print f function into a character array
+                
+                Parameters are the array variable to print to, then the standard print f parameters
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -1493,7 +1551,37 @@ class ProgrammingLanguages {
             """.trimIndent(),
             questionTts = "",
             answerTts = """
-                The function is alpha which takes a character parameter
+                The function is digit which takes a character parameter
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you check if a character is alphanumerical?",
+            answer = """
+                isalnum(char c)
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                The function is al num which takes a character parameter
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you check if a character is lowercase?",
+            answer = """
+                islower(char c)
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                The function is lower which takes a character parameter
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you check if a character is uppercase?",
+            answer = """
+                isupper(char c)
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                The function is upper which takes a character parameter
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -1503,6 +1591,16 @@ class ProgrammingLanguages {
             """.trimIndent(),
             questionTts = "When does the function is space which takes a character parameter return 1?",
             answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you declare a file pointer variable?",
+            answer = """
+                FILE *fp
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                FILE space asterisk f p
+            """.trimIndent()
         ),
         QuestionAnswer(
             question = "How do you open a file for reading or writing?",
@@ -1531,6 +1629,15 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "Do you need to always free allocated memory in C?",
+            answer = """
+                No, if your program is not running for very long the OS will automatically free it on termination
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                 """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "How do you read a double and a string from a file?",
             answer = """
                 Similar to scanf but the first parameter is the file pointer
@@ -1543,6 +1650,70 @@ class ProgrammingLanguages {
                 
                 f scan f open parenthesis file pointer variable comma open quote percent d percent s close quote comma ampersand variable name comma string variable name close parenthesis
             """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you write one char to a file without using fprintf()?",
+            answer = """
+                putc('c', fp)
+            """.trimIndent(),
+            questionTts = "How do you write one char to a file without using the function f print f?",
+            answerTts = """
+                The function put c open parenthesis char variable comma file pointer variable close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you read a single character from a file or user input?",
+            answer = """
+                char c = getc(stdin)
+                
+                char c = getc(file_pointer)
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                char c = get c open parenthesis s t d in close parenthesis
+                
+                char c = get c open parenthesis file pointer variable close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you print a single character to a file?",
+            answer = """
+                putc(ch, fp);
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+              put c open parenthesis character variable comma file pointer variable close parenthesis
+                 """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you print a line of characters to a file?",
+            answer = """
+                fputs(buffer, fp);
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+              f puts open parenthesis character variable comma file pointer variable close parenthesis
+                 """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you read a line of characters in a file?",
+            answer = """
+                fgets(buffer, fp);
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+              f gets open parenthesis character variable comma file pointer variable close parenthesis
+                 """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you close an open file pointer?",
+            answer = """
+                fclose(fp);
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+              f close open parenthesis file pointer variable close parenthesis
+                 """.trimIndent()
         ),
     )
 
