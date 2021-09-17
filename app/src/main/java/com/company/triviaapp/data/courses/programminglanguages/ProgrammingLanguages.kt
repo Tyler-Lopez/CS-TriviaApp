@@ -251,7 +251,8 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
         QuestionAnswer(
-            "What is the name of the category of programming languages whose structure is dictated by the von Neumann computer architecture?", """
+            "What is the name of the category of programming languages whose structure is dictated by the von Neumann computer architecture?",
+            """
         Imperative
     """.trimIndent()
         ),
@@ -261,7 +262,8 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
         QuestionAnswer(
-            "Which was the primary application area of computers at the time Fortran was designed?", """
+            "Which was the primary application area of computers at the time Fortran was designed?",
+            """
         Scientific
     """.trimIndent()
         ),
@@ -276,7 +278,8 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
         QuestionAnswer(
-            "What are two ways the choice of programming language can affect software development cost?", """
+            "What are two ways the choice of programming language can affect software development cost?",
+            """
         Programmer training costs
         
         Writability: more writable = cheaper
@@ -500,12 +503,14 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
         QuestionAnswer(
-            "What two programming languages from the 1960 - 1970 were mainly used for teaching purposes?", """
+            "What two programming languages from the 1960 - 1970 were mainly used for teaching purposes?",
+            """
         Pascal and Basic
     """.trimIndent()
         ),
         QuestionAnswer(
-            "Name three special purpose programming languages and their domain of applications?", """
+            "Name three special purpose programming languages and their domain of applications?",
+            """
         Visual Basic - Basic UI
         
         SQL - Database
@@ -558,82 +563,96 @@ class ProgrammingLanguages {
     """.trimIndent()
         ),
 
-    )
+        )
 
     val chapterThree = listOf(
         QuestionAnswer(
-            "What is the extension of C source files?", """
+            question = "What is the extension of C source files?",
+            answer = """
         .c
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                dot c
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is the return type of the main function?", """
+            question = "What is the return type of the main function?",
+            answer = """
         int
         
         Returning 0 is seen as a success
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Does the main function require parameters?", """
+            question = "Does the main function require parameters?",
+            answer = """
         No
-        
-        Unlike Java, C does not require String[] args in the main method / function
-        
-        main() or main(void) both work
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Does C have public or static keywords?", """
+            question = "Does C have public or static keywords?",
+            answer = """
         No
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you import printf?", """
-        #include <stdio.h>
-        
-        Including Standard IO header
-    """.trimIndent()
-        ),
-        QuestionAnswer(
-            "How do you print \"Hello World\" and a new line?", """
+            question = "How do you print \"Hello World\" and a new line?",
+            answer = """
         printf("Hello World\n");
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                print f open parenthesis open quote Hello world backslash n close quote close parenthesis
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Do variables and function identifiers use camelCase?", """
+            question = "Do variables and function identifiers use camelCase?",
+            answer = """
         No
         
-        Best practice is all lowercase, with words separated by underscore _
-    """.trimIndent()
+        Best practice is all lowercase, with words separated by underscore
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What does size of types mean?", """
+            question = "What does size of types mean?",
+            answer = """
         Size of types is fixed in Java - this is NOT the case in C
         
-        You can find out the size of types with: sizeof(int), sizeof(variable) - returns bytes
-    """.trimIndent()
+        Find bytes of type: sizeof(int), sizeof(variable)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                The size of types is fixed in Java, this is not the case in C
+                
+                To find the bytes of a type, use the size of function and use a keyword or variable parameter
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you declare a integer named my_number?", """
+            question = "How do you declare a integer named my_number?",
+            answer = """
         int my_number;
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "How do you declare an integer named my underscore number?",
+            answerTts = """
+                int my underscore number semi-colon
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Provided an integer variable, my_number, how do you print it preceded by \"My number is: \"", """
-        printf("My number is: %i\n", my_number);
-        
-        %i = integer
-    """.trimIndent()
-        ),
-        QuestionAnswer(
-            "Provided a float variable, my_float, how do you print it preceded by \"My float is: \"", """
-        printf("My float is: %f\n", my_float);
-        
-        %f = float
-    """.trimIndent()
-        ),
-        QuestionAnswer(
-            "What are four categories of types in C?", """
+            question = "What are four categories of types in C?",
+            answer = """
         Numerical
         
         Arrays
@@ -641,10 +660,14 @@ class ProgrammingLanguages {
         Structures (Structs)
         
         Pointers
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What are all of the integer types in C?", """
+            question = "What are all of the integer types in C?",
+            answer = """
         char
         
         short
@@ -654,318 +677,516 @@ class ProgrammingLanguages {
         long
         
         long long
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What are all of the floating point types in C?", """
+            question = "What are all of the floating point types in C?",
+            answer = """
         float
         
         double
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you declare an array of 50 integers in C?", """
+            question = "How do you declare an array of 50 integers in C?",
+            answer = """
         int x[50];
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                int x open square bracket 50 close square bracket
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "When is a struct useful?", """
+            question = "When is a struct useful?",
+            answer = """
         When you have a lot of information you want to keep together, like a class in Java
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How would you define a struct for a person?", """
-        struct person { char name[50]; int age; int height_in_inches; }
-    """.trimIndent()
+            question = "How would you define a struct for a person?",
+            answer = """
+        struct person { char name[50]; int age; }
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                struct person open curly brace char name open square bracket 50 close square bracket semi colon int age semi colon close curly brace
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Provided a defined struct for person, how do you declare two different persons?", """
+            question = "Provided a defined struct for person, how do you declare two different persons?",
+            answer = """
         struct person person_1
         struct person person_2
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                struct person person underscore 1
+                
+                struct person person underscore 2
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What do pointers do?", """
+            question = "What do pointers do?",
+            answer = """
         Store memory addresses or locations in memory
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What do pointers do?", """
-        Store memory addresses or locations in memory
-    """.trimIndent()
+            question = "Given an int y = 7, what does int *p = &y; do?",
+            answer = """
+         p stores, or points to, the memory address location of y
+    """.trimIndent(),
+            questionTts = "Given an integer variable y = 7, what does int space asterisk p = ampersand y do?",
+            answerTts = """
+                p will store or point to the memory address location of y
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Given an int y = 7, what does int *p = &y; do?", """
-         p stores, or points to, the location of y
-         
-         Putting & before a variable returns the memory address
-    """.trimIndent()
-        ),
-        QuestionAnswer(
-            "Provided a pointer *p, what are two ways you can print it?", """
+            question = "Provided a pointer int *p, what are two ways you can print it?",
+            answer = """
          printf("%p", p) - prints the memory address
          
          printf("%i", *p) - prints the int which p points to
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "Provided a pointer which points to an int, asterisk p, what are two ways you can print it?",
+            answerTts = """
+                print f open parenthesis percent p in quotes comma p close parenthesis
+                prints the memory address
+                or
+                print f open parenthesis percent i in quotes comma asterisk p close parenthesis
+                prints the integer which p points to
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "If a pointer *p points at a int variable y, can you change the value of y from *p?", """
-         Yes
-         
-         *p = 14;
-    """.trimIndent()
+            question = "If a pointer *p points at an int variable y, can you change the value of y from *p?",
+            answer = """
+         Yes: *p = new value;
+    """.trimIndent(),
+            questionTts = "If a pointer, asterisk p, points at an integer variable y, can you change the value of y from asterisk p?",
+            answerTts = """
+                Yes with asterisk p = new value
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What does it mean to be an unsigned type?", """
+            question = "What does it mean to be an unsigned type?",
+            answer = """
         The type cannot be negative, but can store a larger positive number for the same size
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How would you create an array of 1, 2, 3, 4, 5?", """
-        int arr[5] = {1, 2, 3, 4, 5}
-    """.trimIndent()
+            question = "How would you create an array of 1, 2, 3, 4, 5?",
+            answer = """
+        int arr[5] = { 1, 2, 3, 4, 5 }
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                int arr open square bracket 5 close square bracket = { 1, 2, 3, 4, 5 }
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Provided an integer variable n, is int *p = n acceptable?", """
+            question = "Provided an int variable n, is int *p = n acceptable?",
+            answer = """
         No
         
-        A pointer cannot be equal to a integer, you must instead write int *p = &n
-    """.trimIndent()
+        A pointer cannot be equal to an int, you must instead write int *p = &n
+    """.trimIndent(),
+            questionTts = "Provided an integer variable n, is int space asterisk p = n acceptable?",
+            answerTts = """
+                No
+                
+                A pointer cannot be equal to an int, you must instead write int space asterisk p = ampersand n
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Provided an array variable n, is int *p = n acceptable?", """
+            question = "Provided an int variable n, is int *p = &n acceptable?",
+            answer = """
+        No
+        
+        A pointer cannot be equal to an int, you must instead write int *p = &n
+    """.trimIndent(),
+            questionTts = "Provided an integer variable n, is int space asterisk p = ampersand n acceptable?",
+            answerTts = """
+                Yes
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Provided an array variable n, is int *p = n acceptable?",
+            answer = """
         Yes
         
         When creating a pointer to an array, you do not use &
-        
-        An array is also a location in memory
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "Provided an array variable n, is int space asterisk p = n acceptable?",
+            answerTts = """
+                        Yes, an array is also a location in memory
+                        
+                        When creating a pointer to an array, you do not use ampersand
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How are arrays different from pointers?", """
+            question = "How are arrays different from pointers?",
+            answer = """
         Arrays allocate space on definition
         
         The compiler tracks the size of arrays and will not let you access out of their bounds in compile-time
         
         Pointers will crash on run-time upon accessing out of their bounds
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you use a while loop?", """
+            question = "How do you use a while loop?",
+            answer = """
         Same as Java
-        
-        Initialize a counter variable
-        
-        Create a loop block with while (counter < target) { }
-        
-        Increment the counter within the loop block
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you use a for loop?", """
-        Same as Java BUT you must declare count variable outside of the loop
-                
-        int count;
-        for (count = 0; counter < target; counter ++) { }
-    """.trimIndent()
+            question = "What is different about a for loop in C compared to Java?",
+            answer = """
+        You must declare the count variable outside of the loop
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What does break mean in a loop?", """
+            question = "What does break mean in a loop?",
+            answer = """
         Exit the loop entirely
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What does continue mean in a loop?", """
+            question = "What does continue mean in a loop?",
+            answer = """
         Exit the current iteration of the loop and continue iterations
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is the commenting syntax in C?", """
-        Same as Java
-        
-        // for single-line
-        
-        /* */ for multi-line
-    """.trimIndent()
-        ),
-        QuestionAnswer(
-            "Is int weights[3] = { 70, 90, 60 } or int weights[] = { 70, 90, 60 } valid?", """
+            question = "Is int weights[3] = { 70, 90, 60 } or int weights[] = { 70, 90, 60 } valid?",
+            answer = """
         Both are valid array initializations
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "Is int weights open square bracket 3 close square bracket = { 70, 90, 60 } or int weights empty square brackets = { 70, 90, 60 } valid?",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Given int x; double y, z; what happens if you attempt to assign x to z?", """
-        z = x;
-        
+            question = "Given int x; double z; what happens if you attempt to assign x to z?",
+            answer = """
         Integer x is converted to double
-        
-        Example: 5 -> 5.0
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "Given integer x and double z, what happens if you assign x to z?",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Given int x; double y, z; what happens if you attempt to assign z to x?", """
-        x = z;
-        
+            question = "Given int x; double z; what happens if you attempt to assign z to x?",
+            answer = """
         Double z is converted to int with loss of precision
         
-        Java would inform you this is a problem, C will NOT
-        
-        Example: 5.7 -> 5
-    """.trimIndent()
+        Java would prohibit you from doing this without explicit cast, C will not
+    """.trimIndent(),
+            questionTts = "Given integer x and double z, what happens if you assign z to x?",
+            answerTts = """
+                The double is converted to an int with loss of precision
+                
+                Java would prohibit you from doing this without explicit cast, C will not
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What does (9 > 5) return in C?", """
+            question = "What does (9 > 5) return in C?", """
         1
         
         C does not have booleans, 1 == true
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                1
+                
+                C does not have booleans, 1 is the same as true
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Is 5 considered \"true\" in C?", """
+            question = "Is 5 considered \"true\" in C?",
+            answer = """
         Yes
         
         Anything that isn't 0 is considered true
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Given int x; double y, z; what happens if you attempt to assign x * z to y?", """
+            question = "Given int x; double y, z; what happens if you attempt to assign x * z to y?",
+            answer = """
         y = z * x;
         
-        Integer x is converted to double, y will 
-    """.trimIndent()
+        Integer x is converted to double during multiplication
+    """.trimIndent(),
+            questionTts = "Given an integer x and double y and z, what happens if you attempt to assign x multiplied by z to y?",
+            answerTts = """
+                X is converted to a double during multiplication
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you explicitly cast a double variable x to int?", """
+            question = "How do you explicitly cast a double variable x to int?",
+            answer = """
         (int) x
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Open parenthesis int close parenthesis x
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is 9 & 5?", """
+            question = "What is 9 & 5?",
+            answer = """
         9: 1001
         
         5: 0101
         
         9 & 5 : 0001 = 1
-        
-        Bitwise AND
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "What is 9 ampersand 5?",
+            answerTts = """
+                Bitwise AND
+                
+                9 is 1 0 0 1
+                
+                5 is 0 1 0 1
+                
+                9 ampersand 5 is 0 0 0 1 = 1
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is 9 | 5?", """
-        9: 1001
-        
-        5: 0101
-        
-        9 & 5 : 1101 = 13
-        
+            question = "What is 9 | 5?",
+            answer = """
         Bitwise OR
-    """.trimIndent()
-        ),
-        QuestionAnswer(
-            "What is 9 ^ 5?", """
+        
         9: 1001
         
         5: 0101
+        
+        9 | 5 : 1101 = 13
+    """.trimIndent(),
+            questionTts = "What is 9 vertical bar 5",
+            answerTts = """
+                Bitwise OR
+                
+                9 is 1 0 0 1
+                
+                5 is 0 1 0 1
+                
+                9 vertical bar 5 is 1 1 0 1 = 13
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is 9 ^ 5?",
+            answer = """
+        Bitwise Exclusive OR
+                        
+        9: 1001, 5: 0101
         
         9 & 5 : 1100 = 12
-        
-        Bitwise Exclusive OR
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "What is 9 caret 5",
+            answerTts = """
+                Bitwise Exclusive OR
+
+                9 is 1 0 0 1
+                
+                5 is 0 1 0 1
+                
+                9 caret 5 is 1 1 0 0 = 12 
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is ~9?", """
+            question = "What is ~9?",
+            answer = """
+        Bitwise NOT
+
         9: 1001
         
-        ~9: 0110 = 6
-        
-        Bitwise NOT
-    """.trimIndent()
+        ~9: 0110 = 6 
+    """.trimIndent(),
+            questionTts = "What is tilde 9?",
+            answerTts = """
+                Bitwise NOT 
+
+                9 is 1 0 0 1
+                
+                tilde 9 is 0 1 1 0
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is 9 >> 2?", """
+            question = "What is 9 >> 2?",
+            answer = """
         9: 1001
         
         9 >> 2: 0010 = 2
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "What is 9 right shift 2",
+            answerTts = """
+                9 is 1 0 0 1
+                
+                9 right shift 2 is 0 0 1 0 which is 2
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is 9 << 1?", """
+            question = "What is 9 << 1?",
+            answer = """
         9: 1001
         
-        9 << 1: 10010 = 2
+        9 << 1: 10010 = 18
         
-        Left shifting by 1 bit is == multiplying by 2
-    """.trimIndent()
+        Left shifting by 1 bit is same as multiplying by 2
+    """.trimIndent(),
+            questionTts = "What is 9 left shift 1",
+            answerTts = """
+                9 is 1 0 0 1
+                
+                9 left shift 1 is 1 0 0 1 0 which is 18
+                
+                Left shifting by 1 is the same as multiplying by 2
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do strings work in C?", """
-        Strings are an array of MUTABLE characters with a null termination
+            question = "How do strings work in C?",
+            answer = """
+        There is no string class in C
         
-        [ 'T', 'e', 'x', 't', 0 ]
-        
-        ASCII
-    """.trimIndent()
+        Strings are represented by an array of MUTABLE characters with a null terminator
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you declare a string containing \"Hello World\"?", """
-        char *str1 = "Hello World"
+            question = "How do you declare a string containing \"Hello World\" using a pointer and an array?",
+            answer = """
+        Pointer: char *str1 = "Hello World"
         
-        char str2[] = "Hello World"
-    """.trimIndent()
+        Array: char str2[] = "Hello World"
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                For a pointer: char space asterisk variable name equals hello world
+                
+                For an array: char space variable name square brackets equals hellow world
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you print a string variable my_string using printf?", """
+            question = "How do you print a string variable my_string using printf?",
+            answer = """
         printf("%s", my_string)
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What is the size (in bytes) of \"Hello!\"?", """
-        7
+            question = "How many bytes is a char in C?",
+            answer = """
+        1
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the size (in bytes) of \"Hello\"?",
+            answer = """
+        6
         
         Each char is a byte, then there is an additional null char used to terminate the char array we don't see
-        
-        [ 'H', 'e', 'l', 'l', 'o', '!', 0 ]
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How would you write a function to return the length of a string?", """
-        Input parameter is a char pointer or array
+            question = "How would you write a function to return the length of a string?",
+            answer = """
+        The input should be a pointer or array
         
-        Initialize a counter variable, loop through the pointer or array with the counter
-        
-        Stop when a 0 is found, return int
-    """.trimIndent()
+        Loop through the array, incrementing count each iteration, until the null terminator is found and return
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Does C have boolean data types?", """
+            question = "Does C have boolean data types?",
+            answer = """
         No
         
         Use 1 or 0 to indicate true or false
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "What does .h mean?", """
+            question = "What does .h mean?", """
         Header file
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Given char name[20] = \"John\", what happens if you attempt to access name[500]?", """
+            question = "Given a char array of size 20, what happens if you attempt to access a value at the 500th index?",
+            answer = """
         Unlike Java, the problem will likely not crash
         
         It will access whatever byte of memory is at that location
-    """.trimIndent()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "Given char name[20] = \"John\", what happens if you attempt to assign name[500]?", """
+            question = "Given a char array of size 20, what happens if you attempt to assign a value to the 500th index?",
+            answer = """
         Unlike Java, the problem will likely not crash
         
-        It will assign whatever that byte is at that location in memory to whatever you assign it to
-        
-        "C will let you scribble all over memory until you really break something"
-    """.trimIndent()
+        It will change that byte at that location in memory to whatever you assign it to
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you format print for a int, double, character, and character array?", """
+            question = "How do you format print for a int, double, character, and character array?",
+            answer = """
         int: %d
         
         double: %f
@@ -986,7 +1207,8 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you format user input for a int, double, character, and character array?", """
+            question = "How do you format user input for a int, double, character, and character array?",
+            answer = """
         int: %d
         
         double: %lf
@@ -1007,7 +1229,8 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "How do you read user input?", """
+            question = "How do you read user input?",
+            answer = """
         scanf("% type of input", & name of the pre-initialized variable where data should be stored)
     """.trimIndent(),
             questionTts = "How do you read user input?",
@@ -1020,7 +1243,8 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "Of %d, %lf, %c, and %s, which of these will skip white spaces when reading inputs?", """
+            question = "Of %d, %lf, %c, and %s, which of these will skip white spaces when reading inputs?",
+            answer = """
         %d, %lf, and %s will skip white spaces when reading inputs
         
         %c will not
@@ -1033,7 +1257,8 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "If you want to define a function after the main method, what must you do?", """
+            question = "If you want to define a function after the main method, what must you do?",
+            """
         Declare AKA prototype the function before the main method
         
         Example: int maximum(int a, int b);
@@ -1046,7 +1271,8 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "In C, how do you access the length of an array within a function where the array is a parameter?", """
+            question = "In C, how do you access the length of an array within a function where the array is a parameter?",
+            """
         You must explicitly pass the length of an array into the function
         
         array.length does not exist in C
@@ -1059,7 +1285,8 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "What do the function parameters (int* num, int length) imply the function is using them for?", """
+            question = "What do the function parameters (int* num, int length) imply the function is using them for?",
+            """
         num is a pointer to the start of an array
         
         length is the length of the array
@@ -1072,7 +1299,7 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "How can you determine the length of a string in a character array?", """
+            question = "How can you determine the length of a string in a character array?", """
         strlen(s) can be used to find the length of a string in a character array
     """.trimIndent(),
             questionTts = "How can you determine the length of a string within a character array?",
@@ -1081,16 +1308,27 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            "To use the strlen function, what must you include in your C program?", """
+            question = "To use the printf function, what must you include in your C program?", """
+        #include <stdio.h>
+    """.trimIndent(),
+            questionTts = "To use the print f function, what must you include in your C program?",
+            answerTts = """
+                hashtag include s t d i o dot h in angle brackets
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "To use the strlen function, what must you include in your C program?",
+            answer = """
         #include<string.h>
     """.trimIndent(),
             questionTts = "To use the s t r l e n function, what must you include in your C program?",
             answerTts = """
-                hashtag include string dot h in square brackets
+                hashtag include string dot h in angle brackets
             """.trimIndent()
         ),
         QuestionAnswer(
-            "What happens when you pass \"s\" from char s[3] = \"pen\" into the strlen function?", """
+            question = "What happens when you pass \"s\" from char s[3] = \"pen\" into the strlen function?",
+            answer = """
         Returns 3
         
         Returns length of the string, not including null terminator
@@ -1098,5 +1336,215 @@ class ProgrammingLanguages {
             questionTts = "What happens when you pass the character array char s size 3 equals pen into the s t r l e n function?",
             answerTts = "3 is returned. The s t r l e n function takes a character array and returns the length of the string, excluding null terminators"
         ),
+        QuestionAnswer(
+            question = "What is dynamic memory allocation?",
+            answer = """
+                When memory is allocated at run time
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "How do you create a double array of dynamic size m?",
+            answer = """
+                double *array;
+                
+                array = (double*) malloc(m * sizeof(double));
+    """.trimIndent(),
+            questionTts = "How do you create a double array of dynamic size corresponding to variable m",
+            answerTts = """
+                First, declare a double type array with double space asterisk variable name
+                
+                Then, make the array equal to open parenthesis double asterisk close parenthesis malloc open parenthesis number of bytes that should be in the array found by variable m times size of double close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "When invoking the malloc function, what must you do to the result?",
+            answer = """
+            Cast to the correct pointer type    
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What must be included in your file to use the malloc function?",
+            answer = """
+            #include <stdlib.h>
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                hashtag include s t d lib dot h in angle brackets
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What must be included in your file to use string functions?",
+            answer = """
+            #include <string.h>
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                hashtag include string dot h in angle brackets
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What must be included in your file to use character functions?",
+            answer = """
+            #include <ctype.h>
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                hashtag include c type dot h in angle brackets
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you free dynamically allocated memory?",
+            answer = """
+            free(array)
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                The free function which takes a dynamically allocated array as input
+                
+                For example, free open parenthesis array close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What are the acceptable values for a character in C?",
+            answer = """
+            0 to 127
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                0 to 127
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What happens when you attempt char x = 400?",
+            answer = """
+            Outside ASCII range
+             
+            Program does not crash but generates warning
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                400 is outside of the ASCII range
+                
+                The program would not crash but does generate a warning
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does the function strcpy(t, s) do?",
+            answer = """
+            Copies the contents of array s into array t including null terminator
+            """.trimIndent(),
+            questionTts = "What does the function s t r c p y open parenthesis t comma s close parenthesis do?",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does the function strcat(t, s) do?",
+            answer = """
+            Concatenates two character arrays together
+            """.trimIndent(),
+            questionTts = "What does the function s t r cat open parenthesis t comma s close parenthesis do?",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does the function strcmp(t, s) do?",
+            answer = """
+            Compares two character arrays
+            
+            If s > t: returns -1, if s < t: returns 1, if s == t: return 0
+            """.trimIndent(),
+            questionTts = "What does the function s t r c m p open parenthesis t comma s close parenthesis do?",
+            answerTts = """
+                Compares two character arrays
+                
+                If s is greater than t, returns -1
+                
+                If s is less than t, returns 1
+                
+                If s is equal to t, return 0
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does the function sprintf() do?",
+            answer = """
+                Prints the output of a printf() into a character array
+            """.trimIndent(),
+            questionTts = "What does the function s print f do?",
+            answerTts = """
+                Prints the output of a print f function into a character array
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you check if a character is an alphabetical letter?",
+            answer = """
+                isalpha(char c)
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                The function is alpha which takes a character parameter
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How can you check if a character is a digit?",
+            answer = """
+                isdigit(char c)
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                The function is alpha which takes a character parameter
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "When does the function isspace(char c) return 1?",
+            answer = """
+                For space, tab, and new line
+            """.trimIndent(),
+            questionTts = "When does the function is space which takes a character parameter return 1?",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you open a file for reading or writing?",
+            answer = """
+                FILE *fp = fopen("filename", "r" or "w" or "a");
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                FILE in all caps space asterisk f p = f open parenthesis filename as a string comma open option as a string close parenthesis
+                 
+                Acceptable options are r, w, and a 
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you print to a file?",
+            answer = """
+                Similar to print f but the first parameter is the file pointer
+
+                fprintf(file_pointer, "message");
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Similar to print f but the first parameter is the file pointer
+                
+                f print f open parenthesis file pointer variable comma string message close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you read a double and a string from a file?",
+            answer = """
+                Similar to scanf but the first parameter is the file pointer
+
+                fscanf(file_pointer, "%d%s", &var, str);
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Similar to scan f but the first parameter is the file pointer
+                
+                f scan f open parenthesis file pointer variable comma open quote percent d percent s close quote comma ampersand variable name comma string variable name close parenthesis
+            """.trimIndent()
+        ),
     )
+
 }

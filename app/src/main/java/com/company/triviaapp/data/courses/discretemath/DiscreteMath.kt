@@ -347,7 +347,8 @@ class DiscreteMath {
     """.trimIndent()
         ),
         QuestionAnswer(
-            "What set does {(n, n + 1) | n ∈ Z⁺} create? [Set of ordered pair of n and n + 1 where n is an element of Z+]", """
+            "What set does {(n, n + 1) | n ∈ Z⁺} create? [Set of ordered pair of n and n + 1 where n is an element of Z+]",
+            """
         {(1, 2), (2, 3), (3, 4), ...}
     """.trimIndent()
         ),
@@ -434,12 +435,14 @@ class DiscreteMath {
     """.trimIndent()
         ),
         QuestionAnswer(
-            "Provided a universal set of { x | 0 < x < 11 }, how would A = { 3, 8, 6 } be represented as a bit string?", """
+            "Provided a universal set of { x | 0 < x < 11 }, how would A = { 3, 8, 6 } be represented as a bit string?",
+            """
         0010010100
     """.trimIndent()
         ),
         QuestionAnswer(
-            "Provided a universal set of { x | 0 < x < 11 }, how would B = { 1, 5, 6, 8, 9 } be represented as a bit string?", """
+            "Provided a universal set of { x | 0 < x < 11 }, how would B = { 1, 5, 6, 8, 9 } be represented as a bit string?",
+            """
         1000110110
     """.trimIndent()
         ),
@@ -460,11 +463,14 @@ class DiscreteMath {
     )
 
     val functions = listOf(
-        QuestionAnswer("If a function gives the output for any given input, what does the inverse do?",
+        QuestionAnswer(
+            "If a function gives the output for any given input, what does the inverse do?",
             """
            Gives the input for any output
-        """.trimIndent()),
-        QuestionAnswer("How would you find the inverse of f(x) = 1 / x?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "How would you find the inverse of f(x) = 1 / x?",
             """
            Let f(x) = y
            
@@ -475,8 +481,10 @@ class DiscreteMath {
            x = 1 / y
            
            f⁻¹(x) = 1 / x
-        """.trimIndent()),
-        QuestionAnswer("How would you find the inverse of f(x) = 2x - 4?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "How would you find the inverse of f(x) = 2x - 4?",
             """
            Let f(x) = y
            
@@ -487,8 +495,10 @@ class DiscreteMath {
            (y + 4) / 2 = x
            
            f⁻¹(x) = (x + 4) / 2
-        """.trimIndent()),
-        QuestionAnswer("How would you find the inverse of f(x) = 2x?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "How would you find the inverse of f(x) = 2x?",
             """
            Let f(x) = y
            
@@ -497,8 +507,10 @@ class DiscreteMath {
            y / 2 = x
            
            f⁻¹(x) = x / 2
-        """.trimIndent()),
-        QuestionAnswer("How would you find the inverse of f(x) = 4x + 5?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "How would you find the inverse of f(x) = 4x + 5?",
             """
            Let f(x) = y
            
@@ -507,115 +519,174 @@ class DiscreteMath {
            (y - 5) / 4  = x
            
            f⁻¹(x) = (x - 5) / 4
-        """.trimIndent()),
-        QuestionAnswer("What is the domain of the function f:A → B?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the domain of the function f:A → B?",
             """
            In f:A → B, A is the domain
-        """.trimIndent()),
+        """.trimIndent()
+        ),
 
-        QuestionAnswer("What is the codomain of the function f:A → B?",
+        QuestionAnswer(
+            "What is the codomain of the function f:A → B?",
             """
            In f:A → B, B is the codomain
-        """.trimIndent()),
-        QuestionAnswer("Describe f(a) = b",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Describe f(a) = b",
             """
            b is the unique element of B assigned by function f to the element a of A
-        """.trimIndent()),
-        QuestionAnswer("In f(a) = b, what is the image of a?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "In f(a) = b, what is the image of a?",
             """
            b is the image of a
-        """.trimIndent()),
-        QuestionAnswer("In f(a) = b, what is the pre-image of b?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "In f(a) = b, what is the pre-image of b?",
             """
            a is the pre-image of b
-        """.trimIndent()),
-        QuestionAnswer("What is range?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is range?",
             """
            Subset of the codomain, set of values the function actually outputs
-        """.trimIndent()),
-        QuestionAnswer("What is the range of f: {a, b, c, d} → {1, 2, 3, 4, 5} defined by f(a) = 1, f(b) = 2, f(c) = 5, f(d) = 2?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the range of f: {a, b, c, d} → {1, 2, 3, 4, 5} defined by f(a) = 1, f(b) = 2, f(c) = 5, f(d) = 2?",
             """
            { 1, 2, 5 }
            
            Subset of the codomain, set of values the function actually outputs
-        """.trimIndent()),
-        QuestionAnswer("In the Java method, int floor(float real) { }, what are the domain and codomain?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "In the Java method, int floor(float real) { }, what are the domain and codomain?",
             """
            Domain: set of real numbers as floats
            
            Codomain: set of integers
-        """.trimIndent()),
-        QuestionAnswer("What does it mean for a function to be one-to-one?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does it mean for a function to be one-to-one?",
             """
            Two inputs of the domain may not map to the same element of the codomain
            
            A one-to-one function is AKA injection
-        """.trimIndent()),
-        QuestionAnswer("What is wrong with A = { 1, 2, 3 }, B = { a, b, c, d }; f(1) = b, f(2) = c?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is wrong with A = { 1, 2, 3 }, B = { a, b, c, d }; f(1) = b, f(2) = c?", """
             There is no mapping for f(3); f is not a function.
-        """.trimIndent()),
-        QuestionAnswer("Does every input in the domain of a function need an output?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Does every input in the domain of a function need an output?", """
             Yes
-        """.trimIndent()),
-        QuestionAnswer("Provided A = { a, b, c }, B = { 1, 2, 3, 4 }; f(a) = 2, f(b) = 2, f(c) = 3, what is the range?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Provided A = { a, b, c }, B = { 1, 2, 3, 4 }; f(a) = 2, f(b) = 2, f(c) = 3, what is the range?",
+            """
             { 2, 3 }
-        """.trimIndent()),
-        QuestionAnswer("Provided A = { a, b }, B = { 1, 2 }; f(a) = 2, f(b) = 1, what is the image of a?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Provided A = { a, b }, B = { 1, 2 }; f(a) = 2, f(b) = 1, what is the image of a?", """
              2
-        """.trimIndent()),
-        QuestionAnswer("Provided A = { a, b }, B = { 1, 2 }; f(a) = 2, f(b) = 1, what is the pre-image of 1?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Provided A = { a, b }, B = { 1, 2 }; f(a) = 2, f(b) = 1, what is the pre-image of 1?",
+            """
              b
-        """.trimIndent()),
-        QuestionAnswer("What is the range?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the range?", """
             Not all elements of the codomain are "used"
             
             The range is which elements are actually being "used"
-        """.trimIndent()),
-        QuestionAnswer("Given function f = { (y, a), (y, b) }, what is wrong?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given function f = { (y, a), (y, b) }, what is wrong?", """
         This is not a function, it is just a subset of ordered pairs
 
         Each element of a domain must be mapped to only one element of the target
 
         (y, a) ∈ f and (y, b) ∈ f means this is not a function
-    """.trimIndent()),
-        QuestionAnswer("Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 2) }: what is the target of f?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 2) }: what is the target of f?",
+            """
         The target is the codomain set, { 1, 2 }
-    """.trimIndent()),
-        QuestionAnswer("Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 1) }: what is the target of f?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 1) }: what is the target of f?",
+            """
         The target is the codomain set, { 1, 2 }
-    """.trimIndent()),
-        QuestionAnswer("Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 1) }: what is the range of f?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given A = { a, b } and X = { 1, 2 } where f = { (a, 1), (b, 1) }: what is the range of f?",
+            """
         The range is the set of elements of the codomain which the function maps elements to
 
         { 1 }
-    """.trimIndent()),
-        QuestionAnswer("What does it mean for a function to be well-defined?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does it mean for a function to be well-defined?", """
         The domain and target of f must be specified such that the function produces well-defined values for all of the domain
 
         Example: f(x) = 1 / (x-1) is not well-defined because if x = 1 there is no output
-    """.trimIndent()),
-        QuestionAnswer("What does the floor function do?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does the floor function do?", """
         Maps a real number to the nearest integer in the downward direction
-    """.trimIndent()),
-        QuestionAnswer("What does the ceiling function do?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does the ceiling function do?", """
         Maps a real number to the nearest integer in the upward direction
-    """.trimIndent()),
-        QuestionAnswer("What is, and provide an example of, an algebraic function?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is, and provide an example of, an algebraic function?", """
         Functions that are defined using algebraic formulas
 
         One example: f: Z ⇾ Z, f(n) = n²
-    """.trimIndent()),
-        QuestionAnswer("Is p: R ⇾ R, p(x) = √x a function?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Is p: R ⇾ R, p(x) = √x a function?", """
         No, the function is not well-defined
 
         The square root of a negative number is imaginary
-    """.trimIndent()),
-        QuestionAnswer("Provided an algebraic function definition, and where the domain is equal to the codomain, what is a trick you can use to determine if the function is one-to-one?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Provided an algebraic function definition, and where the domain is equal to the codomain, what is a trick you can use to determine if the function is one-to-one?",
+            """
         f(x) = f(y)
         
         Does f(x) = f(y) reduce to x = y? It is one-to-one
-    """.trimIndent()),
-        QuestionAnswer("Provided an algebraic function definition, and where the domain is equal to the codomain, what is a trick you can use to determine if it is onto?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Provided an algebraic function definition, and where the domain is equal to the codomain, what is a trick you can use to determine if it is onto?",
+            """
         Example: f(x) = 2x + 1
         
         f(x) = y
@@ -625,8 +696,10 @@ class DiscreteMath {
         x = y - 1 / 2
         
         Since you can find what x is, the function is onto
-    """.trimIndent()),
-        QuestionAnswer("How do you determine if a function is onto?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "How do you determine if a function is onto?", """
         Look at the codomain
         
         Is all of the codomain mapped to? If so, it is onto
@@ -634,30 +707,40 @@ class DiscreteMath {
         When the codomain = the range, the function is onto
         
         AKA surjective
-    """.trimIndent()),
-        QuestionAnswer("What does it mean for a function to be bijection?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does it mean for a function to be bijection?", """
         One-to-one AND onto
         
         AKA one-to-one correspondence
-    """.trimIndent()),
-        QuestionAnswer("What functions can be inversed?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What functions can be inversed?", """
         Functions which are bijections
         
         AKA both one-to-one and onto
         
         AKA one-to-one correspondence
-    """.trimIndent()),
-        QuestionAnswer("What is the notation for an inverse function for f?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the notation for an inverse function for f?", """
         f⁻¹        
-    """.trimIndent()),
-        QuestionAnswer("What is the inverse of the bijection function f: Z → Z, f(x) = x + 3?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the inverse of the bijection function f: Z → Z, f(x) = x + 3?", """
         x = f⁻¹(x) + 3
         
         x - 3 = f⁻¹
         
         f⁻¹(x) = x - 3
-    """.trimIndent()),
-        QuestionAnswer("What are 4 ways to represent functions?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What are 4 ways to represent functions?", """
         Explicit statement | f(A) = 1, f(B) = 2
            
         Algebraic Formula | f(x) = x²
@@ -665,33 +748,49 @@ class DiscreteMath {
         Computer Program
         
         Relation | A ✕ B - can be a function if the first value is not mapped to multiple values
-    """.trimIndent()),
-        QuestionAnswer("In f: A → B, f(1) = B, f(2) = B what is the image and preimage?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "In f: A → B, f(1) = B, f(2) = B what is the image and preimage?", """
         Image: B is the image of 1 under f  - B is also the image of 2 under f
         
         Preimage: { 1, 3 } is the preimage of B under f
-    """.trimIndent()),
-        QuestionAnswer("For f: X → Y, f(A) = 1, f(B) = 1, f(C) = 1, f(D) = 2, what is the preimage of 2?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "For f: X → Y, f(A) = 1, f(B) = 1, f(C) = 1, f(D) = 2, what is the preimage of 2?", """
         { D } is the preimage of 2
-    """.trimIndent()),
-        QuestionAnswer("For f: X → Y, f(A) = 1, f(B) = 1, f(C) = 1, f(D) = 2, what is the image of A?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "For f: X → Y, f(A) = 1, f(B) = 1, f(C) = 1, f(D) = 2, what is the image of A?", """
         { 1 } is the image of A
-    """.trimIndent()),
-        QuestionAnswer("What does injective mean?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does injective mean?", """
         Another name for one-to-one function, a function where each value in the range corresponds to no more than one element in the domain
-    """.trimIndent()),
-        QuestionAnswer("What does surjective mean?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does surjective mean?", """
         Another name for onto function, a function where every element in the codomain maps to at least one element in the domain
-    """.trimIndent()),
-        QuestionAnswer("What does bijective mean?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does bijective mean?", """
         Another name for a function which is both one-to-one (injective) and onto (surjective)
-    """.trimIndent()),
-        QuestionAnswer("Is f: Z → Z, f(x) = x² either one-to-one or onto?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Is f: Z → Z, f(x) = x² either one-to-one or onto?", """
         It is not one-to-one, because a negative and positive integer will output the same value    
             
         It is not onto, because this will never output a negative number
-    """.trimIndent()),
-        QuestionAnswer("Given f(x) = x + 3 and g(x) = x² - 2 what is f ∘ g(1)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(x) = x + 3 and g(x) = x² - 2 what is f ∘ g(1)?", """
         f(1² - 2)
         
         f(-1)
@@ -699,68 +798,90 @@ class DiscreteMath {
         -1 + 3
         
         2
-    """.trimIndent()),
-        QuestionAnswer("Given f(x) = x + 3 and g(x) = x² - 2 what is f ∘ g(x)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(x) = x + 3 and g(x) = x² - 2 what is f ∘ g(x)?", """
         g(x) = f(x² - 2)
         
         f(x² - 2 + 3)
         
         f(x² + 1)
-    """.trimIndent()),
-        QuestionAnswer("Given f(x) = x + 3 and g(x) = x² - 2 what is g ∘ f(1)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(x) = x + 3 and g(x) = x² - 2 what is g ∘ f(1)?", """
         g(1 + 3) = (1 + 3)² - 2
         
         g(4) = 4² - 2
         
         g(4) = 14
-    """.trimIndent()),
-        QuestionAnswer("Given f(x) = x + 3 and g(x) = x² - 2 what is g ∘ f(x)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(x) = x + 3 and g(x) = x² - 2 what is g ∘ f(x)?", """
         g(x + 3) = (x + 3)² - 2
         
         g(x + 3) = x² + 6x + 9 - 2
         
         g(x + 3) = x² + 6x + 7
-    """.trimIndent()),
-        QuestionAnswer("Given f: S → T and g: T → U what is g(f(s))?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f: S → T and g: T → U what is g(f(s))?", """
         g(f(s)) is the composition of functions g and f
         
         g ∘ f
-    """.trimIndent()),
-        QuestionAnswer("In f: S → T ?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "In f: S → T ?", """
         The domain of one function must be the same as the codomain of another function
-    """.trimIndent()),
-        QuestionAnswer("Given two functions, f and g, are f ∘ g and g ∘ f the same?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given two functions, f and g, are f ∘ g and g ∘ f the same?", """
         Not often; the order in which functions are applied is important
-    """.trimIndent()),
-        QuestionAnswer("Given f: R⁺ → R⁺, f(x) = x³ and g: R⁺ → R⁺, g(x) = x + 2: what is (f ∘ g)(x)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f: R⁺ → R⁺, f(x) = x³ and g: R⁺ → R⁺, g(x) = x + 2: what is (f ∘ g)(x)?", """
         f(g(x))
         
         f((x + 2))
          
         (x + 2)³  
-    """.trimIndent()),
-        QuestionAnswer("Given f: R⁺ → R⁺, f(x) = x³ and g: R⁺ → R⁺, g(x) = x + 2: what is (g ∘ f)(x)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f: R⁺ → R⁺, f(x) = x³ and g: R⁺ → R⁺, g(x) = x + 2: what is (g ∘ f)(x)?", """
         g(f(x))
         
         g((x³))
          
         x³ + 2
-    """.trimIndent()),
-        QuestionAnswer("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ g)(2)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ g)(2)?", """
         f(g(2))
         
         f(4)
         
         13
-    """.trimIndent()),
-        QuestionAnswer("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (g ∘ h)(3)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (g ∘ h)(3)?", """
         g(h(3))
         
         g(8)
         
         64
-    """.trimIndent()),
-        QuestionAnswer("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ g ∘ h)(0)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ g ∘ h)(0)?", """
         f(g(h(0)))
         
         f(g(1))
@@ -768,157 +889,205 @@ class DiscreteMath {
         f(1)
         
         4
-    """.trimIndent()),
-        QuestionAnswer("Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ f⁻¹)(17)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(n) = 3n + 1, g(n) = n², and h(n) = 2ⁿ: what is (f ∘ f⁻¹)(17)?", """
         (f⁻¹ ∘ f)(a) = a
         
         17
-    """.trimIndent()),
-        QuestionAnswer("Given f(n) = 2ⁿ and g(n) = n / 6: what is (f ∘ g)(0)?", """
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Given f(n) = 2ⁿ and g(n) = n / 6: what is (f ∘ g)(0)?", """
         1
-    """.trimIndent()),
+    """.trimIndent()
+        ),
     )
 
     val logic = listOf(
-        QuestionAnswer("What does ∧ mean?",
-        """
+        QuestionAnswer(
+            "What does ∧ mean?",
+            """
            Logical AND 
            
            Conjunction
-        """.trimIndent()),
-        QuestionAnswer("What does ∨ mean?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does ∨ mean?",
             """
            Logical OR
            
            Inclusive
            
            Disjunction
-        """.trimIndent()),
-        QuestionAnswer("What does ¬ mean?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does ¬ mean?",
             """
            Logical negation
-        """.trimIndent()),
-        QuestionAnswer("Describe how to create a truth table for (A ∨ B) ∧ B",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Describe how to create a truth table for (A ∨ B) ∧ B",
             """
            Create four columns: A, B, A ∨ B, (A ∨ B) ∧ B
            
            Create four rows of all possibilities of when A and B can be true or false
            
            Evaluate (A ∨ B) then evaluate that by ∧ B
-        """.trimIndent()),
-        QuestionAnswer("What does ~ mean?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does ~ mean?",
             """
            Not
            
            Example: If A = T, ~A = F
-        """.trimIndent()),
-        QuestionAnswer("What does it mean if two statements have the same truth table?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does it mean if two statements have the same truth table?",
             """
            They are logically equivalent
-        """.trimIndent()),
-        QuestionAnswer("What does A ⇒ B mean?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does A ⇒ B mean?",
             """
            If A then B
            
            Returns true or false by asserting when A is true, B should also be true
            
            If A is false, returns true anyway because of the implication
-        """.trimIndent()),
-        QuestionAnswer("What does A ⇔ B mean?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does A ⇔ B mean?",
             """
            If A then B AND if B then A
            
            Returns true or false, true means A and B are logically equivalent
            
            A if and only if B
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Identity Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Identity Law?",
             """
            p ∧ T (true) ⇔ p
            
            p ∨ F (false) ⇔ p
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Domination Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Domination Law?",
             """
            p ∨ T (true) ⇔ T
            
            p ∧ F (false) ⇔ F
            
            It doesn't matter what p is
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Double Negation Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Double Negation Law?",
             """
            ¬¬p ⇔ p 
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic DeMorgan's Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic DeMorgan's Law?",
             """
            ¬(p ∧ q) ⇔ ¬p ∨ ¬q 
            
            Not p AND q is = to not p OR not q
            
            Distribute the negation sign to the statements and flip the connective
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Distributive Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Distributive Law?",
             """
            p ∧ (q ∨ r) ⇔ (p ∧ q) ∨ (p ∧ r)
            
            p ∨ (q ∧ r) ⇔ (p ∨ q) ∧ (p ∨ r)
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Absorption Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Absorption Law?",
             """
            p ∧ (p ∨ q) ⇔ p
            
            p ∨ (p ∧ q) ⇔ p
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Commutativity Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Commutativity Law?",
             """
            p ∧ q ⇔ q ∧ p
            
            p ∨ q ⇔ q ∨ p
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Associativity Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Associativity Law?",
             """
            p ∧ (q ∧ r)  ⇔ (p ∧ q) ∧ r
            
            This only works if they both the same connective, otherwise distributive
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Inverse Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Inverse Law?",
             """
            p ∧ ¬p ⇔ F
            
            p ∨ ¬p ⇔ T
-        """.trimIndent()),
-        QuestionAnswer("What is the Logic Conditional Law?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the Logic Conditional Law?",
             """
            p ⇒ q ⇔ ¬p ∨ q
            
            p ⇒ q is true when p is false and when p and q are true 
-        """.trimIndent()),
-        QuestionAnswer("What does ¬(¬p ∧ ¬q) reduce to?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does ¬(¬p ∧ ¬q) reduce to?",
             """
            ¬¬p ∨ ¬¬q | DeMorgan's
            
            p ∨ q | Double Negation
-        """.trimIndent()),
-        QuestionAnswer("What does ¬¬p ∨ ((p ∨ F) ∧ ¬¬q) reduce to? F = false",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does ¬¬p ∨ ((p ∨ F) ∧ ¬¬q) reduce to? F = false",
             """
            p ∨ ((p ∨ F) ∧ q) | Double Negation x2
            
            p ∨ (p ∧ q) | Identity
            
            p | Absorption
-        """.trimIndent()),
-        QuestionAnswer("What does (p ∨ F) ∧ (q v T) reduce to?",
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What does (p ∨ F) ∧ (q v T) reduce to?",
             """
            p ∧ (q v T) | Identity
            
            p ∧ T | Domination
            
            p | Identity
-        """.trimIndent()),
+        """.trimIndent()
+        ),
     )
     val relations = listOf(
-        QuestionAnswer("What is a binary relation from A to B?", """
+        QuestionAnswer(
+            "What is a binary relation from A to B?", """
             Subset of their Cartesian Product, A × B
             
             Set R of ordered pairs
@@ -926,73 +1095,164 @@ class DiscreteMath {
             Relation denoted by (a, b) ∈ R or a R b
             
             When (a, b) ∈ R, a is related to b by R
-        """.trimIndent()),
-        QuestionAnswer("Is a relation a function?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Is a relation a function?", """
             Yes
-        """.trimIndent()),
-        QuestionAnswer("What is the domain of a relation?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the domain of a relation?", """
             The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
             
             Relation denoted by (a, b) ∈ R
-        """.trimIndent()),
-        QuestionAnswer("What is the domain of a relation?", """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            "What is the domain of a relation?", """
             The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
             
             Relation denoted by (a, b) ∈ R
-        """.trimIndent()),
+        """.trimIndent()
+        ),
 
 
-    )
+        )
     val sequences = listOf(
         QuestionAnswer(
             "What is an informal definition of sequence?",
-        """
+            """
             A list of numbers that follow a well-defined rule
-        """.trimIndent()),
+        """.trimIndent()
+        ),
         QuestionAnswer(
             "What is a mathematical definition of a sequence?",
             """
             A function from Z⁺ (set of positive integers) to R (set of real numbers)
-        """.trimIndent()),
+        """.trimIndent()
+        ),
         QuestionAnswer(
             "What are each number in a sequence referred to as?",
             """
             Terms
-        """.trimIndent()),
+        """.trimIndent()
+        ),
         QuestionAnswer(
             "What does it mean to represent a sequence by terms?",
             """
             Sequence is written explicitly; may not be obvious in some cases
             
             Example: 1, 3, 5, 7 . . .
-        """.trimIndent()),
+        """.trimIndent()
+        ),
         QuestionAnswer(
-            "What does it mean to represent a sequence by formula?",
-            """
+            question = "What does it mean to represent a sequence by formula?",
+            answer = """
             Formula is used to describe how to determine each value given n
             
             Must include the range of n values
             
             Example: aₙ = 2n - 1 for n = 1, 2, 3 . . .
-        """.trimIndent()),
+        """.trimIndent()
+        ),
         QuestionAnswer(
-            "How would you express the sequence 0, 3, 8, 15, 24, 35 . . . by formula?",
-            """
+            question = "How would you express the sequence 0, 3, 8, 15, 24, 35 . . . by formula?",
+            answer = """
             aₙ = n² - 1 for n = 1, 2, 3 . . .
-        """.trimIndent()),
+        """.trimIndent()
+        ),
         QuestionAnswer(
-            "What is one potential issue with attempting to represent a sequence by formula?",
-            """
+            question = "What is one potential issue with attempting to represent a sequence by formula?",
+            answer = """
             It may be difficult to find the formula
-        """.trimIndent()),
+        """.trimIndent()
+        ),
         QuestionAnswer(
-            "What does it mean to represent a sequence by recurrence relation?",
-            """
+            question = "What does it mean to represent a sequence by recurrence relation?",
+            answer = """
             Writing aₙ in respect to other terms
             
             Any values that cannot be found by relation must be explicitly defined
 
             Example: aₙ = aₙ₋₁ + 2 for n ≥ 2, a₁ = 1
-        """.trimIndent()),
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is an arithmetic sequence?",
+            answer = """
+            a, a + d, a + 2d, a + 3 d ... a + nd
+            
+            Example: 4, 9, 14, 19, 24 ... 104
+            
+            a = 4, d = 5, n = 20
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                a, a plus d, a plus 2 multiplied by d, a plus 3 multiplied by 3 dot dot dot a plus n multiplied by d
+        
+                For example, the sequence 4, 9, 14, 29, 24 dot dot dot 104
+                
+                In this sequence, a = 4, d = 5, n = 20
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the summation of arithmetic sequence 1 + 2 + 3 + 4 ... n?",
+            answer = """
+                ( n * (n + 1)) / 2
+        """.trimIndent(),
+            questionTts = "What is the summation of the arithmetic sequence 1 plus 2 plus 3 plus 4 dot dot dot n?",
+            answerTts = """
+                n multiplied by n plus 1 all divided by 2
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the summation of arithmetic sequence a + a + d + a + 2d ... a + nd?",
+            answer = """
+                a(n + 1) + d((n * (n + 1)) / 2)
+        """.trimIndent(),
+            questionTts = "What is the summation of the arithmetic sequence a plus a plus d plus a plus 2 times d dot dot dot a plus n times d?",
+            answerTts = """
+               the result of a times the result of n plus 1 is added to d times the result of n multiplied by n plus 1 all divided by 2
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What are the two types of infinite sets",
+            answer = """
+                Countably infinite and uncountably infinite
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What makes a set countably infinite?",
+            answer = """
+                If there is a bijection between the elements of the set and Z⁺.
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                 If there is a bijection between the elements of the set and the set of all positive integers.
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Is there a bijection between Z and Z⁺?",
+            answer = """
+                Yes
+        """.trimIndent(),
+            questionTts = "Is there a bijection between the set of all integers and the set of all positive integers",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Is there a bijection between R and Z⁺?",
+            answer = """
+                No
+        """.trimIndent(),
+            questionTts = "Is there a bijection between the set of all real numbers and the set of all positive integers?",
+            answerTts = """
+        """.trimIndent()
+        ),
+
     )
 }
