@@ -843,10 +843,6 @@ class ProgrammingLanguages {
             question = "How are arrays different from pointers?",
             answer = """
         Arrays allocate space on definition
-        
-        The compiler tracks the size of arrays and will not let you access out of their bounds in compile-time
-        
-        Pointers will crash on run-time upon accessing out of their bounds
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -926,7 +922,7 @@ class ProgrammingLanguages {
         
         C does not have booleans, 1 == true
     """.trimIndent(),
-            questionTts = "",
+            questionTts = "What does 9 greater than 5 return in C?",
             answerTts = """
                 1
                 
@@ -969,6 +965,8 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "What is 9 & 5?",
             answer = """
+        Bitwise AND
+        
         9: 1001
         
         5: 0101
@@ -1043,7 +1041,7 @@ class ProgrammingLanguages {
 
                 9 is 1 0 0 1
                 
-                tilde 9 is 0 1 1 0
+                tilde 9 is 0 1 1 0 which is 6
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -1108,8 +1106,9 @@ class ProgrammingLanguages {
             answer = """
         printf("%s", my_string)
     """.trimIndent(),
-            questionTts = "",
+            questionTts = "How do you print a string variable my underscore string using print f",
             answerTts = """
+                print f open parenthesis % s in quotes comma my underscore string close parenthesis
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -1239,7 +1238,7 @@ class ProgrammingLanguages {
                 
                 The first parameter is the type of input specified by a percent identifier enclosed in quotations
                 
-                The second parameter is the name of the pre-initialized variable where the data should be stored, the ampersand symbol must be placed before it to specify this is a location
+                The second parameter is the name of the pre-initialized variable where the data should be stored, the ampersand symbol must be placed before it if primitive to specify this is a location
             """.trimIndent()
         ),
         QuestionAnswer(
