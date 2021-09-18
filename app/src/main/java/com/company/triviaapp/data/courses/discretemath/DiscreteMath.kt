@@ -1204,30 +1204,31 @@ class DiscreteMath {
             answer = """
             Writing aₙ in respect to other terms
             
-            Any values that cannot be found by relation must be explicitly defined
+            Initial conditions must be explicitly defined
 
-            Example: aₙ = aₙ₋₁ + 2 for n ≥ 2, a₁ = 1
+            Example: aₙ = aₙ₋₁ + 1 for n ≥ 2 where a₁ = 1
         """.trimIndent(),
             questionTts = "",
             answerTts = """
+                Writing a sub n with respect to other terms
+                
+                Initial conditions must be explicitly defined
+                
+                For example: a sub n = a sub n - 1 + 1 for n greater than or equal to 2 where a sub 1 is 1
         """.trimIndent()
         ),
         QuestionAnswer(
-                question = "What is an arithmetic sequence?",
-                answer = """
+            question = "What is a definition of an arithmetic sequence?",
+            answer = """
+            A sequence formed by adding the initial term, a, and the product of the common difference, d, and the term number, n
+            
             a, a + d, a + 2d, a + 3 d ... a + nd
-            
-            Example: 4, 9, 14, 19, 24 ... 104
-            
-            a = 4, d = 5, n = 20
         """.trimIndent(),
             questionTts = "",
             answerTts = """
-                a, a plus d, a plus 2 multiplied by d, a plus 3 multiplied by 3 dot dot dot a plus n multiplied by d
-        
-                For example, the sequence 4, 9, 14, 29, 24 dot dot dot 104
-                
-                In this sequence, a = 4, d = 5, n = 20
+            A sequence formed by adding the initial term, a, and the product of the common difference, d, and the term number, n
+            
+            a, a plus d, a plus 2 multiplied by d, a plus 3 multiplied by 3 dot dot dot a plus n multiplied by d
         """.trimIndent()
         ),
         QuestionAnswer(
@@ -1339,12 +1340,16 @@ class DiscreteMath {
         """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What is a geometric sequence?",
+            question = "What is the definition of a geometric sequence?",
             answer = """
+                A sequence formed by multiplying the initial term, a, by the common ratio to the nth power, rⁿ
+                
                 a, ar, ar² . . . arⁿ
         """.trimIndent(),
             questionTts = "",
             answerTts = """
+                A sequence formed by multiplying the initial term, a, by the common ratio to the nth power, r to the power of n
+
                 a, a times r, a times r squared, dot dot dot, a times r to the nth power
         """.trimIndent()
         ),

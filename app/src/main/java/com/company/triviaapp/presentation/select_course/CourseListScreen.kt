@@ -22,16 +22,20 @@ fun CourseListScreen(
 ) {
     val state = viewModel.state.value
     Box(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxSize().padding(20.dp)) {
-            HeaderText("Course")
-            LazyColumn(modifier = Modifier.fillMaxSize()) {
-                items(state.courses) { course ->
-                    CourseListItem(
-                        course = course,
-                        onItemClick = {
-                            navController.navigate(Screen.ChapterSelect.route + "/${course.name}")
-                        })
-                }
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(20.dp)
+        ) {
+            item {
+                HeaderText("Course")
+            }
+            items(state.courses) { course ->
+                CourseListItem(
+                    course = course,
+                    onItemClick = {
+                        navController.navigate(Screen.ChapterSelect.route + "/${course.name}")
+                    })
             }
         }
     }

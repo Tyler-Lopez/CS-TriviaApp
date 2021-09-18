@@ -26,18 +26,22 @@ fun ChapterListScreen(
 ) {
     val state = viewModel.state.value
     Box(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxSize().padding(20.dp)) {
-            HeaderText("Chapter")
-            SubHeaderText(state.courseName)
-            LazyColumn(modifier = Modifier.fillMaxSize()) {
-                items(state.chapters) { chapter ->
-                    ChapterListItem(
-                        chapter = chapter,
-                        navController = navController,
-                        onItemClick = {
-                            navController.navigate(Screen.FlashCard.route + "/${state.courseName}/${chapter.name}")
-                        })
-                }
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(20.dp)
+        ) {
+            item {
+                HeaderText("Chapter")
+                SubHeaderText(state.courseName)
+            }
+            items(state.chapters) { chapter ->
+                ChapterListItem(
+                    chapter = chapter,
+                    navController = navController,
+                    onItemClick = {
+                        navController.navigate(Screen.FlashCard.route + "/${state.courseName}/${chapter.name}")
+                    })
             }
         }
     }

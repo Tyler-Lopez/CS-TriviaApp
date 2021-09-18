@@ -37,14 +37,10 @@ val BottomNavItems = listOf(
 
 @Composable
 fun BottomBar(navController: NavController) {
-
     BottomAppBar(
 
         // set background color
-        backgroundColor = MaterialTheme.colors.secondaryVariant, modifier = Modifier.border(
-    width = 2.dp,
-    color = Color(30,30,30, 100)
-    ).shadow(10.dp)
+        backgroundColor = MaterialTheme.colors.secondaryVariant, modifier = Modifier.shadow(10.dp)
     ) {
 
         // observe the backstack
@@ -75,7 +71,7 @@ fun BottomBar(navController: NavController) {
                         imageVector = navItem.icon,
                         contentDescription = navItem.label,
                         modifier = Modifier.size(30.dp),
-                        tint = MaterialTheme.colors.onSecondary
+                        tint = MaterialTheme.colors.primaryVariant
                       //  tint = Color(147,153,175,255),
                     )
                 },
