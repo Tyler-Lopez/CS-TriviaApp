@@ -1121,29 +1121,41 @@ class DiscreteMath {
         )
     val sequences = listOf(
         QuestionAnswer(
-            "What is an informal definition of sequence?",
-            """
-            A list of numbers that follow a well-defined rule
+            question = "What is an informal definition of sequence?",
+            answer = """
+            An ordered list of objects that follow a well-defined rule
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
-            "What is a mathematical definition of a sequence?",
-            """
+            question = "What is a mathematical definition of a sequence?",
+            answer = """
             A function from Z⁺ (set of positive integers) to R (set of real numbers)
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
-            "What are each number in a sequence referred to as?",
-            """
+            question = "What are each number in a sequence referred to as?",
+            answer = """
             Terms
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
-            "What does it mean to represent a sequence by terms?",
-            """
+            question = "What does it mean to represent a sequence by terms?",
+            answer = """
             Sequence is written explicitly; may not be obvious in some cases
             
             Example: 1, 3, 5, 7 . . .
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
@@ -1154,18 +1166,37 @@ class DiscreteMath {
             Must include the range of n values
             
             Example: aₙ = 2n - 1 for n = 1, 2, 3 . . .
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
             question = "How would you express the sequence 0, 3, 8, 15, 24, 35 . . . by formula?",
             answer = """
             aₙ = n² - 1 for n = 1, 2, 3 . . .
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What sequence would the formula aₙ = n for n ∈ Z⁺ produce?",
+            answer = """
+            1, 2, 3, 4, 5 . . .
+        """.trimIndent(),
+            questionTts = "What sequence would the formula a sub n = n for n is an element of the set of positive integers produce?",
+            answerTts = """
+                1, 2, 3, 4, 5, dot dot dot
         """.trimIndent()
         ),
         QuestionAnswer(
             question = "What is one potential issue with attempting to represent a sequence by formula?",
             answer = """
             It may be difficult to find the formula
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
@@ -1176,11 +1207,14 @@ class DiscreteMath {
             Any values that cannot be found by relation must be explicitly defined
 
             Example: aₙ = aₙ₋₁ + 2 for n ≥ 2, a₁ = 1
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What is an arithmetic sequence?",
-            answer = """
+                question = "What is an arithmetic sequence?",
+                answer = """
             a, a + d, a + 2d, a + 3 d ... a + nd
             
             Example: 4, 9, 14, 19, 24 ... 104
@@ -1194,6 +1228,37 @@ class DiscreteMath {
                 For example, the sequence 4, 9, 14, 29, 24 dot dot dot 104
                 
                 In this sequence, a = 4, d = 5, n = 20
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What type of progression is aₙ = 2n - 1 for n ∈ Z⁺?",
+            answer = """
+            Arithmetic with a = 1 and d = 2
+        """.trimIndent(),
+            questionTts = "What type of progression is a sub n = 2 times n minus 1 for n is an element of the set of all positive integers?",
+            answerTts = """
+                
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "∑_1^100▒1/j | What sequence does this express?",
+            answer = """
+                1, 2, 3 . . . 100
+        """.trimIndent(),
+            questionTts = "The summation from 1 to 100 with summand 1 divided by j, what sequence does this express?",
+            answerTts = """
+                1, 2, 3 dot dot dot 100
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the value of ∑_1^5▒j² ?",
+            answer = """
+                1 + 4 + 9 + 16 + 25
+                
+                55
+        """.trimIndent(),
+            questionTts = "What is the value of 1 to 5 with summand j squared?",
+            answerTts = """
         """.trimIndent()
         ),
         QuestionAnswer(
@@ -1217,6 +1282,16 @@ class DiscreteMath {
         """.trimIndent()
         ),
         QuestionAnswer(
+            question = "What is the cardinality of a finite set?",
+            answer = """
+                The number of elements in the set
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+               
+        """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "What are the two types of infinite sets",
             answer = """
                 Countably infinite and uncountably infinite
@@ -1236,6 +1311,16 @@ class DiscreteMath {
         """.trimIndent()
         ),
         QuestionAnswer(
+            question = "What makes a set uncountably infinite?",
+            answer = """
+                 If there is no bijection between the set and Z⁺	
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                 If there is no bijection between the elements of the set and the set of all positive integers.
+        """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "Is there a bijection between Z and Z⁺?",
             answer = """
                 Yes
@@ -1251,6 +1336,26 @@ class DiscreteMath {
         """.trimIndent(),
             questionTts = "Is there a bijection between the set of all real numbers and the set of all positive integers?",
             answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a geometric sequence?",
+            answer = """
+                a, ar, ar² . . . arⁿ
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                a, a times r, a times r squared, dot dot dot, a times r to the nth power
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is an arithmetic sequence?",
+            answer = """
+                a, a + d, a + 2d . . . a + nd
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                a, a + d, a + 2 times d, dot dot dot, a + n times d
         """.trimIndent()
         ),
 

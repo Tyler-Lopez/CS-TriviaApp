@@ -24,6 +24,7 @@ val sections = mapOf(
     "COSC 314: 02" to DiscreteMath().logic,
     "COSC 314: 03" to DiscreteMath().relations,
     "COSC 314: 04" to DiscreteMath().functions,
+    "COSC 314: 05" to DiscreteMath().sequences,
     "COSC 341: 01" to ProgrammingLanguages().chapterOne,
     "COSC 341: 02" to ProgrammingLanguages().chapterTwo,
     "COSC 341: 03" to ProgrammingLanguages().chapterThree,
@@ -49,8 +50,9 @@ val courses = mapOf(
                     "Sets" to Chapter("Sets", sections["COSC 314: 01"]!!),
                     "Logic" to Chapter("Logic", sections["COSC 314: 02"]!!),
                     "Functions" to Chapter("Functions", sections["COSC 314: 04"]!!),
-                    "Relations" to Chapter("Relations", sections["COSC 314: 03"]!!)
-            )),
+                    "Relations" to Chapter("Relations", sections["COSC 314: 03"]!!),
+                    "Sequences" to Chapter("Sequences", sections["COSC 314: 05"]!!)
+                )),
     "Data Structures & Algorithms" to
             Course(
                 "Data Structures & Algorithms", mapOf(
