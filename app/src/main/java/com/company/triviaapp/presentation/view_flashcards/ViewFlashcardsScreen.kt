@@ -71,9 +71,6 @@ fun ViewFlashcardsScreen(
                         },
                     ),
             ) {
-
-
-
                     CardListItem(
                         questionAnswer = list[currIndex.value],
                         currIndex = currIndex.value,

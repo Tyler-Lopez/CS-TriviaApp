@@ -451,6 +451,32 @@ class ProgrammingLanguages {
     )
     val chapterTwo = listOf(
         QuestionAnswer(
+            question = "Which was the primary application area of computers at the time Fortran was designed?",
+            answer = """
+        Scientific
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            "Which user group was the target of the first version of BASIC?", """
+        Liberal arts students
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            "PL/1 was designed to replace which two languages?", """
+        FORTRAN and COBOL
+    """.trimIndent(),
+            questionTts = "P L 1 was designed to replace which two languages?",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
             question = "What is Plankalkul?",
             answer = """
         First "programming language"
@@ -460,9 +486,7 @@ class ProgrammingLanguages {
         Theoretical language, 40's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is minimal hardware programming?",
@@ -474,9 +498,7 @@ class ProgrammingLanguages {
         40's & 50's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is FORTRAN?",
@@ -492,9 +514,8 @@ class ProgrammingLanguages {
         50's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is Lisp?",
@@ -506,9 +527,8 @@ class ProgrammingLanguages {
         MIT & IBM, John McCarthy, 50's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is Algol?",
@@ -522,9 +542,8 @@ class ProgrammingLanguages {
         Developed in Europe, 50's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is COBOL?",
@@ -538,9 +557,8 @@ class ProgrammingLanguages {
         IBM, 60's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is BASIC?",
@@ -552,9 +570,8 @@ class ProgrammingLanguages {
         Dartmouth, 60's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is PL/1?",
@@ -566,9 +583,8 @@ class ProgrammingLanguages {
         IBM, 60's
     """.trimIndent(),
             questionTts = "What is P L 1?",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is Simula?",
@@ -580,9 +596,8 @@ class ProgrammingLanguages {
         Norway, 60's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is Pascal?",
@@ -592,9 +607,8 @@ class ProgrammingLanguages {
         Niklaus Wirth, 70's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is Ada?",
@@ -606,9 +620,8 @@ class ProgrammingLanguages {
         Designed with support of the U.S. government, 80's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is Prolog?",
@@ -620,9 +633,8 @@ class ProgrammingLanguages {
         Developed in Europe, 70's
     """.trimIndent(),
             questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
+            answerTts = """""".trimIndent()
+
         ),
         QuestionAnswer(
             question = "What is SmallTalk?",
@@ -1037,11 +1049,11 @@ class ProgrammingLanguages {
                 """.trimIndent()
         ),
         QuestionAnswer(
-            question = "Given an int y = 7, what does int *p = &y; do?",
+            question = "Given an int y, what does int *p = &y; do?",
             answer = """
          p stores, or points to, the memory address location of y
     """.trimIndent(),
-            questionTts = "Given an integer variable y = 7, what does int space asterisk p = ampersand y do?",
+            questionTts = "Given an integer variable y, what does int space asterisk p = ampersand y do?",
             answerTts = """
                 p will store or point to the memory address location of y
                 """.trimIndent()
@@ -1108,9 +1120,7 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "Provided an int variable n, is int *p = &n acceptable?",
             answer = """
-        No
-        
-        A pointer cannot be equal to an int, you must instead write int *p = &n
+        Yes
     """.trimIndent(),
             questionTts = "Provided an integer variable n, is int space asterisk p = ampersand n acceptable?",
             answerTts = """
@@ -1638,12 +1648,14 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What does srand(seed) do?",
+            question = "What does srand(int seed) do?",
             answer = """
         Initializes a random number generator which is automatically used by any call of rand
     """.trimIndent(),
-            questionTts = "What does s rand open parenthesis seed int variable do?",
-            answerTts = """""".trimIndent()
+            questionTts = "What does the function s rand open parenthesis int variable close parenthesis do?",
+            answerTts = """
+                
+            """.trimIndent()
         ),
         QuestionAnswer(
             question = "What does rand() do?",
@@ -1651,7 +1663,9 @@ class ProgrammingLanguages {
         Returns a random number
     """.trimIndent(),
             questionTts = "What does rand empty parentheses do?",
-            answerTts = """""".trimIndent()
+            answerTts = """
+                
+            """.trimIndent()
         ),
         QuestionAnswer(
             question = "How can you generate a random number from 1 to 100?",
@@ -1765,7 +1779,7 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What happens when you attempt char x = 400?",
+            question = "What happens when you attempt to assign 400 to a char?",
             answer = """
             Outside ASCII range
              
@@ -1773,9 +1787,6 @@ class ProgrammingLanguages {
             """.trimIndent(),
             questionTts = "",
             answerTts = """
-                400 is outside of the ASCII range
-                
-                The program would not crash but does generate a warning
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -2006,34 +2017,6 @@ class ProgrammingLanguages {
             answerTts = """
               f close open parenthesis file pointer variable close parenthesis
                  """.trimIndent()
-        ),
-        QuestionAnswer(
-            question = "Which was the primary application area of computers at the time Fortran was designed?",
-            answer = """
-        Scientific
-    """.trimIndent(),
-            questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
-        ),
-        QuestionAnswer(
-            "Which user group was the target of the first version of BASIC?", """
-        Liberal arts students
-    """.trimIndent(),
-            questionTts = "",
-            answerTts = """
-                
-            """.trimIndent()
-        ),
-        QuestionAnswer(
-            "PL/1 was designed to replace which two languages?", """
-        FORTRAN and COBOL
-    """.trimIndent(),
-            questionTts = "P L 1 was designed to replace which two languages?",
-            answerTts = """
-                
-            """.trimIndent()
         ),
     )
 

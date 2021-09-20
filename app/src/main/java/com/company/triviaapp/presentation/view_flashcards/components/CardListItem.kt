@@ -64,11 +64,11 @@ fun CardListItem(
         24
 
     val textToSpeech = if (isQuestion) {
-        if (questionAnswer.questionTts != "") {
+        if (questionAnswer.questionTts.isNotBlank()) {
             questionAnswer.questionTts
         } else questionAnswer.question
     } else {
-        if (questionAnswer.answerTts != "") {
+        if (questionAnswer.answerTts.isNotBlank()) {
             questionAnswer.answerTts
         } else questionAnswer.answer
     }
