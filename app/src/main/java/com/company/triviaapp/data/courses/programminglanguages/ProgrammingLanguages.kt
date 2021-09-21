@@ -699,7 +699,11 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+                        Object oriented
+                        
+                        Widely used, part of dot NET
+                        
+                        Microsoft, early 2000's
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -769,11 +773,11 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What two programming languages from the 1960 - 1970 were mainly used for teaching purposes?",
+            question = "Which two programming languages in the 60's & 70's were mainly used for teaching purposes?",
             answer = """
         Pascal and Basic
     """.trimIndent(),
-            questionTts = "",
+            questionTts = "Which two programming languages in the 60's and 70's were mainly used for teaching purposes?",
             answerTts = """
                 
             """.trimIndent()
