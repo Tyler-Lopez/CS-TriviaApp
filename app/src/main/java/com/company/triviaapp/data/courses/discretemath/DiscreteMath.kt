@@ -1116,9 +1116,7 @@ class DiscreteMath {
             Relation denoted by (a, b) ∈ R
         """.trimIndent()
         ),
-
-
-        )
+    )
     val sequences = listOf(
         QuestionAnswer(
             question = "What is an informal definition of sequence?",
@@ -1363,6 +1361,121 @@ class DiscreteMath {
                 a, a + d, a + 2 times d, dot dot dot, a + n times d
         """.trimIndent()
         ),
-
+    )
+    val matrices = listOf(
+        QuestionAnswer(
+            question = "How do you add two matrices?",
+            answer = """
+            Each element in a matrix is added to the element with the same index value in the other matrix
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you subtract two matrices?",
+            answer = """
+            Each element in the second matrix is subtracted from the element with the same index value in the first matrix
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you multiply two matrices?",
+            answer = """
+            Each element in each row of the first matrix is multiplied by each element in each column of the second matrix then summed
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do find the transpose of a matrix?",
+            answer = """
+            Convert each row to a column or each row to each column; (i,j)th element becomes (j,i)th element of Aᵀ
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Convert each row to a column or each row to each column
+                
+                The element at i, j becomes the element at j, i of the transposed matrix
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a symmetric matrix?",
+            answer = """
+            When a matrix is the same as it's transpose
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the identity matrix?",
+            answer = """
+            When all diagonal elements of a matrix are 1 and all other elements are 0
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the symbol to denote the transpose of a matrix A?",
+            answer = """
+            Aᵀ
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                A superscript T
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Can you add two matrices with different sizes together?",
+            answer = """
+            No
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Is A-B the same as B-A?",
+            answer = """
+            No
+        """.trimIndent(),
+            questionTts = "Is A minus B the same as B minus A?",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Under what circumstances may two matrices be multiplied?",
+            answer = """
+            Number of columns in first matrix must be equal to number of rows in second matrix
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "If you have a 3x4 matrix, what would the dimensions of it's transpose be?",
+            answer = """
+            4x3
+        """.trimIndent(),
+            questionTts = "If you have a 3 by 4 matrix, what would the dimensions of it's transpose be?",
+            answerTts = """
+                4 by 3
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Given the multiplication of a 3x4 matrix by a 4x2 matrix, what are the dimensions of the result?",
+            answer = """
+            3x2
+        """.trimIndent(),
+            questionTts = "Given the multiplication of a 3 by 4 matrix by a 4 by 2 matrix, what are the dimensions of the result?",
+            answerTts = """
+               3 by 2
+        """.trimIndent()
+        ),
     )
 }

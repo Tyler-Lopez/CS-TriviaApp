@@ -1652,7 +1652,7 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What does srand(int seed) do?",
+            question = "What does srand(int) do?",
             answer = """
         Initializes a random number generator which is automatically used by any call of rand
     """.trimIndent(),
