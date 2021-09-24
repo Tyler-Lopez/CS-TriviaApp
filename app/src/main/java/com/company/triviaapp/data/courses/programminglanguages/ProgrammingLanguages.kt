@@ -2022,6 +2022,44 @@ class ProgrammingLanguages {
               f close open parenthesis file pointer variable close parenthesis
                  """.trimIndent()
         ),
+        QuestionAnswer(
+            question = "How do you define a constant?",
+            answer = """
+                #define VARIABLE_NAME value
+                
+                No semi-colon
+            """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+              hashtag define variable name in capital letters then the value without a semi-colon
+                 """.trimIndent()
+        ),
+    )
+    val chapterFour = listOf(
+        QuestionAnswer(
+            question = "How do you print Hello World to console in Python?",
+            answer = """
+        print('Hello World')
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                print open parenthesis Hello World close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do declare a variable named sum of value 5 and print it?",
+            answer = """
+        sum = 5
+        
+        print (sum)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                sum = 5
+                
+                print open parenthesis sum close parenthesis
+                """.trimIndent()
+        ),
     )
 
 }

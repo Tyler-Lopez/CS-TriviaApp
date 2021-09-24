@@ -28,6 +28,8 @@ val sections = mapOf(
     "COSC 341: 01" to ProgrammingLanguages().chapterOne,
     "COSC 341: 02" to ProgrammingLanguages().chapterTwo,
     "COSC 341: 03" to ProgrammingLanguages().chapterThree,
+    "COSC 341: 04" to ProgrammingLanguages().chapterFour,
+
     "Kotlin: O2" to KotlinCourse().intermediete
 )
 
@@ -52,22 +54,33 @@ val courses = mapOf(
                     "Functions" to Chapter("Functions", sections["COSC 314: 04"]!!),
                     "Relations" to Chapter("Relations", sections["COSC 314: 03"]!!),
                     "Sequences" to Chapter("Sequences", sections["COSC 314: 05"]!!)
-                )),
+                )
+            ),
     "Data Structures & Algorithms" to
             Course(
                 "Data Structures & Algorithms", mapOf(
                     "Introduction" to Chapter("Introduction", sections["COSC 311: 01"]!!),
-                    "Searching & Algorithm Analysis" to Chapter("Searching & Algorithm Analysis", sections["COSC 311: 02"]!!),
+                    "Searching & Algorithm Analysis" to Chapter(
+                        "Searching & Algorithm Analysis",
+                        sections["COSC 311: 02"]!!
+                    ),
                     "Recursion" to Chapter("Recursion", sections["COSC 311: 03"]!!),
-                    "Sorting Algorithms" to Chapter("Sorting Algorithms", sections["COSC 311: Sorting"]!!),
+                    "Sorting Algorithms" to Chapter(
+                        "Sorting Algorithms",
+                        sections["COSC 311: Sorting"]!!
+                    ),
                 )
             ),
     "Programming Languages" to
             Course(
                 "Programming Languages", mapOf(
                     "Language Analysis" to Chapter("Language Analysis", sections["COSC 341: 01"]!!),
-                    "Overview of Languages" to Chapter("Overview of Languages", sections["COSC 341: 02"]!!),
+                    "Overview of Languages" to Chapter(
+                        "Overview of Languages",
+                        sections["COSC 341: 02"]!!
+                    ),
                     "C" to Chapter("C", sections["COSC 341: 03"]!!),
+                    "Python" to Chapter("Python", sections["COSC 341: 04"]!!),
                 )
             )
 )
