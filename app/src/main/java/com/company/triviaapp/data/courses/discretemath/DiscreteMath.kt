@@ -915,6 +915,24 @@ class DiscreteMath {
         """.trimIndent()
         ),
         QuestionAnswer(
+            question = "What is the precedence order of logical operators?",
+            answer = """
+           ¬, ∧, ∨, →, ⇔
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = "Negation, and, or, implication, biconditional"
+        ),
+        QuestionAnswer(
+            question = "Provided three variables, how many combinations are there in relation to a truth table?",
+            answer = """
+           8
+           
+           2³
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = "8, the formula is 2 to the power of variable count"
+        ),
+        QuestionAnswer(
             "What does ∨ mean?",
             """
            Logical OR

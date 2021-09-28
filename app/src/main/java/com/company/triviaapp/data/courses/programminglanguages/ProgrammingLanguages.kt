@@ -2047,6 +2047,40 @@ class ProgrammingLanguages {
                 """.trimIndent()
         ),
         QuestionAnswer(
+            question = "How do you print with a new line in Python?",
+            answer = """
+        print
+        
+        The print function automatically adds a new line to the end of the print
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you print without a new line in Python?",
+            answer = """
+        Change the named end variable to an empty string
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What happens if you attempt to print(\"Hello\" + 5)?",
+            answer = """
+        Compile error
+        
+        Python will not let you concatenate any variables to a string other than a string, you must first convert 5 to a string with str(5)
+    """.trimIndent(),
+            questionTts = "What happens if you attempt to print open parenthesis open quote Hello close quote plus 5 close parenthesis?",
+            answerTts = """
+               Compile error
+        
+        Python will not let you concatenate any variables to a string other than a string, you must first convert 5 to a string with s t r open parenthesis 5 close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "How do declare a variable named sum of value 5 and print it?",
             answer = """
         sum = 5
