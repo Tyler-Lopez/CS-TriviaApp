@@ -2105,6 +2105,112 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "How do you compare two strings in Python?",
+            answer = """
+        In Python, you can simply use relational operators directly
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What are the equivalents of &&, ||, and ! operators in Python?",
+            answer = """
+        && = and
+        
+        || = or
+        
+        ! = not
+    """.trimIndent(),
+            questionTts = "What are the equivalents of double ampersand, double vertical line, and exclamation mark operators in Python",
+            answerTts = """
+                and
+                
+                or
+                
+                not
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the syntax of an if, else block in Python?",
+            answer = """
+        Without curly braces
+        
+        Conditions have colons at the end of them
+        
+        Indentations are important
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the else-if keyword in Python?",
+            answer = """
+        elif
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                e l if
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does for k in range(2, 10, 2): print(k) do?",
+            answer = """
+        Prints 2, 4, 6, 8
+    """.trimIndent(),
+            questionTts = "What does for k in range open parenthesis 2 comma 10 comma 2 close parenthesis colon print open parenthesis k close parenthesis do",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Do functions have return types in Python?",
+            answer = """
+        No, because there are no strict types in Python
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does for k in range(1, 5): print(k) do?",
+            answer = """
+        Prints 1, 2, 3, 4
+    """.trimIndent(),
+            questionTts = "What does for k in range open parenthesis 1 comma 5 close parenthesis colon print open parenthesis k close parenthesis do",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does for k in range(5): print(k) do?",
+            answer = """
+        Prints 0, 1, 2, 3, 4
+    """.trimIndent(),
+            questionTts = "What does for k in range open parenthesis 5 close parenthesis colon print open parenthesis k close parenthesis do",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does the ** operator do in Python?",
+            answer = """
+            Exponent operator
+            
+            2**3 = 8
+    """.trimIndent(),
+            questionTts = "What does the double asterisk operator do in Python",
+            answerTts = """
+                Exponent operator
+                
+                2 double asterisk 3 equals 8
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Do increment and decrement operators exist in Python?",
+            answer = """
+            No
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """ """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "What happens if you attempt to print(\"Hello\" + 5)?",
             answer = """
         Compile error
