@@ -2067,6 +2067,44 @@ class ProgrammingLanguages {
             answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
+            question = "How do you read user input in python?",
+            answer = """
+        variable_name = input("Input Prompt: ")
+        
+        Returns a string, then cast it as needed
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                variable underscore name equals input open parenthesis open quote Input Prompt String close quote close parenthesis
+                
+                This returns a string, cast it to other types as needed
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you cast a string to an int?",
+            answer = """
+        int(string_variable)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                int open parenthesis string underscore variable close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the difference between / and // operators in Python?",
+            answer = """
+        / performs fractional division 13 / 4 = 3.25
+        
+        // performs integer division 13 // 4 = 3
+    """.trimIndent(),
+            questionTts = "What is the difference between single forward slash and double forward slash operators in Python",
+            answerTts = """
+                Single forward slash performs fraction division for example 13 fractional division by 4 is 3 point 2 5
+                
+                Double forward slash performs integer division for example 13 integer division by 4 is 3
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "What happens if you attempt to print(\"Hello\" + 5)?",
             answer = """
         Compile error
