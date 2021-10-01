@@ -933,6 +933,104 @@ class DiscreteMath {
             answerTts = "8, the formula is 2 to the power of variable count"
         ),
         QuestionAnswer(
+            question = "What is a tautology?",
+            answer = """
+           A proposition that is always true
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What is a contrapositive of a conditional proposition p → q?",
+            answer = """
+           Swap order and negate
+           
+           ¬q → ¬p
+        """.trimIndent(),
+            questionTts = "What is a contrapositive of a conditional proposition if p then q",
+            answerTts = """
+                Swap the order and then negate
+                
+                if not q then not p 
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a converse of a conditional proposition p → q?",
+            answer = """
+           Swap order
+           
+           q → p
+        """.trimIndent(),
+            questionTts = "What is a converse of a conditional proposition if p then q",
+            answerTts = """
+                Swap the order
+                
+                if q then p
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a  inverse of a conditional proposition p → q?",
+            answer = """
+           Negate but do not swap order
+           
+           ¬p → ¬q
+        """.trimIndent(),
+            questionTts = "What is a inverse of a conditional proposition if p then q",
+            answerTts = """
+                Negate but do not swap order
+                
+                if not p then not q
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Are the conditional proposition and contrapositive equivalent?",
+            answer = """
+           Yes
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a propositional function?",
+            answer = """
+           Statement involving variables
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Is p(x) : x + 2 > 5 a propositional function?",
+            answer = """
+           Yes
+        """.trimIndent(),
+            questionTts = "Is p of x colon x plus 2 greater than 5 a propositional function?",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Are propositional functions true or false?",
+            answer = """
+           No, a propositional function itself is not true or false; its propositions are true or false
+        """.trimIndent(),
+            questionTts = """,
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you prove a statement is a tautology by a truth table?",
+            answer = """
+           If in the truth table all possible combinations are true
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What is a contradiction?",
+            answer = """
+           A proposition that is always false
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
             "What does ∨ mean?",
             """
            Logical OR

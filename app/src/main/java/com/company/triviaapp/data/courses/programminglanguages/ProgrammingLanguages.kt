@@ -2162,6 +2162,92 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "How do you import a module?",
+            answer = """
+        import module_name
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                import module underscore name
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you create a list named list containing numbers from 0 to 5?",
+            answer = """
+        list = [0, 1, 2, 3, 4, 5]
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                list = open square bracket 0, 1, 2, 3, 4, 5 close square bracket
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you create a list of 100 elements of value 100?",
+            answer = """
+        list = [100] * 100
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                list = open square bracket 100 close square bracket times 100
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you print a list?",
+            answer = """
+        print(list)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                print open parenthesis list close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you find the length of a list?",
+            answer = """
+        len(list)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                len open parenthesis list close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does the input '9 in list' return?",
+            answer = """
+        True if element 9 is in list named list
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does \"hello\"[3:5] return?",
+            answer = """
+        lo
+    """.trimIndent(),
+            questionTts = "What does open quote hello close quote open square bracket 3 colon 5 close square bracket return?",
+            answerTts = """l o
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does \"hello\".split('e') return?",
+            answer = """
+        ['h', 'llo']
+    """.trimIndent(),
+            questionTts = "What does open quote hello close quote dot split open parenthesis character e close parenthesis return?",
+            answerTts = """A list containing two elements, h and l l o
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you open a file named outfile for writing?",
+            answer = """
+         outfile = open("filepath", "w") 
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """outfile equals open open parenthesis open quote file name close quote comma open quote w close quote close parenthesis
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "Do functions have return types in Python?",
             answer = """
         No, because there are no strict types in Python
