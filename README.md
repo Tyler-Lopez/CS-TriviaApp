@@ -13,7 +13,6 @@ This app would naturally also work well with any other broader topic - but quest
 * Text-to-speech toggle which reads comprehensible statements. (i.e. strlen(s) read as "call function s t r l e n with parameter character array s) 
 
 ## UI Examples
-UI to continue to improve throughout development, light and dark mode toggle as a future-feature.
 
 <img src="https://user-images.githubusercontent.com/77797048/133003566-584d0adc-7fec-45c8-954c-4a9cda4400da.png" width="300px">
 <img src="https://user-images.githubusercontent.com/77797048/133003567-ea99a11e-17c4-42a0-a3d7-62436c92b6b7.png" width="300px">
