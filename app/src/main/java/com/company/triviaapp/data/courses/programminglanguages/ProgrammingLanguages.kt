@@ -531,11 +531,19 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "What is Plankalkul?",
             answer = """
-        First "programming language"
+        First programming language
 
         "Programming calculus"
         
-        Theoretical language, 40's
+        Konrad Zuse, Germany, 1945
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was Plankalkul created?",
+            answer = """
+        Konrad Zuse, Germany, 1945
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
@@ -561,13 +569,18 @@ class ProgrammingLanguages {
 
         Formula Translation System
         
-        Beginning of subprogramming approach
-        
-        50's
+        John Backus, IBM, 1954
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was Fortran created?",
+            answer = """
+        John Backus, IBM, 1954
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is Lisp?",
@@ -576,41 +589,66 @@ class ProgrammingLanguages {
          
         Based on list processing
                         
-        MIT & IBM, John McCarthy, 50's
+        MIT & IBM, John McCarthy, 1958
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was Lisp created?",
+            answer = """
+        John McCarthy, MIT & IBM, 1958
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What language is Common Lisp, Scheme, & Haskell descended from?",
+            answer = """
+        Lisp
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is Algol?",
             answer = """
-        Procedural, "Algorithmic" language
-        
         FIRST programming language to describe SYNTAX formally
-        
-        Lost dev support quickly
-                
-        Developed in Europe, 50's
+
+        Procedural, "Algorithmic" language
+                        
+        Committees in Europe/US, 1958
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was Algol created?",
+            answer = """
+        Committees in Europe/US, 1958
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is COBOL?",
             answer = """
-        Common Business Oriented Language
-
-        For business applications
+        Common Business Oriented Language; for business applications
         
         Blamed for Y2K
         
-        IBM, 60's
+        IBM, 1960
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Where & when was COBOL created?",
+            answer = """
+        IBM, 1960
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is BASIC?",
@@ -619,11 +657,18 @@ class ProgrammingLanguages {
         
         For teaching basics of programming
         
-        Dartmouth, 60's
+        Dartmouth, 1963
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Where & when was BASIC created?",
+            answer = """
+        Dartmouth College, 1963
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is PL/1?",
@@ -632,24 +677,38 @@ class ProgrammingLanguages {
         
         Designed to replace FORTRAN & COBOL
         
-        IBM, 60's
+        IBM, 1963
     """.trimIndent(),
             questionTts = "What is P L 1?",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Where & when was PL/1 created?",
+            answer = """
+        IBM, 1963
+    """.trimIndent(),
+            questionTts = "Where, and when was P L 1 created?",
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is Simula?",
             answer = """
-        First object oriented language
+        FIRST object oriented language
         
         Designed for simulation applications
         
-        Norway, 60's
+        Norway, 1965
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Where & when was Simula created?",
+            answer = """
+        Norway, 1965
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
         ),
         QuestionAnswer(
             question = "What is Pascal?",
@@ -659,8 +718,29 @@ class ProgrammingLanguages {
         Niklaus Wirth, 70's
     """.trimIndent(),
             questionTts = "",
+            answerTts = """
+            For teaching computer science students
+                        
+            Niklaus Wirth, seventy's 
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which language is Pascal descended from?",
+            answer = """
+        Algol
+    """.trimIndent(),
+            questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "By whom & when was Pascal created?",
+            answer = """
+        Niklaus Wirth, 70's
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Niklaus Wirth, seventy's
+            """.trimIndent()
         ),
         QuestionAnswer(
             question = "What is Ada?",
@@ -669,24 +749,48 @@ class ProgrammingLanguages {
         
         Somewhat object-oriented; for embedded systems
         
-        Designed with support of the U.S. government, 80's
+        Designed with support of the U.S. government, 1980
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "Which language is Ada descended from?",
+            answer = """
+        Pascal
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """""".trimIndent()
+        ),
+        QuestionAnswer(
+            question = "By whom & when was Ada created?",
+            answer = """
+        U.S. government, 1980
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
         ),
         QuestionAnswer(
             question = "What is Prolog?",
             answer = """
-        Logic paradigm language
+        Logic language
         
-        Intended for AI applications
+        AI applications
         
-        Developed in Europe, 70's
+        France & England, 1973
     """.trimIndent(),
             questionTts = "",
             answerTts = """""".trimIndent()
-
+        ),
+        QuestionAnswer(
+            question = "By whom & when was Prolog created?",
+            answer = """
+        France & England, 1973
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
         ),
         QuestionAnswer(
             question = "What is SmallTalk?",
@@ -696,8 +800,16 @@ class ProgrammingLanguages {
         Xerox, Alan Kay, 80's
     """.trimIndent(),
             questionTts = "",
+            answerTts = """  
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was SmallTalk created?",
+            answer = """
+        Alan Kay, Xerox, 1980
+    """.trimIndent(),
+            questionTts = "",
             answerTts = """
-                
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -705,13 +817,22 @@ class ProgrammingLanguages {
             answer = """
         Functional language
         
-        Bell labs, Dennis Ritchie, 70's
-        
         General purpose, widely used
+        
+        Bell labs, Dennis Ritchie, 1972
     """.trimIndent(),
             questionTts = "",
             answerTts = """
                 
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was C created?",
+            answer = """
+        Dennis Ritchie, Bell Labs, 1972
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -721,9 +842,22 @@ class ProgrammingLanguages {
         
         Evolved from C and Simula
         
-        Contains C
-        
-        Bell Labs, Bjarne Stroustrup, 80's
+        Bjarne Stroustrup, Bell Labs, 1985
+    """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was C++ created?",
+            answer = """
+        Bjarne Stroustrup, Bell Labs, 1985
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which languages did C++ evolve from?",
+            answer = """
+                Simula & C
     """.trimIndent()
         ),
         QuestionAnswer(
