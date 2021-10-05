@@ -35,7 +35,9 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+                Used to write small programs quickly
+        
+                For example, Pearl, MAT LAB, and R
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -77,35 +79,59 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+       Simplicity, for example a small number of language features
+        
+        Process and data abstraction
+        
+        Control and block structures
             """.trimIndent()
         ),
         QuestionAnswer(
             question = "What decreases readability?",
             answer = """
-        Method and operator overloading
+        Method & operator overloading
         
-        Over simplicity (machine code)
+        Generics & inheritance relations
+        
+        Over simplicity
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+                Method and operator overloading
+        
+        Generics and inheritance relations
+        
+        Over simplicity
             """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is expressivity?",
+            answer = """
+        Ability to express ideas
+        
+        Inheritance, generics, exception handling, recursion
+    """.trimIndent()
         ),
         QuestionAnswer(
             question = "What increases writability?",
             answer = """
-        Simplicity (small # of language features)
+        Simplicity
         
-        Process and data abstraction
+        Process & data abstraction
         
-        Control and block structures
+        Control & block structures
         
-        Expressivity (ability to express complex structures)
+        Expressivity
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+            Simplicity
+                        
+            Process and data abstraction
+                        
+            Control and block structures
+                        
+            Expressivity
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -113,7 +139,7 @@ class ProgrammingLanguages {
             answer = """
         Too much expressivity
         
-        Extreme simplicity (ex: a language without loops)
+        Extreme simplicity
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -127,13 +153,15 @@ class ProgrammingLanguages {
         
         Exception handling
         
-        Readability (easier to find errors)
-        
-        Writability (less likely to make errors)
+        Readability & writability
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+            Type checking at compile time
+                        
+            Exception handling
+                        
+            Readability and writability
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -203,15 +231,13 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What is aliasing(ale-e-s-ing)?",
+            question = "What is aliasing?",
             answer = """
         Having two or more distinct names in a program used to access same memory
 
         Considered dangerous - decrease reliability
 
         Two points point to the same variable
-
-        Changing value pointed to by one of the two changes value of other
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -228,17 +254,20 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            question = "What is the von Neumann(Noyman) Architecture?",
+            question = "What two main factors influenced the development of languages?", """
+        Computer hardware & programming methodologies
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the von Neumann Architecture?",
             answer = """
         Languages designed around called imperative
 
-        Both data & programs stored in same MEMORY
-
-        CPU is separate from memory; instructions piped to CPU
-
-        Program & data fetched, decoded, executed by CPU
-
-        Program languages designed to work around this
+        Data & program are in memory and must be fetched by the CPU
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -258,11 +287,39 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "Which method of language translation do Java, Python, and JavaScript use?",
+            answer = """
+        Hybrid compiling / interpreting
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which method of language translation do Lisp, Basic, and Perl use?",
+            answer = """
+        Interpreting
+    """.trimIndent(),
+            questionTts = "Which method of language translation do Lisp, Basic, and Pearl use?",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which method of language translation do C, C++ and Fortran use?",
+            answer = """
+        Compiling
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "What is procedural programming?",
             answer = """
         Don't write whole program in one program, divide program into subprograms
-        
-        Made programs more manageable
         
         AKA imperative
     """.trimIndent(),
@@ -286,11 +343,11 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "What is object oriented programming?",
             answer = """
-        Encapsulation of data and methods
+        Encapsulation of data & methods
         
-        Classes and objects
+        Classes & objects
         
-        Inheritance and polymorphism
+        Inheritance & polymorphism
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -314,11 +371,9 @@ class ProgrammingLanguages {
             answer = """
         Source code completely translated to machine code
         
-        Compiling and executing occur different times
+        Compiling & executing occur different times
         
         Compile once, run many times
-        
-        C, C++, Fortran
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -328,11 +383,9 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "What is interpreting language translation?",
             answer = """
-        Interpreter translates source code and executes at the same time
+        Interpreter translates source code & executes at the same time
         
         Translation occurs everytime program is run
-        
-        Lisp, Basic
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -345,8 +398,6 @@ class ProgrammingLanguages {
         Source code translated to intermediate code (byte code)
         
         Interpreted code may be executed at runtime, line-by-line
-        
-        Java, Python
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -372,7 +423,7 @@ class ProgrammingLanguages {
             answer = """
         Integrated development environment
         
-        Provides package of components: editor, compiler, debugger, libraries
+        Provides package of components for programming
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -392,7 +443,7 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "What has been the strongest influence on programming language design?",
             answer = """
-        Computer architecture
+        Computer architecture & programming methodologies
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -419,19 +470,20 @@ class ProgrammingLanguages {
                 
             """.trimIndent()
         ),
-
         QuestionAnswer(
-            question = "What are two ways the choice of programming language can affect software development cost?",
+            question = "How does a more reliable language impact the development cost?",
             answer = """
-        Programmer training costs
-        
-        Writability: more writable = cheaper
-        
-        Reliability: more reliable, less failures = cheaper
-        
-        Readability: more readable, less update cost = cheaper
-        
-        Cost of compiler / debugger if not free
+        More reliable means less failure cost and cheaper
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How does a more readable language impact the development cost?",
+            answer = """
+        More readable means less cost to update and cheaper
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -441,7 +493,7 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "Why do compiled programs typically run faster than interpreted programs?",
             answer = """
-        The process of translating code at run-time adds to the overhead and can cause the program to be slower.
+        The process of translating code at run-time adds to the overhead & can cause the program to be slower.
     """.trimIndent(),
             questionTts = "",
             answerTts = """
