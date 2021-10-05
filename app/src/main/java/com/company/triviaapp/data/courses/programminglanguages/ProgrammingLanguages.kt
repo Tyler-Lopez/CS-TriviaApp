@@ -857,39 +857,47 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "Which languages did C++ evolve from?",
             answer = """
-                Simula & C
+        Simula & C
     """.trimIndent()
         ),
         QuestionAnswer(
             question = "What is Java?",
             answer = """
-        Strictly object oriented, general purpose
+        Strictly object-oriented, general purpose
         
         Evolved from and simpler than C++
         
-        Sun Micro Systems, James Gosling, 90's
+        James Gosling, Sun Micro Systems, 1994
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Who, where, & when was Java created?",
+            answer = """
+        James Gosling, Sun Micro Systems, 1994
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
             """.trimIndent()
         ),
         QuestionAnswer(
             question = "What is C#?",
             answer = """
-        Object oriented
+        Object-oriented
         
         Widely used, part of .NET
         
-        Microsoft, 00's
+        Microsoft, 2002
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                        Object oriented
+                        Object-oriented
                         
                         Widely used, part of dot NET
                         
-                        Microsoft, early 2000's
+                        Microsoft, early 2002
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -903,7 +911,20 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+            Used by Apple to develop mobile apps
+                        
+            Object oriented
+                        
+            Developed not by Apple, eighties
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which languages influenced Objective C?",
+            answer = """
+        C & SmallTalk
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -917,7 +938,11 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+            Scripting language related to Unix and C
+        
+            Considered "mother of all scripting languages"
+        
+            Eighties  
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -929,7 +954,9 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                
+            Started as a scripting language, became general purpose language
+        
+            Developed by individuals, non-profits, nineties 
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -951,7 +978,7 @@ class ProgrammingLanguages {
             answer = """
         Mobile application development language
         
-        Developed by Apple, 10's
+        Developed by Apple, 2014
     """.trimIndent(),
             questionTts = "",
             answerTts = """
@@ -963,25 +990,7 @@ class ProgrammingLanguages {
             answer = """
         Pascal and Basic
     """.trimIndent(),
-            questionTts = "Which two programming languages in the 60's and 70's were mainly used for teaching purposes?",
-            answerTts = """
-                
-            """.trimIndent()
-        ),
-        QuestionAnswer(
-            question = "Name three special purpose programming languages and their domain of applications?",
-            answer = """
-        Visual Basic - Basic UI
-        
-        SQL - Database
-        
-        OpenGL - Graphics
-        
-        FORTRAN - Science & Engineering
-        
-        COBOL - Business Applications
-    """.trimIndent(),
-            questionTts = "",
+            questionTts = "Which two programming languages in the sixties and seventies were mainly used for teaching purposes?",
             answerTts = """
                 
             """.trimIndent()
@@ -1017,11 +1026,23 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
-            question = "When and by who was the markup language HTML developed?",
+            question = "When & by who was the markup language HTML developed?",
             answer = """
         Tim Berners-Lee
-        
-        90's
+      
+        1993
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "When & by whom was XML developed?",
+            answer = """
+        World Wide Web Consortium
+      
+        1996
     """.trimIndent(),
             questionTts = "",
             answerTts = """
