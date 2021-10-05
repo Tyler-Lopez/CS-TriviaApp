@@ -1031,6 +1031,115 @@ class DiscreteMath {
             answerTts = ""
         ),
         QuestionAnswer(
+            question = "What is a universal quantification and what symbol denotes it?",
+            answer = """
+           ∀
+           
+           States that a propositional function is true for all values in the domain
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Upside down A
+                
+                States that a propositional function is true for all values in the domain
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What must be specified when declaring a universal quantification?",
+            answer = """
+           Domain
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What must be specified when declaring a existential quantification?",
+            answer = """
+           Domain
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a existential quantification and what symbol denotes it?",
+            answer = """
+           ∃
+           
+           States that a propositional function is true for some value in the domain
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+           Backwards E
+           
+           States that a propositional function is true for some value in the domain
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Can you negate a quantification?",
+            answer = """
+           Yes
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What happens when you negate a universal quantification?",
+            answer = """
+           Existential quantification of negated function
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What happens when you negate an existential quantification?",
+            answer = """
+           Universal quantification of negated function
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the english negation of the statement \"all students passed the class\"?",
+            answer = """
+           There exists a student who did not pass the class
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the english negation of the statement \"some student is a millionaire\"?",
+            answer = """
+           No student is a millionaire
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a theorem?",
+            answer = """
+           Mathematical statement that is true
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a proof?",
+            answer = """
+           Mathematical argument that shows a theorem is true
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             "What does ∨ mean?",
             """
            Logical OR
