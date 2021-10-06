@@ -29,6 +29,7 @@ val sections = mapOf(
     "COSC 341: 02" to ProgrammingLanguages().chapterTwo,
     "COSC 341: 03" to ProgrammingLanguages().chapterThree,
     "COSC 341: 04" to ProgrammingLanguages().chapterFour,
+    "COSC 341: 05" to ProgrammingLanguages().chapterFive,
 
     "Kotlin: O2" to KotlinCourse().intermediete
 )
@@ -81,6 +82,8 @@ val courses = mapOf(
                     ),
                     "C" to Chapter("C", sections["COSC 341: 03"]!!),
                     "Python" to Chapter("Python", sections["COSC 341: 04"]!!),
-                )
+                    "Lisp" to Chapter("Lisp", sections["COSC 341: 05"]!!),
+
+                    )
             )
 )

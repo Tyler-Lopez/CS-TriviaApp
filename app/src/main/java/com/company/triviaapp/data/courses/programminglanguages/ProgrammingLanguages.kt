@@ -2532,5 +2532,183 @@ class ProgrammingLanguages {
                 """.trimIndent()
         ),
     )
+    // COMMON LISP
+    val chapterFive = listOf(
+        QuestionAnswer(
+            question = "What programming paradigm does LISP represent?",
+            answer = """
+                Functional
+        
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you sum 3 and 8 in LISP?",
+            answer = """
+          (+ 3 8)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            plus 3 8 in parentheses
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does (* (+ 8 3) 2) equate to in LISP?",
+            answer = """
+            22
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                What does open parenthesis multiplication symbol open parenthesis plus 8 3 close parenthesis 2 close parenthesis equate to in LISP?
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the general syntax from in LISP?",
+            answer = """
+        (function x y z...)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                Open parenthesis function identifier variables close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is an atom?",
+            answer = """
+        A single number, variable, operator, or function names
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is an s-expression?",
+            answer = """
+        An atom or a list
+    """.trimIndent(),
+            questionTts = "What is an s expression",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How many s-expressions are there in this list: (+ 5 1)?",
+            answer = """
+        4
+    """.trimIndent(),
+            questionTts = "How many s expressions are in this list open parenthesis plus 5 1 close parenthesis",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How many atoms are in this list: (+ 5 1)?",
+            answer = """
+        3
+    """.trimIndent(),
+            questionTts = "How many atoms are in this list open parenthesis plus 5 1 close parenthesis",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is returned when an atom is evaluated?",
+            answer = """
+        A value
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How is a list evaluated?",
+            answer = """
+        First item is the function & other items are arguments
+        
+        Arguments are evaluated first then function is applied
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you set variable x to 6?",
+            answer = """
+        (setq x 6)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                open parenthesis set q   x   6 close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does (setq x 6) return?",
+            answer = """
+        6
+    """.trimIndent(),
+            questionTts = "What does open parenthesis set q   x   6 close parenthesis return?",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How does the setq function work?",
+            answer = """
+        The first argument is a variable which is not evaluated
+        
+        Other arguments are evaluated
+    """.trimIndent(),
+            questionTts = "How does the set q function work?",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does the quote function do?",
+            answer = """
+        Return the input without evaluating it
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a shorthand for (quote 2)?",
+            answer = """
+       '(2)
+    """.trimIndent(),
+            questionTts = "What is a shorthand for quote 2 in parenthesis",
+            answerTts = """    
+                single quote symbol then 2 in parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does '(+ 2 3) return?",
+            answer = """
+       (+ 2 3)
+    """.trimIndent(),
+            questionTts = "What does single quote symbol open parenthesis plus 2 3 close parenthesis return?",
+            answerTts = """    
+                open parenthesis plus 2 3 close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Why are setq x and set 'x equivalent?",
+            answer = """
+       The setq function automatically quotes the first parameter
+    """.trimIndent(),
+            questionTts = "Why are set q and set single quote x equivalent?",
+            answerTts = """    
+                The set q function automatically quotes the first parameter
+                """.trimIndent()
+        ),
+    )
+
 
 }
