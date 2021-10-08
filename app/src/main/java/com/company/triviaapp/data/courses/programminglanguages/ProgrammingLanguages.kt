@@ -1172,7 +1172,7 @@ class ProgrammingLanguages {
         
         Arrays
         
-        Structures (Structs)
+        Structs
         
         Pointers
     """.trimIndent(),
@@ -1215,7 +1215,7 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                int x open square bracket 50 close square bracket
+                int space x open square bracket 50 close square bracket
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -1241,6 +1241,7 @@ class ProgrammingLanguages {
             question = "Provided a defined struct for person, how do you declare two different persons?",
             answer = """
         struct person person_1
+        
         struct person person_2
     """.trimIndent(),
             questionTts = "",
@@ -1267,6 +1268,16 @@ class ProgrammingLanguages {
             questionTts = "Given an integer variable y, what does int space asterisk p = ampersand y do?",
             answerTts = """
                 p will store or point to the memory address location of y
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Given an int y, how do you declare a pointer p to it?",
+            answer = """
+         int *p = &y
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                int space asterisk p equals ampersand y
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -1311,7 +1322,7 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
-                int arr open square bracket 5 close square bracket = { 1, 2, 3, 4, 5 }
+                int arr open square bracket 5 close square bracket = open curly brace 1, 2, 3, 4, 5 close curly brace
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -1433,13 +1444,13 @@ class ProgrammingLanguages {
             question = "What does (9 > 5) return in C?", """
         1
         
-        C does not have booleans, 1 == true
+        C does not have booleans, anything that doesn't return 0 is true
     """.trimIndent(),
             questionTts = "What does 9 greater than 5 return in C?",
             answerTts = """
                 1
                 
-                C does not have booleans, 1 is the same as true
+                C does not have booleans, anything that doesn't return 0 is true
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -1451,6 +1462,29 @@ class ProgrammingLanguages {
     """.trimIndent(),
             questionTts = "",
             answerTts = """
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How would you define constants to act as booleans?",
+            answer = """
+        #define TRUE 1
+        #define FALSE 0
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                hashtag define space TRUE in all caps space 1
+                
+                hashtag define space FALSE in all caps space 0
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How would you define pi as a constant?",
+            answer = """
+        #define PI 3.14
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                hashtag define PI in all caps space 3 point 1 4
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -1743,15 +1777,15 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "How do you read user input?",
             answer = """
-        scanf("% type of input", & name of the pre-initialized variable where data should be stored)
+        scanf("% type of input", & name of the pre-declared variable where data should be stored)
     """.trimIndent(),
             questionTts = "How do you read user input?",
             answerTts = """
-                With the method scan f which takes two parameters.
+                With the method scan f which takes at least two parameters.
                 
-                The first parameter is the type of input specified by a percent identifier enclosed in quotations
+                The first parameter is the type of input specified by percent identifier enclosed in quotations
                 
-                The second parameter is the name of the pre-initialized variable where the data should be stored, the ampersand symbol must be placed before it if primitive to specify this is a location
+                The following parameters are the name of the pre-declared variable where the data should be stored, the ampersand symbol must be placed before it if primitive to specify this is a location
             """.trimIndent()
         ),
         QuestionAnswer(
@@ -1783,6 +1817,16 @@ class ProgrammingLanguages {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "How would you prototype a function call maximum which takes two integers?",
+            """
+        int maximum(int a, int b);
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                int space maximum open parenthesis int a comma int b close parenthesis semi colon
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "In C, how do you access the length of an array within a function where the array is a parameter?",
             """
         You must explicitly pass the length of an array into the function
@@ -1808,6 +1852,16 @@ class ProgrammingLanguages {
                 This means that num is a pointer to the start of an array
                 
                 Length is the length of the array
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which is the correct way to declare a pointer: int *p or int* p?",
+            """
+        Both are correct
+    """.trimIndent(),
+            questionTts = "Which is the correct way to declare a pointer, int space asterisk p OR int asterisk space p?",
+            answerTts = """
+                
             """.trimIndent()
         ),
         QuestionAnswer(
