@@ -2708,6 +2708,81 @@ class ProgrammingLanguages {
                 The set q function automatically quotes the first parameter
                 """.trimIndent()
         ),
+        QuestionAnswer(
+            question = "What must the argument of the car function be?",
+            answer = """
+       A list
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What must the argument of the cdr function be?",
+            answer = """
+       A list
+    """.trimIndent(),
+            questionTts = "What must the argument of the c d r function be?",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What the car function return?",
+            answer = """
+       The first item of the list
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What the cdr function return?",
+            answer = """
+       All list items excluding the first item
+    """.trimIndent(),
+            questionTts = "What does the c d r function return?",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What does invoking the cdr or car function on the empty list return?",
+            answer = """
+       NIL
+    """.trimIndent(),
+            questionTts = "What does invoking the c d r or car function on the empty list return?",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do write two cdr then a car function by shorthand?",
+            answer = """
+       caddr
+    """.trimIndent(),
+            questionTts = "How do write two c d r then a car function by shorthand?",
+            answerTts = """
+                    c a d d r
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What are the arguments of the cons function?",
+            answer = """
+       The first is any S-expression, second must be a list
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What function is invoked to use conditionals?",
+            answer = """
+       cond
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                    
+                """.trimIndent()
+        ),
     )
 
 
