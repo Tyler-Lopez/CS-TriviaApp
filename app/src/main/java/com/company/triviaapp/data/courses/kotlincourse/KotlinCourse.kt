@@ -88,6 +88,53 @@ class KotlinCourse {
             questionTts = "",
             answerTts = ""),
         QuestionAnswer(
+            question = "Should parameters of the secondary constructors be declared with val or var?",
+            answer = """
+            NO
+            
+            Only parameters of the primary constructor can be declared val or var
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "Can a secondary constructor declare a parameter with val or var?",
+            answer = """
+            NO
+            
+            Compile-time error
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "What keyword must be used on a class before it is extended?",
+            answer = """
+            open
+            
+            All classes are final by default
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "Can a derived class access private members of the base class?",
+            answer = """
+            No
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "Must member functions of a concrete superclass have concrete implementations?",
+            answer = """
+            Yes
+            
+            open fun functionName() { }
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                Yes
+                
+                open fun function name open and close parentheses open and close curly brace
+            """.trimIndent()),
+        QuestionAnswer(
             question = "How is an init block declared for a secondary constructor?",
             answer = """
             After calling another constructor open a block of curly braces
