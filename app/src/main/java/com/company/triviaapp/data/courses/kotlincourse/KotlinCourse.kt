@@ -175,6 +175,55 @@ class KotlinCourse {
             answerTts = """
             """.trimIndent()),
         QuestionAnswer(
+            question = "Can interfaces inherit from each other?",
+            answer = """
+            Yes
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "What happens if a class inherits several interfaces which contain functions with the same signature?",
+            answer = """
+            Collisions must be resolved manually
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "How can a function access the base version of itself in interface A?",
+            answer = """
+            super<A>.functionName
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                super A in angle brackets dot function name
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "How can functionality be added to a class without inheritance?",
+            answer = """
+            Extension functions
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "What is the Liskov Substitution Principle?",
+            answer = """
+            After upcasting, the derived type can be treated exactly like the base type
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "Consider super class Shape / subclass Square which has a color function; if a Shape object shape points to an instance of Square can color be accessed?",
+            answer = """
+            Not without casting or checking if shape is an instance of Square
+        """.trimIndent(),
+            questionTts = "Consider super class Shape and a subclass Square which has a color function; if a Shape object shape points to an instance of Square can color be accessed?",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
             question = "How is an init block declared for a secondary constructor?",
             answer = """
             After calling another constructor open a block of curly braces
