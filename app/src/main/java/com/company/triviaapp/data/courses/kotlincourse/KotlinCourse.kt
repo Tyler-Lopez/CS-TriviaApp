@@ -135,6 +135,46 @@ class KotlinCourse {
                 open fun function name open and close parentheses open and close curly brace
             """.trimIndent()),
         QuestionAnswer(
+            question = "Can an interface concretely implement functions?",
+            answer = """
+            Yes
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "Does an interface need to use the abstract keyword for abstract properties and functions?",
+            answer = """
+            No, it is redundant
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "What is the difference between an interface and an abstract class?",
+            answer = """
+            An abstract class can contain state while an interface cannot
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "What does it mean that an abstract class can contain state but an interface cannot?",
+            answer = """
+            An interface may declare properties abstractly but actual data is stored in classes that implement interface
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
+            question = "Which can contain functions with implementations: abstract classes or interfaces?",
+            answer = """
+            Both may contain functions with implementations
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()),
+        QuestionAnswer(
             question = "How is an init block declared for a secondary constructor?",
             answer = """
             After calling another constructor open a block of curly braces
