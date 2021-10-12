@@ -2599,6 +2599,46 @@ class ProgrammingLanguages {
                 """.trimIndent()
         ),
         QuestionAnswer(
+            question = "What programming paradigm does LISP represent?",
+            answer = """
+                Functional
+        
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is the keyword to define a function?",
+            answer = """
+                defun
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                    de fun
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How would you define a function to return the average of two values?",
+            answer = """
+               (defun average(x y) (/ (+ x y) 2))
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                    open parenthesis de fun average x and y in parentheses open parenthesis divide symbol plus x and y in parentheses 2 close parenthesis close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How would you invoke a custom function average which takes two numbers and returns their average?",
+            answer = """
+               (average number1 number2)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                    open parenthesis average number 1 number 2 close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "How do you sum 3 and 8 in LISP?",
             answer = """
           (+ 3 8)
