@@ -1140,6 +1140,15 @@ class DiscreteMath {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "What is a proof by exhaustion?",
+            answer = """
+           Split numbers into a set of exhaustive categories and statement is found true for each
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             "What does ∨ mean?",
             """
            Logical OR
