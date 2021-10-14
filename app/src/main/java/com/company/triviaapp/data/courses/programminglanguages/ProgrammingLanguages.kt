@@ -2599,6 +2599,16 @@ class ProgrammingLanguages {
                 """.trimIndent()
         ),
         QuestionAnswer(
+            question = "Which function makes a list from s-expressions?",
+            answer = """
+               list
+        
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "What programming paradigm does LISP represent?",
             answer = """
                 Functional
