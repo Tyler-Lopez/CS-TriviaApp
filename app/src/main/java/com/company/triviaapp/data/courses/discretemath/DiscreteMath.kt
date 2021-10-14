@@ -1149,6 +1149,33 @@ class DiscreteMath {
             """.trimIndent()
         ),
         QuestionAnswer(
+            question = "What is a lemma?",
+            answer = """
+           Small theorem that is usually used to prove a larger theorem
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a corollary?",
+            answer = """
+           Small theorem that follows from a larger theorem
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "What is a conjecture?",
+            answer = """
+           Mathematical statement that is believed to be true but not yet proven true
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+            """.trimIndent()
+        ),
+        QuestionAnswer(
             "What does ∨ mean?",
             """
            Logical OR

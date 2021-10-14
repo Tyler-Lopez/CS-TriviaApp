@@ -3,7 +3,18 @@ package com.company.triviaapp.data.courses.kotlincourse
 import com.company.triviaapp.data.model.QuestionAnswer
 
 class KotlinCourse {
-    val intermediete = listOf(
+    // QUESTIONS ABOUT THE ANDROID LIFECYCLE
+    val lifeCycle = listOf(
+        QuestionAnswer(
+            question = "",
+            answer = """
+           
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+    )
+    // QUESTIONS ABOUT OBJECT ORIENTED PROGRAMMING
+    val objectOriented = listOf(
         QuestionAnswer("What does an interface do and what does it not do?",
             """
            Describes what a class should do, and not how to do it

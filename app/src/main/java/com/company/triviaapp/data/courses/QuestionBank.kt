@@ -31,7 +31,9 @@ val sections = mapOf(
     "COSC 341: 04" to ProgrammingLanguages().chapterFour,
     "COSC 341: 05" to ProgrammingLanguages().chapterFive,
 
-    "Kotlin: OOP" to KotlinCourse().intermediete
+    "Kotlin: OOP" to KotlinCourse().objectOriented,
+    "Kotlin: Lifecycle" to KotlinCourse().lifeCycle
+
 )
 
 val tempMap = mapOf(
@@ -89,7 +91,8 @@ val courses = mapOf(
     "Kotlin" to
             Course(
                 "Kotlin", mapOf(
-                    "Object Oriented Programming" to Chapter("Object Oriented Programming", sections["Kotlin: OOP"]!!),
+                    "OOP" to Chapter("OOP", sections["Kotlin: OOP"]!!),
+                    "Android Lifecycle" to Chapter("Android Lifecycle", sections["Kotlin: Lifecycle"]!!),
                     )
             ),
 )
