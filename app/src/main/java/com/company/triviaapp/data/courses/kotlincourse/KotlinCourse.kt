@@ -47,6 +47,13 @@ class KotlinCourse {
         """.trimIndent(),
             questionTts = "What should on resume be implemented for?",
             answerTts = "To initialize components released during on pause"),
+        QuestionAnswer(
+            question = "Why must the superclass of onCreate() callback be called if overridden?",
+            answer = """
+           To complete the creation of the activity, like creating the view hierarchy
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
     )
     // QUESTIONS ABOUT OBJECT ORIENTED PROGRAMMING
     val objectOriented = listOf(
