@@ -1364,6 +1364,14 @@ class DiscreteMath {
         """.trimIndent()
         ),
         QuestionAnswer(
+            question = "What is a relation from Set A to Set B?",
+            answer = """
+            A subset of A x B
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
             "What is the domain of a relation?", """
             The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
             
