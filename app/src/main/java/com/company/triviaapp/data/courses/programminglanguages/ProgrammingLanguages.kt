@@ -2296,7 +2296,7 @@ class ProgrammingLanguages {
                  """.trimIndent()
         ),
     )
-    val chapterFour = listOf(
+    val python = listOf(
         QuestionAnswer(
             question = "How do you print Hello World to console in Python?",
             answer = """
@@ -2305,6 +2305,36 @@ class ProgrammingLanguages {
             questionTts = "",
             answerTts = """    
                 print open parenthesis Hello World close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do open a file for reading in Python?",
+            answer = """
+        file = open(file name, "r")
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                file equals open open parenthesis file name as a string comma r in quotes close parenthesis
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which functions returns a string with all characters lowercase?",
+            answer = """
+        .lower()
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                dot lower parentheses
+                """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "Which method of language translation does Python use?",
+            answer = """
+        Hybrid compiled / interpreted
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """    
+                
                 """.trimIndent()
         ),
         QuestionAnswer(
@@ -2587,7 +2617,7 @@ class ProgrammingLanguages {
         ),
     )
     // COMMON LISP
-    val chapterFive = listOf(
+    val lisp = listOf(
         QuestionAnswer(
             question = "What programming paradigm does LISP represent?",
             answer = """

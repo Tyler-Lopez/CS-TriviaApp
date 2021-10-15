@@ -6,12 +6,47 @@ class KotlinCourse {
     // QUESTIONS ABOUT THE ANDROID LIFECYCLE
     val lifeCycle = listOf(
         QuestionAnswer(
-            question = "",
+            question = "What are the 6 callbacks provided by the Activity class?",
             answer = """
-           
+           onCreate(), onStart(), onResume(), onStop(), onDestroy()
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = "on create on start on resume on stop on destroy"),
+        QuestionAnswer(
+            question = "Which callback is fired when the system first creates an activity?",
+            answer = """
+           onCreate()
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = "on create"),
+        QuestionAnswer(
+            question = "Which parameter, if any, does onCreate() receive?",
+            answer = """
+           savedInstanceState: Bundle?
+        """.trimIndent(),
+            questionTts = "Which parameter, if any, does on create receive?",
+            answerTts = "Saved instance state of type nullable bundle"),
+        QuestionAnswer(
+            question = "Does an activity reside in the Created state?",
+            answer = """
+           No
         """.trimIndent(),
             questionTts = "",
             answerTts = ""),
+        QuestionAnswer(
+            question = "Does an activity reside in the Started state?",
+            answer = """
+           No
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "What should onResume() be implemented for?",
+            answer = """
+           To initialize components released during onPause()
+        """.trimIndent(),
+            questionTts = "What should on resume be implemented for?",
+            answerTts = "To initialize components released during on pause"),
     )
     // QUESTIONS ABOUT OBJECT ORIENTED PROGRAMMING
     val objectOriented = listOf(
