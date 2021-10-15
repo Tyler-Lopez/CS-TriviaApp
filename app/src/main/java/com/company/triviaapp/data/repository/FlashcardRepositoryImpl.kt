@@ -3,10 +3,10 @@ package com.company.triviaapp.data.repository
 import com.company.triviaapp.data.model.Chapter
 import com.company.triviaapp.data.model.Course
 import com.company.triviaapp.data.model.QuestionAnswer
-import com.company.triviaapp.domain.repository.FlashcardRepository
+import com.company.triviaapp.domain.repository.IFlashcardRepository
 import com.company.triviaapp.presentation.courses
 
-class FlashcardRepositoryImpl(): FlashcardRepository {
+class FlashcardRepositoryImpl(): IFlashcardRepository {
 
     override suspend fun getCourses(): List<Course> {
         return courses.values.toList() // Non-ideal, but how else to retrieve from mapping?

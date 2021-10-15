@@ -1,7 +1,7 @@
 package com.company.triviaapp.di
 
 import com.company.triviaapp.data.repository.FlashcardRepositoryImpl
-import com.company.triviaapp.domain.repository.FlashcardRepository
+import com.company.triviaapp.domain.repository.IFlashcardRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,6 +19,6 @@ object AppModule {
      */
 
     @Provides
-    fun provideService(): FlashcardRepository = FlashcardRepositoryImpl()
+    fun provideService(): IFlashcardRepository = FlashcardRepositoryImpl()
 
 }

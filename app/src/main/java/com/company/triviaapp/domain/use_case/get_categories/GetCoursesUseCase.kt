@@ -2,7 +2,7 @@ package com.company.triviaapp.domain.use_case.get_categories
 
 import com.company.triviaapp.common.Resource
 import com.company.triviaapp.data.model.Course
-import com.company.triviaapp.domain.repository.FlashcardRepository
+import com.company.triviaapp.domain.repository.IFlashcardRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -11,7 +11,7 @@ import javax.inject.Inject
 // Use case should only have one public function
 
 class GetCoursesUseCase @Inject constructor(
-    private val repository: FlashcardRepository
+    private val repository: IFlashcardRepository
 ) {
     // https://kotlinlang.org/docs/operator-overloading.html
     operator fun invoke(): Flow<Resource<List<Course>>> = flow {
