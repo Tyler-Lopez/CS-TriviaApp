@@ -29,7 +29,7 @@ val sections = mapOf(
     "COSC 341: 02" to ProgrammingLanguages().chapterTwo,
     "COSC 341: 03" to ProgrammingLanguages().chapterThree,
     "COSC 341: 04" to ProgrammingLanguages().python,
-    "COSC 341: 05" to ProgrammingLanguages().chapterFive,
+    "COSC 341: 05" to ProgrammingLanguages().lisp,
 
     "Kotlin: OOP" to KotlinCourse().objectOriented,
     "Kotlin: Lifecycle" to KotlinCourse().lifeCycle
