@@ -2671,7 +2671,7 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "How would you define a function to return the average of two values?",
             answer = """
-               (defun average(x y) (/ (+ x y) 2))
+               (defun average (x y) (/ (+ x y) 2))
     """.trimIndent(),
             questionTts = "",
             answerTts = """
