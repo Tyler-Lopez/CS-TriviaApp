@@ -2649,6 +2649,16 @@ class ProgrammingLanguages {
                 """.trimIndent()
         ),
         QuestionAnswer(
+            question = "Before using the append function to join an integer I to a list, what must you do?",
+            answer = """
+                Convert the integer to a list with (list I)
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+                 Convert the integer to a list with the list function
+                """.trimIndent()
+        ),
+        QuestionAnswer(
             question = "What is the keyword to define a function?",
             answer = """
                 defun
