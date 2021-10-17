@@ -3,6 +3,44 @@ package com.company.triviaapp.data.courses.kotlincourse
 import com.company.triviaapp.data.model.QuestionAnswer
 
 class KotlinCourse {
+    // DESIGN PATTERNS
+    val designPatterns = listOf(
+        QuestionAnswer(
+            question = "What is a Design Pattern?",
+            answer = """
+           Blueprint for a problem that occurs very often
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "What is the Singleton pattern?",
+            answer = """
+           An object where a single instance exists in the code base
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "Which keyword creates a Singleton?",
+            answer = """
+            object
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "What is the Factory pattern?",
+            answer = """
+            Distinguishes between different types of objects, then creates the desired object
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+        QuestionAnswer(
+            question = "Consider a Factory named DialogFactory, what is the most likely name of the function contained within?",
+            answer = """
+            createDialog
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""),
+    )
     // QUESTIONS ABOUT THE ANDROID LIFECYCLE
     val lifeCycle = listOf(
         QuestionAnswer(
