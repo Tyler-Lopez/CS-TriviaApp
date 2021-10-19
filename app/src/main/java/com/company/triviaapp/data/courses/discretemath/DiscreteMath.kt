@@ -1385,6 +1385,21 @@ class DiscreteMath {
             Relation denoted by (a, b) ∈ R
         """.trimIndent()
         ),
+        QuestionAnswer(
+            "What is the domain of a relation?", """
+            The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
+            
+            Relation denoted by (a, b) ∈ R
+        """.trimIndent()
+        ),
+        QuestionAnswer(
+            question = "How do you check to see if a relation is reflexive?",
+            answer = """
+            The relation must include each element of the set to itself
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
     )
     val sequences = listOf(
         QuestionAnswer(
