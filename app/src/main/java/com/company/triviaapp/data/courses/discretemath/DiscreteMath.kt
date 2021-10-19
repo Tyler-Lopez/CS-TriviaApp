@@ -1400,6 +1400,14 @@ class DiscreteMath {
             questionTts = "",
             answerTts = ""
         ),
+        QuestionAnswer(
+            question = "Does a relation (1, 1) mean a relation is anti-symmetric?",
+            answer = """
+            No, the definition of anti-symmetric only looks at 
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
     )
     val sequences = listOf(
         QuestionAnswer(
