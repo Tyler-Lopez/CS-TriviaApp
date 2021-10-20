@@ -2928,6 +2928,17 @@ class ProgrammingLanguages {
                 """.trimIndent()
         ),
     )
+    val syntax = listOf(
+        QuestionAnswer(
+            question = "What is a mathematical definition of grammar?",
+            answer = """
+            Collection of rules or definitions that describe how to construct valid or correct strings in a language
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+    )
 
 
 }

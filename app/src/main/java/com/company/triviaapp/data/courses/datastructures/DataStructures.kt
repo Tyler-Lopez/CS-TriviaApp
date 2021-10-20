@@ -636,4 +636,15 @@ class DataStructures {
     """.trimIndent()
         ),
     )
+
+    val hashMap = listOf(
+        QuestionAnswer(
+            question = "What is a recursive algorithm?",
+            answer = """
+        Breaks the problem into smaller subprograms and applies an algorithm to solve them
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+    )
 }
