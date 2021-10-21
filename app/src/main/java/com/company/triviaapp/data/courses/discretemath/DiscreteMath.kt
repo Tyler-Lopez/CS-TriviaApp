@@ -1750,11 +1750,11 @@ class DiscreteMath {
         """.trimIndent()
         ),
         QuestionAnswer(
-            question = "If you have a 3x4 matrix, what would the dimensions of it's transpose be?",
+            question = "If you have a 3x4 matrix, what would the dimensions of its transpose be?",
             answer = """
             4x3
         """.trimIndent(),
-            questionTts = "If you have a 3 by 4 matrix, what would the dimensions of it's transpose be?",
+            questionTts = "If you have a 3 by 4 matrix, what would the dimensions of its transpose be?",
             answerTts = """
                 4 by 3
         """.trimIndent()
