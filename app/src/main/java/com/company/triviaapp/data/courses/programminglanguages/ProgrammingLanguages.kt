@@ -2938,6 +2938,16 @@ class ProgrammingLanguages {
             answerTts = """
         """.trimIndent()
         ),
+
+        QuestionAnswer(
+            question = "Which four things make up a Grammar?",
+            answer = """
+            Variables, Terminals, Starting Symbol, Production Rules
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
     )
 
 
