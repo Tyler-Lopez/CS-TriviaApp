@@ -670,5 +670,13 @@ class DataStructures {
             questionTts = "",
             answerTts = ""
         ),
+        QuestionAnswer(
+            question = "How does a hash table with linear probing handle collision?",
+            answer = """
+        Start at the key's mapped bucket then linearly search buckets until an empty one is found
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
     )
 }
