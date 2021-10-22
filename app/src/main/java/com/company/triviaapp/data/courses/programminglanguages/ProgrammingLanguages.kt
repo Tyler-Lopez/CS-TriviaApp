@@ -2940,7 +2940,7 @@ class ProgrammingLanguages {
         ),
 
         QuestionAnswer(
-            question = "Which four things make up a Grammar?",
+            question = "Which four things make up a grammar?",
             answer = """
             Variables, Terminals, Starting Symbol, Production Rules
         """.trimIndent(),

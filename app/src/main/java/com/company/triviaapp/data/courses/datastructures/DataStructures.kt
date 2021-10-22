@@ -639,9 +639,33 @@ class DataStructures {
 
     val hashMap = listOf(
         QuestionAnswer(
-            question = "What is a recursive algorithm?",
+            question = "What is a hash table?",
             answer = """
-        Breaks the problem into smaller subprograms and applies an algorithm to solve them
+        A data structure which stores unordered items by mapping (or hashing) each item to a location in an array
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What is a key in a hash table?",
+            answer = """
+        The value which is used to map to an index
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What is a bucket?",
+            answer = """
+        A hash table array element
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What does a hash function do?",
+            answer = """
+        Computes a bucket's index from a key
     """.trimIndent(),
             questionTts = "",
             answerTts = ""
