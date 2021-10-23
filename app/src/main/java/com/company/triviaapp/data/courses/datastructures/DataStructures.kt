@@ -678,5 +678,61 @@ class DataStructures {
             questionTts = "",
             answerTts = ""
         ),
+        QuestionAnswer(
+            question = "How does a hash table with quadratic probing handle collision?",
+            answer = """
+            Start at key's mapped bucket then quadratically search buckets until an empty bucket is found    
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "How does a hash table with double hashing handle collision?",
+            answer = """
+            Uses 2 different hash functions to compute bucket indices   
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What does a hash table's resize operation do?",
+            answer = """
+            Increases the number of buckets
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What does a hash table's resize operation typically resize to?",
+            answer = """
+            The next prime number greater than or equal to current size times 2
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What is a hash table's load factor?",
+            answer = """
+            Number of items divided by number of buckets
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What does it mean for a hash table to use open addressing?",
+            answer = """
+            One bucket holds at most one item
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "When resizing to a larger size, is the load factor guarenteed to decrease?",
+            answer = """
+            Yes
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
     )
 }
