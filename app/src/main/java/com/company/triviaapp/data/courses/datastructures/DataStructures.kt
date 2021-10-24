@@ -727,9 +727,17 @@ class DataStructures {
             answerTts = ""
         ),
         QuestionAnswer(
-            question = "When resizing to a larger size, is the load factor guarenteed to decrease?",
+            question = "When resizing to a larger size, is the load factor guaranteed to decrease?",
             answer = """
             Yes
+    """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "What would a perfect hash function do?",
+            answer = """
+            Map items to buckets with no collisions
     """.trimIndent(),
             questionTts = "",
             answerTts = ""
