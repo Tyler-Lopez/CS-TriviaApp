@@ -1372,6 +1372,14 @@ class DiscreteMath {
             answerTts = ""
         ),
         QuestionAnswer(
+            question = "What does it mean for a relation R to be transitive?",
+            answer = """
+            If everytime a 1 appears in the squared matrix, there is a 1 in the non-squared matrix
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
             "What is the domain of a relation?", """
             The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
             
