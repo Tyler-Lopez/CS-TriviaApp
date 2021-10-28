@@ -1360,13 +1360,21 @@ class DiscreteMath {
         ),
         QuestionAnswer(
             "Is a relation a function?", """
-            Yes
+            Yes 
         """.trimIndent()
         ),
         QuestionAnswer(
             question = "What is a relation from Set A to Set B?",
             answer = """
             A subset of A x B
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
+            question = "Is a path direct or indirect?",
+            answer = """
+            Both, a path can be both direct or indirect
         """.trimIndent(),
             questionTts = "",
             answerTts = ""
