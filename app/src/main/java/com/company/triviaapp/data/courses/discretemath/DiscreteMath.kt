@@ -1372,6 +1372,14 @@ class DiscreteMath {
             answerTts = ""
         ),
         QuestionAnswer(
+            question = "What does it mean for a relation to be an equivalence relation?",
+            answer = """
+            It must be reflexive, symmetric, & transitive
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = ""
+        ),
+        QuestionAnswer(
             question = "Is a path direct or indirect?",
             answer = """
             Both, a path can be both direct or indirect
