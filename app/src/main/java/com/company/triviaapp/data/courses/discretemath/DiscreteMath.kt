@@ -1366,7 +1366,7 @@ class DiscreteMath {
         QuestionAnswer(
             question = "What is a relation from Set A to Set B?",
             answer = """
-            A subset of A x B
+            Subset of A x B
         """.trimIndent(),
             questionTts = "",
             answerTts = ""
