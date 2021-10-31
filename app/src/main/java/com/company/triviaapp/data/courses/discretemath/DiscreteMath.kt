@@ -1374,7 +1374,7 @@ class DiscreteMath {
         QuestionAnswer(
             question = "What does it mean for a relation to be an equivalence relation?",
             answer = """
-            It must be reflexive, symmetric, & transitive
+            It must be reflexive, symmetric & transitive
         """.trimIndent(),
             questionTts = "",
             answerTts = ""
