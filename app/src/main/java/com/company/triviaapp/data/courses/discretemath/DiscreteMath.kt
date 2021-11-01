@@ -1382,7 +1382,7 @@ class DiscreteMath {
         QuestionAnswer(
             question = "Is a path direct or indirect?",
             answer = """
-            Both, a path can be both direct or indirect
+            A path can be both direct or indirect
         """.trimIndent(),
             questionTts = "",
             answerTts = ""
