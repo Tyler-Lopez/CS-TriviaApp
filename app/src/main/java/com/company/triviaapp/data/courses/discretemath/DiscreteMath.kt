@@ -1397,7 +1397,7 @@ class DiscreteMath {
         ),
         QuestionAnswer(
             "What is the domain of a relation?", """
-            The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R 
+            The set of a ∈ A such that there is a b ∈ B with (a, b) ∈ R  
             
             Relation denoted by (a, b) ∈ R
         """.trimIndent()
