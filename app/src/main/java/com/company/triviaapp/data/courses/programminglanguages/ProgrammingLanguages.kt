@@ -2920,7 +2920,7 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "What function is invoked to use conditionals?",
             answer = """
-       cond
+       cond 
     """.trimIndent(),
             questionTts = "",
             answerTts = """
