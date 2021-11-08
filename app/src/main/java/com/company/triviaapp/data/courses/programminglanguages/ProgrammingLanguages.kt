@@ -37,7 +37,7 @@ class ProgrammingLanguages {
             answerTts = """
                 Used to write small programs quickly
         
-                For example, Pearl, MAT LAB, and R
+                For example, Pearl, MAT LAB, & R
             """.trimIndent()
         ),
         QuestionAnswer(
