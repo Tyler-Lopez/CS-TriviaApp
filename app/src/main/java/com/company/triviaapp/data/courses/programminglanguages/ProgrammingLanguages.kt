@@ -2949,6 +2949,26 @@ class ProgrammingLanguages {
         """.trimIndent()
         ),
     )
+    val javaScript = listOf(
+        QuestionAnswer(
+            question = "What company did JavaScript start in?",
+            answer = """
+            Netscape
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
 
+        QuestionAnswer(
+            question = "Which four things make up a grammar?",
+            answer = """
+            Variables, Terminals, Starting Symbol, Production Rules
+        """.trimIndent(),
+            questionTts = "",
+            answerTts = """
+        """.trimIndent()
+        ),
+    )
 
 }
