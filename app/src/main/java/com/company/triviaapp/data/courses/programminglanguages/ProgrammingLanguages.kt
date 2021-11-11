@@ -2953,7 +2953,7 @@ class ProgrammingLanguages {
         QuestionAnswer(
             question = "What company did JavaScript start in?",
             answer = """
-            Netscape
+            NetScape
         """.trimIndent(),
             questionTts = "",
             answerTts = """
