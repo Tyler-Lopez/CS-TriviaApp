@@ -2959,16 +2959,17 @@ class ProgrammingLanguages {
             answerTts = """
         """.trimIndent()
         ),
-
+    )
+    val swift = listOf(
         QuestionAnswer(
-            question = "Which four things make up a grammar?",
+            question = "How do you declare a int variable named x?",
             answer = """
-            Variables, Terminals, Starting Symbol, Production Rules
+            var x: Int
         """.trimIndent(),
             questionTts = "",
             answerTts = """
+            var x colon int
         """.trimIndent()
         ),
     )
-
 }
