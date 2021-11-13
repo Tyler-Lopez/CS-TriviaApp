@@ -2962,7 +2962,7 @@ class ProgrammingLanguages {
     )
     val swift = listOf(
         QuestionAnswer(
-            question = "How do you declare a int variable named x?",
+            question = "How do you declare a integer variable named x?",
             answer = """
             var x: Int
         """.trimIndent(),
